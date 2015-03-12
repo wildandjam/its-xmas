@@ -1,0 +1,627 @@
+@import "compass/css3";
+@import 'partials/variables';
+/*
+Theme Name: It's Christmas
+Theme URI: http://www.its-xmas.co.uk
+Author: It's Christmas
+Author URI: http://www.its-xmas.co.uk
+Description: 
+
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: its-christmas
+
+
+This theme, like WordPress, is licensed under the GPL.
+
+
+*/
+
+html {
+  &.touch, &.no-touch {
+   margin:0!important;
+  }
+
+  * {
+    @include box-sizing(border-box);
+  }
+}
+.navigation.post-navigation {display:none;}
+
+#blogBody {
+  header {
+    background:$blue;
+    @include box-shadow(none);
+	
+
+    .left {
+      width:auto;
+	  
+	  @media (max-width:767px) {
+		max-width:none;
+	  }
+      a {
+        color:$lgrey;
+        
+        &:hover {
+          color:white;
+        }
+      }
+      div {
+        display:none;
+      }
+    }
+    .right {
+      width:auto;
+     
+      a {
+        line-height:34px;
+        font-size:12px;
+        color:$lgrey;
+        text-decoration:none;
+
+        &:hover {
+          color:white;
+          text-decoration:underline;
+        }
+      }
+    }
+  }
+  .navmenu {
+    float:right;
+    margin-bottom:25px;
+
+    ul {
+      float:left;
+      margin:0;
+      padding:0;
+
+      li {
+        float:left;
+        background:$blue;
+
+        a {
+          color:$lgrey;
+          text-decoration:none;
+          font-size:11px;
+          line-height:25px;
+          padding: 3px 25px;
+          width:100%;
+          float:left;
+          text-align:center;
+          text-transform:uppercase;
+          letter-spacing:1px;
+        }
+
+        &:hover {
+          background:$green;
+
+          a {
+            color:white;
+          }
+        }
+      }
+    }
+  }
+
+  #page {
+    float:left;
+    width:100%;
+    padding-top:50px;
+    clear:both;
+
+    #masthead {
+      float:left;
+      width:100%;
+      clear:both;
+
+      nav {
+        float:left;
+        width:100%;
+
+
+          
+      }
+    }
+    #content {
+      float:left;
+      width:100%;
+      clear:both;
+
+      .container {
+        padding:0;
+
+        #blogContent { 
+          float:left;
+          width:72.5%;
+          margin:0 2.5% 0 0;
+          clear:both;
+        }
+        #secondary {
+          float:left;
+          width:25%;
+
+          aside {
+            background:white;
+            margin:0 0 25px;
+            padding:15px;
+            border:1px solid $lgrey;
+            float:left;
+            width:100%;
+
+            h3 {
+              font-family:$lobster;
+              font-size: 22px;
+              width: 100%;
+              float: left;
+              text-align: center;
+              line-height: 28px;
+              margin-bottom: 10px;
+            }
+            &.widget_search {
+              form {
+                float:left;
+                width:100%;
+
+                .row {
+                  float:left;
+                  width:100%;
+                  position:relative;
+
+                  input[type='text']{
+                    width:100%;
+                    float:left;
+                    padding-left:10px;
+                    padding-right:calc(10% + 10px);
+                  }
+                  button {
+                    float: right;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    height: 100%;
+                    background: none;
+                    padding: 0;
+                    padding-top: 3px;
+                    padding-bottom: 3px;
+
+                    img {
+                      float: right;
+                      max-height: 100%;
+                      margin-right:2px;
+                    }
+                  }
+                }
+              }
+            }
+            ul {
+              float:left;
+              width:100%;
+
+              li {
+                float:left;
+                width:100%;
+                clear:both;
+                font-size:11px;
+                letter-spacing:1px;
+                color:$dgrey;
+              }
+            }
+            &.widget_recent_entries, &.widget_recent_comments {
+              a {
+                font-size:12px;
+                line-height:20px;
+                text-decoration:none;
+                color:$blue;
+                letter-spacing:1px;
+
+                &:hover {
+                  color:$green;
+                  text-decoration:underline;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+  .container {
+    width:100%;
+    max-width:1100px;
+    margin:0 auto;
+    overflow:hidden;
+  }
+  .content-area {
+    #comments {
+      padding-bottom:15px;
+    }
+
+    article, #comments, main > .page-header {
+      background:white;
+      padding: 9;
+      margin-bottom:25px;
+      border:1px solid $lgrey;
+      width:100%;
+      float:left;
+      clear:both;
+
+      h1.page-title {
+        padding:10px 0;
+      }
+
+      &.post {
+        footer.entry-meta {
+          margin-top:25px;
+          font-size:11px;
+        }
+      }
+
+      &.comments-area {
+        h2.comments-title {
+          font-family:$lobster;
+          font-size:24px;
+          width:100%;
+          float:left;
+          text-align:center;
+          padding:10px 0;
+        }
+
+        ol {
+          float:left;
+          width:100%;
+          clear:both;
+          border-top:1px solid $lgrey;
+
+          li {
+            float:left;
+            width:100%;
+            clear:both;
+            
+
+            article {
+              margin:0;
+              padding:15px;
+              border-width:0 0 1px 0;
+
+              .comment-meta {
+                width:25%;
+                float:left;
+                
+                img {
+                  margin:0 auto;
+                  overflow:hidden;
+                  max-width:100%;
+                }
+
+                a, span, div, p {
+                  display:block;
+                  float:left;
+                  width:100%;
+                  clear:both;
+                  padding:2px 0;
+                  font-size: 11px;
+                  letter-spacing: 1px;
+
+                  time {
+                    color:$dgrey;
+                    font-size:10px;
+                  }
+
+                  &.says {
+                    display:none;
+                  }
+                  &.comment-metadata {
+                    padding:0;
+                  }
+                }
+              }
+              .comment-content {
+                float:left;
+                width:75%;
+                min-height:50px;
+                font-size: 12px;
+                letter-spacing: 1px;
+
+                p {
+                  float:left;
+                  width:100%;
+                  clear:both; 
+                }
+              }
+              .reply {
+                float:left;
+                width:75%;
+
+
+                a {
+                  float:left;
+                  background:$blue;
+                  color:white;
+                  padding:5px 10px;
+                  display:block;
+                  letter-spacing:1px;
+                  text-transform:uppercase;
+                  font-size:11px;
+
+                  &:hover {
+                    background:$green;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      #respond {
+        float:left;
+        width:100%;
+        clear:both;
+
+        h3 {
+          font-family:$lobster;
+          font-size:24px;
+          width:100%;
+          float:left;
+          text-align:center;
+          padding:15px;
+
+          a {
+            font-size:24px;
+
+            &#cancel-comment-reply-link {
+              float:left;
+              width:100%;
+              font-family:$font;
+              color:$error;
+              margin:10px 0 5px;
+              font-size:14px;
+              letter-spacing:1px;
+              text-transform:uppercase;
+
+              &:hover {
+                text-decoration:underline;
+              }
+            }
+          }
+        }
+        form {
+          float:left;
+          width:100%;
+          clear:both;
+          letter-spacing:1px;
+
+          > p {
+            float:left;
+            width:100%;
+            padding:5px 15px;
+
+            &.comment-notes {
+              font-size:12px;
+              padding-bottom:10px;
+            }
+          }
+
+          label {
+            font-size:11px;
+            line-height:21px;
+            width:20%;
+            padding-right:2%;
+            float:left;
+            display:block;
+          }
+          label ~ input, label ~ textarea {
+            float:left;
+            width:60%;
+            display:block;
+            margin:0;
+          }
+
+          .logged-in-as, .comment-form-comment, .form-submit {
+            input {
+              float:right;
+              background:$blue;
+              color:white;
+              padding:10px 15px;
+              display:block;
+              text-transform:uppecase;
+              letter-spacing:1px;
+              border:0;
+              cursor:pointer;
+
+              &[type="submit"] {
+                text-transform:uppercase;
+                font-size:11px
+              }
+
+              &:hover {
+                background:$green;
+              }
+            }
+          }
+          .form-allowed-tags {
+            display:none;
+          }
+        }
+
+      }
+
+      .post-inner-content {
+        float:left;
+        width:100%;
+        clear:both;
+        padding:15px;
+
+        .entry-header.page-header {
+            float:left;
+            width:100%;
+            clear:both;
+
+            .posted-on {
+              padding-left:2.5%;
+
+              .updated {
+              display:none;
+              }
+            }
+          }
+
+        &.secondary-content-box {
+          background:rgba(247,247,247,0.6);
+          border-top:1px solid $lgrey;
+
+
+
+          .author-bio {
+            float:left;
+            width:100%;
+            clear:both;
+            letter-spacing:1px;
+
+            div.avatar {
+              float:left;
+              width:10%;
+              padding:0 1%;
+
+              img {
+                overflow:hidden;
+                margin:0 auto;
+                max-width:100%;
+                height:auto;
+              }
+            }
+            .author-bio-content {
+              float:left;
+              width:90%;
+              padding:0 15px;
+
+              h4 {
+                font-size:20px;
+              }
+              p {
+                font-size:12px;
+                color:$dgrey;
+                line-height:20px;
+              }
+            }
+          }
+        }
+      }
+
+      h2 {
+        font-family:$lobster;
+        float:left;
+        width:100%;
+        margin-bottom:5px;
+        a {
+          font-size:20px;
+        }
+      }
+      .entry-meta {
+        float:left;
+        width:100%;
+        margin-bottom:5px;
+        color:$dgrey;
+
+        .posted-on {
+          a {
+            color:$dgrey;
+            font-size:10px;
+            letter-spacing:1px;
+          }
+        }
+
+
+        .byline,.comments-link {
+          display:none;
+        }
+
+      }
+      .entry-content {
+        float:left;
+        width:100%;
+        clear:both;
+
+        p {
+          float:left;
+          width:100%;
+          clear:both;
+          font-size:12px;
+          margin-bottom:5px;
+          letter-spacing:1px;
+
+          a {
+            font-size:12px;
+            text-decoration:underline;
+          }
+        }
+      }
+
+      a {
+        text-decoration:none;
+        color:$blue;
+        font-size:12px;
+      }
+    }
+  }
+}
+
+@media (max-width:767px) {
+
+
+  #blogBody header {
+    .left {
+      float:left;
+      width:100%;
+      div {
+        display:block;
+        float:right;
+        @include box-shadow(none);
+      }
+    }
+    .right {
+      display:none;
+    }
+  }
+  #blogBody #page #content .container {
+
+    .navmenu {
+      float:left;
+      width:100%;
+      clear:both;
+      display:none;
+
+      &.show {
+        display:block;
+      }
+
+      ul {
+        float:left;
+        width:100%;
+        clear:both;
+
+        li {
+          float:left;
+          width:100%;
+          clear:both;
+        }
+      }
+    }
+
+
+    #blogContent, #secondary {
+      width:100%;
+      margin:20px 0 0;
+      padding:0 2.5%;
+    }
+    #secondary {
+      border-top:2px solid $lgrey;
+      padding-top:20px;
+      margin:0;
+    }
+  }
+}

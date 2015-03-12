@@ -1,0 +1,628 @@
+#itemholder {
+	width:100%;
+	min-width:100%;
+	max-width:100%;
+	margin: 0;
+	float:left;
+	min-height:400px;
+	clear:both;
+	position:relative;
+	height:100%;
+
+	> h1 {
+		margin:20px auto;
+	}
+
+	#error {
+		width:100%;
+		float:left;
+		padding:10px 0;
+		color:red;
+		text-align:center;
+		font-size:12px;
+	}
+
+	#pleaseLogin {
+		text-align:center;
+		width:100%;
+		margin-top:20px;
+
+		a {
+			color:$green;
+			text-decoration:none;
+
+			&:hover {
+				text-decoration:underline;
+			}
+		}
+	}
+	&.images, &.pin {
+
+		.item {
+			width: 200px;
+			margin: 10px;
+			float: left;
+			border: 1px solid #e8e8e8;
+			font-size:15px;
+			background:#FFFFFF;
+
+			.removeFromCollection {
+				width: 100%;
+				text-align: center;
+				display: block;
+				float: left;
+				clear: both;
+				text-transform: uppercase;
+				font-size: 10px;
+				margin: 5px 0;
+				color: $dgrey;
+				letter-spacing: 1px;
+				text-decoration:none;
+
+				&:hover {
+					color:$error;
+
+				}
+			
+			}
+
+			.itemImg {
+				width:100%;
+				float:left;
+				position:relative;
+
+				a {
+					max-width:100%;
+				}
+
+				img {
+					min-width:100px;
+					max-width:100%;
+					display:block;
+					margin: 0 auto;
+				}
+				
+				.itemHover {
+					display:none;
+					position:absolute;
+					width:100%;
+					height:100%;
+					top:0;
+					font-family:$lobster;
+					font-size:20px;
+					color:white;
+					text-align:center;
+					line-height:1em;
+					background:rgba($blue,0.7);
+
+					span {
+						position: absolute;
+						display: table;
+						margin: auto;
+						top: 0;
+						left: 0;
+						right: 0;
+						bottom: 0;
+						//height: 24px;
+						width: 100%;
+					}
+				}
+				&:hover {
+					.itemHover {
+						display:block;
+						cursor:pointer;
+					}
+				}
+				.textImage {
+					float:left;
+					width:100%;
+					text-align:center;
+					padding:20px 0;
+
+					span {
+						font-size:60px;
+						color:$dgrey;
+						text-decoration:none;
+					}
+
+					&:hover span {
+						color:$blue;
+					}
+				}
+			}
+			
+			.itemRating {
+				margin:0 auto;
+				border-top:1px solid rgba(0,0,0,0.25);
+				width:50%;
+				text-align:center;
+				font-size:10px;
+				max-width:150px;
+				padding:5px 0;
+
+				span {
+					vertical-align:top;
+				}
+
+			}
+			.itemScore {
+				width:85px;
+				height:25px;
+				margin: 0px auto;
+				background:url('/images/greystars.png') no-repeat;
+				background-size:100%;
+				position:relative;
+
+				.itemPerc {
+					position:absolute;
+					left:0;
+					top:0;
+					background:url('/images/bluestars.png') no-repeat;
+					background-size:85px 23px;
+					height:25px;
+				}
+			}
+			.itemTitle {
+				font-size:12px;
+				line-height:19px;
+				width:100%;
+				text-align:center;
+				padding:10px 0;
+				color:$blue;
+				float:left;
+				clear:both;
+
+				a {
+					color:$blue;
+				}
+			}
+			.itemActions {
+				float:left;
+				width:100%;
+				text-align:center;
+				clear:both;
+				margin-bottom:4px;
+
+				> span {
+					width:20px;
+					height:20px;
+					display:inline-block;
+					background-size:100%;
+					background-repeat:no-repeat;
+					cursor:pointer;
+					vertical-align:top;
+
+					&.rating {
+						span.perc {
+							color:white; 
+							font-size:10px;
+							text-align:center;
+							background:none;
+							z-index:5;
+						}
+
+					}
+				}
+
+				
+			}
+
+
+			.itemURL, .itemUser {
+				font-size:10px;
+				padding:5px 2.5%;
+				float:left;
+				width:50%;
+				color:$blue;
+				overflow:hidden;
+				text-overflow:ellipsis;
+				a {
+					color:$blue;
+				}
+				&.uploaded a {
+					color:$lgrey;
+				}
+			}
+			.itemUser {
+				text-align:right;
+				float:right;
+			}
+			a {
+				text-decoration:none;
+
+				&:hover {
+					text-decoration:underline;
+				}
+			}
+			.itemFriend {
+				display:inline-block;
+				width:20px;
+				height:20px;
+				cursor:pointer;
+				
+				&.hint:before, &[data-hint]:before {
+					top:18px;
+					border-bottom-color: $blue;
+				}
+				&.hint:after, &[data-hint]:after {
+					top:19px;
+				}
+			}
+		}
+		@media #{$break-handheld} {
+			.item {
+				width:45%;
+				min-width:45%;
+				max-width:45%;
+				padding: 0;
+				margin:10px 2%;
+
+				.itemImg img {
+					max-width:100%;
+				}
+			}
+			#itemPost {
+				width:95%;
+				margin: 0 2.5%;
+			}
+		}
+	}
+	&.rows {
+		width:100%;
+		max-width:1000px;
+		margin:0 auto;
+		float:none;
+		min-width:0;
+		padding:0 15px;
+		
+		@media #{$break-handheld} {
+			padding:0 2.5%;
+		}
+
+		.item {
+			float:left;
+			width:100%;
+			max-width:1000px;
+			clear:both;
+			margin:0 auto 15px auto;
+
+
+			.itemUserBox {
+				float:left;
+				width:100px;
+
+				.itemUserAvatar {
+					float:left;
+					width:100%;
+				}
+
+				.itemAuthor {
+					float:left;
+					width:100%;
+					clear:both;
+					margin-top:10px;
+					font-size:12px;
+					overflow:hidden;
+					text-overflow:ellipsis;
+					white-space:nowrap;
+
+					a {
+						text-decoration:none;
+						color:$blue;
+
+						&:hover {
+							color:$green;
+						}
+					}
+				}
+			}
+			.itemInfo {
+				float:right;
+				width: calc(100% - 100px);
+				background:white;
+				padding:10px;
+				border: 1px solid #e8e8e8;
+
+				.itemImg {
+					max-width:100%;
+					display:block;
+					width:auto;
+					margin:0 auto 10px;
+					float:none;
+					background:white;
+
+					img {
+						max-width:100%;
+						display:block;
+						margin:0 auto;
+					}
+				}
+				.itemTitle {
+					float:left;
+					margin:10px 0 0;
+					width:100%;
+					font-size:24px;
+					font-family:$lobster;
+
+					a {
+						text-decoration:none;
+						color:$blue;
+					}
+				}
+				.itemDesc {
+					font-size:13px;
+					color:$green;
+					float:left;
+					clear:both;
+					width:100%;
+					padding:5px 0;
+					letter-spacing:1px;
+
+					p {
+						width:100%;
+						padding:0;
+					}
+				}
+				.itemCategory, .itemFrom, .itemAuthor, .itemLikes, .itemDislikes, .removeFromCollection{
+					color:$dgrey;
+					font-size:11px;
+					letter-spacing:1px;
+					float:left;
+					margin: 5px 15px 5px 0;
+
+					a {
+						color:$dgrey;
+						text-decoration:none;
+
+						&:hover {
+							color:$blue;
+						}
+					}
+				}
+				> a.removeFromCollection {
+					color:$error;
+					text-decoration:none;
+
+					&:hover {
+						text-decoration:underline;
+					}
+				}
+			}
+
+			img {
+				max-width:100%;
+			}
+		}
+
+	}
+	&.text {
+		width:100%;
+		max-width:1000px;
+		margin:0 auto;
+		float:none;
+		min-width:0;
+
+
+		.item {
+			float:left;
+			width:100%;
+			clear:both;
+			margin:0 0 15px 0;
+			position:relative;
+
+			.itemTitle {
+				float:left;
+				width:100%;
+				clear:both;
+				font-family:$lobster;
+				font-size:20px;
+				padding:5px 0;
+
+				a {
+					color:$blue;
+					text-decoration:none;
+					&:hover {
+						text-decoration:underline;
+					}
+				}
+			}
+			.itemInfo {
+				float:left;
+				width:100%;
+				clear:both;
+				color:$dgrey;
+				font-size:13px;
+
+				> div {
+					float:left;
+					clear:none;
+					width:auto;
+					padding-right:10px;
+				}
+
+
+				a {
+					color:$blue;
+					text-decoration:none;
+					&:hover {
+						text-decoration:underline;
+					}
+				}
+			}
+		}
+		.deleteClose {
+			position:absolute;
+			top:50%;
+			right:0;
+			background:$error;
+			text-decoration:none;
+			padding:5px;
+			@include border-radius(10px);
+			@include opacity(0.75);
+
+			span {
+				color:white;
+				font-size:9px;
+
+			}
+			&:hover {
+				@include opacity(1);
+			}
+		}
+
+	}
+	&.minimal {
+		width:100%;
+		max-width:1000px;
+		margin:0 auto;
+		float:none;
+		min-width:0px;
+
+		a {
+			text-decoration:none;
+		}
+
+		.item {
+			float:left;
+			width:100%;
+			clear:both;
+			margin:0 0 15px 0;
+
+			.videoIcon {
+				width:100%;
+				background:white;
+				padding:10px;
+				text-align:center;
+				font-size:30px;
+				color:$blue;
+				text-decoration:none;
+				span {
+				text-decoration:none;
+				}
+
+				&:hover {
+					color:$green;
+				}
+			}
+
+			.itemImg {
+				float:left;
+				width:130px;
+				padding:0 15px 0 0;
+
+				img {
+					max-width:100%;
+					float:left;
+					height:auto;
+				}
+			}
+			.itemInfo {
+				width:calc(100% - 145px);
+				float:left;
+				padding:10px;
+
+				.itemTitle {
+					float:left;
+					width:100%;
+					margin-bottom:5px;
+
+					a {
+						text-decoration:none;
+						color:$blue;
+
+						&:hover {
+							color:$green;
+						}
+					}
+				}
+				.itemCategory, .itemFrom, .itemAuthor, .itemLikes, .itemDislikes, .removeFromCollection {
+					color:$dgrey;
+					font-size:11px;
+					letter-spacing:1px;
+					float:left;
+					margin: 5px 15px 5px 0;
+
+					a {
+						color:$dgrey;
+						text-decoration:none;
+
+						&:hover {
+							color:$blue;
+						}
+					}
+				}
+				> a.removeFromCollection {
+					color:$error;
+					&:hover {
+						text-decoration:underline;
+					}
+				}
+			}
+			
+		}
+		@media #{$break-handheld} {
+
+		padding:0 2.5%;
+			.item {
+				.itemImg {
+					width:20%;
+				}
+				.itemInfo {
+					width:80%;
+					padding:0px 2.5% 15px;
+				
+					.itemCategory, .itemFrom, .itemAuthor, .itemLikes, .itemDislikes {
+						margin: 2px 15px 2px 0;
+					}
+					.itemCategory, .itemFrom, .itemAuthor, .itemLikes {
+						clear:both;
+					}
+				}
+			}
+		}
+	}
+
+	
+
+
+}
+#criteriaHolder {
+	float:left;
+	width:100%;
+	clear:both;
+	text-align:center;
+	margin-bottom:10px;
+
+	.criteria {
+		color:$dgrey;
+		font-size:11px;
+		display:inline-block;
+		margin: 0 5px;
+
+		> * {
+			display:inline-block;
+			margin:0 2px;
+		}
+
+		span {
+			&.criteriaRemove {
+				background:$dgrey;
+				padding:2px;
+
+				span.icon-close {
+					font-style:normal;
+					color:white;
+					font-size:8px;
+				}
+				&:hover {
+					background:$error;
+					cursor:pointer;
+
+				}
+			}
+
+			
+		}
+		
+	}
+}

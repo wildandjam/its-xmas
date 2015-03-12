@@ -1,0 +1,6587 @@
+/* line 1, partials/_reset.scss */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* line 4, partials/_reset.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* line 7, partials/_reset.scss */
+html, body {
+  height: 100%;
+  min-height: 100%;
+}
+
+/* line 11, partials/_reset.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 14, partials/_reset.scss */
+blockquote, q {
+  quotes: none;
+}
+
+/* line 18, partials/_reset.scss */
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+/* line 22, partials/_reset.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 1, partials/_nav.scss */
+#navbar {
+  position: fixed;
+  height: 100%;
+  width: 350px;
+  background: #FFFFFF;
+  background: rgba(255, 255, 255, 0.98);
+  top: 0;
+  right: 0;
+  display: none;
+  border-left: 2px solid #183051;
+  z-index: 50;
+  overflow-x: auto;
+}
+/* line 14, partials/_nav.scss */
+#navbar.navopen {
+  display: block;
+}
+/* line 18, partials/_nav.scss */
+#navbar .bar {
+  width: 95%;
+  margin: 70px 2.5% 0;
+  float: left;
+  position: relative;
+}
+/* line 24, partials/_nav.scss */
+#navbar .bar .link {
+  float: left;
+  clear: both;
+  padding: 9px 2.5%;
+  margin: 5px 0;
+  background: white;
+  text-align: center;
+  line-height: 12px;
+  font-size: 12px;
+  width: 100%;
+  color: #183051;
+  text-decoration: none;
+}
+/* line 39, partials/_nav.scss */
+#navbar .bar .link.wildandjam {
+  font-size: 10px;
+  line-height: 10px;
+}
+/* line 44, partials/_nav.scss */
+#navbar .bar .link:hover {
+  background: #183051;
+  color: #FFFFFF;
+}
+/* line 48, partials/_nav.scss */
+#navbar .bar .link.cta {
+  background: #183051;
+  color: white;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+/* line 55, partials/_nav.scss */
+#navbar .bar .link.cta:hover {
+  background: #124f42;
+}
+/* line 58, partials/_nav.scss */
+#navbar .bar .link.cta span {
+  position: absolute;
+  right: 5px;
+  font-size: 15px;
+  color: white;
+}
+/* line 67, partials/_nav.scss */
+#navbar .bar ul.navUL {
+  list-style: none;
+  position: relative;
+  float: left;
+  width: 100%;
+  clear: both;
+}
+/* line 74, partials/_nav.scss */
+#navbar .bar ul.navUL li.chosen {
+  background: #124f42;
+  color: white;
+}
+/* line 79, partials/_nav.scss */
+#navbar .bar ul.navUL li.chosen > ul {
+  display: block;
+}
+/* line 84, partials/_nav.scss */
+#navbar .bar ul.navUL ul {
+  display: none;
+  width: 100%;
+  float: left;
+  width: 100%;
+  clear: both;
+  margin: 10px 0 5px;
+  background: white;
+}
+/* line 93, partials/_nav.scss */
+#navbar .bar ul.navUL ul li {
+  float: left;
+  clear: both;
+  padding: 9px 20px;
+  background: white;
+  font-size: 12px;
+  width: 100%;
+  color: #183051;
+  text-decoration: none;
+}
+/* line 104, partials/_nav.scss */
+#navbar .bar ul.navUL ul li:hover {
+  background: #183051;
+  color: white;
+}
+/* line 108, partials/_nav.scss */
+#navbar .bar ul.navUL ul li:hover a {
+  color: white;
+}
+/* line 113, partials/_nav.scss */
+#navbar .bar ul.navUL ul li a {
+  color: #183051;
+  text-decoration: none;
+  width: 100%;
+  float: left;
+}
+/* line 123, partials/_nav.scss */
+#navbar .bar input.title {
+  padding: 9px 2.5%;
+}
+/* line 126, partials/_nav.scss */
+#navbar .bar input.title:hover {
+  background: white;
+  color: #183051;
+}
+/* line 130, partials/_nav.scss */
+#navbar .bar input.title#searchInput {
+  cursor: text;
+}
+/* line 135, partials/_nav.scss */
+#navbar .bar #refineMenu {
+  width: 100%;
+  float: left;
+  clear: both;
+  margin-bottom: 5px;
+}
+/* line 141, partials/_nav.scss */
+#navbar .bar #refineMenu .title {
+  margin-bottom: 0;
+}
+/* line 145, partials/_nav.scss */
+#navbar .bar #refineMenu > form {
+  display: none;
+  background: #183051;
+  color: white;
+  float: left;
+  width: 100%;
+  padding: 0 2.5%;
+}
+/* line 152, partials/_nav.scss */
+#navbar .bar #refineMenu > form.active {
+  display: block;
+}
+/* line 156, partials/_nav.scss */
+#navbar .bar #refineMenu .refineRow {
+  float: left;
+  width: 100%;
+  clear: both;
+  margin: 5px 0;
+  height: 28px;
+}
+/* line 163, partials/_nav.scss */
+#navbar .bar #refineMenu .refineRow > div, #navbar .bar #refineMenu .refineRow > label, #navbar .bar #refineMenu .refineRow > select, #navbar .bar #refineMenu .refineRow > input, #navbar .bar #refineMenu .refineRow > button {
+  width: 60%;
+  float: left;
+  font-size: 12px;
+  display: block;
+}
+/* line 170, partials/_nav.scss */
+#navbar .bar #refineMenu .refineRow > div#refineDateInputs > input, #navbar .bar #refineMenu .refineRow > label#refineDateInputs > input, #navbar .bar #refineMenu .refineRow > select#refineDateInputs > input, #navbar .bar #refineMenu .refineRow > input#refineDateInputs > input, #navbar .bar #refineMenu .refineRow > button#refineDateInputs > input {
+  width: 45%;
+  float: left;
+  font-size: 11px;
+}
+/* line 175, partials/_nav.scss */
+#navbar .bar #refineMenu .refineRow > div#refineDateInputs span, #navbar .bar #refineMenu .refineRow > label#refineDateInputs span, #navbar .bar #refineMenu .refineRow > select#refineDateInputs span, #navbar .bar #refineMenu .refineRow > input#refineDateInputs span, #navbar .bar #refineMenu .refineRow > button#refineDateInputs span {
+  width: 10%;
+  float: left;
+  display: block;
+  text-align: center;
+  height: 20px;
+  line-height: 20px;
+}
+/* line 186, partials/_nav.scss */
+#navbar .bar #refineMenu .refineRow > div#refineRating input, #navbar .bar #refineMenu .refineRow > label#refineRating input, #navbar .bar #refineMenu .refineRow > select#refineRating input, #navbar .bar #refineMenu .refineRow > input#refineRating input, #navbar .bar #refineMenu .refineRow > button#refineRating input {
+  width: 45%;
+  float: left;
+}
+/* line 190, partials/_nav.scss */
+#navbar .bar #refineMenu .refineRow > div#refineRating #ratingSlider, #navbar .bar #refineMenu .refineRow > label#refineRating #ratingSlider, #navbar .bar #refineMenu .refineRow > select#refineRating #ratingSlider, #navbar .bar #refineMenu .refineRow > input#refineRating #ratingSlider, #navbar .bar #refineMenu .refineRow > button#refineRating #ratingSlider {
+  margin: 7px 2.5% 5px 7.5%;
+  width: 45%;
+  float: left;
+}
+/* line 197, partials/_nav.scss */
+#navbar .bar #refineMenu .refineRow > label {
+  width: 40%;
+}
+/* line 198, partials/_nav.scss */
+#navbar .bar #refineMenu .refineRow > input[type=checkbox] {
+  width: auto;
+  margin-left: 40%;
+}
+/* line 201, partials/_nav.scss */
+#navbar .bar #refineMenu .refineRow > input[type=checkbox] + label {
+  margin: 3px 0;
+}
+/* line 206, partials/_nav.scss */
+#navbar .bar #refineMenu .refineRow .jquerySelect .select2-choice {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+}
+/* line 209, partials/_nav.scss */
+#navbar .bar #refineMenu .refineRow .jquerySelect .select2-offscreen, #navbar .bar #refineMenu .refineRow .jquerySelect input, #navbar .bar #refineMenu .refineRow .jquerySelect div {
+  font-size: 12px;
+}
+/* line 214, partials/_nav.scss */
+#navbar .bar #refineMenu .refineRow > button {
+  background: #124f42;
+  padding: 5px 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+/* line 219, partials/_nav.scss */
+#navbar .bar #refineMenu .refineRow > button:hover {
+  border: 1px solid white;
+}
+/* line 226, partials/_nav.scss */
+#navbar .bar .title {
+  width: 100%;
+  float: left;
+  clear: both;
+  font-size: 12px;
+  cursor: pointer;
+  margin: 5px 0;
+  height: 30px;
+}
+/* line 235, partials/_nav.scss */
+#navbar .bar .title:hover {
+  background: #183051;
+  color: white;
+}
+/* line 241, partials/_nav.scss */
+#navbar .bar .title.showOptions {
+  background: #183051;
+  color: white;
+  height: auto;
+}
+/* line 246, partials/_nav.scss */
+#navbar .bar .title.showOptions .control.minus {
+  display: block;
+}
+/* line 249, partials/_nav.scss */
+#navbar .bar .title.showOptions .control.plus {
+  display: none;
+}
+/* line 252, partials/_nav.scss */
+#navbar .bar .title.showOptions .link, #navbar .bar .title.showOptions .navUL {
+  display: block;
+}
+/* line 257, partials/_nav.scss */
+#navbar .bar .title .space, #navbar .bar .title .control {
+  width: 10%;
+  float: left;
+  text-align: right;
+  font-size: 24px;
+  line-height: 30px;
+  padding-right: 6px;
+}
+/* line 265, partials/_nav.scss */
+#navbar .bar .title .space.minus, #navbar .bar .title .control.minus {
+  display: none;
+}
+/* line 269, partials/_nav.scss */
+#navbar .bar .title .textTitle {
+  width: 80%;
+  float: left;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 2px;
+  line-height: 30px;
+  height: 30px;
+}
+/* line 280, partials/_nav.scss */
+#navbar .bar .title .link, #navbar .bar .title > .navUL {
+  display: none;
+  background: #183051;
+  color: white;
+}
+/* line 285, partials/_nav.scss */
+#navbar .bar .title .link#category, #navbar .bar .title > .navUL#category {
+  background: #124f42;
+}
+/* line 288, partials/_nav.scss */
+#navbar .bar .title .link#category li, #navbar .bar .title > .navUL#category li {
+  background: #124f42;
+  padding: 0;
+}
+/* line 292, partials/_nav.scss */
+#navbar .bar .title .link#category li select, #navbar .bar .title > .navUL#category li select {
+  padding: 9px 2.5%;
+}
+/* line 298, partials/_nav.scss */
+#navbar .bar .title .link:hover {
+  background: #124f42;
+}
+/* line 301, partials/_nav.scss */
+#navbar .bar .title select {
+  width: 100%;
+  background: #124f42;
+  color: white;
+  border: 0 !important;
+  /*Removes border*/
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+/* line 309, partials/_nav.scss */
+#navbar .bar .title div.navUL {
+  width: 100%;
+  float: left;
+  clear: both;
+  text-align: center;
+  height: 30px;
+  padding: 9px 2.5%;
+  margin: 5px 0;
+}
+/* line 319, partials/_nav.scss */
+#navbar .bar .sep {
+  width: 100%;
+  float: left;
+  clear: both;
+  height: 0;
+  margin: 5px 0;
+}
+/* line 328, partials/_nav.scss */
+#navbar .moreOptions, #navbar .lessOptions.show {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 11px;
+  margin: 8px 0;
+  border: 1px dotted gray;
+  background: white;
+  float: left;
+  clear: both;
+}
+/* line 338, partials/_nav.scss */
+#navbar .moreOptions:hover, #navbar .lessOptions.show:hover {
+  border: 1px dotted #183051;
+  cursor: pointer;
+}
+/* line 343, partials/_nav.scss */
+#navbar .moreOptions span, #navbar .lessOptions.show span {
+  float: left;
+  width: 100%;
+  display: block;
+  color: gray;
+}
+/* line 350, partials/_nav.scss */
+#navbar .moreOptions, #navbar .lessOptions.show span {
+  padding: 8px 0;
+}
+/* line 353, partials/_nav.scss */
+#navbar .moreOptions.hide, #navbar .lessOptions {
+  display: none;
+}
+/* line 356, partials/_nav.scss */
+#navbar #optionFooter {
+  display: block;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #183051;
+  padding: 0 2.5%;
+  z-index: 1;
+  border-top: 2px solid white;
+}
+/* line 367, partials/_nav.scss */
+#navbar #optionFooter #changeView {
+  float: left;
+  font-size: 10px;
+  color: white;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 5px;
+}
+/* line 376, partials/_nav.scss */
+#navbar #optionFooter ul#viewUL {
+  display: none;
+  float: left;
+  list-style: none;
+}
+/* line 382, partials/_nav.scss */
+#navbar #optionFooter ul#viewUL li {
+  margin: 0 5px;
+  float: left;
+}
+/* line 386, partials/_nav.scss */
+#navbar #optionFooter ul#viewUL li a {
+  text-decoration: none;
+  font-size: 10px;
+  line-height: 10px;
+  color: white;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 5px;
+  float: left;
+}
+/* line 397, partials/_nav.scss */
+#navbar #optionFooter ul#viewUL li a:hover {
+  background: #124f42;
+  text-decoration: underline;
+}
+/* line 406, partials/_nav.scss */
+#navbar #optionFooter.active #changeView {
+  background: rgba(255, 255, 255, 0.5);
+}
+/* line 409, partials/_nav.scss */
+#navbar #optionFooter.active ul#viewUL {
+  display: block;
+}
+@media (max-width: 767px) {
+  /* line 416, partials/_nav.scss */
+  #navbar #optionFooter {
+    margin: 10px 2.5%;
+    border-top: 1px solid #e8e8e8;
+    position: static;
+    float: left;
+    width: 95%;
+    background: none;
+    padding: 10px 0;
+  }
+  /* line 425, partials/_nav.scss */
+  #navbar #optionFooter #changeView {
+    float: left;
+    width: 100%;
+    background: #124f42;
+    text-align: center;
+    color: white;
+    padding: 10px;
+  }
+  /* line 433, partials/_nav.scss */
+  #navbar #optionFooter ul#viewUL {
+    float: left;
+    width: 100%;
+  }
+  /* line 437, partials/_nav.scss */
+  #navbar #optionFooter ul#viewUL li {
+    float: left;
+    width: 100%;
+    clear: both;
+    padding: 5px 0;
+    background: #124f42;
+    color: white;
+    margin: 0;
+  }
+  /* line 446, partials/_nav.scss */
+  #navbar #optionFooter ul#viewUL li a {
+    color: white;
+    float: left;
+    width: 100%;
+    padding: 5px 0;
+    text-align: center;
+  }
+  /* line 456, partials/_nav.scss */
+  #navbar #optionFooter.active #changeView {
+    background: #124f42;
+  }
+}
+/* line 462, partials/_nav.scss */
+#navbar #socialButtons {
+  float: left;
+  width: 100%;
+  clear: both;
+  text-align: center;
+  margin: 10px 0;
+}
+/* line 469, partials/_nav.scss */
+#navbar #socialButtons img {
+  display: inline-block;
+  margin: 5px;
+  width: 35px;
+}
+/* line 475, partials/_nav.scss */
+#navbar #countdownMobileHolder {
+  float: left;
+  width: 100%;
+  clear: both;
+  text-align: center;
+  margin: 0 0 10px;
+}
+/* line 482, partials/_nav.scss */
+#navbar #countdownMobileHolder a {
+  color: #183051;
+  text-decoration: none;
+  text-align: center;
+  font-size: 12px;
+}
+
+/* line 490, partials/_nav.scss */
+.control {
+  position: relative;
+  float: left;
+}
+
+/* line 494, partials/_nav.scss */
+.closed .control {
+  width: 100%;
+}
+
+/* line 497, partials/_nav.scss */
+.open .control {
+  width: 30px;
+}
+
+/* line 500, partials/_nav.scss */
+#searchForm {
+  position: relative;
+  float: left;
+  width: 100%;
+  clear: both;
+}
+/* line 506, partials/_nav.scss */
+#searchForm input[type=text] {
+  height: 22px;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+  padding: 0 0 0 15px;
+  color: #183051;
+  border: 1px solid rgba(24, 48, 81, 0.2);
+}
+/* line 513, partials/_nav.scss */
+#searchForm input[type=image] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5px;
+  margin: 5px 0;
+}
+
+/* line 522, partials/_nav.scss */
+#cookiePop {
+  position: fixed;
+  bottom: 0;
+  width: 350px;
+  right: 0;
+  background: white;
+  border: 2px solid #183051;
+  border-right: 0;
+  border-bottom: 0;
+  padding: 15px;
+}
+@media (max-width: 767px) {
+  /* line 522, partials/_nav.scss */
+  #cookiePop {
+    width: 100%;
+    border-left: 0;
+  }
+}
+/* line 540, partials/_nav.scss */
+#cookiePop h3 {
+  font-family: "Lobster Two", cursive;
+  width: 100%;
+  float: left;
+  text-align: center;
+  font-size: 18px;
+}
+/* line 547, partials/_nav.scss */
+#cookiePop img {
+  float: left;
+  display: block;
+  width: 25%;
+}
+/* line 552, partials/_nav.scss */
+#cookiePop p {
+  float: left;
+  font-size: 12px;
+  line-height: 20px;
+  text-align: left;
+  padding: 10px;
+  width: 75%;
+}
+/* line 560, partials/_nav.scss */
+#cookiePop a {
+  background: #183051;
+  display: block;
+  float: right;
+  clear: both;
+  background: #183051;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: white;
+  padding: 5px 10px;
+}
+/* line 573, partials/_nav.scss */
+#cookiePop a:hover {
+  background: #124f42;
+}
+/* line 577, partials/_nav.scss */
+#cookiePop span.icon-close {
+  float: left;
+  padding: 5px 0;
+  color: #183051;
+  font-size: 12px;
+  cursor: pointer;
+}
+/* line 584, partials/_nav.scss */
+#cookiePop span.icon-close:hover {
+  color: #124f42;
+}
+
+/* line 1, partials/_header.scss */
+header {
+  width: 52px;
+  height: 100%;
+  padding: 5px;
+  float: left;
+  background: #e8e8e8;
+  color: #183051;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  -webkit-box-shadow: 0px 2px 9px gray;
+  -moz-box-shadow: 0px 2px 9px gray;
+  box-shadow: 0px 2px 9px gray;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+/* line 14, partials/_header.scss */
+header.active {
+  width: 239px;
+}
+/* line 18, partials/_header.scss */
+header #altHeader {
+  float: left;
+  width: 100%;
+  clear: both;
+}
+/* line 23, partials/_header.scss */
+header #altHeader > a, header #altHeader > div {
+  display: block;
+  margin: 5px 0;
+  clear: both;
+  float: left;
+  border: 1px solid gray;
+  width: 100%;
+  height: 40px;
+  overflow: hidden;
+}
+/* line 33, partials/_header.scss */
+header #altHeader > a#extendNav, header #altHeader > div#extendNav {
+  cursor: pointer;
+  position: absolute;
+  bottom: 10px;
+  width: calc(100% - 10px);
+}
+/* line 40, partials/_header.scss */
+header #altHeader > a .link-icon, header #altHeader > div .link-icon {
+  display: block;
+  float: left;
+  width: 40px;
+}
+/* line 45, partials/_header.scss */
+header #altHeader > a .link-icon img, header #altHeader > div .link-icon img {
+  height: 40px;
+  width: 40px;
+  float: left;
+}
+/* line 51, partials/_header.scss */
+header #altHeader > a .link-name, header #altHeader > div .link-name {
+  display: block;
+  float: left;
+  height: 40px;
+  width: 150px;
+  padding: 10px;
+  color: #183051;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 10px;
+  line-height: 20px;
+}
+/* line 65, partials/_header.scss */
+header #altHeader > a .link-extend, header #altHeader > div .link-extend {
+  display: block;
+  float: right;
+  height: 40px;
+  padding: 10px;
+  color: #183051;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 10px;
+  line-height: 20px;
+}
+/* line 77, partials/_header.scss */
+header #altHeader > a .link-extend:hover, header #altHeader > div .link-extend:hover {
+  background: #124f42;
+  color: white;
+}
+/* line 83, partials/_header.scss */
+header #altHeader > a:hover, header #altHeader > div:hover {
+  background: white;
+}
+/* line 86, partials/_header.scss */
+header #altHeader > a:hover .link-name, header #altHeader > div:hover .link-name {
+  color: #124f42;
+}
+/* line 91, partials/_header.scss */
+header #altHeader > span.line {
+  display: block;
+  width: 100%;
+  float: left;
+  clear: both;
+  border: 0;
+  margin: 10px 0;
+  padding: 0;
+  background: none;
+}
+/* line 101, partials/_header.scss */
+header #altHeader > span.line > span.line {
+  float: left;
+  width: 100%;
+  clear: both;
+  background: gray;
+  height: 1px;
+}
+/* line 112, partials/_header.scss */
+header .hint--right:after {
+  font-family: "Droid Sans", sans-serif;
+}
+/* line 116, partials/_header.scss */
+header .headcont {
+  float: left;
+  width: 100%;
+  margin: 0;
+  padding: 0 10px;
+}
+/* line 122, partials/_header.scss */
+header .left {
+  float: left;
+}
+/* line 125, partials/_header.scss */
+header .right {
+  float: right;
+}
+/* line 130, partials/_header.scss */
+header .left .navbutton, header .right .navbutton {
+  height: 34px;
+  width: 34px;
+  border: 2px solid white;
+  float: right;
+  background: white;
+  display: block;
+  margin: 0 3px;
+  color: #183051;
+  cursor: pointer;
+  text-align: center;
+  -webkit-box-shadow: 2px 2px 2px gray;
+  -moz-box-shadow: 2px 2px 2px gray;
+  box-shadow: 2px 2px 2px gray;
+}
+/* line 143, partials/_header.scss */
+header .left .navbutton .icon-login8, header .right .navbutton .icon-login8 {
+  font-size: 18px;
+}
+/* line 147, partials/_header.scss */
+header .left .navbutton:hover, header .right .navbutton:hover {
+  border: 2px solid #183051;
+}
+/* line 150, partials/_header.scss */
+header .left .navbutton img, header .right .navbutton img {
+  padding: 0px;
+  width: 30px;
+}
+/* line 154, partials/_header.scss */
+header .left .navbutton a, header .right .navbutton a {
+  text-decoration: none;
+  display: block;
+}
+/* line 158, partials/_header.scss */
+header .left .navbutton span, header .right .navbutton span {
+  font-size: 20px;
+  line-height: 30px;
+  color: #183051;
+  text-decoration: none;
+}
+/* line 166, partials/_header.scss */
+header .left .navbutton#nav, header .right .navbutton#nav {
+  color: white;
+  background: #183051;
+  border: 2px solid #183051;
+}
+/* line 171, partials/_header.scss */
+header .left .navbutton#nav:hover, header .right .navbutton#nav:hover {
+  border: 2px solid white;
+}
+/* line 174, partials/_header.scss */
+header .left .navbutton#nav span, header .right .navbutton#nav span {
+  color: white;
+  font-size: 30px;
+}
+/* line 179, partials/_header.scss */
+header .left .navbutton.selected, header .right .navbutton.selected {
+  background: #124f42;
+  border: 2px solid #124f42;
+}
+/* line 183, partials/_header.scss */
+header .left .navbutton.selected span, header .right .navbutton.selected span {
+  color: white;
+}
+/* line 186, partials/_header.scss */
+header .left .navbutton.selected:hover, header .right .navbutton.selected:hover {
+  background: #183051;
+  border: 2px solid #183051;
+}
+/* line 192, partials/_header.scss */
+header .left a.iCTitle, header .right a.iCTitle {
+  font-family: "Lobster Two", cursive;
+  font-size: 34px;
+  line-height: 34px;
+  letter-spacing: 1px;
+  float: left;
+  text-decoration: none;
+  color: #183051;
+  padding-right: 10px;
+}
+/* line 201, partials/_header.scss */
+header .left a.iCTitle h1, header .right a.iCTitle h1 {
+  font-size: 34px;
+  line-height: 34px;
+  margin: 0;
+  padding: 0;
+}
+/* line 209, partials/_header.scss */
+header .left #countdownHolder, header .right #countdownHolder {
+  position: relative;
+  float: left;
+}
+/* line 214, partials/_header.scss */
+header .left #countdownHolder.hover #countdownShare, header .right #countdownHolder.hover #countdownShare {
+  display: block;
+}
+/* line 219, partials/_header.scss */
+header .left #countdown, header .right #countdown {
+  font-size: 12px;
+  line-height: 12px;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  overflow: hidden;
+  float: left;
+  margin: 20px 0 0;
+  color: #183051;
+}
+/* line 230, partials/_header.scss */
+header .left #countdownShare, header .right #countdownShare {
+  height: 22px;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top: 0;
+  background: #183051;
+  display: none;
+}
+
+@media (max-width: 767px) {
+  /* line 242, partials/_header.scss */
+  .hint--left {
+    display: none;
+  }
+
+  /* line 245, partials/_header.scss */
+  #navbar {
+    width: 100%;
+  }
+
+  /* line 250, partials/_header.scss */
+  header .headcont .left {
+    max-width: 200px;
+  }
+  /* line 252, partials/_header.scss */
+  header .headcont .left #countdown {
+    display: none;
+  }
+  /* line 256, partials/_header.scss */
+  header .headcont .right {
+    max-width: 135px;
+  }
+}
+@media (max-width: 375px) {
+  /* line 263, partials/_header.scss */
+  header .right {
+    max-width: 90px;
+  }
+  /* line 266, partials/_header.scss */
+  header .right .navbutton {
+    display: none;
+  }
+  /* line 269, partials/_header.scss */
+  header .right .navbutton#nav, header .right .navbutton#LoginNav, header .right .navbutton#navShow {
+    display: block;
+  }
+}
+/* line 277, partials/_header.scss */
+.panel {
+  position: fixed;
+  z-index: 50;
+  left: 0px;
+  top: 0px;
+  width: 50px;
+  padding: 10px;
+  background: white;
+  height: 100%;
+  -webkit-box-shadow: 0px 2px 9px gray;
+  -moz-box-shadow: 0px 2px 9px gray;
+  box-shadow: 0px 2px 9px gray;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
+}
+/* line 288, partials/_header.scss */
+.panel.active {
+  left: 238px;
+  width: 250px;
+}
+/* line 292, partials/_header.scss */
+.panel * {
+  max-width: 100%;
+}
+
+/* line 296, partials/_header.scss */
+#pageHeader {
+  float: left;
+  width: 100%;
+  clear: both;
+  border-bottom: 1px solid #e8e8e8;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  position: relative;
+}
+/* line 305, partials/_header.scss */
+#pageHeader #breadcrumbs {
+  max-width: 60%;
+}
+/* line 309, partials/_header.scss */
+#pageHeader h1 {
+  text-align: left;
+  font-size: 50px;
+  line-height: 50px;
+  float: left;
+  max-width: 60%;
+  float: left;
+  clear: both;
+  margin: 10px 0;
+  padding: 0;
+}
+/* line 320, partials/_header.scss */
+#pageHeader h1.small {
+  font-size: 30px;
+  line-height: 30px;
+}
+/* line 325, partials/_header.scss */
+#pageHeader #userPortal {
+  float: right;
+  max-width: 40%;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+/* line 332, partials/_header.scss */
+#pageHeader #userPortal a {
+  font-size: 12px;
+  text-decoration: none;
+  color: #183051;
+  padding: 0;
+  margin: 0 0 0 10px;
+  line-height: 30px;
+}
+/* line 340, partials/_header.scss */
+#pageHeader #userPortal ul {
+  display: inline;
+  position: relative;
+  float: right;
+  margin-left: 10px;
+}
+/* line 346, partials/_header.scss */
+#pageHeader #userPortal ul img {
+  cursor: pointer;
+}
+/* line 350, partials/_header.scss */
+#pageHeader #userPortal ul ul {
+  display: none;
+  position: absolute;
+  background: white;
+  border: 1px solid #183051;
+  color: #183051;
+  right: 0px;
+  width: 150px;
+  top: 30px;
+  padding: 0;
+  margin: 0;
+  z-index: 100;
+}
+/* line 364, partials/_header.scss */
+#pageHeader #userPortal ul ul li a {
+  float: left;
+  width: 100%;
+  text-align: left;
+  color: #183051;
+  text-decoration: none;
+  margin: 0;
+  padding: 0 10px;
+}
+/* line 373, partials/_header.scss */
+#pageHeader #userPortal ul ul li a:hover {
+  color: white;
+  background: #124f42;
+}
+/* line 383, partials/_header.scss */
+#pageHeader #pageHeaderLinks {
+  float: right;
+}
+/* line 386, partials/_header.scss */
+#pageHeader #pageHeaderLinks a {
+  float: left;
+  padding: 10px 15px;
+  color: white;
+  background: gray;
+  text-decoration: none;
+  font-size: 12px;
+  display: block;
+  margin: 0 0 0 10px;
+}
+/* line 396, partials/_header.scss */
+#pageHeader #pageHeaderLinks a:hover {
+  background: #124f42;
+}
+
+/* line 402, partials/_header.scss */
+#breadcrumbs {
+  float: left;
+  clear: both;
+}
+/* line 406, partials/_header.scss */
+#breadcrumbs ul {
+  padding: 0;
+  margin: 10px 0;
+  width: 100%;
+  text-align: left;
+}
+/* line 412, partials/_header.scss */
+#breadcrumbs ul li {
+  display: inline-block;
+  margin: 0 5px 0 0;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: gray;
+}
+/* line 420, partials/_header.scss */
+#breadcrumbs ul li a {
+  color: #183051;
+  text-decoration: none;
+}
+
+/* line 1, partials/_lists.scss */
+#container.myChristmasContainer {
+  margin: 0 auto;
+}
+/* line 4, partials/_lists.scss */
+#container.myChristmasContainer h1 {
+  margin: 0px auto 5px;
+}
+
+/* line 11, partials/_lists.scss */
+#container.list #listNamePrivacy {
+  width: 100%;
+  float: left;
+  clear: both;
+  text-align: center;
+}
+/* line 17, partials/_lists.scss */
+#container.list #listNamePrivacy > h2, #container.list #listNamePrivacy > div {
+  display: inline-block;
+  vertical-align: top;
+  width: auto;
+  padding: 0 15px;
+  float: none;
+  height: 25px;
+  line-height: 25px;
+}
+/* line 27, partials/_lists.scss */
+#container.list #listNamePrivacy > p {
+  margin: 10px 0;
+}
+/* line 30, partials/_lists.scss */
+#container.list #listNamePrivacy .listPrivacy {
+  color: #124f42;
+  font-style: italic;
+}
+/* line 34, partials/_lists.scss */
+#container.list #listNamePrivacy .listPrivacy span.changePrivacy {
+  border: 1px dashed #124f42;
+  padding: 5px;
+  font-size: 10px;
+  letter-spacing: 1px;
+  font-style: normal;
+  cursor: pointer;
+  text-transform: uppercase;
+  margin-left: 5px;
+}
+/* line 44, partials/_lists.scss */
+#container.list #listNamePrivacy .listPrivacy span.changePrivacy:hover {
+  background: #124f42;
+  color: white;
+}
+/* line 56, partials/_lists.scss */
+#container.list h1, #container.list h2 {
+  width: 100%;
+  float: left;
+  clear: both;
+}
+/* line 61, partials/_lists.scss */
+#container.list #shareThisPage {
+  float: right;
+  font-size: 12px;
+  text-align: right;
+  text-transform: uppercase;
+  color: gray;
+  clear: both;
+  margin-top: 10px;
+}
+/* line 70, partials/_lists.scss */
+#container.list #shareThisPage img {
+  max-width: 35px;
+}
+/* line 73, partials/_lists.scss */
+#container.list #shareThisPage > * {
+  display: inline-block;
+  vertical-align: top;
+  padding: 0 2px;
+}
+/* line 78, partials/_lists.scss */
+#container.list #shareThisPage h3 {
+  padding-right: 5px;
+  line-height: 35px;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+/* line 85, partials/_lists.scss */
+#container.list #itemholder {
+  height: auto;
+  min-height: 20px;
+  max-height: auto;
+}
+/* line 91, partials/_lists.scss */
+#container.list a.delete {
+  float: left;
+  background: #bd2c2c;
+  color: white;
+  padding: 10px 25px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 11px;
+  text-decoration: none;
+  text-align: center;
+  margin: 5px;
+  display: block;
+  cursor: pointer;
+}
+/* line 105, partials/_lists.scss */
+#container.list .clearBoth {
+  width: 100%;
+  float: left;
+  clear: both;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px dotted #e8e8e8;
+}
+
+/* line 116, partials/_lists.scss */
+#container.listContainer h1 {
+  margin: 20px auto 5px;
+}
+/* line 119, partials/_lists.scss */
+#container.listContainer h2 {
+  text-align: center;
+  font-size: 12px;
+}
+
+/* line 125, partials/_lists.scss */
+h2.lists {
+  float: left;
+  font-family: "Lobster Two", cursive;
+  font-size: 24px;
+  clear: both;
+}
+
+/* line 131, partials/_lists.scss */
+.createList {
+  float: right;
+}
+/* line 134, partials/_lists.scss */
+.createList ul {
+  float: right;
+  background: #183051;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+/* line 141, partials/_lists.scss */
+.createList ul li {
+  float: left;
+  width: 150px;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  position: relative;
+}
+/* line 148, partials/_lists.scss */
+.createList ul li span.name {
+  float: left;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: 1px;
+  padding: 10px;
+}
+/* line 156, partials/_lists.scss */
+.createList ul li span.plus, .createList ul li span.minus {
+  float: right;
+  color: white;
+  font-size: 16px;
+  line-height: 32px;
+  padding: 0 10px;
+}
+/* line 163, partials/_lists.scss */
+.createList ul li span.minus {
+  display: none;
+}
+/* line 167, partials/_lists.scss */
+.createList ul li ul {
+  display: none;
+  position: absolute;
+  top: 32px;
+  left: 0;
+  z-index: 50;
+}
+/* line 174, partials/_lists.scss */
+.createList ul li ul li {
+  padding: 0;
+}
+/* line 176, partials/_lists.scss */
+.createList ul li ul li:hover {
+  background: #124f42;
+}
+/* line 180, partials/_lists.scss */
+.createList ul li ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 12px;
+  float: left;
+  width: 100%;
+  padding: 10px 10px 10px 20px;
+}
+/* line 193, partials/_lists.scss */
+.createList ul li:hover span.minus {
+  display: block;
+}
+/* line 196, partials/_lists.scss */
+.createList ul li:hover span.plus {
+  display: none;
+}
+@media (max-width: 767px) {
+  /* line 131, partials/_lists.scss */
+  .createList {
+    width: 100%;
+  }
+  /* line 205, partials/_lists.scss */
+  .createList ul {
+    width: 100%;
+  }
+  /* line 208, partials/_lists.scss */
+  .createList ul li {
+    width: 100%;
+    background: #124f42;
+  }
+}
+
+/* line 216, partials/_lists.scss */
+.no-touch .createList > ul > li:hover > ul {
+  display: block;
+}
+
+/* line 219, partials/_lists.scss */
+#christmasLists {
+  float: left;
+  clear: both;
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+}
+/* line 226, partials/_lists.scss */
+#christmasLists ul {
+  float: left;
+  width: 100%;
+  list-style: none;
+}
+/* line 231, partials/_lists.scss */
+#christmasLists ul li {
+  float: left;
+  width: 200px;
+  margin: 10px;
+  float: left;
+  border: 1px solid #e8e8e8;
+}
+/* line 238, partials/_lists.scss */
+#christmasLists ul li .fourPost {
+  width: 50%;
+  float: left;
+  height: 100px;
+  background-size: cover;
+  background-color: white;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=85);
+  opacity: 0.85;
+}
+
+/* line 253, partials/_lists.scss */
+a.christmasList {
+  float: left;
+  width: 100%;
+  display: block;
+}
+/* line 258, partials/_lists.scss */
+a.christmasList .listImage {
+  height: 200px;
+  float: left;
+  width: 100%;
+  background: #e8e8e8;
+}
+/* line 264, partials/_lists.scss */
+a.christmasList .listName {
+  padding: 10px 0;
+  width: 100%;
+  float: left;
+  clear: both;
+  color: #183051;
+  text-align: center;
+}
+/* line 274, partials/_lists.scss */
+a.christmasList:hover .fourPost {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+/* line 277, partials/_lists.scss */
+a.christmasList:hover .listName {
+  background: #183051;
+  color: white;
+}
+
+/* line 284, partials/_lists.scss */
+.postsbycollection ul {
+  float: left;
+  width: 100%;
+}
+/* line 288, partials/_lists.scss */
+.postsbycollection ul li {
+  float: left;
+  width: 200px;
+  list-style: none;
+}
+
+/* line 296, partials/_lists.scss */
+#viewAll {
+  width: 100%;
+  float: left;
+  clear: both;
+  padding: 5px 0;
+  font-size: 12px;
+  color: #e8e8e8;
+  border: 1px dotted #e8e8e8;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+/* line 309, partials/_lists.scss */
+#viewAll:hover {
+  color: #183051;
+  border: 1px dotted #183051;
+}
+/* line 313, partials/_lists.scss */
+#viewAll.shown {
+  display: none;
+}
+
+/* line 317, partials/_lists.scss */
+.feedbackBar {
+  float: left;
+  width: 100%;
+  clear: both;
+}
+
+/* line 323, partials/_lists.scss */
+#myChristmasBoxes {
+  width: 100%;
+  float: left;
+  clear: both;
+  margin: 10px 0;
+}
+
+/* line 326, partials/_lists.scss */
+#collectionPreview,
+#listPreview {
+  cursor: pointer;
+}
+
+/* line 331, partials/_lists.scss */
+#collectionPreview,
+#listPreview {
+  line-height: 180px;
+  text-align: center;
+  font-size: 30px;
+  font-family: "Lobster Two", cursive;
+}
+
+/* line 340, partials/_lists.scss */
+#collectionPreview,
+#listPreview,
+#myChristmasAccount {
+  width: 31.333%;
+  padding: 10px 1%;
+  margin: 10px 1%;
+  float: left;
+  background: white;
+  height: 200px;
+  border: 1px solid #e8e8e8;
+}
+/* line 350, partials/_lists.scss */
+#collectionPreview.selected,
+#listPreview.selected,
+#myChristmasAccount.selected {
+  background: #183051;
+  margin-bottom: 0;
+  height: 210px;
+  color: white;
+  border: 0;
+}
+/* line 357, partials/_lists.scss */
+#collectionPreview.selected a,
+#listPreview.selected a,
+#myChristmasAccount.selected a {
+  color: white;
+}
+@media (max-width: 767px) {
+  /* line 340, partials/_lists.scss */
+  #collectionPreview,
+  #listPreview,
+  #myChristmasAccount {
+    padding: 0;
+    width: 100%;
+    height: auto;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-align: center;
+    margin: 0;
+    background: #183051;
+    color: white;
+    line-height: normal;
+    border: 0;
+  }
+  /* line 378, partials/_lists.scss */
+  #collectionPreview.selected,
+  #listPreview.selected,
+  #myChristmasAccount.selected {
+    height: auto;
+  }
+  /* line 381, partials/_lists.scss */
+  #collectionPreview a,
+  #listPreview a,
+  #myChristmasAccount a {
+    float: left;
+    display: block;
+    clear: both;
+    width: 100%;
+    color: white;
+    text-decoration: none;
+    padding: 10px 1%;
+    font-family: "Droid Sans", sans-serif;
+  }
+  /* line 392, partials/_lists.scss */
+  #collectionPreview:hover,
+  #listPreview:hover,
+  #myChristmasAccount:hover {
+    background: #124f42;
+  }
+}
+/* line 397, partials/_lists.scss */
+#collectionPreview ul,
+#listPreview ul,
+#myChristmasAccount ul {
+  float: left;
+  width: 100%;
+  clear: both;
+}
+/* line 402, partials/_lists.scss */
+#collectionPreview ul li,
+#listPreview ul li,
+#myChristmasAccount ul li {
+  float: left;
+  clear: both;
+  margin: 0 0 5px 0;
+  padding: 0;
+  width: 100%;
+}
+/* line 409, partials/_lists.scss */
+#collectionPreview ul li a,
+#listPreview ul li a,
+#myChristmasAccount ul li a {
+  padding: 10px 0;
+  background: #183051;
+  display: block;
+  color: white;
+  text-decoration: none;
+  font-size: 12px;
+  text-transform: uppercase;
+  width: 100%;
+  text-align: center;
+  letter-spacing: 1px;
+}
+/* line 421, partials/_lists.scss */
+#collectionPreview ul li a:hover,
+#listPreview ul li a:hover,
+#myChristmasAccount ul li a:hover {
+  background: #124f42;
+}
+
+@media (max-width: 767px) {
+  /* line 432, partials/_lists.scss */
+  #myChristmasAccount:hover {
+    background: #183051;
+  }
+  /* line 436, partials/_lists.scss */
+  #myChristmasAccount ul li {
+    margin: 0;
+  }
+}
+/* line 441, partials/_lists.scss */
+.previewPanel {
+  float: left;
+  width: 98%;
+  clear: both;
+  background: #183051;
+  padding: 15px;
+  margin: 0 1%;
+  color: white;
+  overflow: hidden;
+  position: relative;
+}
+/* line 452, partials/_lists.scss */
+.previewPanel .prevButton {
+  float: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0 10px;
+  background: #183051;
+  height: 100%;
+}
+/* line 461, partials/_lists.scss */
+.previewPanel .prevButton:hover .prevButtonImage {
+  background-position: 0 -62px;
+}
+/* line 465, partials/_lists.scss */
+.previewPanel .prevButton .prevButtonImage {
+  background: url("/images/icon/arrow-left-sprite.png") no-repeat;
+  background-position: 0 0px;
+  width: 15px;
+  height: 31px;
+  position: absolute;
+  top: 110px;
+  left: 5px;
+}
+/* line 475, partials/_lists.scss */
+.previewPanel .nextButton {
+  float: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0 10px;
+  background: #183051;
+  height: 100%;
+}
+/* line 484, partials/_lists.scss */
+.previewPanel .nextButton:hover .nextButtonImage {
+  background-position: 0 -62px;
+}
+/* line 488, partials/_lists.scss */
+.previewPanel .nextButton .nextButtonImage {
+  background: url("/images/icon/arrow-right-sprite.png") no-repeat;
+  background-position: 0 0px;
+  width: 15px;
+  height: 31px;
+  position: absolute;
+  top: 110px;
+  right: 5px;
+}
+@media (max-width: 767px) {
+  /* line 441, partials/_lists.scss */
+  .previewPanel {
+    display: none!important;
+  }
+}
+/* line 504, partials/_lists.scss */
+.previewPanel p a {
+  color: white;
+}
+/* line 506, partials/_lists.scss */
+.previewPanel p a:hover {
+  color: #e8e8e8;
+}
+/* line 511, partials/_lists.scss */
+.previewPanel ul {
+  float: left;
+  width: 100%;
+  position: relative;
+  list-style: none;
+}
+/* line 517, partials/_lists.scss */
+.previewPanel ul li {
+  float: left;
+  width: 200px;
+  margin: 10px;
+  position: relative;
+  float: left;
+  border: 1px solid #e8e8e8;
+}
+/* line 525, partials/_lists.scss */
+.previewPanel ul li.fauxLi {
+  border: 0;
+}
+/* line 529, partials/_lists.scss */
+.previewPanel ul li .fourPost {
+  width: 50%;
+  float: left;
+  height: 100px;
+  background-size: cover;
+  background-color: white;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=85);
+  opacity: 0.85;
+}
+/* line 538, partials/_lists.scss */
+.previewPanel ul li a.christmasList {
+  float: left;
+  width: 100%;
+  display: block;
+}
+/* line 543, partials/_lists.scss */
+.previewPanel ul li a.christmasList .listImage {
+  height: 200px;
+  float: left;
+  width: 100%;
+  background: #e8e8e8;
+}
+/* line 549, partials/_lists.scss */
+.previewPanel ul li a.christmasList .listName {
+  padding: 10px 0;
+  width: 100%;
+  float: left;
+  clear: both;
+  color: white;
+  text-align: center;
+}
+/* line 559, partials/_lists.scss */
+.previewPanel ul li a.christmasList:hover .fourPost {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+/* line 562, partials/_lists.scss */
+.previewPanel ul li a.christmasList:hover .listName {
+  background: #124f42;
+  color: white;
+}
+
+/* line 573, partials/_lists.scss */
+#container .fauxTable {
+  width: 100%;
+  display: table;
+}
+/* line 577, partials/_lists.scss */
+#container .fauxTable.fauxHide {
+  display: none;
+}
+/* line 581, partials/_lists.scss */
+#container .fauxTable .toggleIcon {
+  width: 20px;
+  height: 12px;
+  background-image: url("/images/arrow-down.png");
+  background-repeat: no-repeat;
+  background-position: 0px 0px;
+  background-size: 100% auto;
+  cursor: pointer;
+}
+/* line 590, partials/_lists.scss */
+#container .fauxTable .toggleIcon:hover {
+  background-position: 0px -12px;
+}
+/* line 600, partials/_lists.scss */
+#container .fauxTable .fauxTableHeader .fauxCell {
+  text-align: center;
+  font-size: 11px;
+  text-transform: uppercase;
+}
+@media (max-width: 767px) {
+  /* line 612, partials/_lists.scss */
+  #container .fauxTable div.fauxTableHeader {
+    display: none;
+  }
+}
+/* line 618, partials/_lists.scss */
+#container .fauxTable .fauxTableHeader, #container .fauxTable .fauxTableRow {
+  display: table-row;
+}
+/* line 622, partials/_lists.scss */
+#container .fauxTable .fauxTableHeader .fauxCell input, #container .fauxTable .fauxTableHeader .fauxCell select, #container .fauxTable .fauxTableRow .fauxCell input, #container .fauxTable .fauxTableRow .fauxCell select {
+  margin: 0;
+}
+/* line 627, partials/_lists.scss */
+#container .fauxTable .fauxTableHeader .fauxCell {
+  font-weight: bold;
+}
+/* line 631, partials/_lists.scss */
+#container .fauxTable .fauxCell {
+  display: table-cell;
+  padding: 3px;
+  text-align: center;
+}
+/* line 636, partials/_lists.scss */
+#container .fauxTable .fauxCell input {
+  text-align: center;
+}
+/* line 638, partials/_lists.scss */
+#container .fauxTable .fauxCell input[type=checkbox] {
+  margin: 0 auto;
+  float: none;
+}
+@media (max-width: 767px) {
+  /* line 631, partials/_lists.scss */
+  #container .fauxTable .fauxCell {
+    display: block;
+    width: 100%;
+    float: left;
+    clear: both;
+    padding: 2px 0;
+  }
+  /* line 651, partials/_lists.scss */
+  #container .fauxTable .fauxCell span, #container .fauxTable .fauxCell label {
+    display: block;
+    width: 100%;
+    float: left;
+    text-align: center;
+    font-size: 11px;
+    min-height: 12px;
+  }
+  /* line 660, partials/_lists.scss */
+  #container .fauxTable .fauxCell label, #container .fauxTable .fauxCell span.handheld {
+    font-style: italic;
+    color: gray;
+  }
+  /* line 664, partials/_lists.scss */
+  #container .fauxTable .fauxCell input[type=text] {
+    float: left;
+    width: 100%;
+    clear: both;
+  }
+}
+@media (max-width: 767px) {
+  /* line 670, partials/_lists.scss */
+  #container .fauxTable .fauxCell.ideas, #container .fauxTable .fauxCell.basic {
+    display: block;
+    clear: none!important;
+  }
+}
+@media (max-width: 767px) {
+  /* line 678, partials/_lists.scss */
+  #container .fauxTable .fauxTableRow {
+    padding: 10px 0 20px;
+    border-bottom: 1px dashed gray;
+    float: left;
+    width: 100%;
+    clear: both;
+  }
+}
+@media (max-width: 767px) {
+  /* line 694, partials/_lists.scss */
+  #container .fauxTable.cardList.basicMode .basic {
+    width: 33.33%;
+    display: block;
+    float: left;
+  }
+  /* line 700, partials/_lists.scss */
+  #container .fauxTable.cardList.basicMode.editMode .basic {
+    width: 25%;
+    display: block;
+    float: left;
+  }
+  /* line 708, partials/_lists.scss */
+  #container .fauxTable.cardList.ideasMode .ideas {
+    width: 25%;
+    display: block;
+    float: left;
+  }
+  /* line 714, partials/_lists.scss */
+  #container .fauxTable.cardList.ideasMode.editMode .ideas {
+    width: 20%;
+    display: block;
+    float: left;
+  }
+}
+/* line 724, partials/_lists.scss */
+#container .fauxTable.cardList.basicMode, #container .fauxTable.cardList.ideasMode {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 735, partials/_lists.scss */
+#container .addCardRow {
+  float: right;
+  background: #183051;
+  color: white;
+  padding: 10px 25px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 12px;
+  cursor: pointer;
+  border: 2px solid #183051;
+  margin: 5px;
+  height: 40px;
+}
+/* line 748, partials/_lists.scss */
+#container .addCardRow:hover {
+  border: 2px solid white;
+}
+/* line 752, partials/_lists.scss */
+#container .infoBox {
+  float: right;
+  background: white;
+  color: #183051;
+  padding: 10px 25px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 12px;
+  cursor: pointer;
+  border: 1px dashed #183051;
+  margin: 5px;
+  height: 40px;
+}
+/* line 765, partials/_lists.scss */
+#container .infoBox:hover {
+  background: #183051;
+  color: white;
+}
+/* line 770, partials/_lists.scss */
+#container form#cardList button, #container form#othersList button {
+  float: right;
+  background: #124f42;
+  width: auto;
+  min-width: 0;
+  padding: 10px 30px;
+  height: 40px;
+  margin: 5px;
+}
+
+/* line 780, partials/_lists.scss */
+#modeChoice {
+  float: left;
+  width: 100%;
+  text-align: right;
+  margin-bottom: 10px;
+}
+@media (max-width: 767px) {
+  /* line 780, partials/_lists.scss */
+  #modeChoice {
+    margin: 10px 0 25px;
+  }
+}
+/* line 789, partials/_lists.scss */
+#modeChoice #basicMode, #modeChoice #advancedMode, #modeChoice #ideasMode {
+  display: inline-block;
+  padding: 5px 10px;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: #183051;
+  cursor: pointer;
+}
+/* line 798, partials/_lists.scss */
+#modeChoice #basicMode.selected, #modeChoice #advancedMode.selected, #modeChoice #ideasMode.selected {
+  background: #183051;
+  color: white;
+}
+/* line 803, partials/_lists.scss */
+#modeChoice .spanTitle {
+  display: inline-block;
+  padding: 5px 2px;
+  text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: gray;
+}
+
+/* line 812, partials/_lists.scss */
+#shareThisPage.listShare {
+  margin-top: 30px;
+  float: left;
+  clear: both;
+  width: 100%;
+  text-align: center;
+}
+/* line 819, partials/_lists.scss */
+#shareThisPage.listShare a {
+  text-decoration: none;
+}
+/* line 823, partials/_lists.scss */
+#shareThisPage.listShare span {
+  width: 100%;
+  display: inline-block;
+  text-align: left;
+  cursor: pointer;
+}
+/* line 829, partials/_lists.scss */
+#shareThisPage.listShare span#fblikeholder {
+  width: auto;
+}
+/* line 833, partials/_lists.scss */
+#shareThisPage.listShare img {
+  width: 40px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+/* line 839, partials/_lists.scss */
+#myCollectionPanel {
+  float: left;
+  width: 100%;
+  clear: both;
+  margin: 20px 0;
+}
+/* line 845, partials/_lists.scss */
+#myCollectionPanel > a {
+  display: block;
+  float: left;
+  margin: 15px;
+  width: 200px;
+}
+@media (max-width: 767px) {
+  /* line 845, partials/_lists.scss */
+  #myCollectionPanel > a {
+    margin: 0 1%;
+    width: 48%;
+  }
+}
+/* line 856, partials/_lists.scss */
+#myCollectionPanel > a .fourPost {
+  height: 100px;
+  width: 100px;
+  float: left;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+@media (max-width: 767px) {
+  /* line 856, partials/_lists.scss */
+  #myCollectionPanel > a .fourPost {
+    width: 50%;
+  }
+}
+/* line 873, partials/_lists.scss */
+#myCollectionPanel > a .onePost {
+  height: 200px;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: center;
+  border: 1px solid #e8e8e8;
+  background-color: white;
+}
+/* line 881, partials/_lists.scss */
+#myCollectionPanel > a .noPosts {
+  height: 200px;
+  border: 1px solid #e8e8e8;
+  background-image: url("/images/errorImage.jpg");
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: center;
+}
+/* line 889, partials/_lists.scss */
+#myCollectionPanel > a .listName {
+  padding: 10px 0;
+  width: 100%;
+  float: left;
+  clear: both;
+  color: white;
+  text-align: center;
+  background: #183051;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+/* line 900, partials/_lists.scss */
+#myCollectionPanel > a .listName span {
+  float: left;
+  width: 100%;
+  color: #e8e8e8;
+  font-size: 10px;
+  text-align: center;
+  margin-top: 5px;
+}
+/* line 910, partials/_lists.scss */
+#myCollectionPanel > a:hover .listName {
+  background: #124f42;
+}
+
+/* line 917, partials/_lists.scss */
+#myListPanel {
+  float: left;
+  width: 100%;
+  clear: both;
+  margin: 20px 0;
+}
+/* line 923, partials/_lists.scss */
+#myListPanel ul {
+  float: left;
+  width: 100%;
+  list-style: none;
+}
+/* line 928, partials/_lists.scss */
+#myListPanel ul li {
+  float: left;
+  width: 200px;
+  margin: 15px;
+  border: 1px solid #e8e8e8;
+}
+/* line 934, partials/_lists.scss */
+#myListPanel ul li a.christmasList .listName {
+  background: #183051;
+  color: white;
+}
+/* line 938, partials/_lists.scss */
+#myListPanel ul li:hover a.christmasList .listName {
+  background: #124f42;
+}
+@media (max-width: 767px) {
+  /* line 928, partials/_lists.scss */
+  #myListPanel ul li {
+    width: 48%;
+    margin: 15px 1%;
+  }
+}
+
+/* line 951, partials/_lists.scss */
+#listCaro {
+  clear: both;
+  float: left;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+/* line 958, partials/_lists.scss */
+#listCaro ul {
+  position: relative;
+  list-type: none;
+  float: left;
+}
+/* line 963, partials/_lists.scss */
+#listCaro ul li {
+  float: left;
+  position: relative;
+  padding: 10px;
+}
+/* line 968, partials/_lists.scss */
+#listCaro ul li.delete {
+  background: rgba(189, 44, 44, 0.1);
+  border: 1px dashed #bd2c2c;
+}
+/* line 972, partials/_lists.scss */
+#listCaro ul li.delete input {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
+  opacity: 0.4;
+}
+/* line 977, partials/_lists.scss */
+#listCaro ul li .removeButton {
+  clear: both;
+  margin-top: 50px;
+  float: left;
+}
+/* line 982, partials/_lists.scss */
+#listCaro ul li div#shareThisPage.listShare {
+  width: 300px;
+  clear: none;
+  margin-top: 50px;
+}
+/* line 988, partials/_lists.scss */
+#listCaro ul li .mainPersonProfile {
+  width: 80%;
+  padding: 0 10px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+@media (max-width: 767px) {
+  /* line 988, partials/_lists.scss */
+  #listCaro ul li .mainPersonProfile {
+    width: 100%;
+  }
+}
+/* line 998, partials/_lists.scss */
+#listCaro ul li .mainPersonProfile .personIcon {
+  width: 25%;
+  float: left;
+  height: 125px;
+}
+/* line 1003, partials/_lists.scss */
+#listCaro ul li .mainPersonProfile .personIcon img {
+  max-width: 105px;
+  margin: 0 auto;
+  display: block;
+  overflow: hidden;
+  padding: 10px;
+  width: 100%;
+  background: #183051;
+}
+/* line 1014, partials/_lists.scss */
+#listCaro ul li .mainPersonProfile .mainPersonProfileInput {
+  width: 75%;
+  float: left;
+  padding-left: 15px;
+}
+/* line 1019, partials/_lists.scss */
+#listCaro ul li .mainPersonProfile .mainPersonProfileInput label {
+  width: 100px;
+  float: left;
+  line-height: 33px;
+  color: gray;
+  font-size: 11px;
+}
+/* line 1026, partials/_lists.scss */
+#listCaro ul li .mainPersonProfile .mainPersonProfileInput input {
+  width: calc(100% - 100px);
+  float: left;
+  padding-left: 15px;
+  color: #183051;
+}
+/* line 1033, partials/_lists.scss */
+#listCaro ul li .mainPersonProfile .mainPersonProfileActions {
+  width: 100%;
+  clear: both;
+  float: left;
+}
+/* line 1038, partials/_lists.scss */
+#listCaro ul li .mainPersonProfile .mainPersonProfileActions .addAnotherItem {
+  padding: 10px 20px;
+  background: #124f42;
+  float: right;
+  color: white;
+  font-size: 10px;
+  line-height: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+/* line 1049, partials/_lists.scss */
+#listCaro ul li .mainPersonProfile .mainPersonProfileActions .addAnotherItem:hover {
+  border: 1px solid white;
+}
+/* line 1053, partials/_lists.scss */
+#listCaro ul li .mainPersonProfile .mainPersonProfileActions .removeFromList {
+  padding: 10px 20px;
+  background: #bd2c2c;
+  float: left;
+  cursor: pointer;
+  color: white;
+  font-size: 9px;
+  line-height: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 1px solid #bd2c2c;
+}
+/* line 1065, partials/_lists.scss */
+#listCaro ul li .mainPersonProfile .mainPersonProfileActions .removeFromList:hover {
+  border: 1px solid white;
+}
+/* line 1072, partials/_lists.scss */
+#listCaro ul li .mainPersonItems {
+  float: left;
+  width: 100%;
+  clear: both;
+  margin-bottom: 50px;
+}
+/* line 1078, partials/_lists.scss */
+#listCaro ul li .mainPersonItems .mainPersonItem {
+  float: left;
+  width: calc(25% - 20px);
+  margin: 10px;
+  border: 1px solid #e8e8e8;
+  padding: 10px 15px;
+  position: relative;
+}
+@media (max-width: 767px) {
+  /* line 1078, partials/_lists.scss */
+  #listCaro ul li .mainPersonItems .mainPersonItem {
+    width: calc(50% - 20px);
+  }
+}
+/* line 1090, partials/_lists.scss */
+#listCaro ul li .mainPersonItems .mainPersonItem label {
+  font-size: 11px;
+  color: gray;
+  text-align: center;
+  font-style: italic;
+  width: 100%;
+  float: left;
+  clear: both;
+}
+/* line 1099, partials/_lists.scss */
+#listCaro ul li .mainPersonItems .mainPersonItem .personSymbol {
+  width: 100%;
+  float: left;
+}
+/* line 1103, partials/_lists.scss */
+#listCaro ul li .mainPersonItems .mainPersonItem .personSymbol img {
+  max-width: 100%;
+  margin: 0 auto;
+  display: block;
+  cursor: pointer;
+}
+/* line 1110, partials/_lists.scss */
+#listCaro ul li .mainPersonItems .mainPersonItem .personDelete {
+  float: left;
+  width: 100%;
+  clear: both;
+  font-size: 10px;
+  text-transform: uppercase;
+  color: gray;
+  letter-spacing: 1px;
+  position: absolute;
+  bottom: -12px;
+  background: white;
+  text-align: center;
+  padding: 3px;
+  left: 50%;
+  width: 100px;
+  margin-left: -50px;
+  cursor: pointer;
+  border: 1px dashed #e8e8e8;
+}
+/* line 1129, partials/_lists.scss */
+#listCaro ul li .mainPersonItems .mainPersonItem .personDelete:hover {
+  background: #bd2c2c;
+  color: White;
+  border: 0;
+}
+/* line 1137, partials/_lists.scss */
+#listCaro ul li .mainPersonItems .mainPersonItem .personDelete .marked {
+  display: none;
+}
+/* line 1141, partials/_lists.scss */
+#listCaro ul li .mainPersonItems .mainPersonItem.toDelete {
+  border: 1px solid #bd2c2c;
+  background: rgba(189, 44, 44, 0.1);
+}
+/* line 1145, partials/_lists.scss */
+#listCaro ul li .mainPersonItems .mainPersonItem.toDelete .personDelete {
+  width: 160px;
+  margin-left: -80px;
+  border: 1px solid #bd2c2c;
+}
+/* line 1150, partials/_lists.scss */
+#listCaro ul li .mainPersonItems .mainPersonItem.toDelete .personDelete .marked {
+  display: block;
+  color: #bd2c2c;
+}
+/* line 1154, partials/_lists.scss */
+#listCaro ul li .mainPersonItems .mainPersonItem.toDelete .personDelete .marked:hover {
+  color: white;
+}
+/* line 1158, partials/_lists.scss */
+#listCaro ul li .mainPersonItems .mainPersonItem.toDelete .personDelete .removeOption {
+  display: none;
+}
+
+/* line 1174, partials/_lists.scss */
+aside#forPerson {
+  float: left;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 50px;
+  background: #e8e8e8;
+}
+/* line 1183, partials/_lists.scss */
+aside#forPerson #saveList {
+  background: #124f42;
+  float: right;
+  width: 150px;
+  margin: 10px;
+  padding: 5px 0;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 11px;
+  height: 30px;
+  letter-spacing: 1px;
+}
+/* line 1196, partials/_lists.scss */
+aside#forPerson #saveList:hover {
+  text-decoration: underline;
+}
+@media (max-width: 767px) {
+  /* line 1183, partials/_lists.scss */
+  aside#forPerson #saveList {
+    margin: 10px;
+  }
+}
+/* line 1203, partials/_lists.scss */
+aside#forPerson select#changeMobile {
+  margin: 10px 5%;
+  width: 90%;
+  height: 30px;
+}
+/* line 1208, partials/_lists.scss */
+aside#forPerson #forPersonCaro {
+  max-width: calc(100% - 175px);
+  overflow: hidden;
+  width: 100%;
+  float: left;
+}
+/* line 1214, partials/_lists.scss */
+aside#forPerson #forCarouselHolder {
+  min-width: calc(100% - 50px);
+  float: left;
+  position: relative;
+  overflow: hidden;
+}
+/* line 1220, partials/_lists.scss */
+aside#forPerson ul {
+  position: relative;
+  min-width: 100%;
+  float: left;
+  height: 100%;
+  padding: 10px 0;
+}
+/* line 1227, partials/_lists.scss */
+aside#forPerson ul li {
+  float: left;
+  position: relative;
+  width: 150px;
+  padding: 0 5px;
+  height: 100%;
+}
+/* line 1234, partials/_lists.scss */
+aside#forPerson ul li .personName {
+  width: 100%;
+  float: left;
+  background: white;
+  border: 1px solid #e8e8e8;
+  text-align: center;
+  color: #183051;
+  height: 100%;
+  padding: 5px 0;
+  cursor: pointer;
+}
+/* line 1245, partials/_lists.scss */
+aside#forPerson ul li .personName:hover {
+  background: #183051;
+  color: white;
+}
+/* line 1250, partials/_lists.scss */
+aside#forPerson ul li.active .personName {
+  background: #183051;
+  color: white;
+}
+/* line 1253, partials/_lists.scss */
+aside#forPerson ul li.active .personName:hover {
+  text-decoration: underline;
+}
+/* line 1258, partials/_lists.scss */
+aside#forPerson ul li.addNew .personName, aside#forPerson ul li.addNew.active .personName {
+  font-style: italic;
+  background: none;
+  color: #183051;
+  border: 1px dashed #183051;
+}
+/* line 1266, partials/_lists.scss */
+aside#forPerson ul li.addNew:hover .personName, aside#forPerson ul li.addNew:hover.active .personName {
+  background: none;
+  color: #124f42;
+  border: 1px dashed #124f42;
+  text-decoration: underline;
+}
+/* line 1275, partials/_lists.scss */
+aside#forPerson #prevButton {
+  float: left;
+  width: 15px;
+  height: 31px;
+  background: url("/images/icon/arrow-left-sprite.png") no-repeat;
+  background-position: 0 -31px;
+  cursor: pointer;
+  margin: 10px 0;
+}
+/* line 1284, partials/_lists.scss */
+aside#forPerson #prevButton:hover {
+  background-position: 0 0;
+}
+/* line 1288, partials/_lists.scss */
+aside#forPerson #nextButton {
+  float: left;
+  width: 15px;
+  height: 31px;
+  background: url("/images/icon/arrow-right-sprite.png") no-repeat;
+  background-position: 0 -31px;
+  cursor: pointer;
+  margin: 10px 0;
+}
+/* line 1298, partials/_lists.scss */
+aside#forPerson #nextButton:hover {
+  background-position: 0 0;
+}
+/* line 1302, partials/_lists.scss */
+aside#forPerson select {
+  display: none;
+}
+
+/* line 1307, partials/_lists.scss */
+.frontPerson {
+  width: 200px;
+  float: left;
+  margin: 10px;
+  border: 1px solid #e8e8e8;
+  background: white;
+}
+@media (max-width: 767px) {
+  /* line 1307, partials/_lists.scss */
+  .frontPerson {
+    width: calc(50% - 20px);
+  }
+}
+/* line 1318, partials/_lists.scss */
+.frontPerson .frontName {
+  padding: 10px;
+  float: left;
+  width: 100%;
+  clear: both;
+  text-align: center;
+  font-family: "Lobster Two", cursive;
+  font-size: 24px;
+  color: #183051;
+}
+/* line 1328, partials/_lists.scss */
+.frontPerson .frontBudget {
+  font-size: 10px;
+  color: #183051;
+  border-top: 1px dashed rgba(24, 48, 81, 0.5);
+  padding: 5px;
+  float: left;
+  width: 100%;
+  clear: both;
+  text-align: right;
+}
+/* line 1338, partials/_lists.scss */
+.frontPerson:hover {
+  border: 1px solid #183051;
+  cursor: pointer;
+}
+
+/* line 1345, partials/_lists.scss */
+form#forPerson {
+  width: 100%;
+  clear: both;
+  float: left;
+}
+
+/* line 1350, partials/_lists.scss */
+.listPreview {
+  float: left;
+  width: 200px;
+  height: 200px;
+}
+/* line 1355, partials/_lists.scss */
+.listPreview.gift {
+  background: url("/images/gift-blue.png") white no-repeat center;
+  background-size: 60% auto;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
+}
+/* line 1359, partials/_lists.scss */
+.listPreview.gift:hover {
+  background-size: 80% auto;
+}
+/* line 1363, partials/_lists.scss */
+.listPreview.card {
+  background: url("/images/card-blue.png") white no-repeat center;
+  background-size: 80% auto;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
+}
+/* line 1367, partials/_lists.scss */
+.listPreview.card:hover {
+  background-size: 100% auto;
+}
+@media (max-width: 767px) {
+  /* line 1350, partials/_lists.scss */
+  .listPreview {
+    max-width: 100%;
+  }
+}
+
+/* line 1378, partials/_lists.scss */
+.personSymbolUL {
+  display: none;
+}
+/* line 1381, partials/_lists.scss */
+.personSymbolUL.active {
+  display: block;
+  position: fixed;
+  width: 80%;
+  max-width: 375px;
+  padding: 5px;
+  height: 300px;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: white;
+  border: 2px solid #183051;
+  overflow-y: scroll;
+}
+/* line 1397, partials/_lists.scss */
+.personSymbolUL.active ul {
+  float: left;
+  width: 100%;
+}
+/* line 1401, partials/_lists.scss */
+.personSymbolUL.active ul li {
+  width: 100px;
+  margin: 5px;
+  border: 1px solid #e8e8e8;
+  float: left;
+}
+/* line 1407, partials/_lists.scss */
+.personSymbolUL.active ul li img {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* line 2, partials/_recaptcha.scss */
+#container #recaptcha_widget_div #recaptcha_area tr:nth-child(1) {
+  height: 67px!important;
+}
+/* line 3, partials/_recaptcha.scss */
+#container #recaptcha_widget_div .recaptchatable, #container #recaptcha_widget_div #recaptcha_area tr, #container #recaptcha_widget_div #recaptcha_area td, #container #recaptcha_widget_div #recaptcha_area th {
+  border: 0!important;
+  padding: 0!important;
+  float: left;
+}
+/* line 4, partials/_recaptcha.scss */
+#container #recaptcha_widget_div input[type='text'] {
+  border: 1px solid #e8e8e8 !important;
+}
+
+/* line 7, partials/_recaptcha.scss */
+#recaptcha_table tbody tr td:nth-child(2) {
+  clear: both;
+}
+/* line 10, partials/_recaptcha.scss */
+#recaptcha_table tbody tr td:nth-child(2) #recaptcha_reload_btn, #recaptcha_table tbody tr td:nth-child(2) #recaptcha_switch_audio_btn, #recaptcha_table tbody tr td:nth-child(2) #recaptcha_switch_img_btn, #recaptcha_table tbody tr td:nth-child(2) #recaptcha_whatsthis_btn {
+  display: none;
+}
+
+/* line 15, partials/_recaptcha.scss */
+#recaptcha_table tbody tr td:nth-child(3) img {
+  display: none;
+}
+
+/* line 18, partials/_recaptcha.scss */
+#recaptcha_image {
+  width: 302px!important;
+  height: 59px!important;
+  border: 1px solid #e8e8e8 !important;
+}
+
+/* line 23, partials/_recaptcha.scss */
+.recaptcha_only_if_privacy {
+  display: none;
+}
+
+/* line 1, partials/_post.scss */
+#itemPost {
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+  max-width: 1000px;
+}
+/* line 7, partials/_post.scss */
+#itemPost #itemMain {
+  float: right;
+  width: 70%;
+  padding: 10px 20px;
+  background: white;
+  -webkit-box-shadow: 1px 1px 3px -2px #183051;
+  -moz-box-shadow: 1px 1px 3px -2px #183051;
+  box-shadow: 1px 1px 3px -2px #183051;
+}
+/* line 16, partials/_post.scss */
+#itemPost #itemMain .itemImg {
+  width: 100%;
+  display: block;
+  float: left;
+  clear: both;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid #e8e8e8;
+  text-align: left;
+  position: relative;
+}
+/* line 27, partials/_post.scss */
+#itemPost #itemMain .itemImg img.rotate-90 {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+/* line 38, partials/_post.scss */
+#itemPost #itemMain .itemImg #itemImgText {
+  padding: 20px;
+  font-size: 13px;
+  line-height: 19px;
+}
+/* line 43, partials/_post.scss */
+#itemPost #itemMain .itemImg #itemImgText * {
+  font-size: 13px;
+  line-height: 19px;
+}
+/* line 49, partials/_post.scss */
+#itemPost #itemMain .itemImg img {
+  max-width: 95%;
+  display: block;
+  margin: 0 auto;
+}
+/* line 54, partials/_post.scss */
+#itemPost #itemMain .itemImg p {
+  text-align: left;
+  padding: 5px 0;
+}
+/* line 58, partials/_post.scss */
+#itemPost #itemMain .itemImg ul {
+  list-style: disc;
+  padding: 0 0 0 40px;
+}
+/* line 62, partials/_post.scss */
+#itemPost #itemMain .itemImg ul li {
+  padding: 5px 0;
+}
+/* line 66, partials/_post.scss */
+#itemPost #itemMain .itemImg [id$=itemText] {
+  display: none;
+}
+/* line 70, partials/_post.scss */
+#itemPost #itemMain .itemRating {
+  float: left;
+  clear: both;
+  height: 25px;
+  margin-bottom: 5px;
+}
+/* line 76, partials/_post.scss */
+#itemPost #itemMain .itemRating span {
+  font-size: 11px;
+  line-height: 25px;
+}
+/* line 81, partials/_post.scss */
+#itemPost #itemMain .itemActions {
+  float: right;
+  padding-top: 1px;
+}
+/* line 86, partials/_post.scss */
+#itemPost #itemMain .itemScore {
+  float: right;
+  width: 85px;
+  height: 25px;
+  margin-bottom: 10px;
+  margin: 0px auto;
+  background: url("/images/greystars.png") no-repeat;
+  background-size: 100%;
+  position: relative;
+}
+/* line 96, partials/_post.scss */
+#itemPost #itemMain .itemScore .itemPerc {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: url("/images/bluestars.png") no-repeat;
+  background-size: 85px 23px;
+  height: 25px;
+}
+/* line 105, partials/_post.scss */
+#itemPost #itemMain #listholder {
+  width: 100%;
+  float: left;
+  clear: both;
+  text-align: left;
+  color: gray;
+  font-size: 12px;
+  border-top: 1px solid #e8e8e8;
+  line-height: 19px;
+  padding: 10px 0;
+}
+/* line 116, partials/_post.scss */
+#itemPost #itemMain #listholder a {
+  color: #183051;
+  text-decoration: none;
+}
+/* line 120, partials/_post.scss */
+#itemPost #itemMain #listholder a:hover {
+  color: #124f42;
+}
+/* line 124, partials/_post.scss */
+#itemPost #itemMain #listholder #addToListBox {
+  display: inline-block;
+}
+/* line 127, partials/_post.scss */
+#itemPost #itemMain #listholder #addToListBox select {
+  font-size: 11px;
+}
+/* line 133, partials/_post.scss */
+#itemPost #deletePost {
+  width: 100%;
+  float: left;
+  margin: 15px 0;
+}
+/* line 138, partials/_post.scss */
+#itemPost #deletePost a {
+  float: left;
+  width: 100%;
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+  background: #bd2c2c;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+/* line 151, partials/_post.scss */
+#itemPost #itemSide {
+  float: left;
+  width: 27.5%;
+  background: #e8e8e8;
+  padding: 10px;
+  border: 2px solid #183051;
+}
+/* line 159, partials/_post.scss */
+#itemPost #itemSide.editMode input, #itemPost #itemSide.editMode select, #itemPost #itemSide.editMode button, #itemPost #itemSide.editMode textarea, #itemPost #itemSide.editMode [id$=postDescriptionInput] {
+  display: block;
+}
+/* line 162, partials/_post.scss */
+#itemPost #itemSide.editMode input, #itemPost #itemSide.editMode select {
+  width: 100%;
+}
+/* line 166, partials/_post.scss */
+#itemPost #itemSide.editMode #itemCat a, #itemPost #itemSide.editMode #tagholder a {
+  display: none;
+}
+/* line 169, partials/_post.scss */
+#itemPost #itemSide.editMode h1 {
+  opacity: 0.5;
+}
+/* line 172, partials/_post.scss */
+#itemPost #itemSide.editMode a#addEdit {
+  display: none;
+}
+/* line 175, partials/_post.scss */
+#itemPost #itemSide.editMode #postShare, #itemPost #itemSide.editMode .hideThis {
+  display: none;
+}
+/* line 181, partials/_post.scss */
+#itemPost #itemSide h1 {
+  color: #183051;
+  padding-bottom: 10px;
+}
+/* line 186, partials/_post.scss */
+#itemPost #itemSide #postDescription {
+  color: #124f42;
+  font-size: 12px;
+  line-height: 18px;
+  text-align: left;
+  margin: 5px 0 10px;
+  padding-bottom: 10px;
+  line-height: 18px;
+  border-bottom: 1px dashed rgba(24, 48, 81, 0.3);
+}
+/* line 198, partials/_post.scss */
+#itemPost #itemSide #itemUser, #itemPost #itemSide #itemURL, #itemPost #itemSide #itemCat, #itemPost #itemSide #itemDate, #itemPost #itemSide #tagholder, #itemPost #itemSide #commentholder, #itemPost #itemSide #commentbox, #itemPost #itemSide #postShare, #itemPost #itemSide #itemPrivacy {
+  float: left;
+  width: 100%;
+  padding: 3px 0;
+  color: gray;
+  font-size: 12px;
+  text-align: left;
+  line-height: 18px;
+}
+/* line 206, partials/_post.scss */
+#itemPost #itemSide #itemUser a, #itemPost #itemSide #itemURL a, #itemPost #itemSide #itemCat a, #itemPost #itemSide #itemDate a, #itemPost #itemSide #tagholder a, #itemPost #itemSide #commentholder a, #itemPost #itemSide #commentbox a, #itemPost #itemSide #postShare a, #itemPost #itemSide #itemPrivacy a {
+  color: #183051;
+  text-decoration: none;
+}
+/* line 211, partials/_post.scss */
+#itemPost #itemSide #itemUser a:hover, #itemPost #itemSide #itemURL a:hover, #itemPost #itemSide #itemCat a:hover, #itemPost #itemSide #itemDate a:hover, #itemPost #itemSide #tagholder a:hover, #itemPost #itemSide #commentholder a:hover, #itemPost #itemSide #commentbox a:hover, #itemPost #itemSide #postShare a:hover, #itemPost #itemSide #itemPrivacy a:hover {
+  text-decoration: underline;
+  color: #124f42;
+}
+/* line 217, partials/_post.scss */
+#itemPost #itemSide #itemUser .itemFriend, #itemPost #itemSide #itemURL .itemFriend, #itemPost #itemSide #itemCat .itemFriend, #itemPost #itemSide #itemDate .itemFriend, #itemPost #itemSide #tagholder .itemFriend, #itemPost #itemSide #commentholder .itemFriend, #itemPost #itemSide #commentbox .itemFriend, #itemPost #itemSide #postShare .itemFriend, #itemPost #itemSide #itemPrivacy .itemFriend {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  cursor: pointer;
+  background: url("/images/action/friend-white.png") no-repeat;
+  background-size: 14px;
+}
+/* line 225, partials/_post.scss */
+#itemPost #itemSide #itemUser .itemFriend:hover, #itemPost #itemSide #itemUser .itemFriend.added, #itemPost #itemSide #itemURL .itemFriend:hover, #itemPost #itemSide #itemURL .itemFriend.added, #itemPost #itemSide #itemCat .itemFriend:hover, #itemPost #itemSide #itemCat .itemFriend.added, #itemPost #itemSide #itemDate .itemFriend:hover, #itemPost #itemSide #itemDate .itemFriend.added, #itemPost #itemSide #tagholder .itemFriend:hover, #itemPost #itemSide #tagholder .itemFriend.added, #itemPost #itemSide #commentholder .itemFriend:hover, #itemPost #itemSide #commentholder .itemFriend.added, #itemPost #itemSide #commentbox .itemFriend:hover, #itemPost #itemSide #commentbox .itemFriend.added, #itemPost #itemSide #postShare .itemFriend:hover, #itemPost #itemSide #postShare .itemFriend.added, #itemPost #itemSide #itemPrivacy .itemFriend:hover, #itemPost #itemSide #itemPrivacy .itemFriend.added {
+  background-image: url("/images/action/friend-active.png");
+}
+/* line 228, partials/_post.scss */
+#itemPost #itemSide #itemUser .itemFriend.added:hover, #itemPost #itemSide #itemUser .itemFriend.requested, #itemPost #itemSide #itemURL .itemFriend.added:hover, #itemPost #itemSide #itemURL .itemFriend.requested, #itemPost #itemSide #itemCat .itemFriend.added:hover, #itemPost #itemSide #itemCat .itemFriend.requested, #itemPost #itemSide #itemDate .itemFriend.added:hover, #itemPost #itemSide #itemDate .itemFriend.requested, #itemPost #itemSide #tagholder .itemFriend.added:hover, #itemPost #itemSide #tagholder .itemFriend.requested, #itemPost #itemSide #commentholder .itemFriend.added:hover, #itemPost #itemSide #commentholder .itemFriend.requested, #itemPost #itemSide #commentbox .itemFriend.added:hover, #itemPost #itemSide #commentbox .itemFriend.requested, #itemPost #itemSide #postShare .itemFriend.added:hover, #itemPost #itemSide #postShare .itemFriend.requested, #itemPost #itemSide #itemPrivacy .itemFriend.added:hover, #itemPost #itemSide #itemPrivacy .itemFriend.requested {
+  background-image: url("/images/action/friend-on.png");
+}
+/* line 232, partials/_post.scss */
+#itemPost #itemSide #itemUser .itemFriend.hint:before, #itemPost #itemSide #itemUser .itemFriend[data-hint]:before, #itemPost #itemSide #itemURL .itemFriend.hint:before, #itemPost #itemSide #itemURL .itemFriend[data-hint]:before, #itemPost #itemSide #itemCat .itemFriend.hint:before, #itemPost #itemSide #itemCat .itemFriend[data-hint]:before, #itemPost #itemSide #itemDate .itemFriend.hint:before, #itemPost #itemSide #itemDate .itemFriend[data-hint]:before, #itemPost #itemSide #tagholder .itemFriend.hint:before, #itemPost #itemSide #tagholder .itemFriend[data-hint]:before, #itemPost #itemSide #commentholder .itemFriend.hint:before, #itemPost #itemSide #commentholder .itemFriend[data-hint]:before, #itemPost #itemSide #commentbox .itemFriend.hint:before, #itemPost #itemSide #commentbox .itemFriend[data-hint]:before, #itemPost #itemSide #postShare .itemFriend.hint:before, #itemPost #itemSide #postShare .itemFriend[data-hint]:before, #itemPost #itemSide #itemPrivacy .itemFriend.hint:before, #itemPost #itemSide #itemPrivacy .itemFriend[data-hint]:before {
+  top: 13px;
+  border-bottom-color: #183051;
+}
+/* line 236, partials/_post.scss */
+#itemPost #itemSide #itemUser .itemFriend.hint:after, #itemPost #itemSide #itemUser .itemFriend[data-hint]:after, #itemPost #itemSide #itemURL .itemFriend.hint:after, #itemPost #itemSide #itemURL .itemFriend[data-hint]:after, #itemPost #itemSide #itemCat .itemFriend.hint:after, #itemPost #itemSide #itemCat .itemFriend[data-hint]:after, #itemPost #itemSide #itemDate .itemFriend.hint:after, #itemPost #itemSide #itemDate .itemFriend[data-hint]:after, #itemPost #itemSide #tagholder .itemFriend.hint:after, #itemPost #itemSide #tagholder .itemFriend[data-hint]:after, #itemPost #itemSide #commentholder .itemFriend.hint:after, #itemPost #itemSide #commentholder .itemFriend[data-hint]:after, #itemPost #itemSide #commentbox .itemFriend.hint:after, #itemPost #itemSide #commentbox .itemFriend[data-hint]:after, #itemPost #itemSide #postShare .itemFriend.hint:after, #itemPost #itemSide #postShare .itemFriend[data-hint]:after, #itemPost #itemSide #itemPrivacy .itemFriend.hint:after, #itemPost #itemSide #itemPrivacy .itemFriend[data-hint]:after {
+  top: 13px;
+  margin-left: -50%;
+}
+/* line 243, partials/_post.scss */
+#itemPost #itemSide span.edit {
+  text-transform: lowercase;
+  color: gray;
+  font-size: 10px;
+}
+/* line 248, partials/_post.scss */
+#itemPost #itemSide span.edit:hover {
+  color: #183051;
+  cursor: pointer;
+}
+/* line 253, partials/_post.scss */
+#itemPost #itemSide input, #itemPost #itemSide select, #itemPost #itemSide button, #itemPost #itemSide textarea, #itemPost #itemSide [id$=postDescriptionInput] {
+  display: none;
+}
+/* line 256, partials/_post.scss */
+#itemPost #itemSide input.active, #itemPost #itemSide select.active, #itemPost #itemSide button.active, #itemPost #itemSide textarea.active, #itemPost #itemSide [id$=postDescriptionInput].active {
+  display: block;
+}
+/* line 260, partials/_post.scss */
+#itemPost #itemSide a#addEdit, #itemPost #itemSide button {
+  background: #183051;
+  color: white;
+  padding: 10px;
+  float: left;
+  clear: both;
+  text-decoration: none;
+  font-size: 11px;
+  letter-spacing: 1px;
+  width: 100%;
+  text-transform: uppercase;
+  text-align: center;
+}
+/* line 273, partials/_post.scss */
+#itemPost #itemSide a#addEdit:hover, #itemPost #itemSide button:hover {
+  background: #124f42;
+}
+/* line 277, partials/_post.scss */
+#itemPost #itemSide a#addEdit {
+  background: white;
+  border: 1px dashed #183051;
+  color: #183051;
+}
+/* line 282, partials/_post.scss */
+#itemPost #itemSide a#addEdit:hover {
+  background: white;
+  border: 1px dashed #124f42;
+  color: #124f42;
+  text-decoration: underline;
+}
+/* line 292, partials/_post.scss */
+#itemPost #itemSide .shareOpt {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 1px;
+}
+/* line 298, partials/_post.scss */
+#itemPost #postShare {
+  margin-top: 30px;
+}
+/* line 301, partials/_post.scss */
+#itemPost #postShare span {
+  width: 100%;
+  display: inline-block;
+  text-align: left;
+}
+/* line 306, partials/_post.scss */
+#itemPost #postShare span#fblikeholder {
+  width: auto;
+}
+/* line 310, partials/_post.scss */
+#itemPost #postShare img {
+  width: 40px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+/* line 316, partials/_post.scss */
+#itemPost #itemReport {
+  float: left;
+  width: 27.5%;
+  background: #e8e8e8;
+  padding: 10px;
+  background: white;
+  -webkit-box-shadow: 1px 1px 3px -2px #183051;
+  -moz-box-shadow: 1px 1px 3px -2px #183051;
+  box-shadow: 1px 1px 3px -2px #183051;
+}
+/* line 325, partials/_post.scss */
+#itemPost #itemSideOp {
+  float: left;
+  width: 27.5%;
+  margin: 15px 0;
+}
+/* line 330, partials/_post.scss */
+#itemPost #itemSideOp #likePost, #itemPost #itemSideOp #dislikePost {
+  width: 50%;
+  float: left;
+  font-family: "Lobster Two", cursive;
+  padding: 10px 0;
+  font-size: 20px;
+  letter-spacing: 1px;
+  color: white;
+  cursor: pointer;
+  opacity: 0.5;
+}
+/* line 341, partials/_post.scss */
+#itemPost #itemSideOp #likePost:hover, #itemPost #itemSideOp #dislikePost:hover {
+  opacity: 1;
+}
+/* line 345, partials/_post.scss */
+#itemPost #itemSideOp #likePost {
+  background: #183051;
+}
+/* line 348, partials/_post.scss */
+#itemPost #itemSideOp #dislikePost {
+  background: gray;
+}
+/* line 352, partials/_post.scss */
+#itemPost #comments {
+  float: right;
+  clear: right;
+  width: 70%;
+  background: white;
+  margin-bottom: 30px;
+  position: relative;
+  padding: 20px;
+  border-top: 2px solid #e8e8e8;
+  -webkit-box-shadow: 1px 1px 3px -2px #183051;
+  -moz-box-shadow: 1px 1px 3px -2px #183051;
+  box-shadow: 1px 1px 3px -2px #183051;
+}
+/* line 363, partials/_post.scss */
+#itemPost #comments h2 {
+  font-family: "Lobster Two", cursive;
+  font-size: 24px;
+  width: 100%;
+  text-align: center;
+}
+/* line 369, partials/_post.scss */
+#itemPost #comments .commentRow {
+  float: left;
+  clear: both;
+  width: 100%;
+  border: 1px solid #e8e8e8;
+}
+/* line 376, partials/_post.scss */
+#itemPost #comments .comment {
+  float: left;
+  width: 100%;
+  clear: both;
+  margin: 0 0 10px 0;
+}
+/* line 382, partials/_post.scss */
+#itemPost #comments .comment.addArea {
+  border-top: 1px dashed #e8e8e8;
+  padding: 15px 0;
+}
+/* line 386, partials/_post.scss */
+#itemPost #comments .comment.reply {
+  display: none;
+}
+/* line 390, partials/_post.scss */
+#itemPost #comments .comment .userArea {
+  float: left;
+  width: 25%;
+  font-size: 12px;
+  padding: 5px 0;
+}
+/* line 396, partials/_post.scss */
+#itemPost #comments .comment .userArea a {
+  font-size: 10px;
+  text-decoration: none;
+}
+/* line 400, partials/_post.scss */
+#itemPost #comments .comment .userArea a:hover {
+  text-decoration: underline;
+}
+/* line 405, partials/_post.scss */
+#itemPost #comments .comment .commentArea {
+  float: left;
+  width: 75%;
+}
+/* line 411, partials/_post.scss */
+#itemPost #comments .comment .commentArea label {
+  width: 100%;
+  float: left;
+  clear: both;
+}
+/* line 416, partials/_post.scss */
+#itemPost #comments .comment .commentArea textarea {
+  width: 100%;
+  float: left;
+  clear: both;
+  padding: 10px;
+}
+/* line 422, partials/_post.scss */
+#itemPost #comments .comment .commentArea button {
+  float: right;
+  clear: both;
+  padding: 10px 30px;
+  margin: 10px 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 10px;
+}
+/* line 431, partials/_post.scss */
+#itemPost #comments .comment .commentArea button:hover {
+  background: #124f42;
+}
+/* line 437, partials/_post.scss */
+#itemPost #comments .comment .commentMessage {
+  float: left;
+  width: 100%;
+  font-size: 12px;
+  text-align: left;
+  padding: 5px 0;
+}
+/* line 444, partials/_post.scss */
+#itemPost #comments .comment .commentActions {
+  float: left;
+  width: 50%;
+  clear: both;
+}
+/* line 449, partials/_post.scss */
+#itemPost #comments .comment .commentActions > div {
+  float: left;
+  padding: 0 5px;
+  font-size: 11px;
+  color: #CCCCCC;
+}
+/* line 454, partials/_post.scss */
+#itemPost #comments .comment .commentActions > div:hover {
+  color: #808080;
+  cursor: pointer;
+}
+/* line 460, partials/_post.scss */
+#itemPost #comments .comment .commentDate {
+  font-style: italic;
+  float: left;
+  text-align: right;
+  padding: 5px 0;
+  width: 50%;
+  font-size: 10px;
+}
+
+/* line 471, partials/_post.scss */
+#video, div[id^="videoP"] {
+  float: none;
+  margin: 0 auto;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+@media all and (max-width: 680px) {
+  /* line 479, partials/_post.scss */
+  #itemPost #itemSide, #itemPost #itemMain, #itemPost #deletePost, #itemPost #itemSideOp, #itemPost #comments {
+    width: 100%;
+  }
+}
+/* line 487, partials/_post.scss */
+#relatedPosts {
+  float: left;
+  width: 100%;
+  background: #e8e8e8;
+  padding: 10px;
+}
+/* line 493, partials/_post.scss */
+#relatedPosts h3 {
+  color: #183051;
+  font-family: "Lobster Two", cursive;
+  text-align: center;
+  width: 100%;
+  font-size: 24px;
+  padding-bottom: 10px;
+}
+/* line 501, partials/_post.scss */
+#relatedPosts ul, #relatedPosts ul li {
+  float: left;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+/* line 507, partials/_post.scss */
+#relatedPosts ul li {
+  border: 1px solid #CCCCCC;
+  background: white;
+  margin: 0 0 15px;
+}
+/* line 512, partials/_post.scss */
+#relatedPosts ul li span.relatedPost {
+  float: left;
+  display: block;
+  padding: 5px 10px;
+  color: #183051;
+  font-size: 12px;
+  text-align: center;
+  width: 100%;
+}
+/* line 522, partials/_post.scss */
+#relatedPosts ul li em {
+  float: left;
+  width: 100%;
+  padding: 5px 10px;
+  font-size: 11px;
+  color: gray;
+  text-align: center;
+}
+/* line 532, partials/_post.scss */
+#relatedPosts * {
+  max-width: 100%;
+}
+
+/* line 1, partials/_view.scss */
+#itemholder {
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+  margin: 0;
+  float: left;
+  min-height: 400px;
+  clear: both;
+  position: relative;
+  height: 100%;
+}
+/* line 12, partials/_view.scss */
+#itemholder > h1 {
+  margin: 20px auto;
+}
+/* line 16, partials/_view.scss */
+#itemholder #error {
+  width: 100%;
+  float: left;
+  padding: 10px 0;
+  color: red;
+  text-align: center;
+  font-size: 12px;
+}
+/* line 25, partials/_view.scss */
+#itemholder #pleaseLogin {
+  text-align: center;
+  width: 100%;
+  margin-top: 20px;
+}
+/* line 30, partials/_view.scss */
+#itemholder #pleaseLogin a {
+  color: #124f42;
+  text-decoration: none;
+}
+/* line 34, partials/_view.scss */
+#itemholder #pleaseLogin a:hover {
+  text-decoration: underline;
+}
+/* line 41, partials/_view.scss */
+#itemholder.images .item, #itemholder.pin .item {
+  width: 200px;
+  margin: 10px;
+  float: left;
+  border: 1px solid #e8e8e8;
+  font-size: 15px;
+  background: #FFFFFF;
+}
+/* line 49, partials/_view.scss */
+#itemholder.images .item .removeFromCollection, #itemholder.pin .item .removeFromCollection {
+  width: 100%;
+  text-align: center;
+  display: block;
+  float: left;
+  clear: both;
+  text-transform: uppercase;
+  font-size: 10px;
+  margin: 5px 0;
+  color: gray;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+/* line 62, partials/_view.scss */
+#itemholder.images .item .removeFromCollection:hover, #itemholder.pin .item .removeFromCollection:hover {
+  color: #bd2c2c;
+}
+/* line 69, partials/_view.scss */
+#itemholder.images .item .itemImg, #itemholder.pin .item .itemImg {
+  width: 100%;
+  float: left;
+  position: relative;
+}
+/* line 74, partials/_view.scss */
+#itemholder.images .item .itemImg a, #itemholder.pin .item .itemImg a {
+  max-width: 100%;
+}
+/* line 78, partials/_view.scss */
+#itemholder.images .item .itemImg img, #itemholder.pin .item .itemImg img {
+  min-width: 100px;
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+/* line 85, partials/_view.scss */
+#itemholder.images .item .itemImg .itemHover, #itemholder.pin .item .itemImg .itemHover {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  font-family: "Lobster Two", cursive;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  line-height: 1em;
+  background: rgba(24, 48, 81, 0.7);
+}
+/* line 98, partials/_view.scss */
+#itemholder.images .item .itemImg .itemHover span, #itemholder.pin .item .itemImg .itemHover span {
+  position: absolute;
+  display: table;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+}
+/* line 111, partials/_view.scss */
+#itemholder.images .item .itemImg:hover .itemHover, #itemholder.pin .item .itemImg:hover .itemHover {
+  display: block;
+  cursor: pointer;
+}
+/* line 116, partials/_view.scss */
+#itemholder.images .item .itemImg .textImage, #itemholder.pin .item .itemImg .textImage {
+  float: left;
+  width: 100%;
+  text-align: center;
+  padding: 20px 0;
+}
+/* line 122, partials/_view.scss */
+#itemholder.images .item .itemImg .textImage span, #itemholder.pin .item .itemImg .textImage span {
+  font-size: 60px;
+  color: gray;
+  text-decoration: none;
+}
+/* line 128, partials/_view.scss */
+#itemholder.images .item .itemImg .textImage:hover span, #itemholder.pin .item .itemImg .textImage:hover span {
+  color: #183051;
+}
+/* line 134, partials/_view.scss */
+#itemholder.images .item .itemRating, #itemholder.pin .item .itemRating {
+  margin: 0 auto;
+  border-top: 1px solid rgba(0, 0, 0, 0.25);
+  width: 50%;
+  text-align: center;
+  font-size: 10px;
+  max-width: 150px;
+  padding: 5px 0;
+}
+/* line 143, partials/_view.scss */
+#itemholder.images .item .itemRating span, #itemholder.pin .item .itemRating span {
+  vertical-align: top;
+}
+/* line 148, partials/_view.scss */
+#itemholder.images .item .itemScore, #itemholder.pin .item .itemScore {
+  width: 85px;
+  height: 25px;
+  margin: 0px auto;
+  background: url("/images/greystars.png") no-repeat;
+  background-size: 100%;
+  position: relative;
+}
+/* line 156, partials/_view.scss */
+#itemholder.images .item .itemScore .itemPerc, #itemholder.pin .item .itemScore .itemPerc {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: url("/images/bluestars.png") no-repeat;
+  background-size: 85px 23px;
+  height: 25px;
+}
+/* line 165, partials/_view.scss */
+#itemholder.images .item .itemTitle, #itemholder.pin .item .itemTitle {
+  font-size: 12px;
+  line-height: 19px;
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+  color: #183051;
+  float: left;
+  clear: both;
+}
+/* line 175, partials/_view.scss */
+#itemholder.images .item .itemTitle a, #itemholder.pin .item .itemTitle a {
+  color: #183051;
+}
+/* line 179, partials/_view.scss */
+#itemholder.images .item .itemActions, #itemholder.pin .item .itemActions {
+  float: left;
+  width: 100%;
+  text-align: center;
+  clear: both;
+  margin-bottom: 4px;
+}
+/* line 186, partials/_view.scss */
+#itemholder.images .item .itemActions > span, #itemholder.pin .item .itemActions > span {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  vertical-align: top;
+}
+/* line 196, partials/_view.scss */
+#itemholder.images .item .itemActions > span.rating span.perc, #itemholder.pin .item .itemActions > span.rating span.perc {
+  color: white;
+  font-size: 10px;
+  text-align: center;
+  background: none;
+  z-index: 5;
+}
+/* line 211, partials/_view.scss */
+#itemholder.images .item .itemURL, #itemholder.images .item .itemUser, #itemholder.pin .item .itemURL, #itemholder.pin .item .itemUser {
+  font-size: 10px;
+  padding: 5px 2.5%;
+  float: left;
+  width: 50%;
+  color: #183051;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/* line 219, partials/_view.scss */
+#itemholder.images .item .itemURL a, #itemholder.images .item .itemUser a, #itemholder.pin .item .itemURL a, #itemholder.pin .item .itemUser a {
+  color: #183051;
+}
+/* line 222, partials/_view.scss */
+#itemholder.images .item .itemURL.uploaded a, #itemholder.images .item .itemUser.uploaded a, #itemholder.pin .item .itemURL.uploaded a, #itemholder.pin .item .itemUser.uploaded a {
+  color: #e8e8e8;
+}
+/* line 226, partials/_view.scss */
+#itemholder.images .item .itemUser, #itemholder.pin .item .itemUser {
+  text-align: right;
+  float: right;
+}
+/* line 230, partials/_view.scss */
+#itemholder.images .item a, #itemholder.pin .item a {
+  text-decoration: none;
+}
+/* line 233, partials/_view.scss */
+#itemholder.images .item a:hover, #itemholder.pin .item a:hover {
+  text-decoration: underline;
+}
+/* line 237, partials/_view.scss */
+#itemholder.images .item .itemFriend, #itemholder.pin .item .itemFriend {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+/* line 243, partials/_view.scss */
+#itemholder.images .item .itemFriend.hint:before, #itemholder.images .item .itemFriend[data-hint]:before, #itemholder.pin .item .itemFriend.hint:before, #itemholder.pin .item .itemFriend[data-hint]:before {
+  top: 18px;
+  border-bottom-color: #183051;
+}
+/* line 247, partials/_view.scss */
+#itemholder.images .item .itemFriend.hint:after, #itemholder.images .item .itemFriend[data-hint]:after, #itemholder.pin .item .itemFriend.hint:after, #itemholder.pin .item .itemFriend[data-hint]:after {
+  top: 19px;
+}
+@media (max-width: 767px) {
+  /* line 253, partials/_view.scss */
+  #itemholder.images .item, #itemholder.pin .item {
+    width: 45%;
+    min-width: 45%;
+    max-width: 45%;
+    padding: 0;
+    margin: 10px 2%;
+  }
+  /* line 260, partials/_view.scss */
+  #itemholder.images .item .itemImg img, #itemholder.pin .item .itemImg img {
+    max-width: 100%;
+  }
+  /* line 264, partials/_view.scss */
+  #itemholder.images #itemPost, #itemholder.pin #itemPost {
+    width: 95%;
+    margin: 0 2.5%;
+  }
+}
+/* line 270, partials/_view.scss */
+#itemholder.rows {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  float: none;
+  min-width: 0;
+  padding: 0 15px;
+}
+@media (max-width: 767px) {
+  /* line 270, partials/_view.scss */
+  #itemholder.rows {
+    padding: 0 2.5%;
+  }
+}
+/* line 282, partials/_view.scss */
+#itemholder.rows .item {
+  float: left;
+  width: 100%;
+  max-width: 1000px;
+  clear: both;
+  margin: 0 auto 15px auto;
+}
+/* line 290, partials/_view.scss */
+#itemholder.rows .item .itemUserBox {
+  float: left;
+  width: 100px;
+}
+/* line 294, partials/_view.scss */
+#itemholder.rows .item .itemUserBox .itemUserAvatar {
+  float: left;
+  width: 100%;
+}
+/* line 299, partials/_view.scss */
+#itemholder.rows .item .itemUserBox .itemAuthor {
+  float: left;
+  width: 100%;
+  clear: both;
+  margin-top: 10px;
+  font-size: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/* line 309, partials/_view.scss */
+#itemholder.rows .item .itemUserBox .itemAuthor a {
+  text-decoration: none;
+  color: #183051;
+}
+/* line 313, partials/_view.scss */
+#itemholder.rows .item .itemUserBox .itemAuthor a:hover {
+  color: #124f42;
+}
+/* line 319, partials/_view.scss */
+#itemholder.rows .item .itemInfo {
+  float: right;
+  width: calc(100% - 100px);
+  background: white;
+  padding: 10px;
+  border: 1px solid #e8e8e8;
+}
+/* line 326, partials/_view.scss */
+#itemholder.rows .item .itemInfo .itemImg {
+  max-width: 100%;
+  display: block;
+  width: auto;
+  margin: 0 auto 10px;
+  float: none;
+  background: white;
+}
+/* line 334, partials/_view.scss */
+#itemholder.rows .item .itemInfo .itemImg img {
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+/* line 340, partials/_view.scss */
+#itemholder.rows .item .itemInfo .itemTitle {
+  float: left;
+  margin: 10px 0 0;
+  width: 100%;
+  font-size: 24px;
+  font-family: "Lobster Two", cursive;
+}
+/* line 347, partials/_view.scss */
+#itemholder.rows .item .itemInfo .itemTitle a {
+  text-decoration: none;
+  color: #183051;
+}
+/* line 352, partials/_view.scss */
+#itemholder.rows .item .itemInfo .itemDesc {
+  font-size: 13px;
+  color: #124f42;
+  float: left;
+  clear: both;
+  width: 100%;
+  padding: 5px 0;
+  letter-spacing: 1px;
+}
+/* line 361, partials/_view.scss */
+#itemholder.rows .item .itemInfo .itemDesc p {
+  width: 100%;
+  padding: 0;
+}
+/* line 366, partials/_view.scss */
+#itemholder.rows .item .itemInfo .itemCategory, #itemholder.rows .item .itemInfo .itemFrom, #itemholder.rows .item .itemInfo .itemAuthor, #itemholder.rows .item .itemInfo .itemLikes, #itemholder.rows .item .itemInfo .itemDislikes, #itemholder.rows .item .itemInfo .removeFromCollection {
+  color: gray;
+  font-size: 11px;
+  letter-spacing: 1px;
+  float: left;
+  margin: 5px 15px 5px 0;
+}
+/* line 373, partials/_view.scss */
+#itemholder.rows .item .itemInfo .itemCategory a, #itemholder.rows .item .itemInfo .itemFrom a, #itemholder.rows .item .itemInfo .itemAuthor a, #itemholder.rows .item .itemInfo .itemLikes a, #itemholder.rows .item .itemInfo .itemDislikes a, #itemholder.rows .item .itemInfo .removeFromCollection a {
+  color: gray;
+  text-decoration: none;
+}
+/* line 377, partials/_view.scss */
+#itemholder.rows .item .itemInfo .itemCategory a:hover, #itemholder.rows .item .itemInfo .itemFrom a:hover, #itemholder.rows .item .itemInfo .itemAuthor a:hover, #itemholder.rows .item .itemInfo .itemLikes a:hover, #itemholder.rows .item .itemInfo .itemDislikes a:hover, #itemholder.rows .item .itemInfo .removeFromCollection a:hover {
+  color: #183051;
+}
+/* line 382, partials/_view.scss */
+#itemholder.rows .item .itemInfo > a.removeFromCollection {
+  color: #bd2c2c;
+  text-decoration: none;
+}
+/* line 386, partials/_view.scss */
+#itemholder.rows .item .itemInfo > a.removeFromCollection:hover {
+  text-decoration: underline;
+}
+/* line 392, partials/_view.scss */
+#itemholder.rows .item img {
+  max-width: 100%;
+}
+/* line 398, partials/_view.scss */
+#itemholder.text {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  float: none;
+  min-width: 0;
+}
+/* line 406, partials/_view.scss */
+#itemholder.text .item {
+  float: left;
+  width: 100%;
+  clear: both;
+  margin: 0 0 15px 0;
+  position: relative;
+}
+/* line 413, partials/_view.scss */
+#itemholder.text .item .itemTitle {
+  float: left;
+  width: 100%;
+  clear: both;
+  font-family: "Lobster Two", cursive;
+  font-size: 20px;
+  padding: 5px 0;
+}
+/* line 421, partials/_view.scss */
+#itemholder.text .item .itemTitle a {
+  color: #183051;
+  text-decoration: none;
+}
+/* line 424, partials/_view.scss */
+#itemholder.text .item .itemTitle a:hover {
+  text-decoration: underline;
+}
+/* line 429, partials/_view.scss */
+#itemholder.text .item .itemInfo {
+  float: left;
+  width: 100%;
+  clear: both;
+  color: gray;
+  font-size: 13px;
+}
+/* line 436, partials/_view.scss */
+#itemholder.text .item .itemInfo > div {
+  float: left;
+  clear: none;
+  width: auto;
+  padding-right: 10px;
+}
+/* line 444, partials/_view.scss */
+#itemholder.text .item .itemInfo a {
+  color: #183051;
+  text-decoration: none;
+}
+/* line 447, partials/_view.scss */
+#itemholder.text .item .itemInfo a:hover {
+  text-decoration: underline;
+}
+/* line 453, partials/_view.scss */
+#itemholder.text .deleteClose {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  background: #bd2c2c;
+  text-decoration: none;
+  padding: 5px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=75);
+  opacity: 0.75;
+}
+/* line 463, partials/_view.scss */
+#itemholder.text .deleteClose span {
+  color: white;
+  font-size: 9px;
+}
+/* line 468, partials/_view.scss */
+#itemholder.text .deleteClose:hover {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+/* line 474, partials/_view.scss */
+#itemholder.minimal {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  float: none;
+  min-width: 0px;
+}
+/* line 481, partials/_view.scss */
+#itemholder.minimal a {
+  text-decoration: none;
+}
+/* line 485, partials/_view.scss */
+#itemholder.minimal .item {
+  float: left;
+  width: 100%;
+  clear: both;
+  margin: 0 0 15px 0;
+}
+/* line 491, partials/_view.scss */
+#itemholder.minimal .item .videoIcon {
+  width: 100%;
+  background: white;
+  padding: 10px;
+  text-align: center;
+  font-size: 30px;
+  color: #183051;
+  text-decoration: none;
+}
+/* line 499, partials/_view.scss */
+#itemholder.minimal .item .videoIcon span {
+  text-decoration: none;
+}
+/* line 503, partials/_view.scss */
+#itemholder.minimal .item .videoIcon:hover {
+  color: #124f42;
+}
+/* line 508, partials/_view.scss */
+#itemholder.minimal .item .itemImg {
+  float: left;
+  width: 130px;
+  padding: 0 15px 0 0;
+}
+/* line 513, partials/_view.scss */
+#itemholder.minimal .item .itemImg img {
+  max-width: 100%;
+  float: left;
+  height: auto;
+}
+/* line 519, partials/_view.scss */
+#itemholder.minimal .item .itemInfo {
+  width: calc(100% - 145px);
+  float: left;
+  padding: 10px;
+}
+/* line 524, partials/_view.scss */
+#itemholder.minimal .item .itemInfo .itemTitle {
+  float: left;
+  width: 100%;
+  margin-bottom: 5px;
+}
+/* line 529, partials/_view.scss */
+#itemholder.minimal .item .itemInfo .itemTitle a {
+  text-decoration: none;
+  color: #183051;
+}
+/* line 533, partials/_view.scss */
+#itemholder.minimal .item .itemInfo .itemTitle a:hover {
+  color: #124f42;
+}
+/* line 538, partials/_view.scss */
+#itemholder.minimal .item .itemInfo .itemCategory, #itemholder.minimal .item .itemInfo .itemFrom, #itemholder.minimal .item .itemInfo .itemAuthor, #itemholder.minimal .item .itemInfo .itemLikes, #itemholder.minimal .item .itemInfo .itemDislikes, #itemholder.minimal .item .itemInfo .removeFromCollection {
+  color: gray;
+  font-size: 11px;
+  letter-spacing: 1px;
+  float: left;
+  margin: 5px 15px 5px 0;
+}
+/* line 545, partials/_view.scss */
+#itemholder.minimal .item .itemInfo .itemCategory a, #itemholder.minimal .item .itemInfo .itemFrom a, #itemholder.minimal .item .itemInfo .itemAuthor a, #itemholder.minimal .item .itemInfo .itemLikes a, #itemholder.minimal .item .itemInfo .itemDislikes a, #itemholder.minimal .item .itemInfo .removeFromCollection a {
+  color: gray;
+  text-decoration: none;
+}
+/* line 549, partials/_view.scss */
+#itemholder.minimal .item .itemInfo .itemCategory a:hover, #itemholder.minimal .item .itemInfo .itemFrom a:hover, #itemholder.minimal .item .itemInfo .itemAuthor a:hover, #itemholder.minimal .item .itemInfo .itemLikes a:hover, #itemholder.minimal .item .itemInfo .itemDislikes a:hover, #itemholder.minimal .item .itemInfo .removeFromCollection a:hover {
+  color: #183051;
+}
+/* line 554, partials/_view.scss */
+#itemholder.minimal .item .itemInfo > a.removeFromCollection {
+  color: #bd2c2c;
+}
+/* line 556, partials/_view.scss */
+#itemholder.minimal .item .itemInfo > a.removeFromCollection:hover {
+  text-decoration: underline;
+}
+@media (max-width: 767px) {
+  /* line 474, partials/_view.scss */
+  #itemholder.minimal {
+    padding: 0 2.5%;
+  }
+  /* line 567, partials/_view.scss */
+  #itemholder.minimal .item .itemImg {
+    width: 20%;
+  }
+  /* line 570, partials/_view.scss */
+  #itemholder.minimal .item .itemInfo {
+    width: 80%;
+    padding: 0px 2.5% 15px;
+  }
+  /* line 574, partials/_view.scss */
+  #itemholder.minimal .item .itemInfo .itemCategory, #itemholder.minimal .item .itemInfo .itemFrom, #itemholder.minimal .item .itemInfo .itemAuthor, #itemholder.minimal .item .itemInfo .itemLikes, #itemholder.minimal .item .itemInfo .itemDislikes {
+    margin: 2px 15px 2px 0;
+  }
+  /* line 577, partials/_view.scss */
+  #itemholder.minimal .item .itemInfo .itemCategory, #itemholder.minimal .item .itemInfo .itemFrom, #itemholder.minimal .item .itemInfo .itemAuthor, #itemholder.minimal .item .itemInfo .itemLikes {
+    clear: both;
+  }
+}
+
+/* line 589, partials/_view.scss */
+#criteriaHolder {
+  float: left;
+  width: 100%;
+  clear: both;
+  text-align: center;
+  margin-bottom: 10px;
+}
+/* line 596, partials/_view.scss */
+#criteriaHolder .criteria {
+  color: gray;
+  font-size: 11px;
+  display: inline-block;
+  margin: 0 5px;
+}
+/* line 602, partials/_view.scss */
+#criteriaHolder .criteria > * {
+  display: inline-block;
+  margin: 0 2px;
+}
+/* line 608, partials/_view.scss */
+#criteriaHolder .criteria span.criteriaRemove {
+  background: gray;
+  padding: 2px;
+}
+/* line 612, partials/_view.scss */
+#criteriaHolder .criteria span.criteriaRemove span.icon-close {
+  font-style: normal;
+  color: white;
+  font-size: 8px;
+}
+/* line 617, partials/_view.scss */
+#criteriaHolder .criteria span.criteriaRemove:hover {
+  background: #bd2c2c;
+  cursor: pointer;
+}
+
+/* line 1, partials/_icons.scss */
+.avatar {
+  float: left;
+  background: #e8e8e8;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  text-align: center;
+}
+/* line 7, partials/_icons.scss */
+.avatar.large {
+  width: 100px;
+  height: 100px;
+  padding: 10px;
+}
+/* line 13, partials/_icons.scss */
+.avatar.small {
+  width: 50px;
+  height: 50px;
+  padding: 5px;
+}
+/* line 20, partials/_icons.scss */
+.avatar.icon-happy3.large {
+  font-size: 80px;
+}
+/* line 23, partials/_icons.scss */
+.avatar.icon-happy3.small {
+  font-size: 40px;
+}
+/* line 29, partials/_icons.scss */
+.avatar.icon-gingerbread.large {
+  font-size: 80px;
+}
+/* line 32, partials/_icons.scss */
+.avatar.icon-gingerbread.small {
+  font-size: 40px;
+}
+/* line 38, partials/_icons.scss */
+.avatar.icon-striped3.large {
+  font-size: 70px;
+  padding: 15px 10px;
+}
+/* line 42, partials/_icons.scss */
+.avatar.icon-striped3.small {
+  font-size: 35px;
+  padding: 7px 5px;
+}
+/* line 49, partials/_icons.scss */
+.avatar.icon-christmas106.large {
+  font-size: 100px;
+  padding: 0;
+}
+/* line 53, partials/_icons.scss */
+.avatar.icon-christmas106.small {
+  font-size: 50px;
+  padding: 0;
+}
+/* line 59, partials/_icons.scss */
+.avatar.icon-angel6.large {
+  font-size: 70px;
+  padding: 15px 10px;
+}
+/* line 63, partials/_icons.scss */
+.avatar.icon-angel6.small {
+  font-size: 35px;
+  padding: 7px 5px;
+}
+/* line 69, partials/_icons.scss */
+.avatar.icon-christmas74.large {
+  font-size: 70px;
+  padding: 15px 10px;
+}
+/* line 73, partials/_icons.scss */
+.avatar.icon-christmas74.small {
+  font-size: 35px;
+  padding: 7px 5px;
+}
+/* line 79, partials/_icons.scss */
+.avatar.icon-star.large {
+  font-size: 70px;
+  padding: 15px 10px;
+}
+/* line 83, partials/_icons.scss */
+.avatar.icon-star.small {
+  font-size: 35px;
+  padding: 7px 5px;
+}
+
+/* line 89, partials/_icons.scss */
+.hideView .avatar.large {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+}
+
+/* line 1, partials/_generic.scss */
+p {
+  width: 100%;
+  padding: 10px 2.5%;
+}
+/* line 5, partials/_generic.scss */
+p.errorMsg {
+  color: #bd2c2c;
+  font-size: 15px;
+  text-align: center;
+  clear: both;
+  background: white;
+  border: 1px dashed #bd2c2c;
+  margin: 3px auto;
+  width: 95%;
+  overflow: hidden;
+  letter-spacing: 1px;
+}
+/* line 18, partials/_generic.scss */
+p.errorMsg a {
+  color: #bd2c2c;
+  text-decoration: underline;
+}
+/* line 22, partials/_generic.scss */
+p.errorMsg a:hover {
+  color: #7f1e1e;
+}
+/* line 27, partials/_generic.scss */
+p.successMsg {
+  color: #124f42;
+  font-size: 15px;
+  text-align: center;
+  clear: both;
+  background: white;
+  border: 1px dashed #124f42;
+  margin: 3px auto;
+  width: 95%;
+  overflow: hidden;
+  letter-spacing: 1px;
+}
+
+/* line 41, partials/_generic.scss */
+span.errorMsg {
+  color: #bd2c2c;
+  font-size: 15px;
+}
+/* line 45, partials/_generic.scss */
+span.errorMsg a {
+  color: #bd2c2c;
+  text-decoration: underline;
+}
+/* line 49, partials/_generic.scss */
+span.errorMsg a:hover {
+  color: #7f1e1e;
+}
+/* line 54, partials/_generic.scss */
+span.successMsg {
+  color: #124f42;
+  font-size: 15px;
+}
+
+/* line 62, partials/_generic.scss */
+#container .content.registerContent p {
+  padding: 10px;
+}
+
+/* line 71, partials/_generic.scss */
+#itemholder.pin .item .itemActions > span, #itemholder.pin .item .itemActions > a, #itemholder.images .item .itemActions > span, #itemholder.images .item .itemActions > a {
+  background-image: url("/images/icon/sprite.png");
+  background-repeat: no-repeat;
+  background-size: initial;
+}
+/* line 76, partials/_generic.scss */
+#itemholder.pin .item .itemActions > span.collection, #itemholder.pin .item .itemActions > a.collection, #itemholder.images .item .itemActions > span.collection, #itemholder.images .item .itemActions > a.collection {
+  background-position: -60px -20px;
+}
+/* line 78, partials/_generic.scss */
+#itemholder.pin .item .itemActions > span.collection.on, #itemholder.pin .item .itemActions > span.collection:hover, #itemholder.pin .item .itemActions > a.collection.on, #itemholder.pin .item .itemActions > a.collection:hover, #itemholder.images .item .itemActions > span.collection.on, #itemholder.images .item .itemActions > span.collection:hover, #itemholder.images .item .itemActions > a.collection.on, #itemholder.images .item .itemActions > a.collection:hover {
+  background-position: -60px 0px;
+}
+/* line 82, partials/_generic.scss */
+#itemholder.pin .item .itemActions > span.likePost, #itemholder.pin .item .itemActions > a.likePost, #itemholder.images .item .itemActions > span.likePost, #itemholder.images .item .itemActions > a.likePost {
+  background-position: -20px -20px;
+}
+/* line 84, partials/_generic.scss */
+#itemholder.pin .item .itemActions > span.likePost.on, #itemholder.pin .item .itemActions > span.likePost:hover, #itemholder.pin .item .itemActions > a.likePost.on, #itemholder.pin .item .itemActions > a.likePost:hover, #itemholder.images .item .itemActions > span.likePost.on, #itemholder.images .item .itemActions > span.likePost:hover, #itemholder.images .item .itemActions > a.likePost.on, #itemholder.images .item .itemActions > a.likePost:hover {
+  background-position: -20px 0px;
+}
+/* line 88, partials/_generic.scss */
+#itemholder.pin .item .itemActions > span.dislikePost, #itemholder.pin .item .itemActions > a.dislikePost, #itemholder.images .item .itemActions > span.dislikePost, #itemholder.images .item .itemActions > a.dislikePost {
+  background-position: -40px -20px;
+}
+/* line 90, partials/_generic.scss */
+#itemholder.pin .item .itemActions > span.dislikePost.on, #itemholder.pin .item .itemActions > span.dislikePost:hover, #itemholder.pin .item .itemActions > a.dislikePost.on, #itemholder.pin .item .itemActions > a.dislikePost:hover, #itemholder.images .item .itemActions > span.dislikePost.on, #itemholder.images .item .itemActions > span.dislikePost:hover, #itemholder.images .item .itemActions > a.dislikePost.on, #itemholder.images .item .itemActions > a.dislikePost:hover {
+  background-position: -40px -100px;
+}
+/* line 94, partials/_generic.scss */
+#itemholder.pin .item .itemActions > span.report, #itemholder.pin .item .itemActions > a.report, #itemholder.images .item .itemActions > span.report, #itemholder.images .item .itemActions > a.report {
+  background-position: -120px -20px;
+}
+/* line 96, partials/_generic.scss */
+#itemholder.pin .item .itemActions > span.report.on, #itemholder.pin .item .itemActions > span.report:hover, #itemholder.pin .item .itemActions > a.report.on, #itemholder.pin .item .itemActions > a.report:hover, #itemholder.images .item .itemActions > span.report.on, #itemholder.images .item .itemActions > span.report:hover, #itemholder.images .item .itemActions > a.report.on, #itemholder.images .item .itemActions > a.report:hover {
+  background-position: -120px -100px;
+}
+/* line 100, partials/_generic.scss */
+#itemholder.pin .item .itemActions > span.itemFriend, #itemholder.pin .item .itemActions > a.itemFriend, #itemholder.images .item .itemActions > span.itemFriend, #itemholder.images .item .itemActions > a.itemFriend {
+  background-position: -80px -20px;
+}
+/* line 102, partials/_generic.scss */
+#itemholder.pin .item .itemActions > span.itemFriend.on, #itemholder.pin .item .itemActions > span.itemFriend:hover, #itemholder.pin .item .itemActions > a.itemFriend.on, #itemholder.pin .item .itemActions > a.itemFriend:hover, #itemholder.images .item .itemActions > span.itemFriend.on, #itemholder.images .item .itemActions > span.itemFriend:hover, #itemholder.images .item .itemActions > a.itemFriend.on, #itemholder.images .item .itemActions > a.itemFriend:hover {
+  background-position: -80px 0px;
+}
+
+/* line 1, partials/_banner.scss */
+.banner {
+  float: left;
+  width: 100%;
+  clear: both;
+  padding: 10px;
+  background-repeat: repeat;
+  background-position: center;
+  height: 125px;
+}
+
+/* line 14, partials/_banner.scss */
+#container .myCollectionsContainer {
+  padding-top: 34px;
+}
+
+/* line 15, style.scss */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 18, style.scss */
+.blue {
+  color: #183051;
+}
+
+/* line 21, style.scss */
+.dgrey {
+  color: gray;
+}
+
+/* line 24, style.scss */
+strong, b {
+  font-weight: bold;
+}
+
+/* line 27, style.scss */
+em, i {
+  font-style: italic;
+}
+
+/* line 31, style.scss */
+.clearfix {
+  clear: both;
+}
+
+/* line 35, style.scss */
+body {
+  line-height: 1;
+  font-family: "Droid Sans", sans-serif;
+  color: #183051;
+  background: url("/images/background.jpg") repeat;
+  overflow-x: hidden;
+  min-width: 300px;
+}
+/* line 43, style.scss */
+body input, body button, body button, body textarea {
+  font-family: "Droid Sans", sans-serif;
+}
+
+/* line 48, style.scss */
+h1 {
+  width: 100%;
+  text-align: center;
+  font-family: "Lobster Two", cursive;
+  font-size: 30px;
+  padding: 0 0 10px;
+  line-height: 35px;
+}
+/* line 56, style.scss */
+h1.noResults {
+  margin: 10px 0 20px;
+}
+
+@media (max-width: 767px) {
+  /* line 60, style.scss */
+  #container .content.login h1 {
+    font-size: 24px;
+    padding: 0;
+  }
+}
+
+/* line 66, style.scss */
+h2 {
+  width: 100%;
+  text-align: center;
+  font-family: "Lobster Two", cursive;
+  font-size: 20px;
+  color: gray;
+  padding: 0 0 10px;
+}
+/* line 74, style.scss */
+h2.subheading {
+  font-family: "Droid Sans", sans-serif;
+}
+/* line 77, style.scss */
+h2 a {
+  color: gray;
+  text-decoration: none;
+}
+/* line 80, style.scss */
+h2 a:hover {
+  color: #183051;
+}
+
+/* line 88, style.scss */
+#criteria, #criteria:focus {
+  outline: 0;
+}
+
+/* line 91, style.scss */
+.postit {
+  margin-right: 15px;
+  padding: 3px 10px;
+  background: #FFFFFF;
+  border-radius: 10px;
+  color: #FED808;
+  width: 50px;
+  text-align: center;
+}
+
+/* line 100, style.scss */
+#failcontainer {
+  width: 450px;
+  margin: 0 auto;
+  background: #F5E9DF;
+  border-radius: 6px;
+  padding: 12px;
+  height: auto;
+  min-height: 350px;
+}
+
+/* line 109, style.scss */
+.fail {
+  height: auto;
+}
+
+/* line 113, style.scss */
+.various .forminp, .fail .forminp {
+  width: 250px;
+  margin: 0;
+  font-size: 12px;
+}
+/* line 114, style.scss */
+.various input, .fail input {
+  width: 250px;
+  margin-bottom: 20px;
+}
+/* line 115, style.scss */
+.various input[type="checkbox"], .fail input[type="checkbox"] {
+  width: 20px;
+}
+/* line 116, style.scss */
+.various input[type="submit"], .fail input[type="submit"] {
+  float: right;
+  width: 100px;
+  background: #957151;
+  border-radius: 10px;
+  color: #F0F0F0;
+  padding: 5px;
+  text-transform: uppercase;
+  border: 0;
+  cursor: pointer;
+}
+
+/* line 118, style.scss */
+#container {
+  padding: 10px 10px 10px 70px;
+  width: 100%;
+  float: left;
+}
+/* line 123, style.scss */
+#container.home-background {
+  background-size: cover;
+  float: left;
+  clear: both;
+}
+/* line 130, style.scss */
+#container #home-container {
+  width: 95%;
+  max-width: 800px;
+  margin: 50px auto;
+  float: none;
+  overflow: hidden;
+}
+/* line 137, style.scss */
+#container #home-container .row {
+  float: left;
+  clear: both;
+  width: 100%;
+}
+/* line 142, style.scss */
+#container #home-container .row h1 {
+  font-family: "Lobster Two", cursive;
+  color: #183051;
+  font-size: 36px;
+  line-height: 44px;
+  float: left;
+  width: 100%;
+  text-align: center;
+}
+/* line 152, style.scss */
+#container #home-container .row .home {
+  float: left;
+  height: 200px;
+  background: white;
+  margin-bottom: 15px;
+  border: 2px solid gray;
+  text-align: center;
+}
+/* line 160, style.scss */
+#container #home-container .row .home a {
+  color: blue;
+  font-size: 14px;
+  text-align: center;
+  color: #183051;
+  text-decoration: none;
+  padding: 10px;
+}
+/* line 169, style.scss */
+#container #home-container .row .home.posts {
+  width: 32%;
+}
+/* line 173, style.scss */
+#container #home-container .row .home.events {
+  width: 32%;
+  margin: 0 2%;
+}
+/* line 177, style.scss */
+#container #home-container .row .home.tools {
+  width: 32%;
+}
+/* line 180, style.scss */
+#container #home-container .row .home.blog {
+  width: 49%;
+  margin-right: 1%;
+  height: 150px;
+}
+/* line 185, style.scss */
+#container #home-container .row .home.wiki {
+  width: 49%;
+  margin-left: 1%;
+  height: 150px;
+}
+/* line 191, style.scss */
+#container #home-container .row #countdown-holder {
+  float: left;
+  width: 100%;
+  text-align: center;
+  font-family: "Lobster Two", cursive;
+  font-size: 22px;
+  line-height: 35px;
+  color: white;
+  padding: 15px;
+  border: 2px solid gray;
+  background: #183051;
+}
+/* line 211, style.scss */
+#container .content {
+  width: 50%;
+  margin: 10px 25%;
+  font-size: 13px;
+  padding: 0 25px;
+  display: inline-block;
+  font-size: 13px;
+  line-height: 19px;
+}
+@media (max-width: 767px) {
+  /* line 211, style.scss */
+  #container .content {
+    padding: 15px;
+  }
+}
+/* line 223, style.scss */
+#container .content.content1000 {
+  width: 95%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 5px 0;
+  display: block;
+  float: none;
+}
+@media (max-width: 767px) {
+  /* line 223, style.scss */
+  #container .content.content1000 {
+    text-align: center;
+  }
+}
+/* line 238, style.scss */
+#container .content.content600 {
+  width: 95%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 5px 0;
+  display: block;
+  float: none;
+}
+/* line 246, style.scss */
+#container .content.content600 p {
+  color: #183051;
+}
+/* line 249, style.scss */
+#container .content.content600 p a {
+  color: #183051;
+  text-decoration: none;
+}
+/* line 252, style.scss */
+#container .content.content600 p a:hover {
+  color: #124f42;
+  text-decoration: underline;
+}
+@media (max-width: 767px) {
+  /* line 238, style.scss */
+  #container .content.content600 {
+    text-align: center;
+  }
+}
+/* line 265, style.scss */
+#container .content.content600 #createList label {
+  width: 50%;
+  float: left;
+  clear: both;
+  padding-right: 5%;
+  height: 35px;
+  padding: 8px 0;
+}
+@media (max-width: 767px) {
+  /* line 265, style.scss */
+  #container .content.content600 #createList label {
+    width: 100%;
+  }
+}
+/* line 277, style.scss */
+#container .content.content600 #createList input, #container .content.content600 #createList select {
+  width: 50%;
+  float: left;
+  margin-top: 0;
+}
+@media (max-width: 767px) {
+  /* line 277, style.scss */
+  #container .content.content600 #createList input, #container .content.content600 #createList select {
+    width: 100%;
+  }
+}
+/* line 285, style.scss */
+#container .content.content600 #createList .listTypeOption {
+  float: left;
+  max-width: 23%;
+  width: 100%;
+  background: white;
+  border: 1px solid #e8e8e8;
+  padding: 15px 1%;
+  color: #183051;
+  margin: 10px 1% 20px;
+  text-align: center;
+  font-family: "Lobster Two", cursive;
+  cursor: pointer;
+  font-size: 22px;
+}
+@media (max-width: 767px) {
+  /* line 285, style.scss */
+  #container .content.content600 #createList .listTypeOption {
+    width: 48%;
+    max-width: 48%;
+  }
+}
+/* line 304, style.scss */
+#container .content.content600 #createList .listTypeOption img {
+  width: 90px;
+  max-width: 100%;
+  margin: 0 auto;
+  display: block;
+}
+/* line 312, style.scss */
+#container .content.content600 #createList .listTypeOption.selected {
+  border: 2px solid #124f42;
+  color: #124f42;
+}
+@media (max-width: 767px) {
+  /* line 285, style.scss */
+  #container .content.content600 #createList .listTypeOption {
+    max-width: 100%;
+  }
+}
+/* line 321, style.scss */
+#container .content.content600 #createList .listTypeOption img {
+  max-width: 100%;
+}
+/* line 329, style.scss */
+#container .content.center {
+  text-align: center;
+}
+/* line 333, style.scss */
+#container .content.prepost {
+  margin: 10px 20%;
+  width: 60%;
+}
+/* line 337, style.scss */
+#container .content.prepost .prePoster {
+  float: left;
+  width: 27%;
+  margin: 15px 2.66%;
+}
+/* line 342, style.scss */
+#container .content.prepost .prePoster img {
+  float: left;
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+  max-width: 200px;
+}
+/* line 349, style.scss */
+#container .content.prepost .prePoster h2 {
+  width: 100%;
+  float: left;
+  font-family: "Lobster Two", cursive;
+  letter-spacing: 1px;
+  color: #183051;
+}
+/* line 356, style.scss */
+#container .content.prepost .prePoster:hover {
+  cursor: pointer;
+}
+/* line 359, style.scss */
+#container .content.prepost .prePoster:hover h2 {
+  text-decoration: underline;
+}
+/* line 367, style.scss */
+#container .content .content {
+  width: 50%;
+  margin: 0 25%;
+  font-size: 13px;
+  padding: 0;
+  border-radius: 0;
+  background: #FFF;
+  border: 0;
+  line-height: 1.5;
+}
+/* line 377, style.scss */
+#container .content .content .forminp#smaller {
+  font-size: 11px;
+  float: left;
+  clear: both;
+}
+/* line 386, style.scss */
+#container .content.registerContent .content {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 450px;
+}
+/* line 393, style.scss */
+#container .content h2 {
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
+  line-height: 40px;
+  clear: both;
+}
+/* line 401, style.scss */
+#container .content p {
+  font-size: 13px;
+  line-height: 21px;
+  padding: 10px 0;
+  width: 100%;
+  text-align: center;
+  clear: both;
+}
+/* line 411, style.scss */
+#container .content.static {
+  text-align: center;
+  width: 95%;
+  margin: 0 auto;
+  padding: 0 2.5%;
+}
+/* line 417, style.scss */
+#container .content.static .bottomLink {
+  width: 40%;
+  margin: 15px 2.5%;
+  padding: 10px 2.5%;
+  display: inline-block;
+  border: 1px solid #e8e8e8;
+  text-decoration: none;
+  color: #183051;
+}
+/* line 426, style.scss */
+#container .content.static .bottomLink:hover {
+  background: #183051;
+  color: white;
+}
+/* line 432, style.scss */
+#container .content #video {
+  float: left;
+  max-width: 100%;
+  clear: both;
+  margin-bottom: 20px;
+}
+/* line 440, style.scss */
+#container .content input[type='text'], #container .content input[type='password'], #container .content input[type='email'], #container .content textarea {
+  margin-bottom: 10px;
+  width: 100%;
+  font-size: 11px;
+  letter-spacing: 2px;
+  padding: 10px;
+  border: 1px solid #e8e8e8;
+  outline: 0;
+}
+/* line 449, style.scss */
+#container .content select {
+  margin-bottom: 10px;
+  width: 100%;
+  font-size: 11px;
+  letter-spacing: 2px;
+  padding-left: 5px;
+  height: 35px;
+  border: 1px solid #e8e8e8;
+  outline: 0;
+}
+/* line 459, style.scss */
+#container .content input.nextToUp {
+  float: left;
+}
+/* line 462, style.scss */
+#container .content button {
+  outline: 0;
+}
+/* line 465, style.scss */
+#container .content a.upload {
+  display: inline-block;
+  padding: 5px 25px;
+  background: white;
+  border: 1px dashed #183051;
+  text-transform: uppercase;
+  clear: both;
+  overflow: hidden;
+  letter-spacing: 1px;
+  text-align: center;
+  color: #183051;
+  font-size: 12px;
+  margin: 0 auto;
+  text-decoration: none;
+}
+/* line 481, style.scss */
+#container .content #filename {
+  width: 100%;
+  color: transparent;
+  outline: 0;
+  cursor: pointer;
+}
+/* line 487, style.scss */
+#container .content #filename::-webkit-file-upload-button {
+  visibility: hidden;
+}
+/* line 490, style.scss */
+#container .content #filename:before {
+  content: 'Select file';
+  display: block;
+  background: white;
+  margin: 0 auto;
+  color: #183051;
+  border: 1px dashed #183051;
+  padding: 8px;
+  text-align: center;
+  width: 200px;
+  max-width: 100%;
+  outline: 0;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+/* line 509, style.scss */
+#container .content #filename:hover:before {
+  border-color: black;
+}
+/* line 512, style.scss */
+#container .content #filename:active:before {
+  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}
+/* line 516, style.scss */
+#container .content input[type='submit'], #container .content button {
+  float: none;
+  min-width: 80%;
+  padding: 10px 0;
+  text-align: center;
+  background: #183051;
+  border: 0;
+  cursor: pointer;
+  color: white;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 2px;
+  margin: 15px auto;
+  display: block;
+}
+/* line 531, style.scss */
+#container .content input[type='submit']:hover, #container .content button:hover {
+  background: #124f42;
+}
+/* line 537, style.scss */
+#container .content#termsPage, #container .content#cookiePolicy, #container .content#privacy {
+  width: 100%;
+  max-width: 800px;
+  padding: 0 2.5%;
+  margin: 0 auto;
+  float: none;
+  display: block;
+}
+/* line 545, style.scss */
+#container .content#termsPage ul, #container .content#cookiePolicy ul, #container .content#privacy ul {
+  list-style: disc;
+  text-align: left;
+  padding-left: 40px;
+}
+/* line 550, style.scss */
+#container .content#termsPage ul li, #container .content#cookiePolicy ul li, #container .content#privacy ul li {
+  text-align: left;
+}
+/* line 555, style.scss */
+#container .content#termsPage p, #container .content#termsPage h2, #container .content#cookiePolicy p, #container .content#cookiePolicy h2, #container .content#privacy p, #container .content#privacy h2 {
+  text-align: left;
+}
+/* line 558, style.scss */
+#container .content#termsPage p a, #container .content#termsPage h2 a, #container .content#cookiePolicy p a, #container .content#cookiePolicy h2 a, #container .content#privacy p a, #container .content#privacy h2 a {
+  color: #124f42;
+  text-decoration: none;
+}
+/* line 562, style.scss */
+#container .content#termsPage p a:hover, #container .content#termsPage h2 a:hover, #container .content#cookiePolicy p a:hover, #container .content#cookiePolicy h2 a:hover, #container .content#privacy p a:hover, #container .content#privacy h2 a:hover {
+  text-decoration: underline;
+}
+/* line 568, style.scss */
+#container .content#termsPage h2, #container .content#cookiePolicy h2, #container .content#privacy h2 {
+  font-family: "Lobster Two", cursive;
+  font-size: 24px;
+}
+/* line 574, style.scss */
+#container .content#termsPage h2 {
+  font-family: "Droid Sans", sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+/* line 587, style.scss */
+#container.pageDetails.editMode .content input, #container.pageDetails.editMode .content textarea, #container.pageDetails.editMode .content button, #container.pageDetails.editMode .content .hideView, #container.pagePreferences.editMode .content input, #container.pagePreferences.editMode .content textarea, #container.pagePreferences.editMode .content button, #container.pagePreferences.editMode .content .hideView, #container.pageContent.editMode .content input, #container.pageContent.editMode .content textarea, #container.pageContent.editMode .content button, #container.pageContent.editMode .content .hideView {
+  display: block;
+}
+/* line 590, style.scss */
+#container.pageDetails.editMode .content #editChangeDetails, #container.pageDetails.editMode .content .infoContent, #container.pageDetails.editMode .content .colourBox, #container.pageDetails.editMode .content .selectedAvatar, #container.pagePreferences.editMode .content #editChangeDetails, #container.pagePreferences.editMode .content .infoContent, #container.pagePreferences.editMode .content .colourBox, #container.pagePreferences.editMode .content .selectedAvatar, #container.pageContent.editMode .content #editChangeDetails, #container.pageContent.editMode .content .infoContent, #container.pageContent.editMode .content .colourBox, #container.pageContent.editMode .content .selectedAvatar {
+  display: none;
+}
+/* line 594, style.scss */
+#container.pageDetails.editMode .content .formRow span.title, #container.pagePreferences.editMode .content .formRow span.title, #container.pageContent.editMode .content .formRow span.title {
+  line-height: 36px;
+}
+/* line 599, style.scss */
+#container.pageDetails.editMode .content ul#selectAvatar, #container.pagePreferences.editMode .content ul#selectAvatar, #container.pageContent.editMode .content ul#selectAvatar {
+  float: left;
+  width: 100%;
+  clear: both;
+  list-style: none;
+}
+/* line 604, style.scss */
+#container.pageDetails.editMode .content ul#selectAvatar li, #container.pagePreferences.editMode .content ul#selectAvatar li, #container.pageContent.editMode .content ul#selectAvatar li {
+  float: left;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+  opacity: 0.5;
+}
+/* line 607, style.scss */
+#container.pageDetails.editMode .content ul#selectAvatar li.selected, #container.pagePreferences.editMode .content ul#selectAvatar li.selected, #container.pageContent.editMode .content ul#selectAvatar li.selected {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+/* line 610, style.scss */
+#container.pageDetails.editMode .content ul#selectAvatar li:hover, #container.pagePreferences.editMode .content ul#selectAvatar li:hover, #container.pageContent.editMode .content ul#selectAvatar li:hover {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=75);
+  opacity: 0.75;
+  cursor: pointer;
+}
+/* line 619, style.scss */
+#container.pageDetails .content, #container.pagePreferences .content, #container.pageContent .content {
+  padding: 0;
+}
+/* line 622, style.scss */
+#container.pageDetails .formRow, #container.pagePreferences .formRow, #container.pageContent .formRow {
+  float: left;
+  width: 100%;
+  clear: both;
+  padding: 5px 0;
+}
+/* line 628, style.scss */
+#container.pageDetails .formRow input, #container.pageDetails .formRow select, #container.pagePreferences .formRow input, #container.pagePreferences .formRow select, #container.pageContent .formRow input, #container.pageContent .formRow select {
+  margin: 0;
+}
+/* line 632, style.scss */
+#container.pageDetails a.fakeButton, #container.pagePreferences a.fakeButton, #container.pageContent a.fakeButton {
+  float: right;
+  background: #183051;
+  color: white;
+  width: 60%;
+  padding: 5px 10px;
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 12px;
+  margin-top: 15px;
+  text-decoration: none;
+}
+/* line 646, style.scss */
+#container.pageDetails a.fakeButton:hover, #container.pagePreferences a.fakeButton:hover, #container.pageContent a.fakeButton:hover {
+  background: #124f42;
+}
+/* line 650, style.scss */
+#container.pageDetails h1, #container.pagePreferences h1, #container.pageContent h1 {
+  padding-top: 5px;
+  padding-bottom: 20px;
+}
+/* line 654, style.scss */
+#container.pageDetails h2, #container.pagePreferences h2, #container.pageContent h2 {
+  text-align: left;
+  font-family: "Lobster Two", cursive;
+  color: #183051;
+  font-size: 24px;
+}
+/* line 660, style.scss */
+#container.pageDetails h3, #container.pagePreferences h3, #container.pageContent h3 {
+  font-size: 20px;
+  color: gray;
+  text-align: left;
+  font-family: "Lobster Two", cursive;
+  width: 100%;
+  float: left;
+  margin: 0;
+  clear: both;
+  padding: 0;
+}
+/* line 674, style.scss */
+#container.pageDetails span.title, #container.pagePreferences span.title, #container.pageContent span.title {
+  float: left;
+  width: 40%;
+  color: gray;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+/* line 682, style.scss */
+#container.pageDetails span.info, #container.pagePreferences span.info, #container.pageContent span.info {
+  float: left;
+  width: 60%;
+}
+/* line 686, style.scss */
+#container.pageDetails span.info .small, #container.pagePreferences span.info .small, #container.pageContent span.info .small {
+  color: #bd2c2c;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+/* line 693, style.scss */
+#container.pageDetails span.info input, #container.pageDetails span.info textarea, #container.pageDetails span.info .hideView, #container.pageDetails span.info button, #container.pagePreferences span.info input, #container.pagePreferences span.info textarea, #container.pagePreferences span.info .hideView, #container.pagePreferences span.info button, #container.pageContent span.info input, #container.pageContent span.info textarea, #container.pageContent span.info .hideView, #container.pageContent span.info button {
+  display: none;
+}
+/* line 696, style.scss */
+#container.pageDetails span.info .colourBox, #container.pagePreferences span.info .colourBox, #container.pageContent span.info .colourBox {
+  width: 50px;
+  height: 20px;
+  display: block;
+  float: left;
+  display: block;
+}
+/* line 704, style.scss */
+#container.pageDetails span.info a, #container.pagePreferences span.info a, #container.pageContent span.info a {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 5px 15px;
+  display: inline-block;
+  border: 1px dashed #183051;
+  text-decoration: none;
+  background: #e8e8e8;
+  color: #183051;
+  font-size: 11px;
+}
+/* line 715, style.scss */
+#container.pageDetails span.info a:hover, #container.pagePreferences span.info a:hover, #container.pageContent span.info a:hover {
+  background: #183051;
+  color: #e8e8e8;
+}
+/* line 722, style.scss */
+#container.pageDetails span.info .link, #container.pageDetails span.info button, #container.pagePreferences span.info .link, #container.pagePreferences span.info button, #container.pageContent span.info .link, #container.pageContent span.info button {
+  border: 0;
+  outline: 0;
+  background: #183051;
+  float: left;
+  width: 100%;
+  color: white;
+  padding: 10px 15px;
+  text-transform: uppercase;
+  font-size: 12px;
+  margin-top: 25px;
+  text-align: center;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+/* line 737, style.scss */
+#container.pageDetails span.info .link:hover, #container.pageDetails span.info button:hover, #container.pagePreferences span.info .link:hover, #container.pagePreferences span.info button:hover, #container.pageContent span.info .link:hover, #container.pageContent span.info button:hover {
+  background: #124f42;
+}
+/* line 746, style.scss */
+#container.countdownPage {
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+}
+/* line 749, style.scss */
+#container.countdownPage h1 {
+  font-family: "Droid Sans", sans-serif;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 1px;
+  margin: 20px 0;
+}
+/* line 756, style.scss */
+#container.countdownPage h2.countdownHeader {
+  text-align: center;
+  font-family: "Lobster Two", cursive;
+  font-size: 40px;
+  line-height: 45px;
+  margin-bottom: 40px;
+  color: #183051;
+}
+/* line 765, style.scss */
+#container.countdownPage #shareThisPage {
+  text-align: center;
+}
+/* line 768, style.scss */
+#container.countdownPage #shareThisPage h3 {
+  color: gray;
+  text-transform: uppercase;
+  font-size: 12px;
+  padding: 5px 0;
+  float: left;
+  text-align: center;
+  width: 100%;
+  clear: both;
+  letter-spacing: 1px;
+}
+/* line 779, style.scss */
+#container.countdownPage #shareThisPage span, #container.countdownPage #shareThisPage a {
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+}
+/* line 784, style.scss */
+#container.countdownPage #shareThisPage span img, #container.countdownPage #shareThisPage a img {
+  display: block;
+  max-width: 100%;
+}
+/* line 790, style.scss */
+#container.countdownPage #durationSelect {
+  clear: both;
+  max-width: 100%;
+  width: 400px;
+  margin: 40px auto;
+  text-align: center;
+}
+/* line 797, style.scss */
+#container.countdownPage #durationSelect label {
+  float: left;
+  width: 100%;
+  color: gray;
+  text-transform: uppercase;
+  font-size: 12px;
+  padding: 5px 0;
+  text-align: center;
+  letter-spacing: 1px;
+}
+/* line 807, style.scss */
+#container.countdownPage #durationSelect select {
+  display: inline-block;
+  vertical-align: top;
+  height: 30px;
+  margin: 0 5px;
+  width: 150px;
+  font-family: "Droid Sans", sans-serif;
+  letter-spacing: 1px;
+  font-size: 12px;
+  padding-left: 10px;
+  outline: 0;
+  border: 1px solid #e8e8e8;
+}
+/* line 820, style.scss */
+#container.countdownPage #durationSelect button {
+  padding: 8px 25px;
+  text-transform: uppercase;
+  outline: 0;
+  letter-spacing: 1px;
+  display: inline-block;
+  vertical-align: top;
+  font-size: 11px;
+  height: 30px;
+  margin: 0 5px;
+}
+/* line 834, style.scss */
+#container.list h2 {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+  width: 100%;
+  font-size: 13px;
+  color: gray;
+  line-height: 0.5;
+}
+/* line 843, style.scss */
+#container.list #pleaseLogin {
+  font-size: 13px;
+  color: #183051;
+  margin: 20px auto;
+  letter-spacing: 1px;
+  text-align: center;
+}
+/* line 850, style.scss */
+#container.list #pleaseLogin a {
+  text-decoration: none;
+  color: #183051;
+}
+/* line 853, style.scss */
+#container.list #pleaseLogin a:hover {
+  text-decoration: underline;
+}
+
+/* line 862, style.scss */
+#paginationContainer {
+  float: left;
+  width: 100%;
+  clear: both;
+  text-align: center;
+  border-top: 1px dotted rgba(24, 48, 81, 0.3);
+  padding: 5px 0;
+  margin: 25px 0 0;
+}
+/* line 871, style.scss */
+#paginationContainer .paginationHeader {
+  float: left;
+  width: 100%;
+  text-align: center;
+  font-size: 9px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding-bottom: 5px;
+}
+/* line 881, style.scss */
+#paginationContainer #pagination {
+  width: 50%;
+  float: left;
+}
+/* line 885, style.scss */
+#paginationContainer #pagination > span, #paginationContainer #pagination a {
+  display: inline-block;
+  padding: 5px;
+  margin: 0 5px;
+  background: #183051;
+  color: white;
+  text-decoration: none;
+  font-size: 12px;
+}
+/* line 894, style.scss */
+#paginationContainer #pagination > span.selected, #paginationContainer #pagination a.selected {
+  background: #124f42;
+}
+/* line 899, style.scss */
+#paginationContainer #perPageContainer, #paginationContainer #changeView {
+  float: left;
+  width: 17.5%;
+}
+/* line 903, style.scss */
+#paginationContainer #perPageContainer > *, #paginationContainer #changeView > * {
+  font-size: 11px;
+}
+/* line 906, style.scss */
+#paginationContainer #perPageContainer > * > a, #paginationContainer #changeView > * > a {
+  height: 20px;
+  line-height: 20px;
+}
+/* line 913, style.scss */
+#paginationContainer #updateView {
+  width: 15%;
+  float: left;
+}
+/* line 917, style.scss */
+#paginationContainer #updateView button {
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 1px;
+  padding: 3px 18px;
+  cursor: context-menu;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
+  opacity: 0.3;
+}
+/* line 925, style.scss */
+#paginationContainer #updateView button.active {
+  cursor: pointer;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+
+/* line 933, style.scss */
+#listOverlay, #reportOverlay, #ratingOverlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  display: none;
+  left: 0;
+  top: 0;
+}
+/* line 942, style.scss */
+#listOverlay.show, #reportOverlay.show, #ratingOverlay.show {
+  display: block;
+}
+/* line 946, style.scss */
+#listOverlay #listBox, #reportOverlay #listBox, #ratingOverlay #listBox {
+  width: 375px;
+  height: 250px;
+  padding: 25px;
+  max-width: 100%;
+  position: absolute;
+  top: -100px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  background: white;
+  text-align: center;
+  border: 1px solid #ccc;
+}
+/* line 961, style.scss */
+#listOverlay #listBox.already, #reportOverlay #listBox.already, #ratingOverlay #listBox.already {
+  height: 325px;
+}
+/* line 965, style.scss */
+#listOverlay #listBox h3, #reportOverlay #listBox h3, #ratingOverlay #listBox h3 {
+  font-family: "Lobster Two", cursive;
+  color: #183051;
+  font-size: 40px;
+  float: left;
+  width: 100%;
+  clear: both;
+  text-align: center;
+}
+/* line 975, style.scss */
+#listOverlay #listBox select, #reportOverlay #listBox select, #ratingOverlay #listBox select {
+  width: 100%;
+  float: left;
+  clear: both;
+  margin-top: 25px;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+/* line 983, style.scss */
+#listOverlay #listBox select option, #reportOverlay #listBox select option, #ratingOverlay #listBox select option {
+  width: 100%;
+  padding: 3px 0;
+}
+/* line 988, style.scss */
+#listOverlay #listBox .button, #reportOverlay #listBox .button, #ratingOverlay #listBox .button {
+  margin: 10px 0;
+  float: left;
+  width: 100%;
+  text-align: center;
+  background: #183051;
+  color: white;
+  font-size: 11px;
+  padding: 10px 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+/* line 1001, style.scss */
+#listOverlay #listBox .button:hover, #reportOverlay #listBox .button:hover, #ratingOverlay #listBox .button:hover {
+  background: #124f42;
+}
+/* line 1005, style.scss */
+#listOverlay #listBox .listClose, #reportOverlay #listBox .listClose, #ratingOverlay #listBox .listClose {
+  background: white;
+  text-transform: uppercase;
+  color: gray;
+  letter-spacing: 1px;
+  display: block;
+  width: 100px;
+  bottom: 0;
+  border: 1px solid #ccc;
+  margin-bottom: -12px;
+  font-size: 11px;
+  left: 50%;
+  margin-left: -50px;
+  padding: 5px 10px;
+  position: absolute;
+  cursor: pointer;
+  text-align: center;
+}
+/* line 1023, style.scss */
+#listOverlay #listBox .listClose:hover, #reportOverlay #listBox .listClose:hover, #ratingOverlay #listBox .listClose:hover {
+  background: #bd2c2c;
+  color: white;
+  border: 1px solid white;
+}
+/* line 1029, style.scss */
+#listOverlay #listBox #currentCollections, #reportOverlay #listBox #currentCollections, #ratingOverlay #listBox #currentCollections {
+  float: left;
+  width: 100%;
+  clear: both;
+  margin: 15px 0;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+/* line 1037, style.scss */
+#listOverlay #listBox #currentCollections a, #reportOverlay #listBox #currentCollections a, #ratingOverlay #listBox #currentCollections a {
+  color: #124f42;
+  text-decoration: none;
+}
+/* line 1041, style.scss */
+#listOverlay #listBox #currentCollections a:hover, #reportOverlay #listBox #currentCollections a:hover, #ratingOverlay #listBox #currentCollections a:hover {
+  text-decoration: underline;
+}
+/* line 1046, style.scss */
+#listOverlay #listBox #getOtherLists, #reportOverlay #listBox #getOtherLists, #ratingOverlay #listBox #getOtherLists {
+  clear: both;
+  padding: 8px 20px;
+  display: inline-block;
+  background: white;
+  color: #183051;
+  text-transform: uppercase;
+  font-size: 10px;
+  border: 1px dashed #183051;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+/* line 1059, style.scss */
+#listOverlay #listBox #getOtherLists:hover, #reportOverlay #listBox #getOtherLists:hover, #ratingOverlay #listBox #getOtherLists:hover {
+  background: #124f42;
+  color: white;
+}
+/* line 1065, style.scss */
+#listOverlay #reportBox, #reportOverlay #reportBox, #ratingOverlay #reportBox {
+  width: 350px;
+  max-width: 100%;
+  height: 300px;
+  padding: 25px;
+  position: absolute;
+  top: -100px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  background: white;
+  border: 1px solid #ccc;
+}
+/* line 1079, style.scss */
+#listOverlay #reportBox h3, #reportOverlay #reportBox h3, #ratingOverlay #reportBox h3 {
+  font-family: "Lobster Two", cursive;
+  color: #183051;
+  font-size: 40px;
+  float: left;
+  width: 100%;
+  clear: both;
+  text-align: center;
+  margin-bottom: 5px;
+}
+/* line 1089, style.scss */
+#listOverlay #reportBox p, #reportOverlay #reportBox p, #ratingOverlay #reportBox p {
+  float: left;
+  width: 100%;
+  clear: both;
+  font-size: 12px;
+  text-align: center;
+  padding: 5px 0 10px;
+}
+/* line 1098, style.scss */
+#listOverlay #reportBox textarea, #reportOverlay #reportBox textarea, #ratingOverlay #reportBox textarea {
+  width: 100%;
+  height: 100px;
+  float: left;
+  clear: both;
+  margin-top: 0px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  padding: 10px;
+}
+/* line 1108, style.scss */
+#listOverlay #reportBox button, #reportOverlay #reportBox button, #ratingOverlay #reportBox button {
+  margin: 10px 0;
+  float: left;
+  width: 100%;
+  text-align: center;
+  background: #183051;
+  color: white;
+  font-size: 10px;
+  padding: 10px 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+/* line 1121, style.scss */
+#listOverlay #reportBox button:hover, #reportOverlay #reportBox button:hover, #ratingOverlay #reportBox button:hover {
+  background: #124f42;
+}
+/* line 1125, style.scss */
+#listOverlay #reportBox .reportClose, #reportOverlay #reportBox .reportClose, #ratingOverlay #reportBox .reportClose {
+  background: white;
+  text-transform: uppercase;
+  color: gray;
+  letter-spacing: 1px;
+  display: block;
+  width: 100px;
+  bottom: 0;
+  border: 1px solid #ccc;
+  margin-bottom: -12px;
+  font-size: 11px;
+  left: 50%;
+  margin-left: -50px;
+  padding: 5px 10px;
+  position: absolute;
+  cursor: pointer;
+  text-align: center;
+}
+/* line 1143, style.scss */
+#listOverlay #reportBox .reportClose:hover, #reportOverlay #reportBox .reportClose:hover, #ratingOverlay #reportBox .reportClose:hover {
+  background: #bd2c2c;
+  color: white;
+  border: 1px solid white;
+}
+/* line 1150, style.scss */
+#listOverlay #ratingBox, #reportOverlay #ratingBox, #ratingOverlay #ratingBox {
+  width: 350px;
+  max-width: 100%;
+  height: 300px;
+  padding: 25px;
+  position: absolute;
+  top: -100px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  background: white;
+  border: 1px solid #ccc;
+}
+/* line 1164, style.scss */
+#listOverlay #ratingBox h3, #reportOverlay #ratingBox h3, #ratingOverlay #ratingBox h3 {
+  font-family: "Lobster Two", cursive;
+  color: #183051;
+  font-size: 40px;
+  float: left;
+  width: 100%;
+  clear: both;
+  text-align: center;
+  margin-bottom: 5px;
+}
+/* line 1174, style.scss */
+#listOverlay #ratingBox p, #reportOverlay #ratingBox p, #ratingOverlay #ratingBox p {
+  float: left;
+  width: 100%;
+  clear: both;
+  font-size: 12px;
+  text-align: center;
+  padding: 5px 0 10px;
+}
+/* line 1183, style.scss */
+#listOverlay #ratingBox textarea, #reportOverlay #ratingBox textarea, #ratingOverlay #ratingBox textarea {
+  width: 100%;
+  height: 100px;
+  float: left;
+  clear: both;
+  margin-top: 0px;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+/* line 1192, style.scss */
+#listOverlay #ratingBox button, #reportOverlay #ratingBox button, #ratingOverlay #ratingBox button {
+  margin: 10px 0;
+  float: left;
+  width: 100%;
+  text-align: center;
+  background: #183051;
+  color: white;
+  font-size: 10px;
+  padding: 10px 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+/* line 1205, style.scss */
+#listOverlay #ratingBox button:hover, #reportOverlay #ratingBox button:hover, #ratingOverlay #ratingBox button:hover {
+  background: #124f42;
+}
+
+/* line 1212, style.scss */
+#container .content .postIt .chosenImage {
+  margin: 0 auto 10px;
+  max-width: 100%;
+  display: block;
+}
+/* line 1218, style.scss */
+#container .content .postIt .postRow {
+  width: 100%;
+  float: left;
+  clear: both;
+  margin: 5px auto;
+}
+/* line 1224, style.scss */
+#container .content .postIt .postRow span {
+  width: 25%;
+  float: left;
+  display: block;
+}
+/* line 1229, style.scss */
+#container .content .postIt .postRow input, #container .content .postIt .postRow button, #container .content .postIt .postRow select {
+  width: 75%;
+  float: left;
+  display: block;
+}
+
+/* line 1237, style.scss */
+#mainContent {
+  width: 90%;
+  margin: 0 auto;
+  padding: 5%;
+  font-size: 13px;
+  min-height: 400px;
+}
+
+/* line 1239, style.scss */
+.terms {
+  line-height: 1.6;
+}
+/* line 1242, style.scss */
+.terms strong {
+  text-transform: uppercase;
+}
+
+/* line 1247, style.scss */
+#left, #right {
+  float: left;
+}
+
+/* line 1248, style.scss */
+#left nav {
+  border: 3px solid #fed808;
+  border-left: 0;
+  border-radius: 0 10px 10px 0;
+  background: url("../images/bg.png") repeat;
+  float: left;
+  margin-top: 10px;
+}
+
+/* line 1256, style.scss */
+#update ul {
+  margin-left: 10px;
+}
+/* line 1259, style.scss */
+#update ul li {
+  list-style: none;
+  float: left;
+  margin: 4px 10px;
+  font-size: 14px;
+}
+
+/* line 1266, style.scss */
+#postimages {
+  float: left;
+  width: 100%;
+  padding: 0;
+  text-align: center;
+}
+/* line 1272, style.scss */
+#postimages form {
+  width: 100%;
+  text-align: center;
+}
+/* line 1277, style.scss */
+#postimages .postdiv {
+  padding: 10px;
+  overflow: hidden;
+  display: inline-block;
+  cursor: pointer;
+  width: 100%;
+  vertical-align: middle;
+  max-width: 400px;
+}
+/* line 1286, style.scss */
+#postimages .postdiv .postimage {
+  max-width: 100%;
+  margin: 0 auto;
+  display: block;
+}
+/* line 1293, style.scss */
+#postimages #chosenImg, #postimages #postOptionAction {
+  max-width: 50%;
+  margin: 0 auto;
+}
+/* line 1297, style.scss */
+#postimages #chosenImg img, #postimages #postOptionAction img {
+  max-width: 100%;
+}
+/* line 1301, style.scss */
+#postimages #chosenImg button, #postimages #postOptionAction button {
+  clear: both;
+  background: #183051;
+  width: 125px;
+  color: white;
+  border: 0;
+  cursor: pointer;
+  padding: 10px 15px;
+  float: left;
+}
+/* line 1311, style.scss */
+#postimages #chosenImg button:hover, #postimages #postOptionAction button:hover {
+  background: #124f42;
+}
+/* line 1316, style.scss */
+#postimages #chosenImg .goBack, #postimages #postOptionAction .goBack {
+  float: left;
+  background: #bd2c2c;
+  padding: 10px 15px;
+  width: 125px;
+  color: white;
+  font-size: 13px;
+}
+/* line 1324, style.scss */
+#postimages #chosenImg .goBack:hover, #postimages #postOptionAction .goBack:hover {
+  background: #183051;
+  color: white;
+}
+/* line 1330, style.scss */
+#postimages h2 {
+  font-family: "Lobster Two", cursive;
+  width: 100%;
+  text-align: center;
+}
+
+/* line 1339, style.scss */
+#selectedimg {
+  background: #183051;
+}
+
+/* line 1345, style.scss */
+.errorNoItems {
+  margin: 20px auto;
+  width: 100%;
+  max-width: 500px;
+  display: block;
+  font-style: italic;
+  line-height: 21px;
+  font-size: 14px;
+  text-align: center;
+  clear: both;
+}
+
+/* line 1359, style.scss */
+button {
+  background: #183051;
+  color: white;
+  border: 0;
+  cursor: pointer;
+}
+
+/* line 1365, style.scss */
+.loginLinks {
+  float: left;
+  width: 100%;
+  clear: both;
+  margin-top: 25px;
+}
+/* line 1371, style.scss */
+.loginLinks a, .loginLinks div a {
+  font-size: 10px;
+  color: #183051;
+  text-decoration: none;
+  border: 1px dashed gray;
+  padding: 2px 15px;
+  background: white;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+  display: inline-block;
+}
+/* line 1383, style.scss */
+.loginLinks a:hover, .loginLinks div a:hover {
+  color: #183051;
+  border: 1px dashed #183051;
+}
+/* line 1390, style.scss */
+.loginLinks > div {
+  width: 100%;
+  margin-bottom: 10px;
+  float: left;
+  clear: both;
+  text-align: center;
+}
+
+/* line 1398, style.scss */
+.forminp.smaller {
+  font-size: 11px;
+  line-height: 15px;
+  float: left;
+  clear: both;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+/* line 1407, style.scss */
+.forminp.smaller a {
+  color: #183051;
+  text-decoration: underline;
+}
+/* line 1411, style.scss */
+.forminp.smaller a:hover {
+  color: #124f42;
+}
+
+/* line 1419, style.scss */
+.itemActions {
+  /*
+  
+  	.likePost {
+  		color:$lgrey;
+  		//background-image:url('/images/action/like.png');
+  
+  		&:hover {
+  			color:$blue;
+  			//background-image:url('/images/action/like-active.png');
+  		}
+  		&.on {
+  			color:$blue;
+  			//background-image:url('/images/action/like-active.png');
+  
+  			&:hover {
+  				color:$green;
+  				//background-image:url('/images/action/like-on.png');
+  			}
+  		}
+  	}
+  	.dislikePost {
+  		background-image:url('/images/action/dislike.png');
+  
+  		&:hover {
+  			background-image:url('/images/action/dislike-active.png');
+  		}
+  		&.on {
+  			background-image:url('/images/action/dislike-active.png');
+  
+  			&:hover {
+  				background-image:url('/images/action/dislike-on.png');
+  			}
+  		}
+  	}
+  */
+  	/*.listAction {
+  		background-image:url('/images/action/list.png');
+  
+  		&:hover {
+  			background-image:url('/images/action/list-active.png');
+  		}
+  		&.on {
+  			background-image:url('/images/action/list-active.png');
+  
+  			&:hover {
+  				background-image:url('/images/action/list-on.png');
+  			}
+  		}
+  	}
+  	.report {
+  		background-image:url('/images/action/report.png');
+  
+  		&:hover {
+  			background-image:url('/images/action/report-active.png');
+  		}
+  		&.on {
+  			background-image:url('/images/action/report-active.png');
+  
+  			&:hover {
+  				background-image:url('/images/action/report-on.png');
+  			}
+  		}
+  	}*/
+}
+/* line 1420, style.scss */
+.itemActions > span {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  color: #e8e8e8;
+}
+/* line 1430, style.scss */
+.itemActions > span:hover {
+  color: #183051;
+}
+/* line 1433, style.scss */
+.itemActions > span.on {
+  color: #183051;
+}
+/* line 1436, style.scss */
+.itemActions > span.on:hover {
+  color: #124f42;
+}
+/* line 1476, style.scss */
+.itemActions .rating {
+  background-image: url("/images/action/rating.png");
+  position: relative;
+}
+/* line 1480, style.scss */
+.itemActions .rating span {
+  background-image: url("/images/action/rating.png");
+  background-size: 20px;
+  background-repeat: no-repeat;
+  height: 100%;
+  position: absolute;
+  display: block;
+  width: 0;
+  top: 0;
+  left: 0;
+}
+/* line 1492, style.scss */
+.itemActions .rating:hover span {
+  background-image: url("/images/action/rating-on.png");
+}
+
+/* line 1531, style.scss */
+.myChristmasContainer h1 {
+  margin-top: 20px;
+}
+
+@media (max-width: 767px) {
+  /* line 1536, style.scss */
+  .nonHandheld {
+    display: none!important;
+  }
+
+  /* line 1539, style.scss */
+  .handheld {
+    display: block!important;
+  }
+
+  /* line 1544, style.scss */
+  #container {
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+  }
+  /* line 1549, style.scss */
+  #container .content, #container .content .content {
+    width: 100%;
+    margin: 0;
+  }
+  /* line 1553, style.scss */
+  #container .content input[type='submit'], #container .content button, #container .content .content input[type='submit'], #container .content .content button {
+    width: 100%;
+  }
+  /* line 1556, style.scss */
+  #container .content.static, #container .content .content.static {
+    float: left;
+  }
+
+  /* line 1563, style.scss */
+  #recaptcha_image {
+    max-width: 100%;
+    height: auto;
+  }
+  /* line 1567, style.scss */
+  #recaptcha_image img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* line 1572, style.scss */
+  form#changeMeta {
+    margin-top: 25px;
+  }
+  /* line 1575, style.scss */
+  form#changeMeta label, form#changeMeta input, form#changeMeta button {
+    width: 100%;
+    max-width: 100%;
+  }
+  /* line 1579, style.scss */
+  form#changeMeta input {
+    margin-bottom: 20px;
+  }
+
+  /* line 1584, style.scss */
+  .loginLinks #registerLink, .loginLinks #passwordLink {
+    width: 100%;
+    float: left;
+    clear: both;
+    text-align: center;
+    margin: 10px 0;
+  }
+  /* line 1591, style.scss */
+  .loginLinks #registerLink a, .loginLinks #passwordLink a {
+    float: left;
+    width: 100%;
+    text-align: center;
+    padding: 5px 0;
+  }
+
+  /* line 1599, style.scss */
+  #paginationContainer {
+    padding: 0;
+  }
+  /* line 1602, style.scss */
+  #paginationContainer #pagination {
+    width: 100%;
+    clear: both;
+    margin: 10px 0;
+  }
+  /* line 1607, style.scss */
+  #paginationContainer #perPageContainer, #paginationContainer #changeView, #paginationContainer #updateView {
+    width: 33.33%;
+    margin: 10px 0;
+  }
+}
+@media (max-width: 480px) {
+  /* line 1615, style.scss */
+  #container .item {
+    width: 95%;
+    min-width: 0;
+    max-width: 95%;
+    margin: 10px 2.5%;
+  }
+}
+@media (min-width: 768px) {
+  /* line 1624, style.scss */
+  .nonHandheld {
+    display: block!important;
+  }
+
+  /* line 1627, style.scss */
+  .handheld {
+    display: none!important;
+  }
+}
+@media (min-width: 1400px) {
+  /* line 1632, style.scss */
+  header .left {
+    width: 75%;
+  }
+
+  /* line 1635, style.scss */
+  header .right {
+    width: 25%;
+  }
+
+  /* line 1639, style.scss */
+  #container .content .content {
+    width: 100%;
+    margin: 0;
+  }
+}
+/* line 1648, style.scss */
+#changeMeta {
+  width: 100%;
+  float: left;
+  clear: both;
+  background: #124f42;
+  padding: 20px;
+  margin-top: 200px;
+}
+/* line 1656, style.scss */
+#changeMeta h3 {
+  font-family: "Lobster Two", cursive;
+  color: white;
+  float: left;
+  width: 100%;
+  clear: both;
+  text-align: left;
+  font-size: 24px;
+  padding: 10px 0;
+}
+/* line 1667, style.scss */
+#changeMeta label {
+  clear: both;
+  color: white;
+  float: left;
+  width: 150px;
+}
+/* line 1673, style.scss */
+#changeMeta input {
+  float: left;
+  width: 250px;
+}
+/* line 1677, style.scss */
+#changeMeta button {
+  clear: both;
+  float: left;
+  width: 400px;
+}
+
+/* line 1684, style.scss */
+#recaptcha_area {
+  margin-top: 20px;
+}
+/* line 1687, style.scss */
+#recaptcha_area table {
+  display: block;
+  float: left;
+  width: 100%;
+}
+/* line 1692, style.scss */
+#recaptcha_area table tbody, #recaptcha_area table tr, #recaptcha_area table td {
+  display: block;
+  float: left;
+  width: 100%;
+}
+/* line 1697, style.scss */
+#recaptcha_area table tbody input, #recaptcha_area table tr input, #recaptcha_area table td input {
+  width: 100%!important;
+}
+
+/* line 1703, style.scss */
+#postItemChoices {
+  width: 100%;
+  float: left;
+  clear: both;
+  text-align: center;
+}
+
+/* line 1710, style.scss */
+.postItemChoice {
+  display: inline-block;
+  vertical-align: top;
+  width: 23%;
+  margin: 0 1%;
+  padding: 15px 10px;
+  font-size: 60px;
+  background: #183051;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+}
+/* line 1724, style.scss */
+.postItemChoice span {
+  color: white;
+}
+/* line 1727, style.scss */
+.postItemChoice:hover, .postItemChoice.active {
+  background: #124f42;
+}
+/* line 1732, style.scss */
+.postItemChoice.hint--bottom:before {
+  border-bottom-color: #124f42;
+}
+/* line 1735, style.scss */
+.postItemChoice.hint:after, .postItemChoice[data-hint]:after {
+  background: #124f42;
+}
+@media (max-width: 767px) {
+  /* line 1710, style.scss */
+  .postItemChoice {
+    width: 30%;
+  }
+}
+
+/* line 1742, style.scss */
+#hiddenInput, #hiddenTextarea {
+  width: 100%;
+  float: left;
+  clear: both;
+  display: none;
+  position: relative;
+  margin: 20px auto;
+  text-align: center;
+}
+/* line 1751, style.scss */
+#hiddenInput button, #hiddenTextarea button {
+  width: 100%;
+}
+
+/* line 1756, style.scss */
+.postIt #textContentContainer {
+  width: 100%;
+  float: left;
+  clear: both;
+  background: rgba(255, 255, 255, 0.4);
+  padding: 20px;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+  position: relative;
+}
+/* line 1766, style.scss */
+.postIt #textContentContainer p {
+  text-align: left;
+}
+/* line 1769, style.scss */
+.postIt #textContentContainer ul {
+  list-style: disc;
+  padding: 0 0 0 40px;
+}
+/* line 1774, style.scss */
+.postIt #textContentContainer:hover > #editTextContentContainer {
+  display: block;
+}
+/* line 1778, style.scss */
+.postIt #textContentContainer #editTextContentContainer {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: #183051;
+  color: white;
+  cursor: pointer;
+}
+/* line 1789, style.scss */
+.postIt #textContentContainer #editTextContentContainer #editTextContent {
+  position: absolute;
+  margin: auto;
+  display: block;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  width: 75px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  height: 20px;
+}
+/* line 1803, style.scss */
+.postIt #textContentContainer #editTextContentContainer p {
+  text-align: left;
+}
+/* line 1806, style.scss */
+.postIt #textContentContainer #editTextContentContainer ul {
+  list-style: disc;
+  padding: 0 0 0 40px;
+}
+
+/* line 1814, style.scss */
+#notificationHolder, #nicelistHolder, #naughtylistHolder, #collaboratorHolder {
+  float: left;
+  width: 100%;
+  margin: 20px 0;
+  clear: both;
+  border: 1px dashed rgba(24, 48, 81, 0.2);
+}
+/* line 1821, style.scss */
+#notificationHolder .niceRow, #notificationHolder .naughtyRow, #nicelistHolder .niceRow, #nicelistHolder .naughtyRow, #naughtylistHolder .niceRow, #naughtylistHolder .naughtyRow, #collaboratorHolder .niceRow, #collaboratorHolder .naughtyRow {
+  float: left;
+  width: 100%;
+  clear: both;
+  padding: 10px;
+  color: #183051;
+}
+/* line 1828, style.scss */
+#notificationHolder .niceRow:nth-child(odd), #notificationHolder .naughtyRow:nth-child(odd), #nicelistHolder .niceRow:nth-child(odd), #nicelistHolder .naughtyRow:nth-child(odd), #naughtylistHolder .niceRow:nth-child(odd), #naughtylistHolder .naughtyRow:nth-child(odd), #collaboratorHolder .niceRow:nth-child(odd), #collaboratorHolder .naughtyRow:nth-child(odd) {
+  background: #f7f7f7;
+}
+/* line 1831, style.scss */
+#notificationHolder .niceRow:nth-child(even), #notificationHolder .naughtyRow:nth-child(even), #nicelistHolder .niceRow:nth-child(even), #nicelistHolder .naughtyRow:nth-child(even), #naughtylistHolder .niceRow:nth-child(even), #naughtylistHolder .naughtyRow:nth-child(even), #collaboratorHolder .niceRow:nth-child(even), #collaboratorHolder .naughtyRow:nth-child(even) {
+  background: white;
+}
+/* line 1835, style.scss */
+#notificationHolder .niceRow a, #notificationHolder .naughtyRow a, #nicelistHolder .niceRow a, #nicelistHolder .naughtyRow a, #naughtylistHolder .niceRow a, #naughtylistHolder .naughtyRow a, #collaboratorHolder .niceRow a, #collaboratorHolder .naughtyRow a {
+  color: #183051;
+  text-decoration: none;
+}
+/* line 1839, style.scss */
+#notificationHolder .niceRow a:hover, #notificationHolder .naughtyRow a:hover, #nicelistHolder .niceRow a:hover, #nicelistHolder .naughtyRow a:hover, #naughtylistHolder .niceRow a:hover, #naughtylistHolder .naughtyRow a:hover, #collaboratorHolder .niceRow a:hover, #collaboratorHolder .naughtyRow a:hover {
+  color: #124f42;
+  text-decoration: underline;
+}
+/* line 1844, style.scss */
+#notificationHolder .niceRow a.removeLink, #notificationHolder .naughtyRow a.removeLink, #nicelistHolder .niceRow a.removeLink, #nicelistHolder .naughtyRow a.removeLink, #naughtylistHolder .niceRow a.removeLink, #naughtylistHolder .naughtyRow a.removeLink, #collaboratorHolder .niceRow a.removeLink, #collaboratorHolder .naughtyRow a.removeLink {
+  float: right;
+  padding-left: 5px;
+  color: #bd2c2c;
+  text-transform: uppercase;
+  font-style: italic;
+  padding: 2px 10px;
+  display: inline-block;
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+/* line 1856, style.scss */
+#notificationHolder .niceRow a.removeLink:hover, #notificationHolder .naughtyRow a.removeLink:hover, #nicelistHolder .niceRow a.removeLink:hover, #nicelistHolder .naughtyRow a.removeLink:hover, #naughtylistHolder .niceRow a.removeLink:hover, #naughtylistHolder .naughtyRow a.removeLink:hover, #collaboratorHolder .niceRow a.removeLink:hover, #collaboratorHolder .naughtyRow a.removeLink:hover {
+  color: white;
+  background: #bd2c2c;
+}
+/* line 1861, style.scss */
+#notificationHolder .niceRow a.listName, #notificationHolder .naughtyRow a.listName, #nicelistHolder .niceRow a.listName, #nicelistHolder .naughtyRow a.listName, #naughtylistHolder .niceRow a.listName, #naughtylistHolder .naughtyRow a.listName, #collaboratorHolder .niceRow a.listName, #collaboratorHolder .naughtyRow a.listName {
+  float: left;
+}
+/* line 1868, style.scss */
+#notificationHolder .notification, #nicelistHolder .notification, #naughtylistHolder .notification, #collaboratorHolder .notification {
+  float: left;
+  width: 100%;
+  clear: both;
+  padding: 10px;
+}
+/* line 1874, style.scss */
+#notificationHolder .notification.read, #nicelistHolder .notification.read, #naughtylistHolder .notification.read, #collaboratorHolder .notification.read {
+  color: #183051;
+}
+/* line 1877, style.scss */
+#notificationHolder .notification.read:nth-child(odd), #nicelistHolder .notification.read:nth-child(odd), #naughtylistHolder .notification.read:nth-child(odd), #collaboratorHolder .notification.read:nth-child(odd) {
+  background: #f7f7f7;
+}
+/* line 1880, style.scss */
+#notificationHolder .notification.read:nth-child(even), #nicelistHolder .notification.read:nth-child(even), #naughtylistHolder .notification.read:nth-child(even), #collaboratorHolder .notification.read:nth-child(even) {
+  background: white;
+}
+/* line 1884, style.scss */
+#notificationHolder .notification.read a, #nicelistHolder .notification.read a, #naughtylistHolder .notification.read a, #collaboratorHolder .notification.read a {
+  color: #183051;
+  text-decoration: none;
+}
+/* line 1888, style.scss */
+#notificationHolder .notification.read a:hover, #nicelistHolder .notification.read a:hover, #naughtylistHolder .notification.read a:hover, #collaboratorHolder .notification.read a:hover {
+  color: #124f42;
+  text-decoration: underline;
+}
+/* line 1894, style.scss */
+#notificationHolder .notification.unread, #nicelistHolder .notification.unread, #naughtylistHolder .notification.unread, #collaboratorHolder .notification.unread {
+  background: #124f42;
+  color: white;
+}
+/* line 1898, style.scss */
+#notificationHolder .notification.unread a, #nicelistHolder .notification.unread a, #naughtylistHolder .notification.unread a, #collaboratorHolder .notification.unread a {
+  color: white;
+  text-decoration: none;
+}
+/* line 1902, style.scss */
+#notificationHolder .notification.unread a:hover, #nicelistHolder .notification.unread a:hover, #naughtylistHolder .notification.unread a:hover, #collaboratorHolder .notification.unread a:hover {
+  text-decoration: underline;
+}
+/* line 1906, style.scss */
+#notificationHolder .notification.unread .notifyDate, #nicelistHolder .notification.unread .notifyDate, #naughtylistHolder .notification.unread .notifyDate, #collaboratorHolder .notification.unread .notifyDate {
+  color: #e8e8e8;
+}
+/* line 1910, style.scss */
+#notificationHolder .notification .notifyDate, #nicelistHolder .notification .notifyDate, #naughtylistHolder .notification .notifyDate, #collaboratorHolder .notification .notifyDate {
+  float: right;
+  font-size: 10px;
+  color: gray;
+}
+/* line 1915, style.scss */
+#notificationHolder .notification .notificationIcon, #nicelistHolder .notification .notificationIcon, #naughtylistHolder .notification .notificationIcon, #collaboratorHolder .notification .notificationIcon {
+  padding-right: 10px;
+}
+/* line 1919, style.scss */
+#notificationHolder .collaboratorRow, #nicelistHolder .collaboratorRow, #naughtylistHolder .collaboratorRow, #collaboratorHolder .collaboratorRow {
+  float: left;
+  width: 100%;
+  clear: both;
+  padding: 10px;
+  color: #183051;
+}
+/* line 1926, style.scss */
+#notificationHolder .collaboratorRow .listName, #nicelistHolder .collaboratorRow .listName, #naughtylistHolder .collaboratorRow .listName, #collaboratorHolder .collaboratorRow .listName {
+  cursor: pointer;
+}
+/* line 1930, style.scss */
+#notificationHolder .collaboratorRow:nth-child(odd), #nicelistHolder .collaboratorRow:nth-child(odd), #naughtylistHolder .collaboratorRow:nth-child(odd), #collaboratorHolder .collaboratorRow:nth-child(odd) {
+  background: #f7f7f7;
+}
+/* line 1933, style.scss */
+#notificationHolder .collaboratorRow:nth-child(even), #nicelistHolder .collaboratorRow:nth-child(even), #naughtylistHolder .collaboratorRow:nth-child(even), #collaboratorHolder .collaboratorRow:nth-child(even) {
+  background: white;
+}
+/* line 1936, style.scss */
+#notificationHolder .collaboratorRow .collabUsers, #nicelistHolder .collaboratorRow .collabUsers, #naughtylistHolder .collaboratorRow .collabUsers, #collaboratorHolder .collaboratorRow .collabUsers {
+  display: none;
+}
+/* line 1939, style.scss */
+#notificationHolder .collaboratorRow.show, #nicelistHolder .collaboratorRow.show, #naughtylistHolder .collaboratorRow.show, #collaboratorHolder .collaboratorRow.show {
+  background: #183051;
+  color: white;
+}
+/* line 1942, style.scss */
+#notificationHolder .collaboratorRow.show .collabUsers, #nicelistHolder .collaboratorRow.show .collabUsers, #naughtylistHolder .collaboratorRow.show .collabUsers, #collaboratorHolder .collaboratorRow.show .collabUsers {
+  display: block;
+}
+
+/* line 1951, style.scss */
+#userButtons {
+  float: left;
+  width: 25%;
+}
+@media (max-width: 767px) {
+  /* line 1951, style.scss */
+  #userButtons {
+    width: 100%;
+    clear: both;
+  }
+  /* line 1959, style.scss */
+  #userButtons > * {
+    clear: none;
+  }
+}
+
+/* line 1966, style.scss */
+.userButton {
+  float: right;
+  background: #183051;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 12px;
+  width: 100%;
+  clear: both;
+  letter-spacing: 1px;
+  padding: 7px 15px;
+  color: white;
+  margin: 5px 0;
+  text-align: center;
+}
+/* line 1981, style.scss */
+.userButton.addNaughtyButton:hover {
+  background: #bd2c2c;
+}
+/* line 1986, style.scss */
+.userButton.addNiceButton:hover {
+  background: #124f42;
+}
+@media (max-width: 767px) {
+  /* line 1966, style.scss */
+  .userButton {
+    float: none;
+    display: inline-block;
+    vertical-align: top;
+  }
+}
+
+/* line 1997, style.scss */
+.listUpdate {
+  float: left;
+  padding: 5px 13px;
+  text-align: center;
+  border: 1px dotted rgba(128, 128, 128, 0.5);
+  background: white;
+  margin: 5px 0;
+  font-size: 12px;
+  color: #183051;
+  width: 100%;
+  clear: both;
+}
+@media (max-width: 767px) {
+  /* line 1997, style.scss */
+  .listUpdate {
+    float: none;
+    display: inline-block;
+    vertical-align: top;
+  }
+}
+/* line 2017, style.scss */
+.listUpdate:nth-child(1) {
+  clear: both;
+}
+/* line 2021, style.scss */
+.listUpdate a {
+  color: #183051;
+  font-style: italic;
+  text-decoration: none;
+}
+/* line 2026, style.scss */
+.listUpdate a:hover {
+  color: #bd2c2c;
+  text-decoration: underline;
+}
+/* line 2031, style.scss */
+.listUpdate a.userButton {
+  color: white;
+}
+/* line 2033, style.scss */
+.listUpdate a.userButton:hover {
+  background: #124f42;
+  color: white;
+  text-decoration: none;
+}
+
+/* line 2044, style.scss */
+.userProfile #itemholder {
+  border-top: 1px dashed gray;
+}
+
+/* line 2048, style.scss */
+#userProfile {
+  float: left;
+  width: 100%;
+  margin: 10px 0;
+  text-align: left;
+}
+/* line 2055, style.scss */
+#userProfile #userProfileAvatar {
+  float: left;
+  padding: 0 20px 0 0;
+  max-width: 120px;
+}
+/* line 2061, style.scss */
+#userProfile #userProfileInfo {
+  float: left;
+  width: calc(75% - 120px);
+  text-align: left;
+}
+@media (max-width: 767px) {
+  /* line 2061, style.scss */
+  #userProfile #userProfileInfo {
+    width: calc(100% - 120px);
+  }
+}
+/* line 2071, style.scss */
+#userProfile span.greyLabel {
+  font-size: 11px;
+  color: gray;
+  width: 100px;
+  display: inline-block;
+}
+/* line 2077, style.scss */
+#userProfile #userProfileBio {
+  margin-top: 15px;
+}
+/* line 2080, style.scss */
+#userProfile #userProfileBio span {
+  width: 100%;
+}
+
+/* line 2088, style.scss */
+.removeButton a, .fauxCell .removeButton {
+  float: left;
+  background: #bd2c2c;
+  color: white;
+  padding: 10px 25px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 11px;
+  text-decoration: none;
+  text-align: center;
+  margin: 5px;
+  height: 40px;
+  display: block;
+  cursor: pointer;
+}
+
+/* line 2104, style.scss */
+.fauxCell .removeButton {
+  margin: 2px;
+  height: 20px;
+  font-size: 10px;
+  padding: 5px 10px;
+  line-height: 10px;
+  margin: 3px 0 0;
+}
+
+/* line 2112, style.scss */
+.clearBoth {
+  clear: both;
+}
+
+/* line 2116, style.scss */
+.homeSub {
+  color: gray;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-align: left;
+  float: left;
+  width: 100%;
+  clear: both;
+  font-weight: normal;
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px dashed #E8E8E8;
+}
+
+/* line 2130, style.scss */
+.homeSubUser {
+  width: 200px;
+  margin: 10px;
+  float: left;
+  background: white;
+  border: 1px dashed #e8e8e8;
+}
+/* line 2137, style.scss */
+.homeSubUser a {
+  color: #183051;
+  text-decoration: none;
+  letter-spacing: 1px;
+  float: left;
+  width: 100%;
+  padding: 10px;
+  font-size: 12px;
+  text-align: center;
+}
+/* line 2147, style.scss */
+.homeSubUser a:hover {
+  background: #124f42;
+  color: white;
+}
+@media (max-width: 767px) {
+  /* line 2130, style.scss */
+  .homeSubUser {
+    width: 45%;
+    min-width: 45%;
+    max-width: 45%;
+    padding: 0;
+    margin: 10px 2%;
+  }
+}
+
+/* line 2162, style.scss */
+#bigSearch {
+  float: left;
+  width: 100%;
+  position: relative;
+}
+/* line 2167, style.scss */
+#bigSearch #bigSearchInput {
+  width: 80%;
+  margin: 25px auto;
+  display: block;
+  height: 75px;
+  padding: 15px;
+  font-size: 32px;
+  font-family: "Lobster Two", cursive;
+  letter-spacing: 1px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  border: 1px solid #e8e8e8;
+  outline: 0;
+}
+@media (max-width: 767px) {
+  /* line 2167, style.scss */
+  #bigSearch #bigSearchInput {
+    margin: 15px auto;
+    padding: 10px 15px;
+    height: 55px;
+    font-size: 26px;
+  }
+}
+@media (max-width: 480px) {
+  /* line 2167, style.scss */
+  #bigSearch #bigSearchInput {
+    width: 90%;
+    font-size: 22px;
+  }
+}
+/* line 2192, style.scss */
+#bigSearch #bigSearchImage {
+  width: 51px;
+  margin: 0 11% 0 0;
+  display: block;
+  float: right;
+  position: absolute;
+  top: 37px;
+  right: 0%;
+}
+@media (max-width: 767px) {
+  /* line 2192, style.scss */
+  #bigSearch #bigSearchImage {
+    top: 30px;
+    width: 45px;
+  }
+}
+@media (max-width: 480px) {
+  /* line 2192, style.scss */
+  #bigSearch #bigSearchImage {
+    margin-right: 8%;
+    width: 30px;
+    top: 26px;
+  }
+}
+
+/* line 2215, style.scss */
+#aboutPage #aboutHeading {
+  width: 50%;
+  float: left;
+  padding: 20px;
+  background: white;
+  border: 1px solid #e8e8e8;
+}
+@media (max-width: 767px) {
+  /* line 2215, style.scss */
+  #aboutPage #aboutHeading {
+    width: 100%;
+  }
+}
+/* line 2226, style.scss */
+#aboutPage #aboutHeading h1 {
+  font-size: 40px;
+  border-bottom: 2px dashed #e8e8e8;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+/* line 2233, style.scss */
+#aboutPage #aboutHeading h2 {
+  line-height: 35px;
+  color: #124f42;
+}
+/* line 2238, style.scss */
+#aboutPage #aboutContent {
+  width: 50%;
+  float: left;
+  padding: 0 20px;
+}
+@media (max-width: 767px) {
+  /* line 2238, style.scss */
+  #aboutPage #aboutContent {
+    width: 100%;
+  }
+}
+/* line 2247, style.scss */
+#aboutPage .exploreWrapper {
+  float: left;
+  width: 100%;
+  clear: both;
+  text-align: center;
+  margin: 30px 0;
+}
+/* line 2254, style.scss */
+#aboutPage a.button {
+  margin: 0 auto;
+  display: inline-block;
+  background: #183051;
+  color: white;
+  font-size: 12px;
+  float: none;
+  padding: 10px 15px;
+  text-decoration: none;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+/* line 2266, style.scss */
+#aboutPage a.button:hover {
+  background: #124f42;
+}
+
+/* line 2272, style.scss */
+.definitionBox {
+  float: left;
+  clear: both;
+  margin: 20px 0;
+  width: 100%;
+  border: 1px dashed #e8e8e8;
+  color: gray;
+  padding: 20px;
+  font-size: 13px;
+  line-height: 19px;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* line 2284, style.scss */
+#nofilereader, #iosnotice {
+  float: left;
+  width: 100%;
+  clear: both;
+  margin: 10px 0;
+  color: #bd2c2c;
+  font-size: 11px;
+  display: block;
+  text-align: center;
+}
+
+/* line 2294, style.scss */
+#workshopMode {
+  display: block;
+  padding: 0px 15px;
+  float: none;
+  margin: 5px auto 15px;
+  color: #124f42;
+  border: 1px solid #124f42;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 10px;
+  text-align: center;
+  max-width: 150px;
+}
+/* line 2307, style.scss */
+#workshopMode::after {
+  text-transform: initial;
+  background: #124f42;
+  margin-left: -250px;
+}
+/* line 2312, style.scss */
+#workshopMode::before {
+  border-bottom-color: #124f42;
+}

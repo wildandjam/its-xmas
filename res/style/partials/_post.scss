@@ -1,0 +1,535 @@
+#itemPost {
+	width:100%;
+	text-align:center;
+	margin: 0 auto;
+	max-width:1000px;
+
+	#itemMain {
+		float:right;
+		width:70%;
+		padding:10px 20px;
+		background:white;
+		//min-height:320px;
+		@include box-shadow(1px 1px 3px -2px $blue);
+
+
+		.itemImg {
+			width:100%;
+			display:block;
+			float:left;
+			clear:both;
+			padding-bottom:5px;
+			margin-bottom:5px;
+			border-bottom:1px solid $lgrey;
+			text-align:left;
+			position:relative;
+
+			img.rotate-90 {
+				@include transform(rotate(90deg));
+				position: absolute;
+				margin: auto;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+
+			}
+
+			#itemImgText {
+				padding:20px;
+				font-size:13px;
+				line-height:19px;
+
+				* {
+					font-size:13px;
+					line-height:19px;
+				}
+			}
+
+			img {
+				max-width:95%;
+				display:block;
+				margin:0 auto;
+			}
+			p {
+				text-align:left;
+				padding:5px 0;
+			}
+			ul {
+				list-style:disc;
+				padding:0 0 0 40px;
+
+				li {
+					padding:5px 0;
+				}
+			}
+			[id$=itemText]{
+				display:none;
+			}
+		}
+		.itemRating {
+			float:left;
+			clear:both;
+			height:25px;
+			margin-bottom:5px;
+
+			span {
+				font-size:11px;
+				line-height:25px;
+			}
+		}
+		.itemActions {
+			float:right;
+			padding-top:1px;
+		}
+
+		.itemScore {
+			float:right;
+			width:85px;
+			height:25px;
+			margin-bottom:10px;
+			margin: 0px auto;
+			background:url('/images/greystars.png') no-repeat;
+			background-size:100%;
+			position:relative;
+
+			.itemPerc {
+				position:absolute;
+				left:0;
+				top:0;
+				background:url('/images/bluestars.png') no-repeat;
+				background-size:85px 23px;
+				height:25px;
+			}
+		}
+		#listholder {
+			width:100%;
+			float:left;
+			clear:both;
+			text-align:left;
+			color:$dgrey;
+			font-size:12px;
+			border-top:1px solid $lgrey;
+			line-height:19px;
+			padding:10px 0;
+
+			a {
+				color:$blue;
+				text-decoration:none;
+
+				&:hover {
+					color:$green;
+				}
+			}
+			#addToListBox {
+				display:inline-block;
+
+				select {
+					font-size:11px;
+				}
+			}
+		}
+	}
+	#deletePost {
+		width:100%;
+		float:left;
+		margin:15px 0;
+
+		a {
+			float:left;
+			width:100%;
+			text-decoration:none;
+			color:white;
+			padding:10px;
+			background:$error;
+			text-align:center;
+			text-transform:uppercase;
+			font-size:11px;
+			letter-spacing:1px;
+		}
+	}
+	#itemSide {
+		float:left;
+		width:27.5%;
+		background:$lgrey;
+		padding:10px;
+		border:2px solid $blue;
+
+		&.editMode {
+			input, select, button, textarea, [id$=postDescriptionInput] {
+				display:block;
+			}
+			input, select {
+				width:100%;
+				
+			}
+			#itemCat a, #tagholder a {
+				display:none;
+			}
+			h1 {
+				opacity:0.5;
+			}
+			a#addEdit {
+				display:none;
+			}
+			#postShare, .hideThis {
+				display:none;
+			}
+		}
+
+
+		h1 {
+			color:$blue;
+			padding-bottom:10px;
+		}
+
+		#postDescription {
+			color: $green;
+			font-size: 12px;
+			line-height:18px;
+			text-align: left;
+			margin: 5px 0 10px;
+			padding-bottom:10px;
+			line-height:18px;
+			border-bottom:1px dashed rgba($blue, 0.3);
+
+		}
+
+		#itemUser, #itemURL, #itemCat, #itemDate,  #tagholder, #commentholder, #commentbox, #postShare, #itemPrivacy {
+			float:left;
+			width:100%;
+			padding:3px 0;
+			color:$dgrey;
+			font-size:12px;
+			text-align:left;
+			line-height:18px;
+			a {
+				
+				color:$blue;
+				text-decoration:none;
+
+				&:hover {
+					text-decoration:underline;
+					color:$green;
+				}
+			}
+
+			.itemFriend {
+				display:inline-block;
+				width:14px;
+				height:14px;
+				cursor:pointer;
+				background: url('/images/action/friend-white.png') no-repeat;
+				background-size:14px;
+
+				&:hover, &.added {
+					background-image: url('/images/action/friend-active.png');
+				}
+				&.added:hover, &.requested {
+					background-image: url('/images/action/friend-on.png');
+				}
+
+				&.hint:before, &[data-hint]:before {
+					top:13px;
+					border-bottom-color: $blue;
+				}
+				&.hint:after, &[data-hint]:after {
+					top: 13px;
+					margin-left: -50%;
+				}
+			}
+		}
+
+		span.edit {
+			text-transform:lowercase;
+			color:$dgrey;
+			font-size:10px;
+
+			&:hover {
+				color:$blue;
+				cursor:pointer;
+			}
+		}
+		input, select, button, textarea, [id$=postDescriptionInput] {
+			display:none;
+
+			&.active {
+				display:block;
+			}
+		}
+		a#addEdit, button {
+			background:$blue;
+			color:white;
+			padding:10px;
+			float:left;
+			clear:both;
+			text-decoration:none;
+			font-size:11px;
+			letter-spacing:1px;
+			width:100%;
+			text-transform:uppercase;
+			text-align:center;
+
+			&:hover {
+				background:$green;
+			}
+		}
+		a#addEdit {
+			background:white;
+			border:1px dashed $blue;
+			color:$blue;
+
+			&:hover {
+				background:$white;
+				border:1px dashed $green;
+				color:$green;
+				text-decoration:underline;
+
+
+			}
+
+		}
+		.shareOpt {
+			display:inline-block;
+			vertical-align:top;
+			margin:0 1px;
+		}
+	}
+	#postShare {
+		margin-top:30px;
+
+		span {
+			width:100%;
+			display:inline-block;
+			text-align:left;
+			
+			&#fblikeholder {
+				width:auto;
+			}
+		}
+		img {
+			width: 40px;
+			margin-right: 5px;
+			cursor:pointer;
+		}
+	}
+	#itemReport {
+		float:left;
+		width:27.5%;
+		background:$lgrey;
+		padding:10px;
+		background:white;
+		@include box-shadow(1px 1px 3px -2px $blue);
+
+	}
+	#itemSideOp {
+		float:left;
+		width:27.5%;
+		margin:15px 0;
+
+		#likePost, #dislikePost {
+			width:50%;
+			float:left;
+			font-family:$lobster;
+			padding:10px 0;
+			font-size:20px;
+			letter-spacing:1px;
+			color:white;
+			cursor:pointer;
+			opacity:0.5;
+
+			&:hover {
+				opacity:1;
+			}
+		}
+		#likePost {
+			background: $blue;
+		}
+		#dislikePost {
+			background: $dgrey;
+		}
+	}
+	#comments {
+		float: right;
+		clear: right;
+		width: 70%;
+		background: white;
+		margin-bottom: 30px;
+		position:relative;
+		padding:20px;
+		border-top:2px solid $lgrey;
+		@include box-shadow(1px 1px 3px -2px #183051);
+
+		h2 {
+			font-family:$lobster;
+			font-size:24px;
+			width:100%;
+			text-align:center;
+		}
+		.commentRow {
+			float:left;
+			clear:both;
+			width:100%;
+			border:1px solid $lgrey;
+		}
+
+		.comment {
+			float:left;
+			width:100%;
+			clear:both;
+			margin:0 0 10px 0;
+
+			&.addArea {
+				border-top:1px dashed $lgrey;
+				padding:15px 0;
+			}
+			&.reply {
+				display:none;
+			}
+
+			.userArea {
+				float:left;
+				width:25%;
+				font-size:12px;
+				padding:5px 0;
+
+				a {
+					font-size:10px;
+					text-decoration:none;
+
+					&:hover {
+						text-decoration:underline;	
+					}
+				}
+			}
+			.commentArea {
+				float:left;
+				width:75%;
+
+
+
+				label {
+					width:100%;
+					float:left;
+					clear:both;
+				}
+				textarea {
+					width:100%;
+					float:left;
+					clear:both;
+					padding:10px;
+				}
+				button {
+					float:right;
+					clear:both;
+					padding:10px 30px;
+					margin:10px 0;
+					text-transform:uppercase;
+					letter-spacing:1px;
+					font-size:10px;
+
+					&:hover {
+						background:$green;
+					}
+				}
+			}
+
+			.commentMessage {
+				float:left;
+				width:100%;
+				font-size:12px;
+				text-align:left;
+				padding:5px 0;
+			}
+			.commentActions {
+				float:left;
+				width:50%;
+				clear:both;
+
+				> div {
+					float:left;
+					padding: 0 5px;
+					font-size:11px;
+					color:#CCCCCC;
+					&:hover {
+						color:#808080;
+						cursor:pointer;
+					}
+				}
+			}
+			.commentDate {
+				font-style:italic;
+				float:left;
+				text-align:right;
+				padding:5px 0;
+				width:50%;
+				font-size:10px;
+			}
+		}
+	}
+}
+#video, , div[id^="videoP"] {
+	float:none;
+	margin: 0 auto;
+	overflow:hidden;
+	max-width:100%;
+}
+@media all and (max-width:680px){
+	#itemPost {
+		#itemSide, #itemMain, #deletePost, #itemSideOp, #comments {
+			width:100%;
+		}
+		#comments {
+			
+		}
+	}
+}
+#relatedPosts {
+	float:left;
+	width:100%;
+	background:$lgrey;
+	padding:10px;
+
+	h3 {
+		color:$blue;
+		font-family:$lobster;
+		text-align:center;
+		width:100%;
+		font-size:24px;
+		padding-bottom:10px;
+	}
+	ul, ul li {
+		float:left;
+		width:100%;
+		padding:0;
+		margin:0;
+	}
+	ul li {
+		border:1px solid #CCCCCC;
+		background:white;
+		margin:0 0 15px;
+
+		span.relatedPost {
+			float:left;
+			display:block;
+			padding:5px 10px;
+			color:$blue;
+			font-size:12px;
+			text-align:center;
+			width:100%;
+		}
+
+		em {
+			float:left;
+			width:100%;
+			padding:5px 10px;
+			font-size:11px;
+			color:$dgrey;
+			text-align:center;
+		}
+	}
+
+	* {
+		max-width:100%;
+	}
+}

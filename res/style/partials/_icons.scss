@@ -1,0 +1,91 @@
+.avatar {
+	float:left;
+	background:$lgrey;
+	@include border-radius(5px);
+	text-align:center;
+
+	&.large {
+		width:100px;
+		height:100px;
+		padding:10px;
+
+	}
+	&.small {
+		width:50px;
+		height:50px;
+		padding:5px;
+	}
+
+	&.icon-happy3 {
+		&.large {
+			font-size:80px;
+		}
+		&.small {
+			font-size:40px;
+		}
+
+	}
+	&.icon-gingerbread{
+		&.large {
+			font-size:80px;
+		}
+		&.small {
+			font-size:40px;
+		}
+
+	}
+	&.icon-striped3{
+		&.large {
+			font-size:70px;
+			padding:15px 10px;
+		}
+		&.small {
+			font-size:35px;
+			padding:7px 5px;
+		}
+
+	}
+	&.icon-christmas106 {
+		&.large {
+			font-size:100px;
+			padding:0;
+		}
+		&.small {
+			font-size:50px;
+			padding:0;
+		}
+	}
+	&.icon-angel6 {
+		&.large {
+			font-size:70px;
+			padding:15px 10px;
+		}
+		&.small {
+			font-size:35px;
+			padding:7px 5px;
+		}
+	}
+	&.icon-christmas74 {
+		&.large {
+			font-size:70px;
+			padding:15px 10px;
+		}
+		&.small {
+			font-size:35px;
+			padding:7px 5px;
+		}
+	}
+	&.icon-star {
+		&.large {
+			font-size:70px;
+			padding:15px 10px;
+		}
+		&.small {
+			font-size:35px;
+			padding:7px 5px;
+		}
+	}
+}
+.hideView .avatar.large {
+	@include border-radius(0);
+}

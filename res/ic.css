@@ -1,0 +1,1316 @@
+/* line 20, ic.scss */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 23, ic.scss */
+.blue {
+  color: #183051;
+}
+
+/* line 26, ic.scss */
+.dgrey {
+  color: gray;
+}
+
+/* line 29, ic.scss */
+strong {
+  font-weight: bold;
+}
+
+/* line 33, ic.scss */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* line 36, ic.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* line 39, ic.scss */
+html, body {
+  height: 100%;
+  min-height: 100%;
+}
+
+/* line 44, ic.scss */
+body {
+  line-height: 1;
+  font-family: "Droid Sans", sans-serif;
+  color: #183051;
+  background: #FFFFFF;
+  overflow-x: hidden;
+}
+/* line 51, ic.scss */
+body input, body button {
+  font-family: "Droid Sans", sans-serif;
+}
+
+/* line 55, ic.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 58, ic.scss */
+blockquote, q {
+  quotes: none;
+}
+
+/* line 62, ic.scss */
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+/* line 66, ic.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 70, ic.scss */
+h1 {
+  width: 100%;
+  text-align: center;
+  font-family: "Lobster Two", cursive;
+  font-size: 30px;
+}
+/* line 76, ic.scss */
+h1.noResults {
+  margin: 10px 0 20px;
+}
+
+/* line 80, ic.scss */
+header {
+  width: 100%;
+  padding: 8px 0;
+  box-shadow: 0px 2px 9px gray;
+  float: left;
+  background: #e8e8e8;
+  color: #183051;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  overflow: hidden;
+}
+/* line 92, ic.scss */
+header .headcont {
+  float: left;
+  width: 96%;
+  margin: 0 2%;
+}
+/* line 97, ic.scss */
+header .left {
+  float: left;
+}
+/* line 100, ic.scss */
+header .right {
+  float: right;
+}
+/* line 105, ic.scss */
+header .left .navbutton, header .right .navbutton {
+  height: 34px;
+  width: 34px;
+  border: 2px solid white;
+  float: right;
+  background: white;
+  display: block;
+  margin: 0 3px;
+  box-shadow: 2px 2px 2px gray;
+  cursor: pointer;
+}
+/* line 116, ic.scss */
+header .left .navbutton:hover, header .right .navbutton:hover {
+  border: 2px solid #183051;
+}
+/* line 119, ic.scss */
+header .left .navbutton img, header .right .navbutton img {
+  padding: 0px;
+  width: 30px;
+}
+/* line 123, ic.scss */
+header .left .navbutton#nav, header .right .navbutton#nav {
+  color: white;
+  background: #183051;
+  border: 2px solid #183051;
+}
+/* line 128, ic.scss */
+header .left .navbutton#nav:hover, header .right .navbutton#nav:hover {
+  border: 2px solid white;
+}
+/* line 133, ic.scss */
+header .left a.iCTitle, header .right a.iCTitle {
+  font-family: "Lobster Two", cursive;
+  font-size: 34px;
+  letter-spacing: 1px;
+  float: left;
+  text-decoration: none;
+  color: #183051;
+  padding-right: 10px;
+}
+/* line 142, ic.scss */
+header .left #countdown, header .right #countdown {
+  font-size: 12px;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  overflow: hidden;
+  float: left;
+  margin: 22px 0 0;
+}
+
+/* line 154, ic.scss */
+#searchBox {
+  position: absolute;
+  width: 400px;
+  right: 2%;
+  top: 50px;
+  padding: 10px 2.5%;
+  background: #E8E8E8;
+  box-shadow: 1px 1px 5px gray;
+  z-index: 5;
+  display: none;
+}
+/* line 165, ic.scss */
+#searchBox input {
+  float: left;
+}
+/* line 168, ic.scss */
+#searchBox input#searchInput {
+  width: 80%;
+  border: 0;
+  padding: 5px 0.5%;
+  outline: 0;
+}
+/* line 174, ic.scss */
+#searchBox input#searchSubmit {
+  width: 18%;
+  background: #183051;
+  color: white;
+  text-transform: uppercase;
+  font-family: "Droid Sans", sans-serif;
+  border: 0;
+  padding: 5px 0.5%;
+}
+
+/* line 185, ic.scss */
+#navbar {
+  position: fixed;
+  height: 100%;
+  width: 350px;
+  background: rgba(255, 255, 255, 0.98);
+  top: 0;
+  right: 0;
+  display: none;
+  border-left: 2px solid #183051;
+  overflow-x: auto;
+}
+/* line 196, ic.scss */
+#navbar.navopen {
+  display: block;
+}
+/* line 200, ic.scss */
+#navbar .bar {
+  width: 95%;
+  margin: 70px 2.5% 0;
+  float: left;
+  position: relative;
+}
+/* line 206, ic.scss */
+#navbar .bar .link {
+  float: left;
+  clear: both;
+  padding: 9px 2.5%;
+  margin: 5px 0;
+  background: white;
+  text-align: center;
+  line-height: 12px;
+  font-size: 12px;
+  width: 100%;
+  color: #183051;
+  text-decoration: none;
+}
+/* line 219, ic.scss */
+#navbar .bar .link.marginAbove {
+  margin-top: 100px;
+}
+/* line 223, ic.scss */
+#navbar .bar .link.wildandjam {
+  font-size: 10px;
+  line-height: 10px;
+}
+/* line 228, ic.scss */
+#navbar .bar .link:hover {
+  background: #183051;
+  color: #FFFFFF;
+}
+/* line 232, ic.scss */
+#navbar .bar .link.cta {
+  background: #183051;
+  color: white;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+/* line 239, ic.scss */
+#navbar .bar .link.cta:hover {
+  background: #124f42;
+}
+/* line 245, ic.scss */
+#navbar .bar ul.navUL {
+  list-style: none;
+  position: relative;
+  float: left;
+  width: 100%;
+  clear: both;
+}
+/* line 252, ic.scss */
+#navbar .bar ul.navUL li.chosen {
+  background: #124f42;
+  color: white;
+}
+/* line 257, ic.scss */
+#navbar .bar ul.navUL li.chosen > ul {
+  display: block;
+}
+/* line 262, ic.scss */
+#navbar .bar ul.navUL ul {
+  display: none;
+  width: 100%;
+  float: left;
+  width: 100%;
+  clear: both;
+  margin: 10px 0 5px;
+  background: white;
+}
+/* line 271, ic.scss */
+#navbar .bar ul.navUL ul li {
+  float: left;
+  clear: both;
+  padding: 9px 20px;
+  background: white;
+  font-size: 12px;
+  width: 100%;
+  color: #183051;
+  text-decoration: none;
+}
+/* line 282, ic.scss */
+#navbar .bar ul.navUL ul li:hover {
+  background: #183051;
+  color: white;
+}
+/* line 289, ic.scss */
+#navbar .bar input.title {
+  padding: 9px 2.5%;
+}
+/* line 292, ic.scss */
+#navbar .bar input.title:hover {
+  background: white;
+  color: #183051;
+}
+/* line 297, ic.scss */
+#navbar .bar .title {
+  width: 100%;
+  float: left;
+  clear: both;
+  font-size: 12px;
+  cursor: pointer;
+  margin: 5px 0;
+  height: 30px;
+}
+/* line 306, ic.scss */
+#navbar .bar .title:hover {
+  background: #183051;
+  color: white;
+}
+/* line 312, ic.scss */
+#navbar .bar .title.showOptions {
+  background: #183051;
+  color: white;
+  height: auto;
+}
+/* line 317, ic.scss */
+#navbar .bar .title.showOptions .control.minus {
+  display: block;
+}
+/* line 320, ic.scss */
+#navbar .bar .title.showOptions .control.plus {
+  display: none;
+}
+/* line 323, ic.scss */
+#navbar .bar .title.showOptions .link, #navbar .bar .title.showOptions .navUL {
+  display: block;
+}
+/* line 328, ic.scss */
+#navbar .bar .title .space, #navbar .bar .title .control {
+  width: 10%;
+  float: left;
+  text-align: right;
+  font-size: 24px;
+  line-height: 30px;
+  padding-right: 10px;
+}
+/* line 336, ic.scss */
+#navbar .bar .title .space.minus, #navbar .bar .title .control.minus {
+  display: none;
+}
+/* line 340, ic.scss */
+#navbar .bar .title .textTitle {
+  width: 80%;
+  float: left;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 2px;
+  line-height: 30px;
+  height: 30px;
+}
+/* line 351, ic.scss */
+#navbar .bar .title .link, #navbar .bar .title > .navUL {
+  display: none;
+  background: #183051;
+  color: white;
+}
+/* line 356, ic.scss */
+#navbar .bar .title .link:hover {
+  background: #124f42;
+}
+/* line 360, ic.scss */
+#navbar .bar .title div.navUL {
+  width: 100%;
+  float: left;
+  clear: both;
+  text-align: center;
+  height: 30px;
+  padding: 9px 2.5%;
+  margin: 5px 0;
+}
+/* line 370, ic.scss */
+#navbar .bar .sep {
+  width: 100%;
+  float: left;
+  clear: both;
+  height: 0;
+  margin: 5px 0;
+}
+
+/* line 379, ic.scss */
+.control {
+  height: 100%;
+  position: relative;
+  float: left;
+}
+
+/* line 384, ic.scss */
+.closed .control {
+  width: 100%;
+}
+
+/* line 387, ic.scss */
+.open .control {
+  width: 30px;
+}
+
+/* line 390, ic.scss */
+h2.lists {
+  float: left;
+  font-family: "Lobster Two", cursive;
+  font-size: 24px;
+  clear: both;
+}
+
+/* line 396, ic.scss */
+.createList {
+  float: right;
+}
+/* line 399, ic.scss */
+.createList ul {
+  float: right;
+  background: #183051;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+/* line 406, ic.scss */
+.createList ul li {
+  float: left;
+  width: 150px;
+  padding: 5px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  position: relative;
+}
+/* line 413, ic.scss */
+.createList ul li span.name {
+  float: left;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: 1px;
+}
+/* line 420, ic.scss */
+.createList ul li span.plus, .createList ul li span.minus {
+  float: right;
+  color: white;
+  font-size: 12px;
+}
+/* line 425, ic.scss */
+.createList ul li span.minus {
+  display: none;
+}
+/* line 429, ic.scss */
+.createList ul li ul {
+  display: none;
+  position: absolute;
+  top: 22px;
+  left: 0;
+  z-index: 50;
+}
+/* line 437, ic.scss */
+.createList ul li ul li:hover {
+  background: #124f42;
+}
+/* line 441, ic.scss */
+.createList ul li ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 11px;
+  float: left;
+  width: 100%;
+}
+/* line 452, ic.scss */
+.createList ul li:hover > ul {
+  display: block;
+}
+/* line 455, ic.scss */
+.createList ul li:hover span.minus {
+  display: block;
+}
+/* line 458, ic.scss */
+.createList ul li:hover span.plus {
+  display: none;
+}
+
+/* line 466, ic.scss */
+#christmasLists {
+  float: left;
+  clear: both;
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+}
+/* line 473, ic.scss */
+#christmasLists ul {
+  float: left;
+  width: 100%;
+  list-style: none;
+}
+/* line 478, ic.scss */
+#christmasLists ul li {
+  float: left;
+  width: 20%;
+  border: 2px solid #e8e8e8;
+}
+/* line 482, ic.scss */
+#christmasLists ul li a.christmasList {
+  float: left;
+  width: 100%;
+  display: block;
+}
+/* line 487, ic.scss */
+#christmasLists ul li a.christmasList .listImage {
+  height: 200px;
+  float: left;
+  width: 100%;
+  background: #e8e8e8;
+}
+/* line 493, ic.scss */
+#christmasLists ul li a.christmasList .listName {
+  padding: 10px 0;
+  width: 100%;
+  float: left;
+  clear: both;
+  color: #183051;
+  text-align: center;
+}
+
+/* line 508, ic.scss */
+#searchbutton {
+  background: #FFFFFF;
+  width: 23px;
+  height: 22px;
+  border-radius: 0 15px 15px 0;
+  margin-left: -10px;
+  border: 1px #FFFFFF solid;
+}
+
+/* line 516, ic.scss */
+#searchform input[type=text] {
+  height: 22px;
+  border-radius: 15px 0 0 15px;
+  padding: 0 0 0 15px;
+  color: #962130;
+  border: 1px #FFFFFF solid;
+}
+
+/* line 523, ic.scss */
+#criteria, #criteria:focus {
+  outline: none;
+}
+
+/* line 526, ic.scss */
+.postit {
+  margin-right: 15px;
+  padding: 3px 10px;
+  background: #FFFFFF;
+  border-radius: 10px;
+  color: #FED808;
+  width: 50px;
+  text-align: center;
+}
+
+/* line 535, ic.scss */
+#failcontainer {
+  width: 450px;
+  margin: 0 auto;
+  background: #F5E9DF;
+  border-radius: 6px;
+  padding: 12px;
+  height: auto;
+  min-height: 350px;
+}
+
+/* line 544, ic.scss */
+.fail {
+  height: auto;
+}
+
+/* line 548, ic.scss */
+.various .forminp, .fail .forminp {
+  width: 250px;
+  margin: 0;
+  font-size: 12px;
+}
+/* line 549, ic.scss */
+.various input, .fail input {
+  width: 250px;
+  margin-bottom: 20px;
+}
+/* line 550, ic.scss */
+.various input[type="checkbox"], .fail input[type="checkbox"] {
+  width: 20px;
+}
+/* line 551, ic.scss */
+.various input[type="submit"], .fail input[type="submit"] {
+  float: right;
+  width: 100px;
+  background: #957151;
+  border-radius: 10px;
+  color: #F0F0F0;
+  padding: 5px;
+  text-transform: uppercase;
+  border: 0;
+  cursor: pointer;
+}
+
+/* line 553, ic.scss */
+#container {
+  padding: 51px 35px 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* line 558, ic.scss */
+#container, #itemholder {
+  width: 100%;
+  margin: 0;
+  float: left;
+  min-height: 400px;
+  clear: both;
+  position: relative;
+  height: 100%;
+}
+/* line 567, ic.scss */
+#container #error, #itemholder #error {
+  width: 100%;
+  float: left;
+  padding: 10px 0;
+  color: red;
+  text-align: center;
+  font-size: 12px;
+}
+/* line 576, ic.scss */
+#container #pleaseLogin, #itemholder #pleaseLogin {
+  text-align: center;
+  width: 100%;
+  margin-top: 20px;
+}
+/* line 581, ic.scss */
+#container #pleaseLogin a, #itemholder #pleaseLogin a {
+  color: #124f42;
+  text-decoration: none;
+}
+/* line 585, ic.scss */
+#container #pleaseLogin a:hover, #itemholder #pleaseLogin a:hover {
+  text-decoration: underline;
+}
+/* line 591, ic.scss */
+#container .item, #itemholder .item {
+  min-width: 160px;
+  margin: 10px;
+  float: left;
+  border: 1px solid #e8e8e8;
+  font-size: 15px;
+  background: #FFFFFF;
+}
+/* line 601, ic.scss */
+#container .item .itemImg, #itemholder .item .itemImg {
+  width: 100%;
+  float: left;
+  position: relative;
+  margin-bottom: 5px;
+}
+/* line 607, ic.scss */
+#container .item .itemImg img, #itemholder .item .itemImg img {
+  min-width: 100px;
+  max-width: 300px;
+  display: block;
+  margin: 0 auto;
+}
+/* line 613, ic.scss */
+#container .item .itemImg .itemHover, #itemholder .item .itemImg .itemHover {
+  display: none;
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  top: 0;
+  font-family: "Lobster Two", cursive;
+  font-size: 24px;
+  color: white;
+  text-align: center;
+  line-height: 1em;
+}
+/* line 625, ic.scss */
+#container .item .itemImg .itemHover span, #itemholder .item .itemImg .itemHover span {
+  position: absolute;
+  display: block;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 24px;
+  width: 100%;
+}
+/* line 637, ic.scss */
+#container .item .itemImg .like, #itemholder .item .itemImg .like {
+  background: #183051;
+  left: 0;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=85);
+  opacity: 0.85;
+}
+/* line 642, ic.scss */
+#container .item .itemImg .dislike, #itemholder .item .itemImg .dislike {
+  right: 0;
+  background: gray;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=85);
+  opacity: 0.85;
+}
+/* line 647, ic.scss */
+#container .item .itemImg .like:hover, #container .item .itemImg .dislike:hover, #itemholder .item .itemImg .like:hover, #itemholder .item .itemImg .dislike:hover {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+/* line 651, ic.scss */
+#container .item .itemImg:hover .itemHover, #itemholder .item .itemImg:hover .itemHover {
+  display: block;
+  cursor: pointer;
+}
+/* line 658, ic.scss */
+#container .item .itemRating, #itemholder .item .itemRating {
+  margin: 0 auto;
+  border-top: 1px solid rgba(0, 0, 0, 0.25);
+  width: 50%;
+  text-align: center;
+  font-size: 10px;
+  max-width: 150px;
+  padding: 5px 0;
+}
+/* line 667, ic.scss */
+#container .item .itemRating span, #itemholder .item .itemRating span {
+  vertical-align: top;
+}
+/* line 672, ic.scss */
+#container .item .itemScore, #itemholder .item .itemScore {
+  width: 85px;
+  height: 25px;
+  margin: 0px auto;
+  background: url("/images/greystars.png") no-repeat;
+  background-size: 100%;
+  position: relative;
+}
+/* line 680, ic.scss */
+#container .item .itemScore .itemPerc, #itemholder .item .itemScore .itemPerc {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: url("/images/bluestars.png") no-repeat;
+  background-size: 85px 23px;
+  height: 25px;
+}
+/* line 689, ic.scss */
+#container .item .itemTitle, #itemholder .item .itemTitle {
+  font-size: 12px;
+  width: 100%;
+  text-align: center;
+  padding: 5px 0;
+  color: #183051;
+}
+/* line 696, ic.scss */
+#container .item .itemTitle a, #itemholder .item .itemTitle a {
+  color: #183051;
+}
+/* line 700, ic.scss */
+#container .item .itemURL, #container .item .itemUser, #itemholder .item .itemURL, #itemholder .item .itemUser {
+  font-size: 10px;
+  padding: 5px 2.5%;
+  float: left;
+  width: 50%;
+  color: #183051;
+}
+/* line 706, ic.scss */
+#container .item .itemURL a, #container .item .itemUser a, #itemholder .item .itemURL a, #itemholder .item .itemUser a {
+  color: #183051;
+}
+/* line 710, ic.scss */
+#container .item .itemUser, #itemholder .item .itemUser {
+  text-align: right;
+  float: right;
+}
+/* line 714, ic.scss */
+#container .item a, #itemholder .item a {
+  text-decoration: none;
+}
+/* line 717, ic.scss */
+#container .item a:hover, #itemholder .item a:hover {
+  text-decoration: underline;
+}
+/* line 722, ic.scss */
+#container #itemPost, #itemholder #itemPost {
+  margin: 0 25%;
+  width: 50%;
+  text-align: center;
+  float: left;
+}
+/* line 728, ic.scss */
+#container #itemPost .itemImg, #itemholder #itemPost .itemImg {
+  width: 100%;
+  display: block;
+  float: left;
+  clear: both;
+}
+/* line 734, ic.scss */
+#container #itemPost .itemImg img, #itemholder #itemPost .itemImg img {
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+/* line 740, ic.scss */
+#container #itemPost .itemTitle, #itemholder #itemPost .itemTitle {
+  font-size: 20px;
+  line-height: 1.75;
+  margin-bottom: 10px;
+  float: left;
+  width: 100%;
+}
+/* line 747, ic.scss */
+#container #itemPost .itemUser, #itemholder #itemPost .itemUser {
+  float: left;
+  clear: both;
+}
+/* line 751, ic.scss */
+#container #itemPost .itemURL, #itemholder #itemPost .itemURL {
+  float: right;
+}
+/* line 755, ic.scss */
+#container #itemPost .itemUser a, #container #itemPost .itemURL a, #itemholder #itemPost .itemUser a, #itemholder #itemPost .itemURL a {
+  font-size: 12px;
+  color: #183051;
+  text-decoration: none;
+}
+/* line 760, ic.scss */
+#container #itemPost .itemUser a:hover, #container #itemPost .itemURL a:hover, #itemholder #itemPost .itemUser a:hover, #itemholder #itemPost .itemURL a:hover {
+  color: #124f42;
+  text-decoration: underline;
+}
+/* line 766, ic.scss */
+#container #itemPost #tagholder, #itemholder #itemPost #tagholder {
+  float: left;
+  clear: both;
+  margin: 10px 0;
+  font-size: 14px;
+  line-height: 16px;
+}
+/* line 773, ic.scss */
+#container #itemPost #tagholder span, #itemholder #itemPost #tagholder span {
+  font-size: 12px;
+  line-height: 16px;
+}
+/* line 778, ic.scss */
+#container #itemPost #tagholder a, #itemholder #itemPost #tagholder a {
+  font-size: 12px;
+}
+/* line 782, ic.scss */
+#container #itemPost #commentholder, #itemholder #itemPost #commentholder {
+  width: 100%;
+  float: left;
+  clear: both;
+  margin: 10px 0;
+  font-size: 14px;
+  line-height: 16px;
+}
+/* line 790, ic.scss */
+#container #itemPost #commentholder span, #itemholder #itemPost #commentholder span {
+  font-size: 12px;
+  line-height: 16px;
+}
+/* line 795, ic.scss */
+#container #itemPost #commentholder h2, #itemholder #itemPost #commentholder h2 {
+  font-size: 14px;
+  text-align: left;
+  width: 100%;
+  float: left;
+}
+/* line 801, ic.scss */
+#container #itemPost #commentholder h3, #itemholder #itemPost #commentholder h3 {
+  width: 100%;
+  float: left;
+  font-size: 13px;
+  text-align: center;
+  margin: 10px 0;
+}
+/* line 809, ic.scss */
+#container #itemPost #commentholder .comment, #itemholder #itemPost #commentholder .comment {
+  float: left;
+  clear: both;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #e8e8e8;
+  margin: 5px 0;
+}
+/* line 817, ic.scss */
+#container #itemPost #commentholder .comment .commentauthor, #itemholder #itemPost #commentholder .comment .commentauthor {
+  float: left;
+  font-size: 12px;
+  color: #183051;
+}
+/* line 822, ic.scss */
+#container #itemPost #commentholder .comment .commentdate, #itemholder #itemPost #commentholder .comment .commentdate {
+  float: left;
+  font-size: 12px;
+  color: #183051;
+  padding: 0 10px;
+}
+/* line 828, ic.scss */
+#container #itemPost #commentholder .comment .commentcontent, #itemholder #itemPost #commentholder .comment .commentcontent {
+  clear: both;
+  float: left;
+  width: 100%;
+  color: gray;
+  font-size: 14px;
+  text-align: left;
+  margin: 5px 0;
+}
+/* line 838, ic.scss */
+#container #itemPost #commentholder #commentbox, #itemholder #itemPost #commentholder #commentbox {
+  font-size: 12px;
+  width: 100%;
+  text-align: center;
+}
+/* line 846, ic.scss */
+#container .content, #itemholder .content {
+  width: 50%;
+  margin: 10px 25%;
+  font-size: 13px;
+  padding: 25px;
+  border-radius: 15px;
+  background: #FFF;
+  display: inline-block;
+  font-size: 13px;
+  line-height: 19px;
+}
+/* line 857, ic.scss */
+#container .content.center, #itemholder .content.center {
+  text-align: center;
+}
+/* line 861, ic.scss */
+#container .content.prepost, #itemholder .content.prepost {
+  margin: 10px 20%;
+  width: 60%;
+}
+/* line 865, ic.scss */
+#container .content.prepost .prePoster, #itemholder .content.prepost .prePoster {
+  float: left;
+  width: 27%;
+  margin: 15px 2.66%;
+}
+/* line 870, ic.scss */
+#container .content.prepost .prePoster img, #itemholder .content.prepost .prePoster img {
+  float: left;
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+  max-width: 200px;
+}
+/* line 877, ic.scss */
+#container .content.prepost .prePoster h2, #itemholder .content.prepost .prePoster h2 {
+  width: 100%;
+  float: left;
+  font-family: "Lobster Two", cursive;
+  letter-spacing: 1px;
+  color: #183051;
+}
+/* line 884, ic.scss */
+#container .content.prepost .prePoster:hover, #itemholder .content.prepost .prePoster:hover {
+  cursor: pointer;
+}
+/* line 887, ic.scss */
+#container .content.prepost .prePoster:hover h2, #itemholder .content.prepost .prePoster:hover h2 {
+  text-decoration: underline;
+}
+/* line 895, ic.scss */
+#container .content .content, #itemholder .content .content {
+  width: 50%;
+  margin: 0 25%;
+  font-size: 13px;
+  padding: 0;
+  border-radius: 0;
+  background: #FFF;
+  border: 0;
+  line-height: 1.5;
+}
+/* line 905, ic.scss */
+#container .content .content .forminp#smaller, #itemholder .content .content .forminp#smaller {
+  font-size: 11px;
+}
+/* line 910, ic.scss */
+#container .content h2, #itemholder .content h2 {
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
+  line-height: 40px;
+  clear: both;
+}
+/* line 918, ic.scss */
+#container .content p, #itemholder .content p {
+  font-size: 13px;
+  line-height: 21px;
+  padding: 10px 0;
+  width: 100%;
+  text-align: center;
+  clear: both;
+}
+/* line 927, ic.scss */
+#container .content.static, #itemholder .content.static {
+  text-align: center;
+  width: 95%;
+  margin: 0;
+  padding: 0 2.5%;
+}
+/* line 933, ic.scss */
+#container .content.static .bottomLink, #itemholder .content.static .bottomLink {
+  width: 40%;
+  margin: 15px 2.5%;
+  padding: 10px 2.5%;
+  display: inline-block;
+  border: 1px solid #e8e8e8;
+  text-decoration: none;
+  color: #183051;
+}
+/* line 942, ic.scss */
+#container .content.static .bottomLink:hover, #itemholder .content.static .bottomLink:hover {
+  background: #183051;
+  color: white;
+}
+/* line 949, ic.scss */
+#container .content input[type='text'], #container .content input[type='password'], #itemholder .content input[type='text'], #itemholder .content input[type='password'] {
+  margin-bottom: 10px;
+  width: 99%;
+  text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: 2px;
+  padding: 10px;
+}
+/* line 959, ic.scss */
+#container .content input[type='submit'], #container .content button, #itemholder .content input[type='submit'], #itemholder .content button {
+  float: right;
+  width: 50%;
+  padding: 10px 0;
+  text-align: center;
+  background: #183051;
+  border: 0;
+  cursor: pointer;
+  color: white;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+/* line 973, ic.scss */
+#container .content input[type='submit']:hover, #container .content button:hover, #itemholder .content input[type='submit']:hover, #itemholder .content button:hover {
+  background: #124f42;
+}
+
+/* line 979, ic.scss */
+#mainContent {
+  width: 90%;
+  margin: 0 auto;
+  padding: 5%;
+  font-size: 13px;
+  min-height: 400px;
+}
+
+/* line 981, ic.scss */
+.terms {
+  line-height: 1.6;
+}
+/* line 984, ic.scss */
+.terms strong {
+  text-transform: uppercase;
+}
+
+/* line 989, ic.scss */
+#left, #right {
+  float: left;
+}
+
+/* line 990, ic.scss */
+#left nav {
+  border: 3px solid #fed808;
+  border-left: 0;
+  border-radius: 0 10px 10px 0;
+  background: url("../images/bg.png") repeat;
+  float: left;
+  margin-top: 10px;
+}
+
+/* line 998, ic.scss */
+#update ul {
+  margin-left: 10px;
+}
+/* line 1001, ic.scss */
+#update ul li {
+  list-style: none;
+  float: left;
+  margin: 4px 10px;
+  font-size: 14px;
+}
+
+/* line 1008, ic.scss */
+#postimages {
+  float: left;
+  margin: 70px 50px 0;
+  text-align: center;
+}
+/* line 1013, ic.scss */
+#postimages form {
+  width: 100%;
+  text-align: center;
+}
+/* line 1018, ic.scss */
+#postimages .postdiv {
+  padding: 10px;
+  overflow: hidden;
+  display: inline-block;
+  cursor: pointer;
+}
+/* line 1024, ic.scss */
+#postimages .postdiv .postimage {
+  max-width: 100%;
+  margin: 0 auto;
+  display: block;
+}
+/* line 1030, ic.scss */
+#postimages input {
+  clear: both;
+  background: #183051;
+  width: 125px;
+  color: white;
+  border: 0;
+  cursor: pointer;
+}
+/* line 1038, ic.scss */
+#postimages input:hover {
+  background: #124f42;
+}
+/* line 1042, ic.scss */
+#postimages #chosenImg {
+  max-width: 50%;
+  margin: 0 auto;
+}
+/* line 1046, ic.scss */
+#postimages #chosenImg img {
+  max-width: 100%;
+}
+/* line 1050, ic.scss */
+#postimages h2 {
+  font-family: "Lobster Two", cursive;
+  width: 100%;
+  text-align: center;
+}
+
+/* line 1058, ic.scss */
+#selectedimg {
+  background: #183051;
+}
+
+/* line 1064, ic.scss */
+.errorNoItems {
+  margin: 20px auto;
+  width: 100%;
+  max-width: 500px;
+  display: block;
+  font-style: italic;
+  line-height: 21px;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* line 1077, ic.scss */
+button {
+  background: #183051;
+  color: white;
+  border: 0;
+  cursor: pointer;
+}
+
+/* line 1083, ic.scss */
+.loginLinks {
+  float: left;
+  width: 100%;
+  clear: both;
+  margin-top: 25px;
+}
+/* line 1089, ic.scss */
+.loginLinks a, .loginLinks div a {
+  font-size: 12px;
+  color: gray;
+  text-decoration: none;
+}
+/* line 1094, ic.scss */
+.loginLinks a:hover, .loginLinks div a:hover {
+  color: #183051;
+  text-decoration: underline;
+}
+/* line 1100, ic.scss */
+.loginLinks div {
+  float: left;
+  width: 50%;
+}
+/* line 1105, ic.scss */
+.loginLinks #passwordLink a {
+  float: right;
+}
+
+@media all and (max-width: 680px) {
+  /* line 1111, ic.scss */
+  .nonHandheld {
+    display: none!important;
+  }
+
+  /* line 1114, ic.scss */
+  .handheld {
+    display: block!important;
+  }
+
+  /* line 1119, ic.scss */
+  header .headcont .left {
+    width: 85%;
+  }
+  /* line 1121, ic.scss */
+  header .headcont .left #countdown {
+    display: none;
+  }
+  /* line 1125, ic.scss */
+  header .headcont .right {
+    width: 15%;
+  }
+
+  /* line 1131, ic.scss */
+  #container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* line 1134, ic.scss */
+  #container .item {
+    width: 45%;
+    min-width: 45%;
+    max-width: 45%;
+    padding: 0;
+    margin: 10px 2%;
+  }
+  /* line 1141, ic.scss */
+  #container .item .itemImg img {
+    max-width: 100%;
+  }
+  /* line 1145, ic.scss */
+  #container #itemPost {
+    width: 95%;
+    margin: 0 2.5%;
+  }
+  /* line 1150, ic.scss */
+  #container .content, #container .content .content {
+    width: 90%;
+    margin: 70px 5% 0;
+  }
+  /* line 1154, ic.scss */
+  #container .content input[type='submit'], #container .content button, #container .content .content input[type='submit'], #container .content .content button {
+    width: 100%;
+  }
+}
+@media all and (max-width: 300px) {
+  /* line 1162, ic.scss */
+  #container .item {
+    width: 95%;
+    min-width: 0;
+    max-width: 95%;
+    margin: 10px 2.5%;
+  }
+}
+@media all and (min-width: 681px) {
+  /* line 1171, ic.scss */
+  .nonHandheld {
+    display: block!important;
+  }
+
+  /* line 1174, ic.scss */
+  .handheld {
+    display: none!important;
+  }
+}
+@media all and (max-width: 1200px) {
+  /* line 1179, ic.scss */
+  header .left {
+    width: 75%;
+  }
+
+  /* line 1182, ic.scss */
+  header .right {
+    width: 25%;
+  }
+
+  /* line 1186, ic.scss */
+  #container .content .content {
+    width: 100%;
+    margin: 0;
+  }
+}

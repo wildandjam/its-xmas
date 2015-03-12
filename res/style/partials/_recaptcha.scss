@@ -1,0 +1,23 @@
+#container #recaptcha_widget_div {
+	#recaptcha_area tr:nth-child(1){height:67px!important;}
+	.recaptchatable, #recaptcha_area tr, #recaptcha_area td, #recaptcha_area th {border:0!important;padding:0!important;float:left;}
+	input[type='text'] {border:1px solid $lgrey!important;}
+}
+
+#recaptcha_table tbody tr td:nth-child(2){
+	clear:both;
+
+	#recaptcha_reload_btn, #recaptcha_switch_audio_btn, #recaptcha_switch_img_btn, #recaptcha_whatsthis_btn {
+		display:none;
+		//margin:0 5px;
+	}
+}
+#recaptcha_table tbody tr td:nth-child(3) img{
+	display:none;
+}
+#recaptcha_image {
+	width: 302px!important;
+	height: 59px!important;
+	border:1px solid $lgrey!important;
+}
+.recaptcha_only_if_privacy {display:none;}

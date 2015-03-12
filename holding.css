@@ -1,0 +1,68 @@
+body {
+	background:#E8E8E8;
+
+}
+#holding {
+	width:100%;
+	max-width:500px;
+	position:absolute;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	margin:auto;
+	display:block;
+	height:300px;
+}
+h1 {
+	font-family:'Lobster Two', cursive;
+	width:100%;
+	text-align:center;
+	color:#183051;
+	font-size:80px;
+	font-weight:normal;
+	padding:0;
+	margin:0;
+	float:left;
+}
+#countdown {
+	font-size:25px;
+	margin:0 auto;
+	display:block; 
+	text-align:center;
+	overflow:hidden;
+	float:left;
+	margin:22px auto 0;
+	width:100%;
+	color:#183051;
+	font-family: 'Lobster Two', cursive;
+
+	span {
+		display:inline-block;
+	}
+}
+
+
+h2 {
+	font-family:'Lobster Two', cursive;
+	width:100%;
+	text-align:center;
+	color:#183051;
+	font-size:30px;
+	font-weight:normal;
+	padding:0;
+	margin:70px 0;
+	float:left;
+}
+#share {
+	float:left;
+	width:100%;
+	text-align:center;
+	margin:50px auto;
+}
+.shareOpt {
+	display:inline-block;
+	vertical-align: top;
+	height:20px;
+}
+a.google {display:none;}

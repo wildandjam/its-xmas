@@ -1,0 +1,1787 @@
+/*
+Theme Name: It's Christmas
+Theme URI: http://www.its-xmas.co.uk
+Author: It's Christmas
+Author URI: http://www.its-xmas.co.uk
+Description: 
+
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: its-christmas
+Domain Path: /languages/
+Tags: green, light, white, gray, black, one-column, two-columns, right-sidebar, fluid-layout, responsive-layout, photoblogging, left-sidebar, translation-ready, custom-background, custom-colors, custom-menu, featured-images, full-width-template, post-formats, theme-options, threaded-comments
+
+
+This theme, like WordPress, is licensed under the GPL.
+
+sparkling is based on Underscores http://underscores.me/, (C) 2012-2013 Automattic, Inc.
+
+*/
+/* Table of content
+-----------------------------------------------
+1. Global
+2. Content
+3. Post styling
+4. Singe Post/Page Pagination
+5. Media
+6. Widgets
+7. Buttons
+8. Infinite Scroll
+8. Custom Styles
+9. Navigation
+10. Comments
+11. Attachment styling
+12. Gallery
+13. Footer
+14. Social icons
+15. Call For Action
+*/
+/* =Global
+----------------------------------------------- */
+/* line 44, blog.scss */
+body {
+  color: #6B6B6B;
+  background-color: #F2F2F2;
+  word-wrap: break-word;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.7;
+  font-size: 14px;
+}
+
+/* line 53, blog.scss */
+a {
+  color: #DA4453;
+  text-decoration: none;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+/* line 63, blog.scss */
+a:hover,
+a:focus {
+  color: #DADADA;
+  text-decoration: none;
+}
+
+/* line 68, blog.scss */
+a:focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+/* line 74, blog.scss */
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  color: #DA4453;
+  font-weight: 700;
+  font-family: 'Roboto Slab', serif;
+}
+
+/* line 81, blog.scss */
+h1,
+.h1 {
+  font-size: 28px;
+}
+
+/* line 86, blog.scss */
+h2,
+.h2 {
+  font-size: 24px;
+}
+
+/* line 91, blog.scss */
+h3,
+.h3 {
+  font-size: 20px;
+}
+
+/* line 96, blog.scss */
+h4,
+.h4 {
+  font-size: 16px;
+}
+
+/* line 101, blog.scss */
+h5,
+.h5 {
+  font-size: 14px;
+}
+
+/* line 106, blog.scss */
+h6,
+.h6 {
+  font-size: 13px;
+}
+
+/* line 110, blog.scss */
+img {
+  height: auto;
+  /* Make sure images are scaled correctly. */
+  max-width: 100%;
+  /* Adhere to container width. */
+}
+
+/* line 117, blog.scss */
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+  /* Corrects font size not being inherited in all browsers */
+  margin: 0;
+  /* Addresses margins set differently in IE6/7, F3/4, S5, Chrome */
+  vertical-align: baseline;
+  /* Improves appearance and consistency in all browsers */
+  *vertical-align: middle;
+  /* Improves appearance and consistency in all browsers */
+}
+
+/* line 125, blog.scss */
+input[type="checkbox"],
+input[type="radio"] {
+  padding: 0;
+  /* Addresses excess padding in IE8/9 */
+}
+
+/* line 128, blog.scss */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* Addresses appearance set to searchfield in S5, Chrome */
+  -webkit-box-sizing: content-box;
+  /* Addresses box sizing set to border-box in S5, Chrome (include -moz to future-proof) */
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+/* line 134, blog.scss */
+input[type="search"]::-webkit-search-decoration {
+  /* Corrects inner padding displayed oddly in S5, Chrome on OSX */
+  -webkit-appearance: none;
+}
+
+/* line 138, blog.scss */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  /* Corrects inner padding and border displayed oddly in FF3/4 www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/ */
+  border: 0;
+  padding: 0;
+}
+
+/* line 147, blog.scss */
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+textarea {
+  color: #666;
+  border: 1px solid #E8E8E8;
+  border-radius: 3px;
+}
+
+/* line 157, blog.scss */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+textarea:focus {
+  color: #111;
+}
+
+/* line 164, blog.scss */
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"] {
+  padding: 3px;
+}
+
+/* line 167, blog.scss */
+textarea {
+  overflow: auto;
+  /* Removes default vertical scrollbar in IE6/7/8/9 */
+  padding-left: 3px;
+  vertical-align: top;
+  /* Improves readability and alignment in all browsers */
+  width: 100%;
+}
+
+/* Alignment */
+/* line 176, blog.scss */
+.alignleft {
+  display: inline;
+  float: left;
+  margin-right: 1.5em;
+}
+
+/* line 181, blog.scss */
+.alignright {
+  display: inline;
+  float: right;
+  margin-left: 1.5em;
+}
+
+/* line 186, blog.scss */
+.aligncenter {
+  clear: both;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Text meant only for screen readers */
+/* line 193, blog.scss */
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+}
+
+/* line 200, blog.scss */
+.screen-reader-text:hover,
+.screen-reader-text:active,
+.screen-reader-text:focus {
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  clip: auto !important;
+  color: #21759b;
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+  /* Above WP toolbar */
+}
+
+/* Clearing */
+/* line 231, blog.scss */
+.clear:before,
+.clear:after,
+.entry-content:before,
+.entry-content:after,
+.comment-content:before,
+.comment-content:after,
+.site-header:before,
+.site-header:after,
+.site-content:before,
+.site-content:after,
+.site-footer:before,
+.site-footer:after {
+  content: '';
+  display: table;
+}
+
+/* line 241, blog.scss */
+.clear:after,
+.entry-content:after,
+.comment-content:after,
+.site-header:after,
+.site-content:after,
+.site-footer:after {
+  clear: both;
+}
+
+/* =Content
+----------------------------------------------- */
+/* line 250, blog.scss */
+.hentry {
+  margin: 0;
+}
+
+/* line 254, blog.scss */
+.byline,
+.updated {
+  display: none;
+}
+
+/* line 258, blog.scss */
+.single .byline,
+.group-blog .byline {
+  display: inline;
+  margin-right: 0;
+}
+
+/* line 264, blog.scss */
+.page-content,
+.entry-content,
+.entry-summary {
+  margin: 1.5em 0 0;
+}
+
+/* line 267, blog.scss */
+.page-links {
+  clear: both;
+  margin: 0 0 1.5em;
+}
+
+/* line 271, blog.scss */
+.main-content-area {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+/* =Post styling
+----------------------------------------------- */
+/* line 277, blog.scss */
+.entry-meta a {
+  font-size: 13px;
+  color: #6B6B6B;
+}
+
+/* line 281, blog.scss */
+.entry-meta {
+  margin-bottom: 30px;
+}
+
+/* line 284, blog.scss */
+footer.entry-meta {
+  margin-bottom: 0;
+}
+
+/* line 287, blog.scss */
+.page-header {
+  margin-top: 0;
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* line 292, blog.scss */
+.entry-meta .fa {
+  font-size: 14px;
+  margin-right: 3px;
+}
+
+/* line 296, blog.scss */
+.entry-meta span {
+  margin-right: 10px;
+}
+
+/* line 299, blog.scss */
+.entry-title {
+  color: #444;
+  margin-bottom: 30px;
+}
+
+/* line 303, blog.scss */
+.entry-title a {
+  color: #444;
+}
+
+/* line 306, blog.scss */
+.entry-title a:hover {
+  color: #DA4453;
+}
+
+/* line 309, blog.scss */
+.btn.btn-default.read-more {
+  float: right;
+  margin-top: 10px;
+  font-size: 12px;
+  padding: 11px 13px;
+}
+
+/* line 315, blog.scss */
+.search .btn.btn-default.read-more {
+  float: none;
+}
+
+/* line 318, blog.scss */
+hr.section-divider {
+  border-color: #E8E8E8;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+/* author */
+/* line 324, blog.scss */
+.author-bio {
+  clear: both;
+  width: 100%;
+  padding-top: 35px;
+  padding-bottom: 35px;
+}
+
+/* line 330, blog.scss */
+.author-bio .avatar {
+  float: left;
+}
+
+/* line 333, blog.scss */
+.author-bio-content h4 {
+  font-size: 14px;
+  margin-top: 0;
+}
+
+/* line 337, blog.scss */
+.author-bio .author-bio-content {
+  margin-left: 74px;
+}
+
+/* line 340, blog.scss */
+.secondary-content-box {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+/* line 345, blog.scss */
+.single-view,
+.blog-item-wrap {
+  margin-bottom: 50px;
+}
+
+/* line 348, blog.scss */
+.post-inner-content {
+  padding: 45px 50px;
+  background-color: #fff;
+  border: 1px solid #dadada;
+  border-top: none;
+}
+
+/* line 354, blog.scss */
+.post-inner-content:first-child {
+  border-top: 1px solid #dadada;
+}
+
+/* line 357, blog.scss */
+.entry-title {
+  margin-top: 0;
+}
+
+/* line 361, blog.scss */
+.more-link,
+.says {
+  display: none;
+}
+
+/* line 366, blog.scss */
+.comment-author .fn,
+.author-bio h4,
+.comment-reply-title {
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+/* line 370, blog.scss */
+.comment-reply-title {
+  font-size: 14px;
+}
+
+/* line 373, blog.scss */
+.comment-reply-link {
+  background: #C1C0C0;
+  border: #C1C0C0;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+/* line 379, blog.scss */
+.page-template-page-fullwidth-php .col-md-8 {
+  width: 100%;
+}
+
+/* =Singe Post/Page Pagination
+----------------------------------------------- */
+/* line 384, blog.scss */
+.page-links span {
+  display: inline-block;
+  color: #fff;
+  background-color: #DA4453;
+  border-radius: 4px;
+  padding: 2px 10px;
+  margin-left: 2px;
+}
+
+/* line 392, blog.scss */
+.page-links a span {
+  background-color: inherit;
+  border: 1px solid #E8E8E8;
+  color: #DA4453;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+/* line 401, blog.scss */
+.page-links a:hover span {
+  background-color: #DA4453;
+  border: 1px solid #DA4453;
+  color: #fff;
+}
+
+/* line 407, blog.scss */
+.pagination .fa-chevron-left,
+.pagination .fa-chevron-right {
+  font-size: 12px;
+}
+
+/* line 410, blog.scss */
+.pagination li a {
+  color: #DA4453;
+}
+
+/* line 413, blog.scss */
+.pagination li:hover a {
+  color: #DA4453;
+}
+
+/* line 421, blog.scss */
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus {
+  color: #FFF;
+  background-color: #DA4453;
+  border-color: #DA4453;
+}
+
+/* line 427, blog.scss */
+.pagination > li > a,
+.pagination > li > span {
+  padding: 9px 14px;
+  border-color: #dadada;
+}
+
+/* line 431, blog.scss */
+.bottom-pagination {
+  text-align: center;
+}
+
+/* =Asides
+----------------------------------------------- */
+/* line 439, blog.scss */
+.blog .format-aside .entry-title,
+.archive .format-aside .entry-title {
+  display: none;
+}
+
+/* =Media
+----------------------------------------------- */
+/* line 448, blog.scss */
+.page-content img.wp-smiley,
+.entry-content img.wp-smiley,
+.comment-content img.wp-smiley {
+  border: none;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding: 0;
+}
+
+/* line 454, blog.scss */
+.single-featured {
+  -webkit-transition: opacity 0.3s linear;
+  -moz-transition: opacity 0.3s linear;
+  -o-transition: opacity 0.3s linear;
+  transition: opacity 0.3s linear;
+  display: block;
+  margin: auto;
+}
+
+/* line 462, blog.scss */
+.single-featured:hover {
+  opacity: 0.8;
+}
+
+/* line 465, blog.scss */
+.wp-caption {
+  border: 1px solid #ccc;
+  margin-bottom: 1.5em;
+  max-width: 100%;
+}
+
+/* line 470, blog.scss */
+.wp-caption img[class*="wp-image-"] {
+  display: block;
+}
+
+/* line 473, blog.scss */
+.wp-caption-text {
+  text-align: center;
+}
+
+/* line 476, blog.scss */
+.wp-caption .wp-caption-text {
+  margin: 0.8075em 0;
+}
+
+/* Make sure embeds and iframes fit their containers */
+/* line 483, blog.scss */
+embed,
+iframe,
+object {
+  max-width: 100%;
+}
+
+/* =Widgets
+----------------------------------------------- */
+/* Make sure select elements fit in widgets */
+/* line 491, blog.scss */
+.widget select {
+  max-width: 100%;
+}
+
+/* Search widget */
+/* line 495, blog.scss */
+.widget_search .search-submit {
+  display: none;
+}
+
+/* line 498, blog.scss */
+.widget ul li {
+  list-style: none;
+  border-bottom: 1px solid #F2F2F2;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+
+/* line 504, blog.scss */
+.widget ul {
+  padding: 0;
+  line-height: 18px;
+  font-size: 14px;
+}
+
+/* line 509, blog.scss */
+.widget ul.nav.nav-tabs {
+  padding: 0;
+}
+
+/* line 512, blog.scss */
+#secondary .widget {
+  margin-bottom: 50px;
+  color: #C1C0C0;
+  overflow: hidden;
+}
+
+/* line 517, blog.scss */
+#secondary .widget:last-child {
+  margin-bottom: 0px;
+}
+
+/* line 520, blog.scss */
+.tab-content ul li {
+  list-style: none;
+}
+
+/* line 525, blog.scss */
+#secondary .widget_archive ul li:before,
+#secondary .widget_categories ul li:before,
+#secondary .widget_recent_comments ul li:before {
+  font-family: fontawesome;
+  margin-right: 10px;
+}
+
+/* line 529, blog.scss */
+#secondary .widget_archive ul li:before {
+  content: '\f073';
+}
+
+/* line 532, blog.scss */
+#secondary .widget_categories ul li:before {
+  content: '\f115';
+}
+
+/* line 535, blog.scss */
+#secondary .widget_recent_comments ul li:before {
+  content: '\f0e5';
+}
+
+/* line 538, blog.scss */
+.well {
+  background-color: #fff;
+  padding: 30px;
+  border: 1px solid #DADADA;
+  overflow: hidden;
+  clear: both;
+}
+
+/* line 545, blog.scss */
+#secondary .widget > h3 {
+  font-size: 14px;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+  margin-top: 0;
+  color: #636467;
+}
+
+/* line 552, blog.scss */
+#secondary .widget a {
+  color: #C1C0C0;
+}
+
+/* line 555, blog.scss */
+.widget ul ul {
+  padding: 10px;
+}
+
+/* line 558, blog.scss */
+.widget #social ul li {
+  border-bottom: 0;
+}
+
+/* line 561, blog.scss */
+.not-found-widget {
+  margin-top: 30px;
+}
+
+/* Custom Category Widget */
+/* line 566, blog.scss */
+.cats-widget ul li span {
+  float: right;
+}
+
+/* Recent Post widgets */
+/* line 570, blog.scss */
+.popular-posts-wrapper .post {
+  float: left;
+  clear: both;
+  margin-bottom: 20px;
+}
+
+/* line 575, blog.scss */
+.popular-posts-wrapper .post .post-image {
+  width: 60px;
+  height: 60px;
+  float: left;
+  display: block;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  background-color: #DADADA;
+  background-position: center center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+/* line 587, blog.scss */
+.popular-posts-wrapper .post .post-image img {
+  border-radius: 4px;
+  opacity: 1;
+  -webkit-transition: opacity  0.5s;
+  -moz-transition: opacity  0.5s;
+  -o-transition: opacity  0.5s;
+  transition: opacity  0.5s;
+}
+
+/* line 595, blog.scss */
+.popular-posts-wrapper .post .post-image img:hover {
+  opacity: 0.6 !important;
+}
+
+/* line 598, blog.scss */
+.popular-posts-wrapper .post .post-content {
+  margin-left: 80px;
+}
+
+/* line 601, blog.scss */
+.widget .post-content > span {
+  display: block;
+}
+
+/* line 604, blog.scss */
+#secondary .widget .post-content a {
+  color: #DA4453;
+}
+
+/* line 607, blog.scss */
+#secondary .widget .post-content a:hover {
+  color: #DADADA;
+}
+
+/* line 610, blog.scss */
+.widget .post-content span {
+  font-size: 12px;
+}
+
+/* line 613, blog.scss */
+.tagcloud {
+  margin-top: 25px;
+}
+
+/* line 616, blog.scss */
+.tagcloud a {
+  padding: 6px 7px;
+  margin-right: 0;
+  margin-bottom: 4px;
+  line-height: 100%;
+  display: inline-block;
+  color: #FFF !important;
+  background-color: #DADADA;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  font-size: 12px;
+}
+
+/* line 628, blog.scss */
+.tagcloud a:hover {
+  background-color: #DA4453;
+  border-color: #DA4453;
+}
+
+/* =Buttons
+----------------------------------------------- */
+/* line 635, blog.scss */
+.btn-default, .label-default {
+  background-color: #DA4453;
+  border-color: #DA4453;
+  -webkit-transition: background-color 0.3s linear;
+  -moz-transition: background-color 0.3s linear;
+  -o-transition: background-color 0.3s linear;
+  transition: background-color 0.3s linear;
+}
+
+/* line 650, blog.scss */
+.btn-default:hover,
+.label-default[href]:hover,
+.label-default[href]:focus,
+.btn-default:hover, .btn-default:focus,
+.btn-default:active,
+.btn-default.active,
+#image-navigation .nav-previous a:hover,
+#image-navigation .nav-next a:hover {
+  background-color: #363636;
+  border-color: #363636;
+}
+
+/* line 654, blog.scss */
+.btn.btn-default {
+  color: #FFF;
+  text-transform: uppercase;
+}
+
+/* line 658, blog.scss */
+.input-group-btn:last-child > .btn {
+  margin-left: 0;
+}
+
+/* =Infinite Scroll
+----------------------------------------------- */
+/* Globally hidden elements when Infinite Scroll is supported and in use. */
+/* line 666, blog.scss */
+.infinite-scroll .paging-navigation,
+.infinite-scroll.neverending .site-footer {
+  /* Theme Footer (when set to scrolling) */
+  display: none;
+}
+
+/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before */
+/* line 671, blog.scss */
+.infinity-end.neverending .site-footer {
+  display: block;
+}
+
+/* line 674, blog.scss */
+#infinite-handle span {
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  padding: 20px;
+  background: transparent;
+  border: 1px solid #DADADA;
+  background: #fff;
+  color: #DA4453;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+/* line 690, blog.scss */
+#infinite-handle span:hover {
+  background-color: #DA4453;
+  color: #fff;
+}
+
+/* =Custom Styles
+----------------------------------------------- */
+/* line 696, blog.scss */
+.site-branding {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* line 700, blog.scss */
+.site-description {
+  color: #777;
+  font-weight: 200;
+  font-size: 16px;
+}
+
+/* line 705, blog.scss */
+.page-template-page-homepage-php .carousel {
+  margin-top: -20px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  /* line 711, blog.scss */
+  .pull-right {
+    float: none !important;
+  }
+
+  /* line 714, blog.scss */
+  .pull-left {
+    float: none !important;
+  }
+
+  /* line 717, blog.scss */
+  .flex-caption {
+    display: none;
+  }
+}
+/* =Navigation
+----------------------------------------------- */
+/* line 725, blog.scss */
+.site-content [class*="navigation"] a {
+  border: 1px solid #DADADA;
+  background-color: #fff;
+  padding: 8px 14px;
+  font-size: 12px;
+  border-radius: 4px;
+  display: block;
+  margin: 0 0 1.5em;
+  overflow: hidden;
+}
+
+/* line 735, blog.scss */
+.paging-navigation {
+  text-transform: uppercase;
+}
+
+/* line 738, blog.scss */
+.site-content [class*="navigation"] a:hover {
+  color: #fff;
+  background: #DA4453;
+  text-decoration: none;
+}
+
+/* line 743, blog.scss */
+.more-link {
+  float: right;
+  margin: 10px 0;
+}
+
+/* line 747, blog.scss */
+.single .nav-links {
+  margin-top: 30px;
+}
+
+/* line 750, blog.scss */
+[class*="navigation"] .nav-previous {
+  float: left;
+}
+
+/* line 753, blog.scss */
+[class*="navigation"] .nav-next {
+  float: right;
+  text-align: right;
+}
+
+/* line 757, blog.scss */
+.nav > li > a {
+  text-transform: uppercase;
+}
+
+/* line 760, blog.scss */
+.navbar.navbar-default {
+  background-color: #363636;
+  font-family: 'Open Sans', serif;
+  margin-bottom: 0;
+  font-weight: 500;
+}
+
+/* line 766, blog.scss */
+.navbar-default .navbar-nav > li > a {
+  color: #F5F7FA;
+  line-height: 40px;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+/* line 772, blog.scss */
+.navbar > .container .navbar-brand {
+  color: #DADADA;
+  font-size: 20px;
+  margin: 13px 0;
+}
+
+/* line 779, blog.scss */
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+  border-right: none;
+  border-left: none;
+}
+
+/* line 783, blog.scss */
+.navbar {
+  border-radius: 0;
+}
+
+/* line 786, blog.scss */
+.navbar-default {
+  border: none;
+}
+
+/* line 796, blog.scss */
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus,
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus,
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+  color: #DA4453;
+  background-color: transparent;
+}
+
+/* line 803, blog.scss */
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus,
+.navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+.navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+  color: #fff;
+  background-color: #DA4453;
+}
+
+/* line 807, blog.scss */
+.navbar-default .navbar-nav .open .dropdown-menu > li > a {
+  color: #656D78;
+}
+
+@media (max-width: 767px) {
+  /* line 811, blog.scss */
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #DADADA;
+  }
+}
+/* line 815, blog.scss */
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 767px) {
+  /* line 819, blog.scss */
+  ul.nav li.dropdown:hover > ul.dropdown-menu {
+    display: block;
+  }
+}
+/* line 823, blog.scss */
+.dropdown-menu > li > a {
+  padding: 10px 15px;
+  color: #636467;
+}
+
+/* line 830, blog.scss */
+.dropdown-menu,
+.dropdown-menu > .active > a,
+.dropdown-menu > .active > a:hover,
+.dropdown-menu > .active > a:focus {
+  border: none;
+}
+
+/* line 835, blog.scss */
+.dropdown-menu > .active > a,
+.dropdown-menu > .active > a:hover,
+.dropdown-menu > .active > a:focus {
+  background-color: #DA4453;
+  color: #fff;
+}
+
+/* line 840, blog.scss */
+.dropdown-menu .divider {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* line 843, blog.scss */
+.navbar-nav > li > .dropdown-menu {
+  padding: 0;
+}
+
+/* line 846, blog.scss */
+.navbar-nav > li > a {
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+
+/* line 852, blog.scss */
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+  background-color: transparent;
+}
+
+/* line 855, blog.scss */
+.nav.navbar-nav {
+  float: right;
+}
+
+@media (max-width: 767px) {
+  /* line 859, blog.scss */
+  .nav.navbar-nav {
+    float: none;
+  }
+
+  /* line 862, blog.scss */
+  .navbar > .container .navbar-brand {
+    margin: 0;
+  }
+
+  /* line 865, blog.scss */
+  .navbar-default .navbar-nav > li > a {
+    line-height: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+/* =Comments
+----------------------------------------------- */
+/* line 875, blog.scss */
+.comment-content a {
+  word-wrap: break-word;
+}
+
+/* line 880, blog.scss */
+#respond {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  padding: 0px !important;
+}
+
+/* line 885, blog.scss */
+#respond > p, #respond p.comment-notes, p.logged-in-as {
+  margin-bottom: 10px;
+}
+
+/* line 889, blog.scss */
+p.logged-in-as {
+  padding-bottom: 0px;
+}
+
+/* line 892, blog.scss */
+.comment-list {
+  margin-bottom: 40px !important;
+  margin-left: 0px !important;
+  padding-left: 0;
+}
+
+/* line 897, blog.scss */
+.comment .comment-body {
+  background-color: #ffffff;
+  margin: 0;
+  overflow: hidden;
+  padding: 25px;
+  margin-top: 2em;
+  padding-left: 100px;
+  position: relative;
+  border: 1px solid #E8E8E8;
+  border-bottom: 1px solid #DADADA;
+  border-radius: 4px;
+}
+
+/* line 909, blog.scss */
+.comment-list .children {
+  margin-left: 0px!important;
+  padding-left: 40px;
+  border-left: 1px solid #DADADA;
+  background-repeat: no-repeat;
+  background-position: left 20px;
+}
+
+/* line 916, blog.scss */
+.comment-list li.comment > div img.avatar {
+  position: absolute;
+  left: 29px;
+  top: 29px;
+}
+
+/* line 921, blog.scss */
+#comment-form-title {
+  font-size: 24px;
+  padding-bottom: 10px;
+}
+
+/* line 925, blog.scss */
+.comment-author.vcard {
+  font-size: 12px;
+}
+
+/* line 928, blog.scss */
+.vcard .avatar {
+  position: absolute;
+  left: 20px;
+  top: 29px;
+  border-radius: 2px;
+}
+
+/* line 934, blog.scss */
+.comment-metadata {
+  font-size: 11px;
+  line-height: 16px;
+  margin-bottom: 10px;
+}
+
+/* line 939, blog.scss */
+.comment-reply-link {
+  float: right;
+}
+
+/* line 942, blog.scss */
+.form-allowed-tags code {
+  word-wrap: break-word;
+  white-space: inherit;
+}
+
+/* line 946, blog.scss */
+.comment-respond label {
+  display: block;
+  font-weight: normal;
+}
+
+/* line 950, blog.scss */
+.comment-respond .required {
+  color: #C7254E;
+}
+
+/* line 953, blog.scss */
+#submit {
+  font-size: 12px;
+}
+
+/* line 957, blog.scss */
+.comment-navigation,
+.single .nav-links {
+  overflow: hidden;
+  margin-top: 30px;
+}
+
+/* =Attachment styling
+----------------------------------------------- */
+/* line 965, blog.scss */
+#image-navigation .nav-previous a,
+#image-navigation .nav-next a {
+  padding: 5px 20px;
+  border: 1px solid #E8E8E8;
+  border-radius: 4px;
+  display: block;
+}
+
+/* line 972, blog.scss */
+#image-navigation .nav-previous a:hover,
+#image-navigation .nav-next a:hover {
+  background-color: #DA4453;
+  color: #fff;
+}
+
+/* line 977, blog.scss */
+#image-navigation .nav-previous,
+#image-navigation .nav-next {
+  margin: 10px 0;
+}
+
+/* =Gallery
+-------------------------------------------------------------- */
+/* Normal */
+/* line 984, blog.scss */
+.gallery-columns-1 .gallery-item {
+  max-width: 648px;
+}
+
+/* line 987, blog.scss */
+.gallery-columns-2 .gallery-item {
+  max-width: 324px;
+}
+
+/* line 990, blog.scss */
+.gallery-columns-3 .gallery-item {
+  max-width: 216px;
+}
+
+/* line 993, blog.scss */
+.gallery-columns-4 .gallery-item {
+  max-width: 162px;
+}
+
+/* line 996, blog.scss */
+.gallery-columns-5 .gallery-item {
+  max-width: 129px;
+}
+
+/* line 999, blog.scss */
+.gallery-columns-6 .gallery-item {
+  max-width: 108px;
+}
+
+/* line 1002, blog.scss */
+.gallery-columns-7 .gallery-item {
+  max-width: 92px;
+}
+
+/* line 1005, blog.scss */
+.gallery-columns-8 .gallery-item {
+  max-width: 81px;
+}
+
+/* line 1008, blog.scss */
+.gallery-columns-9 .gallery-item {
+  max-width: 72px;
+}
+
+/* line 1011, blog.scss */
+.gallery {
+  margin: 0 auto 18px;
+  overflow: hidden;
+}
+
+/* line 1015, blog.scss */
+.gallery .gallery-item {
+  float: left;
+  margin-top: 0;
+  text-align: center;
+}
+
+/* line 1020, blog.scss */
+.gallery img {
+  border: 1px solid #dddddd;
+}
+
+/* line 1023, blog.scss */
+.gallery .gallery-caption {
+  font-size: 12px;
+  margin: 0 0 12px;
+}
+
+/* line 1027, blog.scss */
+.gallery dl {
+  margin: 0;
+}
+
+/* line 1030, blog.scss */
+.gallery br + br {
+  display: none;
+}
+
+/* line 1033, blog.scss */
+.attachment-gallery img {
+  background: #ffffff;
+  border: 1px solid #DADADA;
+  display: block;
+  height: auto;
+  margin: 15px auto;
+  max-width: 96%;
+  padding: 5px;
+  width: auto;
+}
+
+/* line 1048, blog.scss */
+.gallery-meta .iso,
+.gallery-meta .camera,
+.gallery-meta .shutter,
+.gallery-meta .aperture,
+.gallery-meta .full-size,
+.gallery-meta .focal-length {
+  display: block;
+}
+
+/* Full Width */
+/* line 1053, blog.scss */
+.page-template-page-fullwidth-php .gallery-columns-1 .gallery-item {
+  max-width: 1008px;
+}
+
+/* line 1056, blog.scss */
+.page-template-page-fullwidth-php .gallery-columns-2 .gallery-item {
+  max-width: 504px;
+}
+
+/* line 1059, blog.scss */
+.page-template-page-fullwidth-php .gallery-columns-3 .gallery-item {
+  max-width: 336px;
+}
+
+/* line 1062, blog.scss */
+.page-template-page-fullwidth-php .gallery-columns-4 .gallery-item {
+  max-width: 252px;
+}
+
+/* line 1065, blog.scss */
+.page-template-page-fullwidth-php .gallery-columns-5 .gallery-item {
+  max-width: 201px;
+}
+
+/* line 1068, blog.scss */
+.page-template-page-fullwidth-php .gallery-columns-6 .gallery-item {
+  max-width: 168px;
+}
+
+/* line 1071, blog.scss */
+.page-template-page-fullwidth-php .gallery-columns-7 .gallery-item {
+  max-width: 144px;
+}
+
+/* line 1074, blog.scss */
+.page-template-page-fullwidth-php .gallery-columns-8 .gallery-item {
+  max-width: 126px;
+}
+
+/* line 1077, blog.scss */
+.page-template-page-fullwidth-php .gallery-columns-9 .gallery-item {
+  max-width: 112px;
+}
+
+@media screen and (max-width: 650px) {
+  /* line 1081, blog.scss */
+  .gallery .gallery-item {
+    max-width: 100%;
+  }
+}
+/* =Footer
+----------------------------------------------- */
+/* line 1088, blog.scss */
+#footer-area {
+  background-color: #313233;
+  color: #999;
+}
+
+/* line 1092, blog.scss */
+#footer-area a {
+  color: #DADADA;
+}
+
+/* line 1095, blog.scss */
+#footer-area .footer-widget-area {
+  padding: 40px 0 20px 0;
+  overflow: hidden;
+}
+
+/* line 1099, blog.scss */
+#footer-area ul li {
+  border-bottom: 1px solid #444;
+}
+
+/* line 1102, blog.scss */
+#footer-area .site-info nav ul li {
+  border-bottom: none;
+}
+
+/* line 1105, blog.scss */
+.widgettitle {
+  font-size: 14px;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+  margin-top: 0;
+  color: inherit;
+}
+
+/* line 1112, blog.scss */
+#footer-area .widget ul li {
+  list-style: none;
+}
+
+/* line 1115, blog.scss */
+.footer-nav.nav > li {
+  position: relative;
+  display: inline-block;
+}
+
+/* line 1119, blog.scss */
+.footer-nav.nav {
+  float: left;
+  margin-bottom: 2px;
+}
+
+/* line 1123, blog.scss */
+.footer-widget {
+  overflow: hidden;
+}
+
+/* line 1126, blog.scss */
+.copyright {
+  margin-top: 10px;
+  float: right;
+  text-align: right;
+}
+
+/* line 1131, blog.scss */
+#colophon {
+  background-color: #1F1F1F;
+  padding: 10px 0;
+  border-top: 1px solid #3A3A3A;
+}
+
+/* line 1136, blog.scss */
+.site-info a {
+  color: #777;
+}
+
+/* line 1139, blog.scss */
+.site-info a:hover {
+  color: #999;
+}
+
+/* line 1142, blog.scss */
+#footer-area a:hover {
+  color: #fff;
+}
+
+/* line 1145, blog.scss */
+.site-info {
+  color: #999;
+  font-size: 12px;
+}
+
+/* line 1149, blog.scss */
+.footer-nav.nav > li > a:hover {
+  background-color: transparent;
+}
+
+/* line 1152, blog.scss */
+.scroll-to-top {
+  background: #363636;
+  background: rgba(100, 100, 100, 0.4);
+  color: #FFF;
+  bottom: 4%;
+  cursor: pointer;
+  display: none;
+  position: fixed;
+  right: 20px;
+  z-index: 999;
+  font-size: 16px;
+  text-align: center;
+  line-height: 40px;
+  width: 40px;
+  border-radius: 4px;
+  -webkit-transition: background-color 0.3s linear;
+  -moz-transition: background-color 0.3s linear;
+  -o-transition: background-color 0.3s linear;
+  transition: background-color 0.3s linear;
+}
+
+/* line 1172, blog.scss */
+.scroll-to-top:hover {
+  background: #DA4453;
+  opacity: .8;
+}
+
+@media (max-width: 768px) {
+  /* line 1178, blog.scss */
+  .site-info, .copyright {
+    text-align: center;
+  }
+
+  /* line 1181, blog.scss */
+  .footer-nav.nav, .copyright {
+    float: none;
+  }
+}
+/* =Social icons
+----------------------------------------------- */
+/* line 1188, blog.scss */
+#secondary .widget .social-icons a {
+  color: #fff;
+}
+
+/* line 1191, blog.scss */
+.social-icons {
+  position: relative;
+  text-align: center;
+}
+
+/* line 1195, blog.scss */
+#secondary .widget .social-icons {
+  text-align: left;
+}
+
+/* line 1198, blog.scss */
+.social-icons a {
+  font-size: 18px;
+  line-height: 40px;
+  list-style: none;
+  display: inline-block;
+  text-align: center;
+  height: 40px;
+  width: 40px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  border-radius: 3px;
+  background-color: #DADADA;
+  -webkit-transition: background-color  0.5s;
+  -moz-transition: background-color  0.5s;
+  -o-transition: background-color  0.5s;
+  transition: background-color  0.5s;
+}
+
+/* line 1215, blog.scss */
+#footer-area .social-icons a {
+  margin-right: 7px;
+  background-color: #363636;
+}
+
+/* line 1220, blog.scss */
+.social-icons a.facebook:hover {
+  background-color: #4265b9 !important;
+}
+
+/* line 1223, blog.scss */
+.social-icons a.twitter:hover {
+  background-color: #55ACEE !important;
+}
+
+/* line 1226, blog.scss */
+.social-icons a.dribbble:hover {
+  background-color: #ea4c89 !important;
+}
+
+/* line 1229, blog.scss */
+.social-icons a.flickr:hover {
+  background-color: #ff0084 !important;
+}
+
+/* line 1232, blog.scss */
+.social-icons a.googleplus:hover {
+  background-color: #d62408 !important;
+}
+
+/* line 1235, blog.scss */
+.social-icons a.skype:hover {
+  background-color: #0bbff2 !important;
+}
+
+/* line 1238, blog.scss */
+.social-icons a.pinterest:hover {
+  background-color: #c31e26 !important;
+}
+
+/* line 1241, blog.scss */
+.social-icons a.linkedin:hover {
+  background-color: #005987 !important;
+}
+
+/* line 1244, blog.scss */
+.social-icons a.vimeo:hover {
+  background-color: #1bb6ec !important;
+}
+
+/* line 1247, blog.scss */
+.social-icons a.tumblr:hover {
+  background-color: #35506b !important;
+}
+
+/* line 1250, blog.scss */
+.social-icons a.youtube:hover {
+  background-color: #df3333 !important;
+}
+
+/* line 1253, blog.scss */
+.social-icons a.instagram:hover {
+  background-color: #F95B60 !important;
+}
+
+/* line 1256, blog.scss */
+.social-icons a.rss:hover {
+  background-color: #f39c12 !important;
+}
+
+/* line 1259, blog.scss */
+.social-icons a.foursquare:hover {
+  background-color: #2398C9 !important;
+}
+
+/* line 1263, blog.scss */
+.fa-googleplus:before {
+  content: "\f0d5";
+}
+
+@media (max-width: 992px) {
+  /* line 1268, blog.scss */
+  .site-branding {
+    text-align: center;
+  }
+}
+/* =Call For Action
+----------------------------------------------- */
+/* line 1275, blog.scss */
+.cfa {
+  padding: 30px 0px;
+  background: #FFF;
+  border-bottom: 1px solid #DADADA;
+  text-align: center;
+}
+
+/* line 1281, blog.scss */
+.cfa-text {
+  font-size: 22px;
+  color: #DA4453;
+  display: block;
+  padding-top: 10px;
+}
+
+/* line 1287, blog.scss */
+.cfa-button {
+  background-color: transparent;
+  color: #DA4453;
+  padding: 15px 30px;
+  border-color: #DA4453;
+}
+
+/* line 1293, blog.scss */
+.cfa-button a {
+  color: #DA4453;
+}
+
+/* line 1296, blog.scss */
+.cfa-button:hover {
+  background-color: #DA4453;
+  color: #fff;
+}
+
+@media (max-width: 767px) {
+  /* line 1301, blog.scss */
+  .cfa {
+    padding: 0 0 20px;
+  }
+
+  /* line 1304, blog.scss */
+  .cfa-button {
+    padding: 10px 16px;
+    margin-top: 10px;
+  }
+}
+/* =Elements when no javaScript is present
+----------------------------------------------- */
+/* line 1319, blog.scss */
+#submit,
+.tagcloud,
+.comment-reply-link,
+button,
+.widget_rss ul,
+button[type=submit],
+.postform,
+table#wp-calendar {
+  display: none;
+}
+
+/* line 1329, blog.scss */
+.no-js #submit,
+.no-js .tagcloud,
+.no-js .comment-reply-link,
+.no-js button,
+.no-js .widget_rss ul,
+button[type=submit],
+.no-js .postform,
+.no-js table#wp-calendar {
+  display: block;
+}

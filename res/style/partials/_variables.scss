@@ -1,0 +1,20 @@
+$blue: 		#183051;
+$lgrey: 	#E8E8E8;
+$dgrey: 	#808080;
+$white: 	#FFFFFF;
+$black:		#000000;
+$green:		#124F42;
+$error:		#bd2c2c;
+$bg:		#F7F7F7;
+$font: 		'Droid Sans', sans-serif;
+$lobster:	'Lobster Two', cursive;
+$break-smallest: "(max-width: 480px)";
+$break-small: "(min-width: 481px) and (max-width: 767px)";
+$break-medium: "(min-width: 768px) and (max-width: 1023px)";
+$break-large: "(min-width: 1024px) and (max-width: 1399px)";
+$break-xlarge: "(min-width: 1400px)";
+$break-handheld: "(max-width: 767px)";
+$break-nonHandheld: "(min-width: 768px)";
+
+@media #{$break-medium} {
+}

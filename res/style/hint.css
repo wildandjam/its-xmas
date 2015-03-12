@@ -1,0 +1,375 @@
+/*-------------------------------------*\
+	HINT.css - A CSS tooltip library
+\*-------------------------------------*/
+/**
+ * HINT.css is a tooltip library made in pure CSS.
+ *
+ * Source: https://github.com/chinchang/hint.css
+ * Demo: http://kushagragour.in/lab/hint/
+ *
+ * Release under The MIT License
+ *
+ */
+/* line 22, hint.scss */
+.no-touch {
+  /**
+   * source: hint-core.scss
+   *
+   * Defines the basic styling for the tooltip.
+   * Each tooltip is made of 2 parts:
+   * 	1) body (:after)
+   * 	2) arrow (:before)
+   * 
+   * Classes added:
+   * 	1) hint
+   */
+  /**
+   * source: hint-position.scss
+   *
+   * Defines the positoning logic for the tooltips.
+   *
+   * Classes added:
+   * 	1) hint--top
+   * 	2) hint--bottom
+   * 	3) hint--left
+   * 	4) hint--right
+   */
+  /**
+   * set default color for tooltip arrows
+   */
+  /**
+   * top tooltip
+   */
+  /**
+   * bottom tooltip
+   */
+  /**
+   * right tooltip
+   */
+  /**
+   * left tooltip
+   */
+  /**
+   * source: hint-color-types.scss
+   *
+   * Contains tooltips of various types based on color differences.
+   *
+   * Classes added:
+   * 	1) hint--error
+   * 	2) hint--warning
+   * 	3) hint--info
+   * 	4) hint--success
+   *
+   */
+  /**
+   * Error
+   */
+  /**
+   * Warning
+   */
+  /**
+   * Info
+   */
+  /**
+   * Success
+   */
+  /**
+   * source: hint-always.scss
+   *
+   * Defines a persisted tooltip which shows always.
+   *
+   * Classes added:
+   * 	1) hint--always
+   *
+   */
+  /**
+   * source: hint-rounded.scss
+   *
+   * Defines rounded corner tooltips.
+   *
+   * Classes added:
+   * 	1) hint--rounded
+   *
+   */
+  /**
+   * source: hint-effects.scss
+   *
+   * Defines various transition effects for the tooltips.
+   *
+   * Classes added:
+   * 	1) hint--bounce
+   *
+   */
+}
+@media (min-width: 768px) {
+  /* line 14, partials/_hint-core.scss */
+  .no-touch .hint, .no-touch [data-hint] {
+    position: relative;
+    display: inline-block;
+    /**
+     * tooltip arrow
+     */
+    /**
+     * tooltip body
+     */
+  }
+  /* line 18, partials/_hint-core.scss */
+  .no-touch .hint:before, .no-touch .hint:after, .no-touch [data-hint]:before, .no-touch [data-hint]:after {
+    position: absolute;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    visibility: hidden;
+    opacity: 0;
+    z-index: 1000000;
+    pointer-events: none;
+    letter-spacing: 1px;
+    -webkit-transition: 0.3s ease;
+    -moz-transition: 0.3s ease;
+    transition: 0.3s ease;
+  }
+  /* line 42, partials/_hint-core.scss */
+  .no-touch .hint:hover:before, .no-touch .hint:hover:after, .no-touch .hint:focus:before, .no-touch .hint:focus:after, .no-touch [data-hint]:hover:before, .no-touch [data-hint]:hover:after, .no-touch [data-hint]:focus:before, .no-touch [data-hint]:focus:after {
+    visibility: visible;
+    opacity: 1;
+  }
+  /* line 50, partials/_hint-core.scss */
+  .no-touch .hint:before, .no-touch [data-hint]:before {
+    content: '';
+    position: absolute;
+    background: transparent;
+    border: 6px solid transparent;
+    z-index: 1000001;
+  }
+  /* line 62, partials/_hint-core.scss */
+  .no-touch .hint:after, .no-touch [data-hint]:after {
+    content: attr(data-hint);
+    background: #183051;
+    color: white;
+    text-shadow: 0 -1px 0px black;
+    padding: 8px 10px;
+    font-size: 12px;
+    line-height: 12px;
+    white-space: nowrap;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+  }
+}
+/* line 16, partials/_hint-mixins.scss */
+.no-touch .hint--top:before {
+  border-top-color: #183051;
+}
+/* line 16, partials/_hint-mixins.scss */
+.no-touch .hint--bottom:before {
+  border-bottom-color: #183051;
+}
+/* line 16, partials/_hint-mixins.scss */
+.no-touch .hint--left:before {
+  border-left-color: #183051;
+}
+/* line 16, partials/_hint-mixins.scss */
+.no-touch .hint--right:before {
+  border-right-color: #183051;
+}
+/* line 14, partials/_hint-position.scss */
+.no-touch .hint--top:before {
+  margin-top: -11px;
+  margin-left: -6px;
+}
+/* line 20, partials/_hint-position.scss */
+.no-touch .hint--top:after {
+  margin-left: -30px;
+}
+/* line 25, partials/_hint-position.scss */
+.no-touch .hint--top:before, .no-touch .hint--top:after {
+  bottom: 100%;
+  left: 50%;
+}
+/* line 27, partials/_hint-mixins.scss */
+.no-touch .hint--top:hover:after, .no-touch .hint--top:hover:before, .no-touch .hint--top:focus:after, .no-touch .hint--top:focus:before {
+  -webkit-transform: translateY(-8px);
+  -moz-transform: translateY(-8px);
+  transform: translateY(-8px);
+}
+/* line 14, partials/_hint-position.scss */
+.no-touch .hint--bottom:before {
+  margin-top: -11px;
+  margin-left: -6px;
+}
+/* line 20, partials/_hint-position.scss */
+.no-touch .hint--bottom:after {
+  margin-left: -30px;
+}
+/* line 25, partials/_hint-position.scss */
+.no-touch .hint--bottom:before, .no-touch .hint--bottom:after {
+  top: 100%;
+  left: 50%;
+}
+/* line 27, partials/_hint-mixins.scss */
+.no-touch .hint--bottom:hover:after, .no-touch .hint--bottom:hover:before, .no-touch .hint--bottom:focus:after, .no-touch .hint--bottom:focus:before {
+  -webkit-transform: translateY(8px);
+  -moz-transform: translateY(8px);
+  transform: translateY(8px);
+}
+/* line 36, partials/_hint-position.scss */
+.no-touch .hint--right:before {
+  margin-left: -12px;
+  margin-bottom: -6px;
+}
+/* line 43, partials/_hint-position.scss */
+.no-touch .hint--right:after {
+  margin-bottom: -14px;
+}
+/* line 48, partials/_hint-position.scss */
+.no-touch .hint--right:before, .no-touch .hint--right:after {
+  left: 100%;
+  bottom: 50%;
+}
+/* line 27, partials/_hint-mixins.scss */
+.no-touch .hint--right:hover:after, .no-touch .hint--right:hover:before, .no-touch .hint--right:focus:after, .no-touch .hint--right:focus:before {
+  -webkit-transform: translateX(8px);
+  -moz-transform: translateX(8px);
+  transform: translateX(8px);
+}
+/* line 36, partials/_hint-position.scss */
+.no-touch .hint--left:before {
+  margin-right: -12px;
+  margin-bottom: -6px;
+}
+/* line 43, partials/_hint-position.scss */
+.no-touch .hint--left:after {
+  margin-bottom: -14px;
+}
+/* line 48, partials/_hint-position.scss */
+.no-touch .hint--left:before, .no-touch .hint--left:after {
+  right: 100%;
+  bottom: 50%;
+}
+/* line 27, partials/_hint-mixins.scss */
+.no-touch .hint--left:hover:after, .no-touch .hint--left:hover:before, .no-touch .hint--left:focus:after, .no-touch .hint--left:focus:before {
+  -webkit-transform: translateX(-8px);
+  -moz-transform: translateX(-8px);
+  transform: translateX(-8px);
+}
+/* line 17, partials/_hint-color-types.scss */
+.no-touch .hint--error:after {
+  background-color: #b34e4d;
+  text-shadow: 0 -1px 0px #592726;
+}
+/* line 11, partials/_hint-mixins.scss */
+.no-touch .hint--error.hint--top:before {
+  border-top-color: #b34e4d;
+}
+/* line 11, partials/_hint-mixins.scss */
+.no-touch .hint--error.hint--bottom:before {
+  border-bottom-color: #b34e4d;
+}
+/* line 11, partials/_hint-mixins.scss */
+.no-touch .hint--error.hint--left:before {
+  border-left-color: #b34e4d;
+}
+/* line 11, partials/_hint-mixins.scss */
+.no-touch .hint--error.hint--right:before {
+  border-right-color: #b34e4d;
+}
+/* line 17, partials/_hint-color-types.scss */
+.no-touch .hint--warning:after {
+  background-color: #c09854;
+  text-shadow: 0 -1px 0px #6c5328;
+}
+/* line 11, partials/_hint-mixins.scss */
+.no-touch .hint--warning.hint--top:before {
+  border-top-color: #c09854;
+}
+/* line 11, partials/_hint-mixins.scss */
+.no-touch .hint--warning.hint--bottom:before {
+  border-bottom-color: #c09854;
+}
+/* line 11, partials/_hint-mixins.scss */
+.no-touch .hint--warning.hint--left:before {
+  border-left-color: #c09854;
+}
+/* line 11, partials/_hint-mixins.scss */
+.no-touch .hint--warning.hint--right:before {
+  border-right-color: #c09854;
+}
+/* line 17, partials/_hint-color-types.scss */
+.no-touch .hint--info:after {
+  background-color: #3986ac;
+  text-shadow: 0 -1px 0px #193b4d;
+}
+/* line 11, partials/_hint-mixins.scss */
+.no-touch .hint--info.hint--top:before {
+  border-top-color: #3986ac;
+}
+/* line 11, partials/_hint-mixins.scss */
+.no-touch .hint--info.hint--bottom:before {
+  border-bottom-color: #3986ac;
+}
+/* line 11, partials/_hint-mixins.scss */
+.no-touch .hint--info.hint--left:before {
+  border-left-color: #3986ac;
+}
+/* line 11, partials/_hint-mixins.scss */
+.no-touch .hint--info.hint--right:before {
+  border-right-color: #3986ac;
+}
+/* line 17, partials/_hint-color-types.scss */
+.no-touch .hint--success:after {
+  background-color: #458746;
+  text-shadow: 0 -1px 0px #1a321a;
+}
+/* line 11, partials/_hint-mixins.scss */
+.no-touch .hint--success.hint--top:before {
+  border-top-color: #458746;
+}
+/* line 11, partials/_hint-mixins.scss */
+.no-touch .hint--success.hint--bottom:before {
+  border-bottom-color: #458746;
+}
+/* line 11, partials/_hint-mixins.scss */
+.no-touch .hint--success.hint--left:before {
+  border-left-color: #458746;
+}
+/* line 11, partials/_hint-mixins.scss */
+.no-touch .hint--success.hint--right:before {
+  border-right-color: #458746;
+}
+/* line 12, partials/_hint-always.scss */
+.no-touch .hint--always:after, .no-touch .hint--always:before {
+  opacity: 1;
+  visibility: visible;
+}
+/* line 27, partials/_hint-mixins.scss */
+.no-touch .hint--always.hint--top:after, .no-touch .hint--always.hint--top:before {
+  -webkit-transform: translateY(-8px);
+  -moz-transform: translateY(-8px);
+  transform: translateY(-8px);
+}
+/* line 27, partials/_hint-mixins.scss */
+.no-touch .hint--always.hint--bottom:after, .no-touch .hint--always.hint--bottom:before {
+  -webkit-transform: translateY(8px);
+  -moz-transform: translateY(8px);
+  transform: translateY(8px);
+}
+/* line 27, partials/_hint-mixins.scss */
+.no-touch .hint--always.hint--left:after, .no-touch .hint--always.hint--left:before {
+  -webkit-transform: translateX(-8px);
+  -moz-transform: translateX(-8px);
+  transform: translateX(-8px);
+}
+/* line 27, partials/_hint-mixins.scss */
+.no-touch .hint--always.hint--right:after, .no-touch .hint--always.hint--right:before {
+  -webkit-transform: translateX(8px);
+  -moz-transform: translateX(8px);
+  transform: translateX(8px);
+}
+/* line 12, partials/_hint-rounded.scss */
+.no-touch .hint--rounded:after {
+  border-radius: 4px;
+}
+/* line 12, partials/_hint-effects.scss */
+.no-touch .hint--bounce:before, .no-touch .hint--bounce:after {
+  -webkit-transition: opacity 0.3s ease, visibility 0.3s ease, -webkit-transform 0.3s cubic-bezier(0.71, 1.7, 0.77, 1.24);
+  -moz-transition: opacity 0.3s ease, visibility 0.3s ease, -moz-transform 0.3s cubic-bezier(0.71, 1.7, 0.77, 1.24);
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s cubic-bezier(0.71, 1.7, 0.77, 1.24);
+}

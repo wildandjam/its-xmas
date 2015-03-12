@@ -1,0 +1,628 @@
+/*
+Theme Name: It's Christmas
+Theme URI: http://www.its-xmas.co.uk
+Author: It's Christmas
+Author URI: http://www.its-xmas.co.uk
+Description: 
+
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: its-christmas
+
+
+This theme, like WordPress, is licensed under the GPL.
+
+
+*/
+/* line 22, blogs.scss */
+html.touch, html.no-touch {
+  margin: 0!important;
+}
+/* line 26, blogs.scss */
+html * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 30, blogs.scss */
+.navigation.post-navigation {
+  display: none;
+}
+
+/* line 33, blogs.scss */
+#blogBody header {
+  background: #183051;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+/* line 38, blogs.scss */
+#blogBody header .left {
+  width: auto;
+}
+@media (max-width: 767px) {
+  /* line 38, blogs.scss */
+  #blogBody header .left {
+    max-width: none;
+  }
+}
+/* line 44, blogs.scss */
+#blogBody header .left a {
+  color: #e8e8e8;
+}
+/* line 47, blogs.scss */
+#blogBody header .left a:hover {
+  color: white;
+}
+/* line 51, blogs.scss */
+#blogBody header .left div {
+  display: none;
+}
+/* line 55, blogs.scss */
+#blogBody header .right {
+  width: auto;
+}
+/* line 58, blogs.scss */
+#blogBody header .right a {
+  line-height: 34px;
+  font-size: 12px;
+  color: #e8e8e8;
+  text-decoration: none;
+}
+/* line 64, blogs.scss */
+#blogBody header .right a:hover {
+  color: white;
+  text-decoration: underline;
+}
+/* line 71, blogs.scss */
+#blogBody .navmenu {
+  float: right;
+  margin-bottom: 25px;
+}
+/* line 75, blogs.scss */
+#blogBody .navmenu ul {
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+/* line 80, blogs.scss */
+#blogBody .navmenu ul li {
+  float: left;
+  background: #183051;
+}
+/* line 84, blogs.scss */
+#blogBody .navmenu ul li a {
+  color: #e8e8e8;
+  text-decoration: none;
+  font-size: 11px;
+  line-height: 25px;
+  padding: 3px 25px;
+  width: 100%;
+  float: left;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+/* line 97, blogs.scss */
+#blogBody .navmenu ul li:hover {
+  background: #124f42;
+}
+/* line 100, blogs.scss */
+#blogBody .navmenu ul li:hover a {
+  color: white;
+}
+/* line 108, blogs.scss */
+#blogBody #page {
+  float: left;
+  width: 100%;
+  padding-top: 50px;
+  clear: both;
+}
+/* line 114, blogs.scss */
+#blogBody #page #masthead {
+  float: left;
+  width: 100%;
+  clear: both;
+}
+/* line 119, blogs.scss */
+#blogBody #page #masthead nav {
+  float: left;
+  width: 100%;
+}
+/* line 127, blogs.scss */
+#blogBody #page #content {
+  float: left;
+  width: 100%;
+  clear: both;
+}
+/* line 132, blogs.scss */
+#blogBody #page #content .container {
+  padding: 0;
+}
+/* line 135, blogs.scss */
+#blogBody #page #content .container #blogContent {
+  float: left;
+  width: 72.5%;
+  margin: 0 2.5% 0 0;
+  clear: both;
+}
+/* line 141, blogs.scss */
+#blogBody #page #content .container #secondary {
+  float: left;
+  width: 25%;
+}
+/* line 145, blogs.scss */
+#blogBody #page #content .container #secondary aside {
+  background: white;
+  margin: 0 0 25px;
+  padding: 15px;
+  border: 1px solid #e8e8e8;
+  float: left;
+  width: 100%;
+}
+/* line 153, blogs.scss */
+#blogBody #page #content .container #secondary aside h3 {
+  font-family: "Lobster Two", cursive;
+  font-size: 22px;
+  width: 100%;
+  float: left;
+  text-align: center;
+  line-height: 28px;
+  margin-bottom: 10px;
+}
+/* line 163, blogs.scss */
+#blogBody #page #content .container #secondary aside.widget_search form {
+  float: left;
+  width: 100%;
+}
+/* line 167, blogs.scss */
+#blogBody #page #content .container #secondary aside.widget_search form .row {
+  float: left;
+  width: 100%;
+  position: relative;
+}
+/* line 172, blogs.scss */
+#blogBody #page #content .container #secondary aside.widget_search form .row input[type='text'] {
+  width: 100%;
+  float: left;
+  padding-left: 10px;
+  padding-right: calc(10% + 10px);
+}
+/* line 178, blogs.scss */
+#blogBody #page #content .container #secondary aside.widget_search form .row button {
+  float: right;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  background: none;
+  padding: 0;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+/* line 189, blogs.scss */
+#blogBody #page #content .container #secondary aside.widget_search form .row button img {
+  float: right;
+  max-height: 100%;
+  margin-right: 2px;
+}
+/* line 198, blogs.scss */
+#blogBody #page #content .container #secondary aside ul {
+  float: left;
+  width: 100%;
+}
+/* line 202, blogs.scss */
+#blogBody #page #content .container #secondary aside ul li {
+  float: left;
+  width: 100%;
+  clear: both;
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: gray;
+}
+/* line 212, blogs.scss */
+#blogBody #page #content .container #secondary aside.widget_recent_entries a, #blogBody #page #content .container #secondary aside.widget_recent_comments a {
+  font-size: 12px;
+  line-height: 20px;
+  text-decoration: none;
+  color: #183051;
+  letter-spacing: 1px;
+}
+/* line 219, blogs.scss */
+#blogBody #page #content .container #secondary aside.widget_recent_entries a:hover, #blogBody #page #content .container #secondary aside.widget_recent_comments a:hover {
+  color: #124f42;
+  text-decoration: underline;
+}
+/* line 232, blogs.scss */
+#blogBody .container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+/* line 239, blogs.scss */
+#blogBody .content-area #comments {
+  padding-bottom: 15px;
+}
+/* line 243, blogs.scss */
+#blogBody .content-area article, #blogBody .content-area #comments, #blogBody .content-area main > .page-header {
+  background: white;
+  padding: 9;
+  margin-bottom: 25px;
+  border: 1px solid #e8e8e8;
+  width: 100%;
+  float: left;
+  clear: both;
+}
+/* line 252, blogs.scss */
+#blogBody .content-area article h1.page-title, #blogBody .content-area #comments h1.page-title, #blogBody .content-area main > .page-header h1.page-title {
+  padding: 10px 0;
+}
+/* line 257, blogs.scss */
+#blogBody .content-area article.post footer.entry-meta, #blogBody .content-area #comments.post footer.entry-meta, #blogBody .content-area main > .page-header.post footer.entry-meta {
+  margin-top: 25px;
+  font-size: 11px;
+}
+/* line 264, blogs.scss */
+#blogBody .content-area article.comments-area h2.comments-title, #blogBody .content-area #comments.comments-area h2.comments-title, #blogBody .content-area main > .page-header.comments-area h2.comments-title {
+  font-family: "Lobster Two", cursive;
+  font-size: 24px;
+  width: 100%;
+  float: left;
+  text-align: center;
+  padding: 10px 0;
+}
+/* line 273, blogs.scss */
+#blogBody .content-area article.comments-area ol, #blogBody .content-area #comments.comments-area ol, #blogBody .content-area main > .page-header.comments-area ol {
+  float: left;
+  width: 100%;
+  clear: both;
+  border-top: 1px solid #e8e8e8;
+}
+/* line 279, blogs.scss */
+#blogBody .content-area article.comments-area ol li, #blogBody .content-area #comments.comments-area ol li, #blogBody .content-area main > .page-header.comments-area ol li {
+  float: left;
+  width: 100%;
+  clear: both;
+}
+/* line 285, blogs.scss */
+#blogBody .content-area article.comments-area ol li article, #blogBody .content-area #comments.comments-area ol li article, #blogBody .content-area main > .page-header.comments-area ol li article {
+  margin: 0;
+  padding: 15px;
+  border-width: 0 0 1px 0;
+}
+/* line 290, blogs.scss */
+#blogBody .content-area article.comments-area ol li article .comment-meta, #blogBody .content-area #comments.comments-area ol li article .comment-meta, #blogBody .content-area main > .page-header.comments-area ol li article .comment-meta {
+  width: 25%;
+  float: left;
+}
+/* line 294, blogs.scss */
+#blogBody .content-area article.comments-area ol li article .comment-meta img, #blogBody .content-area #comments.comments-area ol li article .comment-meta img, #blogBody .content-area main > .page-header.comments-area ol li article .comment-meta img {
+  margin: 0 auto;
+  overflow: hidden;
+  max-width: 100%;
+}
+/* line 300, blogs.scss */
+#blogBody .content-area article.comments-area ol li article .comment-meta a, #blogBody .content-area article.comments-area ol li article .comment-meta span, #blogBody .content-area article.comments-area ol li article .comment-meta div, #blogBody .content-area article.comments-area ol li article .comment-meta p, #blogBody .content-area #comments.comments-area ol li article .comment-meta a, #blogBody .content-area #comments.comments-area ol li article .comment-meta span, #blogBody .content-area #comments.comments-area ol li article .comment-meta div, #blogBody .content-area #comments.comments-area ol li article .comment-meta p, #blogBody .content-area main > .page-header.comments-area ol li article .comment-meta a, #blogBody .content-area main > .page-header.comments-area ol li article .comment-meta span, #blogBody .content-area main > .page-header.comments-area ol li article .comment-meta div, #blogBody .content-area main > .page-header.comments-area ol li article .comment-meta p {
+  display: block;
+  float: left;
+  width: 100%;
+  clear: both;
+  padding: 2px 0;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+/* line 309, blogs.scss */
+#blogBody .content-area article.comments-area ol li article .comment-meta a time, #blogBody .content-area article.comments-area ol li article .comment-meta span time, #blogBody .content-area article.comments-area ol li article .comment-meta div time, #blogBody .content-area article.comments-area ol li article .comment-meta p time, #blogBody .content-area #comments.comments-area ol li article .comment-meta a time, #blogBody .content-area #comments.comments-area ol li article .comment-meta span time, #blogBody .content-area #comments.comments-area ol li article .comment-meta div time, #blogBody .content-area #comments.comments-area ol li article .comment-meta p time, #blogBody .content-area main > .page-header.comments-area ol li article .comment-meta a time, #blogBody .content-area main > .page-header.comments-area ol li article .comment-meta span time, #blogBody .content-area main > .page-header.comments-area ol li article .comment-meta div time, #blogBody .content-area main > .page-header.comments-area ol li article .comment-meta p time {
+  color: gray;
+  font-size: 10px;
+}
+/* line 314, blogs.scss */
+#blogBody .content-area article.comments-area ol li article .comment-meta a.says, #blogBody .content-area article.comments-area ol li article .comment-meta span.says, #blogBody .content-area article.comments-area ol li article .comment-meta div.says, #blogBody .content-area article.comments-area ol li article .comment-meta p.says, #blogBody .content-area #comments.comments-area ol li article .comment-meta a.says, #blogBody .content-area #comments.comments-area ol li article .comment-meta span.says, #blogBody .content-area #comments.comments-area ol li article .comment-meta div.says, #blogBody .content-area #comments.comments-area ol li article .comment-meta p.says, #blogBody .content-area main > .page-header.comments-area ol li article .comment-meta a.says, #blogBody .content-area main > .page-header.comments-area ol li article .comment-meta span.says, #blogBody .content-area main > .page-header.comments-area ol li article .comment-meta div.says, #blogBody .content-area main > .page-header.comments-area ol li article .comment-meta p.says {
+  display: none;
+}
+/* line 317, blogs.scss */
+#blogBody .content-area article.comments-area ol li article .comment-meta a.comment-metadata, #blogBody .content-area article.comments-area ol li article .comment-meta span.comment-metadata, #blogBody .content-area article.comments-area ol li article .comment-meta div.comment-metadata, #blogBody .content-area article.comments-area ol li article .comment-meta p.comment-metadata, #blogBody .content-area #comments.comments-area ol li article .comment-meta a.comment-metadata, #blogBody .content-area #comments.comments-area ol li article .comment-meta span.comment-metadata, #blogBody .content-area #comments.comments-area ol li article .comment-meta div.comment-metadata, #blogBody .content-area #comments.comments-area ol li article .comment-meta p.comment-metadata, #blogBody .content-area main > .page-header.comments-area ol li article .comment-meta a.comment-metadata, #blogBody .content-area main > .page-header.comments-area ol li article .comment-meta span.comment-metadata, #blogBody .content-area main > .page-header.comments-area ol li article .comment-meta div.comment-metadata, #blogBody .content-area main > .page-header.comments-area ol li article .comment-meta p.comment-metadata {
+  padding: 0;
+}
+/* line 322, blogs.scss */
+#blogBody .content-area article.comments-area ol li article .comment-content, #blogBody .content-area #comments.comments-area ol li article .comment-content, #blogBody .content-area main > .page-header.comments-area ol li article .comment-content {
+  float: left;
+  width: 75%;
+  min-height: 50px;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+/* line 329, blogs.scss */
+#blogBody .content-area article.comments-area ol li article .comment-content p, #blogBody .content-area #comments.comments-area ol li article .comment-content p, #blogBody .content-area main > .page-header.comments-area ol li article .comment-content p {
+  float: left;
+  width: 100%;
+  clear: both;
+}
+/* line 335, blogs.scss */
+#blogBody .content-area article.comments-area ol li article .reply, #blogBody .content-area #comments.comments-area ol li article .reply, #blogBody .content-area main > .page-header.comments-area ol li article .reply {
+  float: left;
+  width: 75%;
+}
+/* line 340, blogs.scss */
+#blogBody .content-area article.comments-area ol li article .reply a, #blogBody .content-area #comments.comments-area ol li article .reply a, #blogBody .content-area main > .page-header.comments-area ol li article .reply a {
+  float: left;
+  background: #183051;
+  color: white;
+  padding: 5px 10px;
+  display: block;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+/* line 350, blogs.scss */
+#blogBody .content-area article.comments-area ol li article .reply a:hover, #blogBody .content-area #comments.comments-area ol li article .reply a:hover, #blogBody .content-area main > .page-header.comments-area ol li article .reply a:hover {
+  background: #124f42;
+}
+/* line 360, blogs.scss */
+#blogBody .content-area article #respond, #blogBody .content-area #comments #respond, #blogBody .content-area main > .page-header #respond {
+  float: left;
+  width: 100%;
+  clear: both;
+}
+/* line 365, blogs.scss */
+#blogBody .content-area article #respond h3, #blogBody .content-area #comments #respond h3, #blogBody .content-area main > .page-header #respond h3 {
+  font-family: "Lobster Two", cursive;
+  font-size: 24px;
+  width: 100%;
+  float: left;
+  text-align: center;
+  padding: 15px;
+}
+/* line 373, blogs.scss */
+#blogBody .content-area article #respond h3 a, #blogBody .content-area #comments #respond h3 a, #blogBody .content-area main > .page-header #respond h3 a {
+  font-size: 24px;
+}
+/* line 376, blogs.scss */
+#blogBody .content-area article #respond h3 a#cancel-comment-reply-link, #blogBody .content-area #comments #respond h3 a#cancel-comment-reply-link, #blogBody .content-area main > .page-header #respond h3 a#cancel-comment-reply-link {
+  float: left;
+  width: 100%;
+  font-family: "Droid Sans", sans-serif;
+  color: #bd2c2c;
+  margin: 10px 0 5px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+/* line 386, blogs.scss */
+#blogBody .content-area article #respond h3 a#cancel-comment-reply-link:hover, #blogBody .content-area #comments #respond h3 a#cancel-comment-reply-link:hover, #blogBody .content-area main > .page-header #respond h3 a#cancel-comment-reply-link:hover {
+  text-decoration: underline;
+}
+/* line 392, blogs.scss */
+#blogBody .content-area article #respond form, #blogBody .content-area #comments #respond form, #blogBody .content-area main > .page-header #respond form {
+  float: left;
+  width: 100%;
+  clear: both;
+  letter-spacing: 1px;
+}
+/* line 398, blogs.scss */
+#blogBody .content-area article #respond form > p, #blogBody .content-area #comments #respond form > p, #blogBody .content-area main > .page-header #respond form > p {
+  float: left;
+  width: 100%;
+  padding: 5px 15px;
+}
+/* line 403, blogs.scss */
+#blogBody .content-area article #respond form > p.comment-notes, #blogBody .content-area #comments #respond form > p.comment-notes, #blogBody .content-area main > .page-header #respond form > p.comment-notes {
+  font-size: 12px;
+  padding-bottom: 10px;
+}
+/* line 409, blogs.scss */
+#blogBody .content-area article #respond form label, #blogBody .content-area #comments #respond form label, #blogBody .content-area main > .page-header #respond form label {
+  font-size: 11px;
+  line-height: 21px;
+  width: 20%;
+  padding-right: 2%;
+  float: left;
+  display: block;
+}
+/* line 417, blogs.scss */
+#blogBody .content-area article #respond form label ~ input, #blogBody .content-area article #respond form label ~ textarea, #blogBody .content-area #comments #respond form label ~ input, #blogBody .content-area #comments #respond form label ~ textarea, #blogBody .content-area main > .page-header #respond form label ~ input, #blogBody .content-area main > .page-header #respond form label ~ textarea {
+  float: left;
+  width: 60%;
+  display: block;
+  margin: 0;
+}
+/* line 425, blogs.scss */
+#blogBody .content-area article #respond form .logged-in-as input, #blogBody .content-area article #respond form .comment-form-comment input, #blogBody .content-area article #respond form .form-submit input, #blogBody .content-area #comments #respond form .logged-in-as input, #blogBody .content-area #comments #respond form .comment-form-comment input, #blogBody .content-area #comments #respond form .form-submit input, #blogBody .content-area main > .page-header #respond form .logged-in-as input, #blogBody .content-area main > .page-header #respond form .comment-form-comment input, #blogBody .content-area main > .page-header #respond form .form-submit input {
+  float: right;
+  background: #183051;
+  color: white;
+  padding: 10px 15px;
+  display: block;
+  text-transform: uppecase;
+  letter-spacing: 1px;
+  border: 0;
+  cursor: pointer;
+}
+/* line 436, blogs.scss */
+#blogBody .content-area article #respond form .logged-in-as input[type="submit"], #blogBody .content-area article #respond form .comment-form-comment input[type="submit"], #blogBody .content-area article #respond form .form-submit input[type="submit"], #blogBody .content-area #comments #respond form .logged-in-as input[type="submit"], #blogBody .content-area #comments #respond form .comment-form-comment input[type="submit"], #blogBody .content-area #comments #respond form .form-submit input[type="submit"], #blogBody .content-area main > .page-header #respond form .logged-in-as input[type="submit"], #blogBody .content-area main > .page-header #respond form .comment-form-comment input[type="submit"], #blogBody .content-area main > .page-header #respond form .form-submit input[type="submit"] {
+  text-transform: uppercase;
+  font-size: 11px;
+}
+/* line 441, blogs.scss */
+#blogBody .content-area article #respond form .logged-in-as input:hover, #blogBody .content-area article #respond form .comment-form-comment input:hover, #blogBody .content-area article #respond form .form-submit input:hover, #blogBody .content-area #comments #respond form .logged-in-as input:hover, #blogBody .content-area #comments #respond form .comment-form-comment input:hover, #blogBody .content-area #comments #respond form .form-submit input:hover, #blogBody .content-area main > .page-header #respond form .logged-in-as input:hover, #blogBody .content-area main > .page-header #respond form .comment-form-comment input:hover, #blogBody .content-area main > .page-header #respond form .form-submit input:hover {
+  background: #124f42;
+}
+/* line 446, blogs.scss */
+#blogBody .content-area article #respond form .form-allowed-tags, #blogBody .content-area #comments #respond form .form-allowed-tags, #blogBody .content-area main > .page-header #respond form .form-allowed-tags {
+  display: none;
+}
+/* line 453, blogs.scss */
+#blogBody .content-area article .post-inner-content, #blogBody .content-area #comments .post-inner-content, #blogBody .content-area main > .page-header .post-inner-content {
+  float: left;
+  width: 100%;
+  clear: both;
+  padding: 15px;
+}
+/* line 459, blogs.scss */
+#blogBody .content-area article .post-inner-content .entry-header.page-header, #blogBody .content-area #comments .post-inner-content .entry-header.page-header, #blogBody .content-area main > .page-header .post-inner-content .entry-header.page-header {
+  float: left;
+  width: 100%;
+  clear: both;
+}
+/* line 464, blogs.scss */
+#blogBody .content-area article .post-inner-content .entry-header.page-header .posted-on, #blogBody .content-area #comments .post-inner-content .entry-header.page-header .posted-on, #blogBody .content-area main > .page-header .post-inner-content .entry-header.page-header .posted-on {
+  padding-left: 2.5%;
+}
+/* line 467, blogs.scss */
+#blogBody .content-area article .post-inner-content .entry-header.page-header .posted-on .updated, #blogBody .content-area #comments .post-inner-content .entry-header.page-header .posted-on .updated, #blogBody .content-area main > .page-header .post-inner-content .entry-header.page-header .posted-on .updated {
+  display: none;
+}
+/* line 473, blogs.scss */
+#blogBody .content-area article .post-inner-content.secondary-content-box, #blogBody .content-area #comments .post-inner-content.secondary-content-box, #blogBody .content-area main > .page-header .post-inner-content.secondary-content-box {
+  background: rgba(247, 247, 247, 0.6);
+  border-top: 1px solid #e8e8e8;
+}
+/* line 479, blogs.scss */
+#blogBody .content-area article .post-inner-content.secondary-content-box .author-bio, #blogBody .content-area #comments .post-inner-content.secondary-content-box .author-bio, #blogBody .content-area main > .page-header .post-inner-content.secondary-content-box .author-bio {
+  float: left;
+  width: 100%;
+  clear: both;
+  letter-spacing: 1px;
+}
+/* line 485, blogs.scss */
+#blogBody .content-area article .post-inner-content.secondary-content-box .author-bio div.avatar, #blogBody .content-area #comments .post-inner-content.secondary-content-box .author-bio div.avatar, #blogBody .content-area main > .page-header .post-inner-content.secondary-content-box .author-bio div.avatar {
+  float: left;
+  width: 10%;
+  padding: 0 1%;
+}
+/* line 490, blogs.scss */
+#blogBody .content-area article .post-inner-content.secondary-content-box .author-bio div.avatar img, #blogBody .content-area #comments .post-inner-content.secondary-content-box .author-bio div.avatar img, #blogBody .content-area main > .page-header .post-inner-content.secondary-content-box .author-bio div.avatar img {
+  overflow: hidden;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+}
+/* line 497, blogs.scss */
+#blogBody .content-area article .post-inner-content.secondary-content-box .author-bio .author-bio-content, #blogBody .content-area #comments .post-inner-content.secondary-content-box .author-bio .author-bio-content, #blogBody .content-area main > .page-header .post-inner-content.secondary-content-box .author-bio .author-bio-content {
+  float: left;
+  width: 90%;
+  padding: 0 15px;
+}
+/* line 502, blogs.scss */
+#blogBody .content-area article .post-inner-content.secondary-content-box .author-bio .author-bio-content h4, #blogBody .content-area #comments .post-inner-content.secondary-content-box .author-bio .author-bio-content h4, #blogBody .content-area main > .page-header .post-inner-content.secondary-content-box .author-bio .author-bio-content h4 {
+  font-size: 20px;
+}
+/* line 505, blogs.scss */
+#blogBody .content-area article .post-inner-content.secondary-content-box .author-bio .author-bio-content p, #blogBody .content-area #comments .post-inner-content.secondary-content-box .author-bio .author-bio-content p, #blogBody .content-area main > .page-header .post-inner-content.secondary-content-box .author-bio .author-bio-content p {
+  font-size: 12px;
+  color: gray;
+  line-height: 20px;
+}
+/* line 515, blogs.scss */
+#blogBody .content-area article h2, #blogBody .content-area #comments h2, #blogBody .content-area main > .page-header h2 {
+  font-family: "Lobster Two", cursive;
+  float: left;
+  width: 100%;
+  margin-bottom: 5px;
+}
+/* line 520, blogs.scss */
+#blogBody .content-area article h2 a, #blogBody .content-area #comments h2 a, #blogBody .content-area main > .page-header h2 a {
+  font-size: 20px;
+}
+/* line 524, blogs.scss */
+#blogBody .content-area article .entry-meta, #blogBody .content-area #comments .entry-meta, #blogBody .content-area main > .page-header .entry-meta {
+  float: left;
+  width: 100%;
+  margin-bottom: 5px;
+  color: gray;
+}
+/* line 531, blogs.scss */
+#blogBody .content-area article .entry-meta .posted-on a, #blogBody .content-area #comments .entry-meta .posted-on a, #blogBody .content-area main > .page-header .entry-meta .posted-on a {
+  color: gray;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+/* line 539, blogs.scss */
+#blogBody .content-area article .entry-meta .byline, #blogBody .content-area article .entry-meta .comments-link, #blogBody .content-area #comments .entry-meta .byline, #blogBody .content-area #comments .entry-meta .comments-link, #blogBody .content-area main > .page-header .entry-meta .byline, #blogBody .content-area main > .page-header .entry-meta .comments-link {
+  display: none;
+}
+/* line 544, blogs.scss */
+#blogBody .content-area article .entry-content, #blogBody .content-area #comments .entry-content, #blogBody .content-area main > .page-header .entry-content {
+  float: left;
+  width: 100%;
+  clear: both;
+}
+/* line 549, blogs.scss */
+#blogBody .content-area article .entry-content p, #blogBody .content-area #comments .entry-content p, #blogBody .content-area main > .page-header .entry-content p {
+  float: left;
+  width: 100%;
+  clear: both;
+  font-size: 12px;
+  margin-bottom: 5px;
+  letter-spacing: 1px;
+}
+/* line 557, blogs.scss */
+#blogBody .content-area article .entry-content p a, #blogBody .content-area #comments .entry-content p a, #blogBody .content-area main > .page-header .entry-content p a {
+  font-size: 12px;
+  text-decoration: underline;
+}
+/* line 564, blogs.scss */
+#blogBody .content-area article a, #blogBody .content-area #comments a, #blogBody .content-area main > .page-header a {
+  text-decoration: none;
+  color: #183051;
+  font-size: 12px;
+}
+
+@media (max-width: 767px) {
+  /* line 577, blogs.scss */
+  #blogBody header .left {
+    float: left;
+    width: 100%;
+  }
+  /* line 580, blogs.scss */
+  #blogBody header .left div {
+    display: block;
+    float: right;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+  }
+  /* line 586, blogs.scss */
+  #blogBody header .right {
+    display: none;
+  }
+
+  /* line 592, blogs.scss */
+  #blogBody #page #content .container .navmenu {
+    float: left;
+    width: 100%;
+    clear: both;
+    display: none;
+  }
+  /* line 598, blogs.scss */
+  #blogBody #page #content .container .navmenu.show {
+    display: block;
+  }
+  /* line 602, blogs.scss */
+  #blogBody #page #content .container .navmenu ul {
+    float: left;
+    width: 100%;
+    clear: both;
+  }
+  /* line 607, blogs.scss */
+  #blogBody #page #content .container .navmenu ul li {
+    float: left;
+    width: 100%;
+    clear: both;
+  }
+  /* line 616, blogs.scss */
+  #blogBody #page #content .container #blogContent, #blogBody #page #content .container #secondary {
+    width: 100%;
+    margin: 20px 0 0;
+    padding: 0 2.5%;
+  }
+  /* line 621, blogs.scss */
+  #blogBody #page #content .container #secondary {
+    border-top: 2px solid #e8e8e8;
+    padding-top: 20px;
+    margin: 0;
+  }
+}

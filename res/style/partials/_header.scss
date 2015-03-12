@@ -1,0 +1,426 @@
+header {
+	width:52px;
+	height:100%;
+	padding: 5px;
+	float:left;
+	background:$lgrey;
+	color:$blue;
+	position:fixed;
+	top:0;
+	z-index:100;
+	@include box-shadow(0px 2px 9px $dgrey);
+	@include transition(all 0.5s);
+
+	&.active {
+		width:239px;
+	}
+
+	#altHeader {
+		float:left;
+		width:100%;
+		clear:both;
+
+		> a, > div {
+			display:block;
+			margin:5px 0;
+			clear:both;
+			float:left;
+			border:1px solid $dgrey;
+			width:100%;
+			height:40px;
+			overflow:hidden;	
+
+			&#extendNav {
+				cursor:pointer;
+				position:absolute;
+				bottom:10px;
+				width:calc(100% - 10px);
+			}
+
+			.link-icon {
+				display:block;
+				float:left;
+				width:40px;
+
+				img {
+					height:40px;
+					width:40px;
+					float:left;
+				}
+			}
+			.link-name {
+				display:block;
+				float:left;
+				height:40px;
+				width:150px;
+				padding:10px;
+				color:$blue;
+
+				font-size:12px;
+				letter-spacing:1px;
+				text-transform:uppercase;
+				padding:10px;
+				line-height:20px;
+			}
+			.link-extend {
+				display:block;
+				float:right;
+				height:40px;
+				padding:10px;
+				color:$blue;
+				font-size:12px;
+				letter-spacing:1px;
+				text-transform:uppercase;
+				padding:10px;
+				line-height:20px;
+
+				&:hover {
+					background:$green;
+					color:white;
+				}
+
+			}
+			&:hover {
+				background:white;
+
+				.link-name {
+					color:$green;
+				}
+			}
+		}
+		> span.line  {
+			display:block;
+			width:100%;
+			float:left;
+			clear:both;
+			border:0;
+			margin:10px 0;
+			padding:0;
+			background:none;
+
+			> span.line {
+				float:left;
+				width:100%;
+				clear:both;
+				background:$dgrey;
+				height:1px;
+
+			}
+		}
+	}
+
+	.hint--right:after {
+		font-family:$font;
+	}
+
+	.headcont {
+		float:left;
+		width:100%;
+		margin: 0;
+		padding:0 10px;
+	}
+	.left {
+		float:left;
+	}
+	.right {
+		float:right;
+	}
+	.left, .right {
+
+		.navbutton {
+			height: 34px;
+			width: 34px;
+			border:2px solid $white;
+			float:right;
+			background:$white;
+			display:block;
+			margin:0 3px;
+			color:$blue;
+			cursor:pointer;
+			text-align:center;
+			@include box-shadow(2px 2px 2px $dgrey);
+
+			.icon-login8{
+				font-size:18px;
+			}
+
+			&:hover {
+				border:2px solid $blue;
+			}
+			img {
+				padding:0px;
+				width:30px;
+			}
+			a {
+				text-decoration:none;
+				display:block;
+			}
+			span {
+				font-size:20px;
+				line-height:30px;
+				color:$blue;
+				text-decoration:none;
+
+
+			}
+			&#nav {
+				color:$white;
+				background:$blue;
+				border:2px solid $blue;
+
+				&:hover {
+					border:2px solid $white;
+				}
+				span {
+					color:white;
+					font-size:30px;
+				}
+			}
+			&.selected {
+				background:$green;
+				border:2px solid $green;
+
+				span {
+					color:white;
+				}
+				&:hover {
+					background:$blue;
+					border:2px solid $blue;
+				}
+			}
+		}
+		a.iCTitle {
+			font-family: $lobster;
+			font-size:34px;
+			line-height:34px;
+			letter-spacing:1px;
+			float:left;
+			text-decoration:none;
+			color:$blue;
+			padding-right:10px;
+			h1 {
+				font-size:34px;
+				line-height:34px;
+				margin:0;
+				padding:0;
+
+			}
+		}
+		#countdownHolder {
+			position:relative;
+			float:left;
+
+			&.hover {
+				#countdownShare {
+					display:block;
+				}
+			}
+		}
+		#countdown {
+			font-size:12px;
+			line-height:12px;
+			margin:0 auto;
+			display:block; 
+			text-align:center;
+			overflow:hidden;
+			float:left;
+			margin:20px 0 0;
+			color:$blue;
+		}
+		#countdownShare {
+			height:22px;
+			position:absolute;
+			left:0;
+			width:100%;
+			top:0;
+			background:$blue;
+			display:none;
+		}
+	}
+}
+@media #{$break-handheld} {
+	.hint--left {
+		display:none;
+	}
+	#navbar {
+		width:100%;
+	}
+	header {
+		.headcont {
+			.left {
+				max-width:200px;
+				#countdown {
+					display:none; 
+				}
+			}
+			.right {
+				max-width:135px;
+			}
+		}
+	}
+}
+@media (max-width:375px) {
+	header .right {
+		max-width:90px;
+
+		.navbutton {
+			display:none;
+
+			&#nav, &#LoginNav, &#navShow {
+				display:block;
+			}
+
+		}
+	}
+
+}
+.panel {
+	position:fixed;
+	z-index:50;
+	left:0px;
+	top:0px;
+	width:50px;
+	padding:10px;
+	background:white;
+	height:100%;
+	@include box-shadow(0px 2px 9px $dgrey);
+	@include transition(all 1s);
+	&.active {
+		left:238px;
+		width:250px;
+	}
+	* {
+		max-width:100%;
+	}
+}
+#pageHeader {
+	float:left;
+	width:100%;
+	clear:both;
+	border-bottom:1px solid $lgrey;	
+	margin-bottom:10px;
+	padding-bottom:10px;
+	position:relative;
+
+	#breadcrumbs {
+		max-width:60%;
+	}
+
+	h1 {
+		text-align:left;
+		font-size:50px;
+		line-height:50px;
+		float:left;
+		max-width:60%;
+		float:left;
+		clear:both;
+		margin:10px 0;
+		padding:0;
+
+		&.small {
+			font-size:30px;
+			line-height:30px;
+		}
+	}
+	#userPortal {
+		float:right;
+		max-width:40%;
+		position:absolute;
+		top:0;
+		right:0;	
+
+		a {
+			font-size:12px;
+			text-decoration:none;
+			color:$blue;
+			padding:0;
+			margin:0 0 0 10px;
+			line-height:30px;
+		}
+		ul {
+			display:inline;
+			position:relative;
+			float:right;
+			margin-left:10px;
+
+			img {
+				cursor:pointer;
+			}
+
+			ul {
+				display:none;
+				position:absolute;
+				background:white;
+				border:1px solid $blue;
+				color:$blue;
+				right:0px;
+				width:150px;
+				top:30px;
+				padding:0;
+				margin:0;
+				z-index:100;
+
+				li {
+					a {
+						float:left;
+						width:100%;
+						text-align:left;
+						color:$blue;
+						text-decoration:none;
+						margin:0;
+						padding:0 10px;
+
+						&:hover {
+							color:white;
+							background:$green;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	#pageHeaderLinks {
+		float:right;
+
+		a {
+			float:left;
+			padding:10px 15px;
+			color:white;
+			background:$dgrey;
+			text-decoration:none;
+			font-size:12px;
+			display:block;
+			margin:0 0 0 10px;
+
+			&:hover {
+				background:$green;
+			}
+		}
+	}
+}
+#breadcrumbs {
+	float:left;
+	clear:both;
+
+	ul {
+		padding:0;
+		margin:10px 0;
+		width:100%;
+		text-align:left;
+
+		li {
+			display:inline-block;
+			margin:0 5px 0 0;
+			font-size:11px;
+			text-transform:uppercase;
+			letter-spacing:1px;
+			color:$dgrey;
+
+			a {
+				color:$blue;
+				text-decoration:none;
+			}
+		}
+	}
+}

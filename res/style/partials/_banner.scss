@@ -1,0 +1,16 @@
+.banner {
+	float:left;
+	width:100%;
+	clear:both;
+	padding:10px;
+	background-repeat:repeat;
+	background-position:center;
+	height:125px;
+
+	&#listBanner {
+		//background-image:url('/images/banner/green-diamond-10-trans.png');
+	}
+}
+#container .myCollectionsContainer {
+	padding-top:34px;
+}
