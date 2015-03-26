@@ -5,7 +5,6 @@ $today = $date = date('Y-m-d H:i');
 $datetime1 = strtotime('2015-12-25 00:00');
 $datetime2 = strtotime($today);
 $interval = $datetime1-$datetime2;
-require('connect.php');
 if (isset($id)){
 	$prefCount = mysqli_query($connect, "SELECT * FROM preferences WHERE userID = '$id'");
 	if (mysqli_num_rows($prefCount) == 1){
@@ -13,7 +12,7 @@ if (isset($id)){
 			$type = $prefRow['countdownType'];	
 		}
 	} else {
-		if ($_REQUEST['type']){
+		if (isset($_REQUEST['type'])){
 			$type = $_REQUEST['type'];
 		} else {
 			$type = "days";	

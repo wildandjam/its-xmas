@@ -12,6 +12,16 @@
 <body>
 <?php require('../res/headnav.php'); ?>
 <div id="container" class="pageContact">
+	<div id="pageHeader">
+        <h1>Contact us</h1>
+        <?php require('../res/userPortal.php'); ?>
+        <div id="breadcrumbs">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li>Contact us</li>
+            </ul>
+        </div>
+    </div>
 	<div class="content">
     	<?php 
 			$formsent = false;
@@ -76,7 +86,6 @@
 				$msg = "<p>Please fill in all fields</p>";
 			}
 		?>
-	   	<h1>Contact us</h1>
         <h2>Send a message to Santa HQ</h2>
         <?php echo $msg; ?>
         <?php if ($formsent != true){ ?>

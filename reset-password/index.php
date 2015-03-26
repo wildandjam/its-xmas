@@ -4,15 +4,28 @@
 <body>
 <?php require('../res/headnav.php'); ?>
 <div id="container">
+	<div id="pageHeader">
+        <h1>Reset your password</h1>
+        <?php require('../res/userPortal.php'); ?>
+        <div id="breadcrumbs">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li>Reset your password</li>
+            </ul>
+        </div>
+    </div>
 	<div class="content">
-    	<h1>Reset your password</h1>
 		<?php 
-        $email = $_REQUEST['email'];
-        $reset = $_REQUEST['resetcode'];
-        $mdemail = md5($email);
-		$status = $_REQUEST['status'];
+		if (isset($_REQUEST['email']) && isset($_REQUEST['resetcode'])){
+	        $email = $_REQUEST['email'];
+	        $reset = $_REQUEST['resetcode'];
+	        $mdemail = md5($email);
+	    }
+	    if (isset($_REQUEST['status'])){
+			$status = $_REQUEST['status'];
+		}
 		$showform = true;
-		if ($status) {
+		if (isset($status)) {
 			switch ($status){
 				case "success":
 					$pagemsg = "<p class='successMsg'>Your password has been changed!</p>";
@@ -29,13 +42,15 @@
 					break;
 				case "password":
 					$pagemsg = "<p class='errorMsg'>Your passwords do not match, please try again.</p>";
+				case "technical":
+					$pagemsg = "<p class='errorMsg'>Unfortunately, an elf dropped your request, please try again.</p>";
 				default:
 					break;		
 			}
 		}
 		if ($showform == true){
        	 if ($mdemail == $reset){
-				if (!$pagemsg){
+				if (!isset($pagemsg)){
 					echo "<p>Please enter a new password below</p>";
 				} else {
 					echo $pagemsg;
@@ -58,6 +73,5 @@
         ?>
     </div>
 </div>
-<?php require('../res/sidebars.php'); ?>
 </body>
 </html>

@@ -1,19 +1,22 @@
 <?php 
 require('../../../res/meta.php'); 
 require('../../../res/membercheck.php'); 
-
-$postType = $_REQUEST['postType'];
-if ($postType == "text"){
+if (isset($_REQUEST['postType'])){
+	$postType = $_REQUEST['postType'];
+}
+if (isset($postType) && $postType == "text"){
 	$textContent = $_REQUEST['textContent'];	
 }
-$user = $_REQUEST['user'];
-$url = $_REQUEST['url'];
-$image = $_REQUEST['image'];
-$status = $_REQUEST['status'];
-$title = $_REQUEST['title'];
-$desc = $_REQUEST['desc'];
+if (isset($_REQUEST)){
+	$user = $_REQUEST['user'];
+	$url = $_REQUEST['url'];
+	$image = $_REQUEST['image'];
+	$status = $_REQUEST['status'];
+	$title = $_REQUEST['title'];
+	$desc = $_REQUEST['desc'];
+}
 
-if ($postType == "video"){
+if (isset($postType) && $postType == "video"){
 	$html = file_get_contents($url);
 	$doc = new DOMDocument();
 	@$doc->loadHTML($html);

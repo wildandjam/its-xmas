@@ -11,10 +11,18 @@
 <body>
 <?php require('../res/headnav.php'); ?>
 <div id="container">
+    <div id="pageHeader">
+        <h1>The Milk & Cookie Policy</h1>
+        <?php require('../res/userPortal.php'); ?>
+        <div id="breadcrumbs">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li>The Milk & Cookie Policy</li>
+            </ul>
+        </div>
+    </div>
 	<div class="content static" id="cookiePolicy">
-    
-		<h1>The Milk & Cookie Policy</h1>
-                <img src="/images/milk-cookies.png" alt="Milk and Cookies" align="middle"/>
+                    <img src="/images/milk-cookies.png" alt="Milk and Cookies" align="middle"/>
         <h2>Milk Policy</h2>
 
         <p>Whilst on It's Christmas, you are permitted to drink milk. This milk may come: </p>

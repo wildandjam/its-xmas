@@ -2,7 +2,7 @@
 	$pageID = 3;
 	require('../res/meta.php'); 
 	
-	if (!$seoDone){	?>
+	if (!isset($seoDone)){	?>
 		<title>Forgotten your Password? | It's Christmas</title>
 	<?php
 	}
@@ -12,10 +12,23 @@
 <body>
 <?php require('../res/headnav.php'); ?>
 <div id="container">
-	<div class="content login">
-    	<h1>Forgotten your password?</h1>
+	<div id="pageHeader">
+        <h1>Forgotten your password</h1>
+        <?php require('../res/userPortal.php'); ?>
+        <div id="breadcrumbs">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li>Forgotten your password</li>
+            </ul>
+        </div>
+    </div>
+    <div class="content login">
 		<?php 
-        $status = $_GET['status'];
+        if (isset($_GET['status'])){
+            $status = $_GET['status'];
+        } else {
+            $status = false;
+        }
         if ($status) {
             if ($status == 'success'){
                     echo "<p class=\"successMsg\">The elves have sent you an email - please follow the instructions in it.</p>"; 

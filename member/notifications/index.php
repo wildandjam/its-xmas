@@ -19,7 +19,7 @@
     </div>
 	<div class="content">
     <?php 
-	if (!$id){
+	if (!isset($id)){
 		echo "<p class='errorMsg'>To get notifications, you need to <a href='/login/'>sign in</a> to the Christmas spirit.</p>";
 		
 	} else { ?>

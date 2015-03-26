@@ -92,8 +92,60 @@
     
 </header>
 <div class="panel" data-panel="home">
-        Home
-    </div>
+    
+        <?php if (isset($id)){ ?>
+            <ul class="links">
+                <li>
+                    <a href="/member/my-christmas/">
+                        My Christmas
+                    </a>
+                </li> 
+            </ul>
+        <?php } else { ?>
+            <ul class="links">
+                <li>
+                    <a href="/login/">
+                        Login
+                    </a>
+                </li>   
+                <li>
+                    <a href="/register/">
+                        Register
+                    </a>
+                </li>  
+            </ul>
+        <?php } ?>
+    
+    <ul class="links">
+        <li>
+            <a href="/about/">
+                About
+            </a>
+        </li>
+        <li>
+            <a href="/contact/">
+                Contact
+            </a>
+        </li>
+    </ul>
+    <ul class="legal">
+        <li>
+            <a href="/cookies/">
+                Milk & Cookie Policy
+            </a>
+        </li>
+        <li>
+            <a href="/privacy/">
+                Privacy Policy
+            </a>
+        </li>
+        <li>
+            <a href="/terms/">
+                Terms and Conditions
+            </a>
+        </li>
+    </ul>
+</div>
 <div class="panel" data-panel="posts">
     <form id="refine" name="refine" action="/" method="post">
                     <div class="refineRow">

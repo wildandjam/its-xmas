@@ -1,19 +1,15 @@
 ﻿<?php
 //Connect to database
 require('../res/connect.php');
-if ($_POST){
-	$lname = $_POST['lname'];
-	$lpass = $_POST['lpass'];
+if ($_REQUEST){
+	$lname = $_REQUEST['lname'];
+	$lpass = $_REQUEST['lpass'];
 	$pass = md5($lpass);
-	$fromurl = $_REQUEST['from'];
 }
 
 require('../res/user.php');
-if (isset($id)) {
-	header("Location: /");
-}
 $msg = '';
-if (isset($lname) && isset($lpass)) {
+if ($_POST) {
 	if (isset($connect)) {
 	// check if email is in database
 	$emailcheck = mysqli_query($connect, "SELECT * FROM users WHERE userEmail='$lname'");
@@ -37,16 +33,12 @@ if (isset($lname) && isset($lpass)) {
 						if ($auth == "0"){
 							$msg = "<p class=\"errorMsg\">oops - the elves have sent you an authorisation email - please check your emails and follow the intructions.</p>";
 						} else {
-							setcookie('username',$lname, time() + (10 * 365 * 24 * 60 * 60), "/");
-							$_SESSION['username']=$lname;
+							setcookie('id',$uid, time() + (10 * 365 * 24 * 60 * 60), "/");
+							$_SESSION['id']=$uid;
 							
 							mysqli_query($connect, "INSERT INTO log VALUES ('','$uid', 'date(\"Y-m-d H:i:s\")')");
+							header("Location: /member/my-christmas/");
 							
-							if (isset($fromurl)){
-								header("Location: /member/?from=" . $fromurl . "");
-							} else {
-								header("Location: /member/");
-							}
 						}
 					}
 				}
@@ -69,12 +61,7 @@ if (isset($lname) && isset($lpass)) {
 					$_SESSION['useremail']=$lname;
 					
 					mysqli_query($connect, "INSERT INTO log VALUES ('','$uid', 'date(\"Y-m-d H:i:s\"')");
-					
-					if ($fromurl){
-					header("Location: /member/?from=" . $fromurl . "");
-					} else {
-					header("Location: /member/");
-					}
+					header("Location: /member/my-christmas/");
 				}
 			}
 		}
@@ -100,8 +87,18 @@ if (isset($lname) && isset($lpass)) {
 <body>
 <?php require('../res/headnav.php'); ?>
 <div id="container">
+	<div id="pageHeader">
+        <h1 class="small">Sign in to the Christmas spirit</h1>
+        <?php require('../res/userPortal.php'); ?>
+        <div id="breadcrumbs">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li>Sign in</li>
+            </ul>
+        </div>
+    </div>
 	<div class="content login">
-   		<h1>Sign in to the Christmas spirit</h1>
+   		
 		<?php echo $msg; 
 		
 		require('../forms/login.php'); ?>

@@ -47,7 +47,7 @@ $(document).on("click", ".postItemChoice", function(){
 <?php require('../../res/headnav.php'); ?>
 <div id="container">
     <div class="content">
-        <h1>What <?php echo $typename; ?> would you like to share?</h1>
+        <h1>What <?php if (isset($typename)){echo $typename;} ?> would you like to share?</h1>
         <br />
         <form method="post" action="options/" name="postitem" id="postitem">
             <div id="postItemChoices">

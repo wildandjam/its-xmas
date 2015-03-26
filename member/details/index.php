@@ -28,7 +28,6 @@
 <div id="container" class="pageDetails">
 	<div class="content">
 	<?php
-		require('../../res/connect.php');
 		if (isset($_REQUEST['edit']) && $_REQUEST['edit'] == "true"){
 			$detailsFirst = mysqli_real_escape_string($connect, $_REQUEST['detailsFirst']);
 			$detailsLast = mysqli_real_escape_string($connect, $_REQUEST['detailsLast']);
@@ -64,42 +63,44 @@
 		}
 		
 		
-		
-		
-		$usermaincheck = mysqli_query($connect, "SELECT * FROM users WHERE userID = '$id'");
-		if (mysqli_num_rows($usermaincheck) == "1"){
-			while ($userow = mysqli_fetch_array($usermaincheck)){
-				$username = $userow['userName'];
-				$useremail = $userow['userEmail'];	
-			}
+		if (isset($id)){
 			
-		}
-		
-		
-		$usercheck = mysqli_query($connect, "SELECT * FROM userdetails WHERE userID='$id'"); 
-		$count = mysqli_num_rows($usercheck);
-		
-		if ($count == 1){
-			while($row = mysqli_fetch_array($usercheck)) {
-				
-				$userAvatar = $row['userAvatar'];
-				$firstname = $row['userFirstName'];
-				$lastname = $row['userLastName'];
-				$location = $row['userLocation'];
-				$gender = $row['userGender'];
-				$bio = $row['userBio'];
-				$dob = $row['userDOB'];
-				if ($dob == "1900-01-01 00:00:00"){
-					$dob = false;	
+			$usermaincheck = mysqli_query($connect, "SELECT * FROM users WHERE userID = '$id'");
+			if (mysqli_num_rows($usermaincheck) == "1"){
+
+				while ($userow = mysqli_fetch_array($usermaincheck)){
+					$username = $userow['userName'];
+					$useremail = $userow['userEmail'];	
 				}
-				if ($userAvatar == ""){$userAvatar ="7";}
-				$userAvatarFore = $row['userAvatarFore'];
-				if ($userAvatarFore == ""){$userAvatarFore = "#183051";}
-				$userAvatarBack = $row['userAvatarBack'];
-				if ($userAvatarBack == ""){$userAvatarBack = "#e8e8e8";}
-				$userPrivate = $row['userPrivate'];
+				
+			}
+			$usercheck = mysqli_query($connect, "SELECT * FROM userdetails WHERE userID='$id'"); 
+			$count = mysqli_num_rows($usercheck);
+			
+			if ($count == 1){
+				while($row = mysqli_fetch_array($usercheck)) {
+					
+					$userAvatar = $row['userAvatar'];
+					$firstname = $row['userFirstName'];
+					$lastname = $row['userLastName'];
+					$location = $row['userLocation'];
+					$gender = $row['userGender'];
+					$bio = $row['userBio'];
+					$dob = $row['userDOB'];
+					if ($dob == "1900-01-01 00:00:00"){
+						$dob = false;	
+					}
+					if ($userAvatar == ""){$userAvatar ="7";}
+					$userAvatarFore = $row['userAvatarFore'];
+					if ($userAvatarFore == ""){$userAvatarFore = "#183051";}
+					$userAvatarBack = $row['userAvatarBack'];
+					if ($userAvatarBack == ""){$userAvatarBack = "#e8e8e8";}
+					$userPrivate = $row['userPrivate'];
+				}
 			}
 		}
+		
+		
 				
 			
 	?>
@@ -118,12 +119,12 @@
         <div class="formRow">
             <span class="title hideEdit">Username:</span>
             <span class="info hideEdit">
-                <?php echo $username; ?> <span class="small">(cannot change)</span>
+                <?php if (isset($username)){echo $username;} ?> <span class="small">(cannot change)</span>
             </span>
         </div>
         <div class="formRow"> 
             <span class="title hideEdit">Email address:</span>
-            <span class="info hideEdit"><?php echo $useremail; ?> <span class="small">(cannot change)</span></span>
+            <span class="info hideEdit"><?php if (isset($useremail)){echo $useremail;} ?> <span class="small">(cannot change)</span></span>
     	</div>
         <div class="formRow"> 
             <span class="title">First Name:</span>

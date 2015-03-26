@@ -3,7 +3,7 @@
 	require("../res/connect.php");
 	require('../res/meta.php'); 
 	
-	if (!$seoDone){	?>
+	if (!isset($seoDone)){	?>
 		<title>Register | It's Christmas</title>
 	<?php
 	}
@@ -16,25 +16,44 @@
 <body>
 <?php require('../res/headnav.php'); ?>
 <div id="container">
+	<div id="pageHeader">
+        <h1>Register</h1>
+        <?php require('../res/userPortal.php'); ?>
+        <div id="breadcrumbs">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li>Register</li>
+            </ul>
+        </div>
+    </div>
 	<div class="content registerContent">
-    	<h1>Register</h1>
         	<?php
-
-$status = $_GET['status'];
+       			if (isset($_GET['status'])){
+       				$status = $_GET['status'];
+       			} else {
+       				$status = false;
+       			}
 
 if ($status == "success") {
-
-	$remail = $_GET['email'];
-	$ruser = $_GET['user'];
-
+	if (isset($_GET['email']) && isset($_GET['user'])){
+		$remail = $_GET['email'];
+		$ruser = $_GET['user'];
+	}
 	echo "<div id='mainContent'><div align='center'><p class='successMsg'>You have successfully registered, please check your e-mail to verify your account before <a href='/login/'>signing in to the Christmas Spirit</a>.</p><br />
 			Username:<strong> $ruser </strong><br />
 			Email Address: <strong>$remail</strong>
 			</div></div>";
 } else {
-	$remail = $_GET['remail'];
-	$ruser = $_GET['ruser'];
-	$rterms = $_GET['rterms'];
+	if (isset($_GET['remail']) && isset($_GET['ruser']) && isset($_GET['rterms'])){
+		$remail = $_GET['remail'];
+		$ruser = $_GET['ruser'];
+		$rterms = $_GET['rterms'];
+	} else {
+		$remail = false;
+		$ruser = false;
+		$rterms = false;
+	}
+	
 
 	
 	if ($status == "empty" or $status == "") {

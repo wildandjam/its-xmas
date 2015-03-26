@@ -975,6 +975,7 @@ header .left #countdownShare, header .right #countdownShare {
   width: 50px;
   padding: 10px;
   background: white;
+  overflow: hidden;
   height: 100%;
   -webkit-box-shadow: 0px 2px 9px gray;
   -moz-box-shadow: 0px 2px 9px gray;
@@ -984,17 +985,69 @@ header .left #countdownShare, header .right #countdownShare {
   -o-transition: all 1s;
   transition: all 1s;
 }
-/* line 288, partials/_header.scss */
+/* line 289, partials/_header.scss */
 .panel.active {
   left: 238px;
   width: 250px;
 }
-/* line 292, partials/_header.scss */
+/* line 293, partials/_header.scss */
 .panel * {
   max-width: 100%;
 }
-
 /* line 296, partials/_header.scss */
+.panel ul {
+  float: left;
+  width: 100%;
+  clear: both;
+  margin: 0 0 20px;
+}
+/* line 302, partials/_header.scss */
+.panel ul li {
+  float: left;
+  width: 100%;
+  clear: both;
+  margin: 0 0 5px;
+}
+/* line 310, partials/_header.scss */
+.panel ul.links a {
+  background: #183051;
+  float: left;
+  width: 100%;
+  padding: 10px;
+  color: white;
+  clear: both;
+  text-decoration: none;
+  text-align: center;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+/* line 323, partials/_header.scss */
+.panel ul.links a:hover {
+  background: #124f42;
+}
+/* line 329, partials/_header.scss */
+.panel ul.legal li {
+  margin: 0 0 10px;
+}
+/* line 332, partials/_header.scss */
+.panel ul.legal a {
+  float: left;
+  width: 100%;
+  color: #183051;
+  clear: both;
+  text-decoration: none;
+  text-align: center;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+/* line 343, partials/_header.scss */
+.panel ul.legal a:hover {
+  text-decoration: underline;
+}
+
+/* line 350, partials/_header.scss */
 #pageHeader {
   float: left;
   width: 100%;
@@ -1004,11 +1057,11 @@ header .left #countdownShare, header .right #countdownShare {
   padding-bottom: 10px;
   position: relative;
 }
-/* line 305, partials/_header.scss */
+/* line 359, partials/_header.scss */
 #pageHeader #breadcrumbs {
   max-width: 60%;
 }
-/* line 309, partials/_header.scss */
+/* line 363, partials/_header.scss */
 #pageHeader h1 {
   text-align: left;
   font-size: 50px;
@@ -1020,12 +1073,12 @@ header .left #countdownShare, header .right #countdownShare {
   margin: 10px 0;
   padding: 0;
 }
-/* line 320, partials/_header.scss */
+/* line 374, partials/_header.scss */
 #pageHeader h1.small {
   font-size: 30px;
   line-height: 30px;
 }
-/* line 325, partials/_header.scss */
+/* line 379, partials/_header.scss */
 #pageHeader #userPortal {
   float: right;
   max-width: 40%;
@@ -1033,7 +1086,7 @@ header .left #countdownShare, header .right #countdownShare {
   top: 0;
   right: 0;
 }
-/* line 332, partials/_header.scss */
+/* line 386, partials/_header.scss */
 #pageHeader #userPortal a {
   font-size: 12px;
   text-decoration: none;
@@ -1042,18 +1095,18 @@ header .left #countdownShare, header .right #countdownShare {
   margin: 0 0 0 10px;
   line-height: 30px;
 }
-/* line 340, partials/_header.scss */
+/* line 394, partials/_header.scss */
 #pageHeader #userPortal ul {
   display: inline;
   position: relative;
   float: right;
   margin-left: 10px;
 }
-/* line 346, partials/_header.scss */
+/* line 400, partials/_header.scss */
 #pageHeader #userPortal ul img {
   cursor: pointer;
 }
-/* line 350, partials/_header.scss */
+/* line 404, partials/_header.scss */
 #pageHeader #userPortal ul ul {
   display: none;
   position: absolute;
@@ -1067,7 +1120,7 @@ header .left #countdownShare, header .right #countdownShare {
   margin: 0;
   z-index: 100;
 }
-/* line 364, partials/_header.scss */
+/* line 418, partials/_header.scss */
 #pageHeader #userPortal ul ul li a {
   float: left;
   width: 100%;
@@ -1077,16 +1130,16 @@ header .left #countdownShare, header .right #countdownShare {
   margin: 0;
   padding: 0 10px;
 }
-/* line 373, partials/_header.scss */
+/* line 427, partials/_header.scss */
 #pageHeader #userPortal ul ul li a:hover {
   color: white;
   background: #124f42;
 }
-/* line 383, partials/_header.scss */
+/* line 437, partials/_header.scss */
 #pageHeader #pageHeaderLinks {
   float: right;
 }
-/* line 386, partials/_header.scss */
+/* line 440, partials/_header.scss */
 #pageHeader #pageHeaderLinks a {
   float: left;
   padding: 10px 15px;
@@ -1097,24 +1150,24 @@ header .left #countdownShare, header .right #countdownShare {
   display: block;
   margin: 0 0 0 10px;
 }
-/* line 396, partials/_header.scss */
+/* line 450, partials/_header.scss */
 #pageHeader #pageHeaderLinks a:hover {
   background: #124f42;
 }
 
-/* line 402, partials/_header.scss */
+/* line 456, partials/_header.scss */
 #breadcrumbs {
   float: left;
   clear: both;
 }
-/* line 406, partials/_header.scss */
+/* line 460, partials/_header.scss */
 #breadcrumbs ul {
   padding: 0;
   margin: 10px 0;
   width: 100%;
   text-align: left;
 }
-/* line 412, partials/_header.scss */
+/* line 466, partials/_header.scss */
 #breadcrumbs ul li {
   display: inline-block;
   margin: 0 5px 0 0;
@@ -1123,7 +1176,7 @@ header .left #countdownShare, header .right #countdownShare {
   letter-spacing: 1px;
   color: gray;
 }
-/* line 420, partials/_header.scss */
+/* line 474, partials/_header.scss */
 #breadcrumbs ul li a {
   color: #183051;
   text-decoration: none;
