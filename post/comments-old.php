@@ -7,7 +7,7 @@
 				$commentID = $commentRow['commentID'];
 				$postID = $commentRow['postID'];
 				$userID = $commentRow['userID'];
-				$userName = $commentRow['userName'];
+				$commentUserName = $commentRow['userName'];
 				$commentMessage = $commentRow['commentMessage'];
 				$commentDate = $commentRow['commentDate'];
 				$commentReplied = $commentRow['commentInReplyTo'];
@@ -15,7 +15,17 @@
 				<div class='commentRow'>
 					<div class='comment' data-commentid="<?php echo $commentID; ?>">
 						<div class="userArea">
-							<a href='/user?uid=<?php echo $userID; ?>'><?php echo $userName; ?></a>
+							<?php
+								$avatarQuery = mysqli_query($connect, "SELECT * FROM userAvatars WHERE userID = '$userID' AND userAvatarSelected ='1'");
+								$avatarCount = mysqli_num_rows($avatarQuery);
+								if ($avatarCount == 1){
+									while($avatarRow = mysqli_fetch_object($avatarQuery)){
+										echo "<img src='/images/avatars/" . $avatarRow->userAvatarSrc . "' alt=" . $commentUserName . "' width='50' /><br />";
+									}
+								}
+
+							?>
+							<a href='/user?uid=<?php echo $userID; ?>'><?php echo $commentUserName; ?></a>
 						</div>
 						<div class="commentArea">
 							<div class='commentMessage'>
@@ -74,6 +84,16 @@
 							?>
 							<div class='comment' data-commentid="<?php echo $replyCommentID; ?>">
 								<div class="userArea">
+									<?php
+										$replyAvatarQuery = mysqli_query($connect, "SELECT * FROM userAvatars WHERE userID = '$replyUserID' AND userAvatarSelected ='1'");
+										$replyAvatarCount = mysqli_num_rows($replyAvatarQuery);
+										if ($replyAvatarCount == 1){
+											while($replyAvatarRow = mysqli_fetch_object($replyAvatarQuery)){
+												echo "<img src='/images/avatars/" . $replyAvatarRow->userAvatarSrc . "' alt=" . $replyUserName . "' width='50' /><br />";
+											}
+										}
+
+									?>
 									<a href='/user?uid=<?php echo $userID; ?>'><?php echo $replyUserName; ?></a>
 								</div>
 								<div class="commentArea">
@@ -83,6 +103,7 @@
 									<div class='commentActions'>
 										<div class='commentActionsLike'>Like</div>
 										<div class='commentActionsDislike'>Dislike</div>
+										<div class='commentActionsReply'>Reply</div>
 										<div class='commentActionsReport'>Report</div>
 									</div>
 									<div class='commentDate'>

@@ -1,6 +1,5 @@
 <?php 
 if (isset($id)){
-
 } else {
 	if (isset($_SESSION['id'])){
 		$id = $_SESSION['id'];
@@ -12,21 +11,6 @@ if (isset($id)){
 		}
 	}
 }
-/*if (!isset($id) || !($id > 0)){
-	if (isset($_SESSION)){
-		if (isset($_SESSION['id'])){
-			$id = $_SESSION['id'];
-		}
-		if (isset($_SESSION['name'])){
-			$name = $_SESSION['name'];
-		}
-		if (isset($_COOKIE['username'])){
-			$uu = $_COOKIE['username'];
-		}
-	} else {
-		$id = false;
-	}
-}*/
 if (isset($id) && ($id > 0)){
 	$userControllerQuery = mysqli_query($connect, "SELECT * FROM users WHERE userID = '$id'");
 	$userControllerRows = mysqli_num_rows($userControllerQuery);
@@ -36,7 +20,7 @@ if (isset($id) && ($id > 0)){
 			$xID = $xUserRow->userID;	
 			$xUserEmail = $xUserRow->userEmail;
 			$xUsername = $xUserRow->userName;
-
+			$xUser = true;
 		}
 		$userDetailsControllerQuery = mysqli_query($connect, "SELECT * FROM userdetails WHERE userID = '$xID'");
 		$userDetailControllerRows = mysqli_num_rows($userDetailsControllerQuery);
@@ -51,10 +35,30 @@ if (isset($id) && ($id > 0)){
 				$xLocation = $xUserDetailRow->userLocation;
 				$xPrivate = $xUserDetailRow->userPrivate;
 			}
+			$xUserDetails = true;
+		} else {
+			$xUserDetails = false;
 		}
 
+		$userAvatarQuery = mysqli_query($connect, "SELECT * FROM userAvatars WHERE userID = '$xID' AND userAvatarSelected ='1'");
+		$userAvatarCount = mysqli_num_rows($userAvatarQuery);
+
+		if ($userAvatarCount > 0){
+			while($userAvatarRow = mysqli_fetch_assoc($userAvatarQuery)){
+				$userAvatarSrc = $userAvatarRow['userAvatarSrc'];
+			}
+			$userAvatar = '/images/avatars/' . $userAvatarSrc;
+			$userAvatarBool = true;
+		} else {
+			$userAvatarBool = false;
+		}
+	} else {
+		$xUser = true;
+		$xUserDetails = false;
 	}
 } else {
 	$id = false;
+	$xUser = true;
+	$xUserDetails = false;
 }
 ?>

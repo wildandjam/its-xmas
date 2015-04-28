@@ -1,6 +1,10 @@
 <?php require('../res/meta.php'); 
 	require('../res/connect.php');
-	$requestid = $_REQUEST["uid"];
+	if (isset($_REQUEST["uid"])){
+		$requestid = $_REQUEST["uid"];
+	} else {
+		$requestid = false;
+	}
 	$icheck = mysqli_query($connect, "SELECT * FROM users WHERE userID = '$requestid'");
 	$icount = mysqli_num_rows($icheck);
 	if ($icount == 1){
@@ -15,13 +19,13 @@
 <?php require('../res/headnav.php'); ?>
 <div id="container" class="userProfile">
 	<div id="pageHeader">
-		<div id="breadcrumbs">
+        <h1><?php echo $profilename; ?></h1>
+        <div id="breadcrumbs">
 	        <ul>
-	            <li><a href="/">Home</a> > </li>
-	            <li><a href="/users/">Users</a> > </li>
+	            <li><a href="/">Home</a></li>
+	            <li><a href="/users/">Users</a></li>
 	        </ul>
 	    </div>
-        <h1><?php echo $profilename; ?></h1>
         <?php require('../res/userPortal.php'); ?>
         
         <div id="pageHeaderLinks">
@@ -150,15 +154,17 @@
 							}
 							$location = $detailRow['userLocation'];
 							$bio = $detailRow['userBio'];
-							$avatar = $detailRow['userAvatar'];
-							$avatarFore = $detailRow['userAvatarFore'];
-							$avatarBack = $detailRow['userAvatarBack'];
-							$avatarSpan = $detailRow['avatarFontName'];
 							
 						?>
 							<div id="userProfile">
 								<div id="userProfileAvatar">
-                                    <span class="avatar large <?php echo $avatarSpan; ?>" style="color:<?php echo $avatarFore;?>;background:<?php echo $avatarBack; ?>;"></span>
+									<?php
+										if ($userAvatarBool){
+											echo '<img src="' . $userAvatar . '" alt="Icon" width="110"/>'; 
+										} else {
+											echo '<img src="http://www.placehold.it/30x30" alt="Icon" />';
+										}
+									?>
                                 </div>
                                 <div id="userProfileInfo">
                                     <?php if (($firstname == '') && ($lastname == '') && ($gender == '') && ($location == '') && ($bio == '')){

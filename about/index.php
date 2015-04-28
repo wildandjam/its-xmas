@@ -1,6 +1,5 @@
 <?php $pageID = 4;
 	require('../res/meta.php'); 
-	
 	if (!$seoDone){	?>
 		<title>About It's Christmas | It's Christmas</title>
 	<?php
@@ -49,8 +48,7 @@
 	</div>
 
 
-<?php require('../res/sidebars.php'); ?>
 </div>
-<?php require('../res/admin.php'); ?>
+<?php require('../res/gtm.php'); ?>
 </body>
 </html>

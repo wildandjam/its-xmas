@@ -1,7 +1,5 @@
 <?php
-
 	$base = "http://www.its-xmas.co.uk/?";
-	
 ?>
 
 <div id="navbar">
@@ -67,7 +65,7 @@
                                 <input type="checkbox" id="limit" name="limit" value="<?php echo $limitLink ?>" />
                                 <label for="limit">Limit to this <?php echo $limitType ?></label>
                             </div>	
-						<?php } else if ($id) { ?>
+						<?php } else if (isset($xUser) && $xUser === true){ ?>
                         	<div class="refineRow buttonRow">
                                 <input type="checkbox" id="limit" name="limit" value="nice" />
                                 <label for="limit">Limit to the nice list</label>
@@ -81,7 +79,7 @@
                 	</form>
                 
         </div>
-        <?php if ($id){ ?>
+        <?php if (isset($xUser) && $xUser === true){ ?>
             <div class="moreOptions">My Account...</div>
             <div class="lessOptions"><span>My Account...</span>
 		            <a href="/member/notifications/" class="link notifications" title="Notifications">Notifications<span></span></a>
@@ -121,11 +119,10 @@
     </div>  
      
 </div>
-<?php if (isset($id)){ 
+<?php if (isset($xUser) && $xUser === true){ 
 
 } else {
 	if (isset($pageID) && $pageID != 1 && $pageID != 2 && $pageID != 3){
-
 ?>
 	
         <div id="cookiePop" style="display:none;">
@@ -135,7 +132,9 @@
             <a href="/cookies/">Read more</a>
             <span class="icon-close"></span>
         </div> 
-<?php }} ?>
+<?php 
+    }
+} ?>
 <!-- Google Tag Manager -->
 <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-TM643S"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>

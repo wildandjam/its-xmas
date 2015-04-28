@@ -1,6 +1,6 @@
 @import "compass/css3";
-@import 'variables';
-@import 'reset';
+@import 'partials/variables';
+@import 'partials/reset';
 
 header {
 	background:$blue;

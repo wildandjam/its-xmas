@@ -71,9 +71,9 @@
 		}?>
 
         
-		</head>
-		<body>
-         <div id="fb-root"></div>
+</head>
+<body>
+	<div id="fb-root"></div>
     <script type="text/javascript">
 	window.fbAsyncInit = function () {
 
@@ -103,19 +103,20 @@
             firstScriptElement.parentNode.insertBefore(facebookJS, firstScriptElement);
         }());
     </script>
-		<?php require('../res/headnav.php'); ?>
-        <?php if (isset($id) && $userID == $id){ ?>
-        	<form method="post" action="/process/updatePost.php">
-        <?php } ?>
+	<?php require('../res/headnav.php'); ?>
+    <?php if (isset($id) && $userID == $id){ ?>
+    	<form method="post" action="/process/updatePost.php">
+    <?php } ?>
 			<div id="container">
 				<div id="pageHeader">
+					<h1 class="small"><?php echo $title; ?></h1>
 					<div id="breadcrumbs">
 				        <ul>
-				            <li><a href="/">Home</a> > </li>
-				            <li><a href="/posts/">Posts</a> > </li>
+				            <li><a href="/">Home</a></li>
+				            <li><a href="/posts/">Posts</a></li>
 				        </ul>
 				    </div>
-			        <h1 class="small"><?php echo $title; ?></h1>
+			        
 			        <?php require('../res/userPortal.php'); ?>
 			        
 			        <div id="pageHeaderLinks">
@@ -476,28 +477,17 @@
                                          </div>
                                     <?php } else { ?>
                                         <img src="<?php echo $userRelatedRow['postImage']; ?>" alt="<?php echo $userRelatedRow['postTitle']; ?>" />
-                                        
-                                        
                                     <?php } ?>
-                                        <span class='relatedPost image'><?php echo $userRelatedRow['postTitle']; ?></span>
-                                    
-                                                               
+                                        <span class='relatedPost image'><?php echo $userRelatedRow['postTitle']; ?></span>           
                                 </a>
                                 <em>Same poster</em>
-                            
                             </li>
-                            
                         <?php }
 							$remaining = $remaining - $userRelatedRows;
 							if ($remaining == '3'){
-									echo "<li><em>There are no related posts</em></li>";
-								
-								
+									echo "<li><em>There are no related posts</em></li>";		
 							}
                         }
-                         
-                        
-                
                     ?>
                     </ul>
                 </div>
@@ -505,41 +495,21 @@
                <?php if (isset($id) && $userID == $id){ ?>
         	</form>
         <?php } ?>
-				
 				<div id="comments">
-				<h2>Comments</h2><a name="comments">&nbsp;</a>
+					<h2>Comments</h2><a name="comments">&nbsp;</a>
+				    <div id="disqus_thread"></div>
+    				<script type="text/javascript">
+				        var disqus_shortname = 'itsxmas';
+						var disqus_url = 'http://www.its-xmas.co.uk/post/?id=<?php echo $postid; ?>';
 
-				<?php 
-					if(isset($_REQUEST['comment'])){
-						$comment = $_REQUEST['comment'];
-
-						if ($comment == 'fail'){
-							echo "<p class='errorMsg'>Unfortunately, there has been an error.</p>";
-						} else if ($comment == 'success'){
-							if (isset($_REQUEST['moderate'])){
-								$moderate = $_REQUEST['moderate'];
-								if ($moderate == "true"){
-									echo "<p class='successMsg'>We're just checking out your comment.</p>";
-								} else {
-									echo "<p class='successMsg'>Your comment has been posted.</p>";
-								}
-							} else {
-								echo "<p class='successMsg'>Your comment has been posted.</p>";
-							}
-						}
-
-						
-
-
-					}
-
-				require_once('comments.php'); ?>
-
-    
-			</div>
-            
-            <?php require('../res/admin.php'); ?>
-
+				        (function() {
+				            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+				            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+				            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+				        })();
+				    </script>
+   					<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>  
+				</div>
     	<?php
 		} else {
 			?>
@@ -555,12 +525,64 @@
 		} 
 		require_once('../res/listOverlay.php'); 
 		require_once('../res/reportOverlay.php');
-		require('../res/sidebars.php'); ?>
-	
+?>	
 </div>
+<?php
+define('DISQUS_SECRET_KEY', 'xhOlWxqR4k3qIMnhICa9fR8jxywaVNKFg2LqLhQXSvOnvuAR4Ropuumv3y4WZyDP');
+define('DISQUS_PUBLIC_KEY', '4Yy4s4ZoahaO2YGpV7ATdnvE9YH4JQeyPDxwZsx6mwdlFSn8VHh8rDTRyVleTuv1');
+
+if ($id){
+	$loggedInQuery = mysqli_query($connect, "SELECT * FROM users WHERE userID = '$id'");
+	if (mysqli_num_rows($loggedInQuery) == 1){
+		$loggedInRow = mysqli_fetch_array($loggedInQuery);
+		$loggedInUser = $loggedInRow['userName'];
+		$loggedInEmail = $loggedInRow['userEmail'];
+	}
+}
 
 
-
+if ($userAvatarBool){
+	$disqusAvatar = 'http://www.its-xmas.co.uk' . $userAvatar;
+} else {
+	$disqusAvatar = 'http://www.its-xmas.co.uk/images/logo.png';
+}
+$data = array(
+        "id" => $id,
+        "username" => $loggedInUser,
+        "email" => $loggedInEmail,
+        "avatar" => $disqusAvatar
+    );
+ 
+function dsq_hmacsha1($data, $key) {
+    $blocksize=64;
+    $hashfunc='sha1';
+    if (strlen($key)>$blocksize)
+        $key=pack('H*', $hashfunc($key));
+    $key=str_pad($key,$blocksize,chr(0x00));
+    $ipad=str_repeat(chr(0x36),$blocksize);
+    $opad=str_repeat(chr(0x5c),$blocksize);
+    $hmac = pack(
+                'H*',$hashfunc(
+                    ($key^$opad).pack(
+                        'H*',$hashfunc(
+                            ($key^$ipad).$data
+                        )
+                    )
+                )
+            );
+    return bin2hex($hmac);
+}
+ 
+$message = base64_encode(json_encode($data));
+$timestamp = time();
+$hmac = dsq_hmacsha1($message . ' ' . $timestamp, DISQUS_SECRET_KEY);
+?>
+<script type="text/javascript">
+var disqus_config = function() {
+    this.page.remote_auth_s3 = "<?php echo "$message $hmac $timestamp"; ?>";
+    this.page.api_key = "<?php echo DISQUS_PUBLIC_KEY; ?>";
+}
+</script>
     <script type="text/javascript" src="/ckeditor/ckeditor.js"></script>
         <script type="text/javascript">
 			$(function(){

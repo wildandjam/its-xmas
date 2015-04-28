@@ -46,7 +46,22 @@ $(document).on("click", ".postItemChoice", function(){
 <body>
 <?php require('../../res/headnav.php'); ?>
 <div id="container">
-    <div class="content">
+    <div id="pageHeader">
+        <h1>New Post</h1>
+        <div id="breadcrumbs">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/member/my-christmas/">My Christmas</a></li>
+            </ul>
+        </div>
+        
+        <?php require('../../res/userPortal.php'); ?>
+        
+        <div id="pageHeaderLinks">
+           
+            
+        </div>
+    </div>
         <h1>What <?php if (isset($typename)){echo $typename;} ?> would you like to share?</h1>
         <br />
         <form method="post" action="options/" name="postitem" id="postitem">
@@ -87,8 +102,6 @@ $(document).on("click", ".postItemChoice", function(){
                 </a>
         	</div>
         </form>
-	</div>
-	<?php require('../../res/sidebars.php'); ?>
 </div>
 
 <script type="text/javascript" src="/ckeditor/ckeditor.js"></script>

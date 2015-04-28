@@ -8,22 +8,24 @@
 	<div class="content">
 		<h1>Preferences</h1>
         <?php 
-			$mode = $_REQUEST['mode'];
-			$viewType = $_REQUEST['viewType'];
-			$perPage = $_REQUEST['perPage'];
-			$countdownType = $_REQUEST['countdownType'];
-			require('../../res/connect.php');
-			
-			
-			if ($id){
-				$viewQ = mysqli_query($connect, "SELECT * FROM preferences WHERE userID = '$id'");
+        	if (isset($_REQUEST['mode'])){
+        		$mode = $_REQUEST['mode'];
+        	}
+			if (isset($_REQUEST['viewType']) && isset($_REQUEST['perPage']) && isset($_REQUEST['countdownType'])){
+				$viewType = $_REQUEST['viewType'];
+				$perPage = $_REQUEST['perPage'];
+				$countdownType = $_REQUEST['countdownType'];
+			}
+						
+			if (isset($xID)){
+				$viewQ = mysqli_query($connect, "SELECT * FROM preferences WHERE userID = '$xID'");
 				$viewQCount = mysqli_num_rows($viewQ);
 				if ($viewQCount == 0){
-					$viewInsert = mysqli_query($connect, "INSERT INTO preferences VALUES ('','$id','$view', $perPage','days')");
+					$viewInsert = mysqli_query($connect, "INSERT INTO preferences VALUES ('','$xID','$view', $perPage','days')");
 				}
 			}
 			
-			if ($mode == "changed"){
+			if (isset($mode) && $mode == "changed"){
 				$updateQuery = mysqli_query($connect, "UPDATE preferences SET viewID='$viewType', perPage = '$perPage', countdownType = '$countdownType' WHERE userID = '$id'");
 				if ($updateQuery){
 					echo "<p class='successMsg'>The elves have your new preferences!</p>";	
@@ -53,7 +55,7 @@
 				}
 			}
 			
-			if ($mode == "change"){ ?>
+			if (isset($mode) && $mode == "change"){ ?>
             	<form id="changePref" name="changePref" action="/member/preferences/">
                 	<label for="viewType">View type:</label>
                     <?php

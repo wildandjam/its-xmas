@@ -1,10 +1,10 @@
 <?php
 
-		session_start(); 
 ?>
 <!DOCTYPE html>
 <html class="no-js">
 <head>
+<!-- Meta tags -->
 <meta charset='UTF-8' />
 <meta name="viewport" content="initial-scale=1, maximum-scale=1" />
 <meta name="ROBOTS" content="index, follow" />
@@ -75,24 +75,22 @@
 <!-- Rich Snippets -->
 <meta name="application-name" content="It's Christmas | Sharing the Christmas spirit" />
 <meta property="og:site_name" content="It's Christmas" />
-<meta itemprop="url" property="og:url" content="http://its-xmas.co.uk/<?php echo $_SERVER["REQUEST_URI"]; ?>" />
+<meta itemprop="url" property="og:url" content="http://its-xmas.co.uk<?php echo $_SERVER["REQUEST_URI"]; ?>" />
+<link rel="canonical" href="http://its-xmas.co.uk<?php echo $_SERVER["REQUEST_URI"]; ?>" />
 <meta property="og:determiner" content="auto" />
 <meta property="og:locale" content="en_GB" />
 
-
 <?php 
-	if (isset($ignoreOG) && $ignoreOG != true){ ?>
-		<meta property="og:type" content="website" />
-		<meta itemprop="image" property="og:image" content="http://www.its-xmas.co.uk/images/logo/fbimage.jpg" />
-	    <meta property="og:image:type" content="image/jpeg" />
-	    <meta property="og:image:width" content="500" />
-	    <meta property="og:image:height" content="500" />
-	    <meta itemprop="description" property="og:description" name="description" content="Share the Christmas spirit with It's Christmas - the Christmas portal on the Internet. Upload pictures, share recipes and post videos" />
-<?php } 
+
+if (isset($ignoreOG) && $ignoreOG != true){ ?><meta property="og:type" content="website" />
+<meta itemprop="image" property="og:image" content="http://www.its-xmas.co.uk/images/logo/fbimage.jpg" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image:width" content="500" />
+<meta property="og:image:height" content="500" />
+<meta itemprop="description" property="og:description" name="description" content="Share the Christmas spirit with It's Christmas - the Christmas portal on the Internet. Upload pictures, share recipes and post videos" /><?php } 
 require_once('connect.php');
 require_once('user.php'); 
 if (isset($pageID)){
-	
 	$pageQuery = mysqli_query($connect, "SELECT * FROM seo WHERE pageID = '$pageID'");
 	$pageCount = mysqli_num_rows($pageQuery);
 	if ($pageCount == 1){
@@ -107,8 +105,5 @@ if (isset($pageID)){
 		}
 	}
 }
-require('countdown.php');
-
-
-
+require_once('countdown-php.php');
 ?>

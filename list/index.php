@@ -71,12 +71,26 @@ window.fbAsyncInit = function () {
 </script>-->
 <?php require('../res/headnav.php'); ?>
 <div id="container" class="list">
-	<div class="content content1000">
+	<div id="pageHeader">
+		<h1><?php echo $listName; ?></h1>
+		<?php require('../res/userPortal.php'); ?>
+		<div class="clearfix"></div>
+		<div id="breadcrumbs">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/lists/">Lists</a></li>
+            </ul>
+        </div>
+		<div id="pageHeaderLinks">
+			<a href="#">Search</a>
+		</div>
+	</div>
+
     	
 		<?php 
             if (mysqli_num_rows($listQuery) == 1){ ?>
-                <h1><?php echo $listName; ?></h1>
-                <div id="listNamePrivacy">
+                
+                <div id="listNamePrivacy" style=backg>
                     <h2 class="subheading">A list by <a href="/user/?uid=<?php echo $userID; ?>"><?php echo $authorName; ?></a></h2>
                  </div>
             <?php if ($private == 0 || ($private == 1 && $id == $userID)){ 
@@ -107,7 +121,7 @@ window.fbAsyncInit = function () {
     <?php
     require_once('../res/listOverlay.php'); 
 	require_once('../res/reportOverlay.php');
-	require('../res/sidebars.php'); ?>
+?>
 </div>
 <script type="text/javascript">
 	$(function(){

@@ -7,6 +7,13 @@
     <div id="pageHeader">
         <h1>My Christmas</h1>
         <?php require('../../res/userPortal.php'); ?>
+        
+        <div id="breadcrumbs">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li>My Christmas</li>
+            </ul>
+        </div>
         <div id="pageHeaderLinks">
             <?php 
                 if (isset($id)){
@@ -21,12 +28,6 @@
                 }
             ?>
             
-        </div>
-        <div id="breadcrumbs">
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li>My Christmas</li>
-            </ul>
         </div>
     </div>
     
@@ -182,7 +183,7 @@
 	</div>
 	<?php 
 	}
-		require('../../res/sidebars.php'); ?>
+    ?>
 </div>
 <script type="text/javascript" src="/res/js/jquery.jcarousel.min.js"></script>
 <script type="text/javascript">

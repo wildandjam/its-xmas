@@ -1,14 +1,13 @@
-<?php require('../../res/meta.php'); 
-	require('../../res/connect.php'); ?>
+<?php require('../../res/meta.php'); ?>
 	<title>Notifications | It's Christmas</title>
 </head>
 <body>
 <?php require('../../res/headnav.php'); ?>
+
 <div id="container" class="notifications">
 	<div id="pageHeader">
         <h1>Nofications</h1>
         <?php require('../../res/userPortal.php'); ?>
-        
         <div id="breadcrumbs">
             <ul>
                 <li><a href="/">Home</a></li>
@@ -93,7 +92,6 @@
     </div>
     <?php } ?>
 	</div>
-    <?php require('../../res/sidebars.php'); ?>
     </div>
 	
 </div>

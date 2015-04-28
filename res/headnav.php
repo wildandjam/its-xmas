@@ -1,17 +1,14 @@
 <?php
 	//Notification Query
-	if (isset($id)){
-		require('connect.php');
+	if ($xUser == true){
 		$notificationQuery = mysqli_query($connect, "SELECT * FROM notifications WHERE notificationUserID = '$id' AND notificationRead = '0' AND notificationHidden = '0'");
 		$notificationCount = mysqli_num_rows($notificationQuery);
 	}
-	
-	//print_r($_COOKIE);
 ?>
-<?php if ($type){ ?>
-<header data-countdown="<?php echo $type; ?>">
+<?php if (isset($type)){ ?>
+    <header data-countdown="<?php echo $type; ?>">
 <?php } else { ?>
-<header data-countdown="days">
+    <header data-countdown="days">
 <?php } ?>
     <div id="altHeader">
         <a href="/">
@@ -30,7 +27,7 @@
         </span>
         <a href="/posts/">
             <span class="link-icon">
-                <img src="http://www.placehold.it/40x40" alt="Icon" />
+                <img src="/images/icon/posts.png" alt="Posts" />
             </span>
             <span class="link-name">
                 Posts
@@ -40,8 +37,8 @@
             </span>
         </a>
         <a href="/events/">
-            <span class="link-icon">
-                <img src="http://www.placehold.it/40x40" alt="Icon" />
+            <span class="link-icon events">
+                <?php echo date("j"); ?>
             </span>
             <span class="link-name">
                 Events
@@ -52,7 +49,7 @@
         </a>
         <a href="/lists/">
             <span class="link-icon">
-                <img src="http://www.placehold.it/40x40" alt="Icon" />
+                <img src="/images/icon/lists.png" alt="Lists" />
             </span>
             <span class="link-name">
                 Lists
@@ -63,7 +60,7 @@
         </a>
         <a href="/wiki/">
             <span class="link-icon">
-                <img src="http://www.placehold.it/40x40" alt="Icon" />
+                <img src="/images/icon/wiki.png" alt="Wiki" />
             </span>
             <span class="link-name">
                 Wiki
@@ -71,10 +68,13 @@
         </a>
         <a href="/blog/">
             <span class="link-icon">
-                <img src="http://www.placehold.it/40x40" alt="Icon" />
+                <img src="/images/icon/snowflake.png" alt="Snowflake" />
             </span>
             <span class="link-name">
                 Blog
+            </span>
+            <span class="link-extend" data-for="blog">
+                >>
             </span>
         </a>
         <span class="line">
@@ -82,40 +82,37 @@
         </span>
         <div id="extendNav">
             <span class="link-icon">
-                <img src="http://www.placehold.it/40x40" alt="Icon" />
+                <img src="/images/icon/expand.png" alt="Toggle menu size" />
             </span>
             <span class="link-name">
-                Expand menu
+                Hide menu
             </span>
         </div>
     </div>
-    
 </header>
 <div class="panel" data-panel="home">
-    
-        <?php if (isset($id)){ ?>
-            <ul class="links">
-                <li>
-                    <a href="/member/my-christmas/">
-                        My Christmas
-                    </a>
-                </li> 
-            </ul>
-        <?php } else { ?>
-            <ul class="links">
-                <li>
-                    <a href="/login/">
-                        Login
-                    </a>
-                </li>   
-                <li>
-                    <a href="/register/">
-                        Register
-                    </a>
-                </li>  
-            </ul>
-        <?php } ?>
-    
+<?php if (isset($id)){ ?>
+    <ul class="links">
+        <li>
+            <a href="/member/my-christmas/">
+                My Christmas
+            </a>
+        </li> 
+    </ul>
+<?php } else { ?>
+    <ul class="links">
+        <li>
+            <a href="/login/">
+                Login
+            </a>
+        </li>   
+        <li>
+            <a href="/register/">
+                Register
+            </a>
+        </li>  
+    </ul>
+<?php } ?>
     <ul class="links">
         <li>
             <a href="/about/">
@@ -147,111 +144,67 @@
     </ul>
 </div>
 <div class="panel" data-panel="posts">
-    <form id="refine" name="refine" action="/" method="post">
-                    <div class="refineRow">
-                        <label>Select Category</label><?php 
-                            $selectbox = true;
-                            require("category.php"); 
-                            $mobileselect = true;                           
-                            require("category.php"); 
-                        ?>
-                        <input type="hidden" id="categoryHidden" name="categoryHidden" value="<?php if (isset($searchCat)){ echo $searchCat; } ?>"/>
-                   </div>
-                   <div class="refineRow">
-                        <label for="dateFrom">Dates</label>
-                        <div id="refineDateInputs">
-                            <input id="dateFrom" name="dateFrom" type="text" placeholder="dd/mm/yyyy" value="<?php if (isset($datefrom)){ echo $datefrom; } ?>" />
-                            <span> - </span>
-                            <input id="dateTo" name="dateTo" type="text" placeholder="dd/mm/yyyy" value="<?php if (isset($dateto)){ echo $dateto; } ?>" />
-                        </div>
-                    </div>  
-                    <div class="refineRow">
-                        <label for="ratingFrom">Rating</label>
-                        <div id="refineRating">
-                            <input id="ratingFrom" name="ratingFrom" type="text" placeholder="0 - 100%" value="<?php if (isset($ratingfrom)){ echo $ratingfrom; }?>" />
-                            <div id="ratingSlider"></div>
-                        </div>
-                    </div>
-                    <div class="refineRow">
-                        <label for="sort">Sort by</label>
-                        <select id="sort" name="sort">
-                            <option selected value="">Select</option>
-                            <option value="newest">Newest</option>
-                            <option value="oldest">Oldest</option>
-                            <option value="most-popular">Most popular</option>
-                            <option value="least-popular">Least popular</option>
-                            <option value="a-z">Alphabetical (A-Z)</option>
-                           <option value="z-a">Alphabetical (Z-A)</option>
-                        </select>
-                    </div>
-                    
-                        
-                        <?php if(isset($limitType)){ ?>
-                            <div class="refineRow buttonRow">
-                                <input type="checkbox" id="limit" name="limit" value="<?php echo $limitLink ?>" />
-                                <label for="limit">Limit to this <?php echo $limitType ?></label>
-                            </div>  
-                        <?php } else if ($id) { ?>
-                            <div class="refineRow buttonRow">
-                                <input type="checkbox" id="limit" name="limit" value="nice" />
-                                <label for="limit">Limit to the nice list</label>
-                            </div>
-                        <?php } ?>
-                    
-                    <div class="refineRow buttonRow">
-                        <label>&nbsp;</label>
-                        <button>Refine</button>
-                    </div>
-                    </form>
-</div>
-    <!--<div class="headcont">
-        <div class="left">
-        	<a href="/" class="iCTitle" data-ref="<?php echo $_SERVER[REQUEST_URI]; ?>">
-                It's Christmas
-            </a>
-			<div id="countdownHolder">
-            	<a href="/countdown">
-                    <div id="countdown">
-                        <div id="countdownTimer"><?php echo $countphp; ?></div>
-                    </div>
-                </a>
+    <form id="refine" name="refine" action="/posts/" method="post">
+        <div class="refineRow">
+            <label>Select Category</label><?php 
+                $selectbox = true;
+                require("category.php"); 
+                $mobileselect = true;                           
+                require("category.php"); 
+            ?>
+            <input type="hidden" id="categoryHidden" name="categoryHidden" value="<?php if (isset($searchCat)){ echo $searchCat; } ?>"/>
+       </div>
+       <div class="refineRow">
+            <label for="dateFrom">Dates</label>
+            <div id="refineDateInputs">
+                <input id="dateFrom" name="dateFrom" type="text" placeholder="dd/mm/yyyy" value="<?php if (isset($datefrom)){ echo $datefrom; } ?>" />
+                <span> - </span>
+                <input id="dateTo" name="dateTo" type="text" placeholder="dd/mm/yyyy" value="<?php if (isset($dateto)){ echo $dateto; } ?>" />
             </div>
-		</div>      
-        <div class="right">
-        	<?php if (isset($id)) { 
-				if ($notificationCount > 0){ ?>
-                	<a href="/member/notifications/">
-                        <span class="navbutton selected hint--left notifications" data-hint="<?php 
-                                echo $notificationCount . " new "; 
-                                if ($notificationCount == '1'){
-                                    echo "notification";	
-                                } else {
-                                    echo "notifications";
-                                }
-                            ?>">
-                            <span></span>
-                        </span>
-                   	</a>
-            <?php } else { ?>
-            	<a href="/member/notifications/">
-					<span class="navbutton notifications hint--left" data-hint="0 new notifications">
-                    	<span></span>
-                    </span>
-            	</a>
-			<?php } ?>
-	            <a href="/member/my-christmas/">
-            		<span class="navbutton hint--left" id="navShow" data-hint="My Christmas" title="My Christmas" >
-                    	<span></span>
-                	</span>
-               	</a>
-                
-            <?php
-			} else { ?>
-            	<a href="/login/"><span class="navbutton hint--left" id="LoginNav" data-hint="Login" title="Login"><span></span></span></a>
-            <?php } ?>
-            <span class="navbutton nonHandheld hint--left" data-hint="Search" id="search" title="Search"><span></span></span>
-            <span class="navbutton hint--left" data-hint="Open Navigation" id="nav" title="Open Navigation"><span></span></span>
-            
+        </div>  
+        <div class="refineRow">
+            <label for="ratingFrom">Rating</label>
+            <div id="refineRating">
+                <input id="ratingFrom" name="ratingFrom" type="text" placeholder="0 - 100%" value="<?php if (isset($ratingfrom)){ echo $ratingfrom; }?>" />
+                <div id="ratingSlider"></div>
+            </div>
         </div>
-    </div>-->   
-</header>
+        <div class="refineRow">
+            <label for="sort">Sort by</label>
+            <select id="sort" name="sort">
+                <option selected value="">Select</option>
+                <option value="newest">Newest</option>
+                <option value="oldest">Oldest</option>
+                <option value="most-popular">Most popular</option>
+                <option value="least-popular">Least popular</option>
+                <option value="a-z">Alphabetical (A-Z)</option>
+               <option value="z-a">Alphabetical (Z-A)</option>
+            </select>
+        </div>
+    <?php if(isset($limitType)){ ?>
+        <div class="refineRow buttonRow">
+            <input type="checkbox" id="limit" name="limit" value="<?php echo $limitLink ?>" />
+            <label for="limit">Limit to this <?php echo $limitType ?></label>
+        </div>  
+    <?php } else if (isset($xUser) && $xUser === true) { ?>
+        <div class="refineRow buttonRow">
+            <input type="checkbox" id="limit" name="limit" value="nice" />
+            <label for="limit">Limit to the nice list</label>
+        </div>
+    <?php } ?>
+        <div class="refineRow buttonRow">
+            <label>&nbsp;</label>
+            <button>Refine</button>
+        </div>
+    </form>
+</div>
+<div class="panel" data-panel="blog">
+    <ul class="links">
+        <li><a href="/blog/topics/best-of/">Best of</a></li>
+        <li><a href="/blog/topics/decorations/">Decorations</a></li>
+        <li><a href="/blog/topics/diy-crafts/">DIY/Crafts</a></li>
+        <li><a href="/blog/topics/gifts/">Gifts</a></li>
+        <li><a href="/blog/topics/recipes/">Recipes</a></li>
+        <li><a href="/blog/topics/shopping/">Shopping</a></li>
+    </ul>
+</div>

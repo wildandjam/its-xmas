@@ -86,11 +86,11 @@
 				$msg = "<p>Please fill in all fields</p>";
 			}
 		?>
-        <h2>Send a message to Santa HQ</h2>
+        <!--<h2>Send a message to Santa HQ</h2>-->
         <?php echo $msg; ?>
         <?php if ($formsent != true){ ?>
             <form method="post" action="/contact/" id="contactUs" name="contactUs">
-                <input type="text" id="contactName" name="contactName" value="<?php echo $name; ?>" placeholder="Your name" required/>
+                <input type="text" id="contactName" name="contactName" value="<?php if (isset($name)){echo $name;} ?>" placeholder="Your name" required/>
                 <?php if (isset($email)){
 					echo "<input type=\"email\" id=\"contactEmail\" name=\"contactEmail\" value=\"" . $email . "\" placeholder=\"Your email\" required />";
 				} else {
@@ -127,8 +127,6 @@
             </form>
     	<?php } ?>
     </div>
-	<?php require('../res/sidebars.php'); ?>
 </div>
-<?php require('../res/admin.php'); ?>
 </body>
 </html>

@@ -1,7 +1,6 @@
 ﻿<?php 
 	require('../res/meta.php'); 
-	require('../res/connect.php');
-	if ($_REQUEST['collectionid']){
+	if (isset($_REQUEST['collectionid']) && $_REQUEST['collectionid']){
 		$listID = $_REQUEST['collectionid'];
 		$listQuery = mysqli_query($connect, "SELECT * FROM collections WHERE listID='" . $listID ."'");
 		$listRows = mysqli_num_rows($listQuery);
@@ -13,7 +12,6 @@
 			$listDescription = $row['listDescription'];
 			$listPrivate = $row['listPrivate'];
 			$listParent = $row['listParentID'];
-			
 			$listViewQuery = mysqli_query($connect, "SELECT * FROM preferences WHERE userID = '$id'");
 			if (mysqli_num_rows($listViewQuery) == '1'){
 				while ($listViewQRow = mysqli_fetch_array($listViewQuery)){
@@ -51,7 +49,7 @@
 					$viewName = 'pin';
 					break;	
 			}
-				if ($view == "1" or $view == "2"){ ?>
+				if (isset($view) && ($view == "1" or $view == "2")){ ?>
 					<script src="/res/jquery.masonry.min.js"></script>
 					<script type="text/javascript">
 					$(document).ready(function(){	
@@ -147,7 +145,7 @@ window.fbAsyncInit = function () {
 		if ($listRows > 0){ ?>
 			<h1><?php echo $listName; ?></h1>
     		<h2 class="subheading">A collection by <a href="/user/?uid=<?php echo $userID; ?>"><?php echo $authorName; ?></a></h2>
-            <?php if ($_REQUEST['status']){
+            <?php if (isset($_REQUEST['status'])){
 				switch ($_REQUEST['status']){
 					case "deleteitemsuccess":
 						echo "<p class='successMsg'>Post removed from collection</p>";
@@ -202,7 +200,7 @@ window.fbAsyncInit = function () {
 					$licheck = mysqli_query($connect, "SELECT * FROM collectionposts WHERE listID = '$listID'");
 					$licount = mysqli_num_rows($licheck);
 					if ($licount > 0){?>
-						<div id="itemholder" class="<?php echo $viewName ?>">
+						<div id="itemholder" class="<?php echo Name ?>">
 							<?php 
 							while($listRow = mysqli_fetch_array($licheck)){
 								$postcheck = mysqli_query($connect, "SELECT * FROM posts WHERE postHidden = '0' AND postID = '" . $listRow['postID'] . "'");
@@ -335,7 +333,7 @@ window.fbAsyncInit = function () {
 	require_once('../res/reportOverlay.php');
 	$limitType = "collection";
 	$limitLink = "/collection/?collectionid=" . $listID;
-	require('../res/sidebars.php'); ?>
+	?>
 </div>
 </body>
 </html>

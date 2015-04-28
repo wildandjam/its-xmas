@@ -152,23 +152,32 @@ h2 {
 			.home {
 				float:left;
 				height:200px;
-				background:white;
+				//background:white;
 				margin-bottom:15px;
-				border:2px solid $dgrey;
+				border:1px dashed rgba($dgrey,0.75);
+				border-right:1px dotted rgba($dgrey,0.75);
 				text-align:center;
+				position:relative;
 
 				a {
 					color:blue;
 					font-size:14px;
-					text-align:center;
 					color:$blue;
 					text-decoration:none;
 					padding:10px;
+					position:absolute;
+					width:100%;
+					height:100%;
+					top:0;
+					left:0;
+					text-align:right;
+					text-transform: uppercase;
+					font-size: 11px;
+					letter-spacing: 1px;
 				}
 
 				&.posts {
 					width:32%;
-					
 				}
 				&.events {
 					width:32%;
@@ -187,18 +196,23 @@ h2 {
 					margin-left:1%;
 					height:150px;
 				}
+				&:hover {
+					border-color:$blue;
+					background:white;
+				}
 			}
 			#countdown-holder {
 				float:left;
 				width:100%;
 				text-align:center;
-				font-family:$lobster;
-				font-size:22px;
-				line-height:35px;
+				font-size:12px;
+				line-height:18px;
 				color:white;
-				padding:15px;
-				border:2px solid $dgrey;
+				padding:10px;
 				background:$blue;
+				text-transform:uppercase;
+				border:0;
+				letter-spacing:1px;
 			}
 			#countdown {
 				
@@ -1810,15 +1824,73 @@ button {
 	}
 
 }
+.row {
+	width:100%;
+	float:left;
+	clear:both;
+}
+//Member - Avatar page
+.avatarBox {
+	float:left;
+	width:150px;
+	border:1px solid #CCCCCC;
+	margin:5px;
+	text-align:center;
+
+
+	.avatarImage {
+		float:left;
+		width:100%;
+		padding:0;
+		clear:both;
+
+		img {
+			float:left;
+			max-width:100%;
+		}
+	}
+	.avatarStatus {
+		float:left;
+		width:100%;
+		padding:0;
+		clear:both;
+		font-size:10px;
+		text-transform:uppercase;
+		letter-spacing:1px;
+
+		&.selected {
+			padding:5px;
+			background:white;
+			cursor:default;
+			font-style:italic;
+		}
+	}
+
+	a {
+		float:left;
+		width:100%;
+		display:block;
+		text-align:center;
+		padding:5px;
+		color:white;
+		background:$blue;
+		text-decoration:none;
+
+		&:hover {
+			background:$green;
+		}
+	}
+}
+
 //Member - Notifications
-#notificationHolder, #nicelistHolder, #naughtylistHolder, #collaboratorHolder {
+#notificationHolder, #nicelistHolder, #naughtylistHolder, #collaboratorHolder, .tableView {
 	float:left;
 	width:100%;
 	margin:20px 0;
 	clear:both;
 	border:1px dashed rgba($blue, 0.2);
 
-	.niceRow, .naughtyRow {
+	.niceRow, .naughtyRow, .tableRow {
 		float:left;
 		width:100%;
 		clear:both;
@@ -2082,7 +2154,28 @@ button {
 		}
 
 	}
+	@media #{$break-handheld} { 
+		#userProfileAvatar {
+			float:left;
+			width:100%;
+			clear:both;
+			margin:0;
+			padding:0;
+			max-width:100%;
 
+			img {
+				margin: 0 auto;
+				display:block;
+
+			}
+		}
+		#userProfileInfo {
+			width:100%;
+			float:left;
+			clear:both;
+			margin:10px 0;
+		}
+	}
 
 }
 .removeButton a, .fauxCell .removeButton{

@@ -1,16 +1,14 @@
-<?php require('../res/meta.php'); 
-	require('../res/connect.php'); ?>
-	<title>Add to nice list | It's Christmas</title>
-</head>
-<body>
-	<?php
-	if ($id){
+<?php 
+	ob_start();	
+	require('../res/meta.php'); 
+
+	if (isset($xID)){
 		$type = $_REQUEST['type'];
 		$userOne = $_REQUEST['userOne'];
 		$userTwo = $_REQUEST['userTwo'];
 		$from = $_REQUEST['from'];
 		
-		if ($from){
+		if (isset($from)){
 			$baseRedirect = $from;	
 		} else {
 			$baseRedirect = "/user/";
@@ -135,7 +133,7 @@
 										break;
 								}// End switch
 								
-								if ($status == "noton"){
+								if (isset($status) && $status == "noton"){
 										header("location: " . $baseRedirect . "?uid=" . $user2 . "&error=not-liked");
 
 								} else {

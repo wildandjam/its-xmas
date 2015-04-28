@@ -1,17 +1,17 @@
 <?php
-
 date_default_timezone_set('Europe/London');
 $today = $date = date('Y-m-d H:i');
 $datetime1 = strtotime('2015-12-25 00:00');
 $datetime2 = strtotime($today);
 $interval = $datetime1-$datetime2;
-if (isset($id)){
-	$prefCount = mysqli_query($connect, "SELECT * FROM preferences WHERE userID = '$id'");
+if (isset($xID)){
+	$prefCount = mysqli_query($connect, "SELECT * FROM preferences WHERE userID = '$xID'");
 	if (mysqli_num_rows($prefCount) == 1){
 		while($prefRow = mysqli_fetch_array($prefCount)){
 			$type = $prefRow['countdownType'];	
 		}
 	} else {
+		echo "nocount";
 		if (isset($_REQUEST['type'])){
 			$type = $_REQUEST['type'];
 		} else {
@@ -25,7 +25,8 @@ if (isset($id)){
 		$type = "days";	
 	}
 }
-if ($type == '' ){
+
+if (!isset($type)){
 	$type = "days";	
 }
 switch ($type){
@@ -119,5 +120,4 @@ switch ($type){
 		break;
 
 }	
-
 ?>

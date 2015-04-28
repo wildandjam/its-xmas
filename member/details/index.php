@@ -1,32 +1,12 @@
 <?php require('../../res/meta.php'); ?>
 <?php require('../../res/membercheck.php'); ?>
 <title>My details | It's Christmas</title>
-<script type="text/javascript" src="/res/farbtastic.js"></script>
-<script type="text/javascript" src="http://typeof.it/archives/color-picker/jquery.ui.ipad.js"></script>
-<script type="text/javascript">
-	$(function(){
-		$('#forePicker').farbtastic('#foreColor');
-		$('#forePicker').addTouch();
-		$('#backPicker').farbtastic('#backColor');
-		$('#backPicker').addTouch();
-		$('#editChangeDetails').click(function(){
-			$("#container.pageDetails").addClass("editMode");
-		});
-		$("#selectAvatar li").click(function(){
-			var getID = $(this).attr("data-id");
-			$("#detailsAvatar").val(getID);
-			$("#selectAvatar li").removeClass("selected");
-			$(this).addClass("selected");
-		});
-	});
-
-</script>
-<link rel="stylesheet" href="/res/farbtastic.css" />
 </head>
 <body>
 <?php require('../../res/headnav.php'); ?>
+
 <div id="container" class="pageDetails">
-	<div class="content">
+	
 	<?php
 		if (isset($_REQUEST['edit']) && $_REQUEST['edit'] == "true"){
 			$detailsFirst = mysqli_real_escape_string($connect, $_REQUEST['detailsFirst']);
@@ -80,7 +60,6 @@
 			if ($count == 1){
 				while($row = mysqli_fetch_array($usercheck)) {
 					
-					$userAvatar = $row['userAvatar'];
 					$firstname = $row['userFirstName'];
 					$lastname = $row['userLastName'];
 					$location = $row['userLocation'];
@@ -90,11 +69,6 @@
 					if ($dob == "1900-01-01 00:00:00"){
 						$dob = false;	
 					}
-					if ($userAvatar == ""){$userAvatar ="7";}
-					$userAvatarFore = $row['userAvatarFore'];
-					if ($userAvatarFore == ""){$userAvatarFore = "#183051";}
-					$userAvatarBack = $row['userAvatarBack'];
-					if ($userAvatarBack == ""){$userAvatarBack = "#e8e8e8";}
 					$userPrivate = $row['userPrivate'];
 				}
 			}
@@ -104,10 +78,22 @@
 				
 			
 	?>
-    
+    <div id="pageHeader">
+        <h1>My Details</h1>
+        <?php require('../../res/userPortal.php'); ?>
+        
+        <div class="clearfix"></div>
+        <div id="breadcrumbs">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/member/my-christmas/">My Christmas</a></li>
+                <li>My details</li>
+            </ul>
+        </div>
+    </div>
+    <div class="content">
     <form id="changeDetails" name="changeDetails" method="post" action="/member/details/?edit=true">
     
-		<h1>My Details</h1>
         <?php 
 			if (isset($finishedMsg)){
 				echo $finishedMsg;	
@@ -189,60 +175,18 @@
         <div class="formRow">           
             <span class="title">Avatar Image:</span>
             <span class="info">
-                <?php 
-                    $avatarQuery = mysqli_query($connect, "SELECT * FROM avatar WHERE avatarHidden != 1 AND avatarID = '$userAvatar'");
-                    if (mysqli_num_rows($avatarQuery) == 1){
-                        while ($avatarRow = mysqli_fetch_array($avatarQuery)){
-                            $avatarID = $avatarRow['avatarID'];
-                            $avatarName = $avatarRow['avatarName'];
-                            $avatarSpan = $avatarRow['avatarFontName'];
-                            echo "<span class=\"" . $avatarSpan . " avatar large selectedAvatar\" style='color:$userAvatarFore;background:$userAvatarBack;'></span>";
-                        }
-                    }
-                ?>
-                <input type="hidden" id="detailsAvatar" name="detailsAvatar" value="<?php echo $avatarID; ?>" />
-                <ul class="hideView" id="selectAvatar">
-                		
-					<?php 
-                        $fullAvatarQuery = mysqli_query($connect, "SELECT * FROM avatar WHERE avatarHidden != 1");
-                        if (mysqli_num_rows($fullAvatarQuery) > 0){
-                            while ($fullAvatarRow = mysqli_fetch_array($fullAvatarQuery)){
-                                $fullAvatarID = $fullAvatarRow['avatarID'];
-                                $fullAvatarName = $fullAvatarRow['avatarName'];
-                                $fullAvatarSpan = $fullAvatarRow['avatarFontName'];
-								if ($fullAvatarID == $userAvatar){
-									echo "<li data-id=\"" . $fullAvatarID . "\" class='selected'><span class=\"" . $fullAvatarSpan . " avatar large\" style='color:$userAvatarFore;background:$userAvatarBack;'></span></li>";
-								} else {
-									echo "<li data-id=\"" . $fullAvatarID . "\"><span class=\"" . $fullAvatarSpan . " avatar large\" style='color:$userAvatarFore;background:$userAvatarBack;'></span></li>";
-								}
-                                
-                            }
-                        }
-                    
-                    
-                    ?>
-                 </ul>
-            </span>
-        </div>
-        <div class="formRow"> 
-            <span class="title">Avatar Colour:</span>
-            <span class="info">
-                <span class="colourBox" style="background:<?php echo $userAvatarFore; ?>;"></span>
-                <div class="hideView">
-                    <div id="forePicker"></div>
-                    <input type="text" id="foreColor" name="foreColor" value="<?php echo $userAvatarFore; ?>" />
-                </div>
-            </span>
-        </div>
-        <div class="formRow"> 
-            <span class="title">Avatar Background Colour:</span>
-            <span class="info">
-                <span class="colourBox" style="background:<?php echo $userAvatarBack; ?>;"></span>
-                <div class="hideView">
-                    <div id="backPicker"></div>
-                    <input type="text" id="backColor" name="backColor" value="<?php echo $userAvatarBack; ?>" />
-                </div>
-            </span>
+            	<?php 
+            		
+            		if ($userAvatarBool){
+        				echo "<img src='" . $userAvatar . "' alt='" . $xUsername . "' />";
+                        echo "<a href='/member/details/avatar/'>Choose an image</a>";
+            		} else {
+            			echo "<a href='/member/details/avatar/'>Upload an image</a>";
+            		}
+
+            	?>
+
+            </span>    
         </div>
         <div class="formRow"> 
             <span class="title">Keep profile private?:</span>
@@ -263,20 +207,8 @@
                 <button>Change ></button>
             </span>
         </div>
-
 		</form>
     </div>
-    <?php require('../../res/sidebars.php'); ?>
 </div>
-<script type="text/javascript">
-	$(function(){
-		$(".farbtastic").click(function(){
-			//Change fore
-			var foreColor = $("input#foreColor").val(),
-				backColor = $("input#backColor").val();
-			$("ul#selectAvatar li > span").css({"color":foreColor, "background":backColor});
-		});
-	});
-</script>
 </body>
 </html>

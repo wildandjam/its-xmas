@@ -1,7 +1,7 @@
 <?php
 
 
-if (!isset($id)){
+if (!isset($xID)){
 	header('location: /');	
 }
 

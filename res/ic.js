@@ -12,14 +12,43 @@ $(document).ready(function(){
 	$("#altHeader a .link-extend").click(function(e){
 		e.preventDefault();
 		var panel = $(this).attr("data-for");
-		if ($(".panel[data-panel=" + panel + "").hasClass("active")){
+		if ($(this).parent("a").hasClass("active")){
+			$("#altHeader a").removeClass("active");
+
 			$(".panel").removeClass("active");
 		} else {
+			$(this).parent("a").addClass("active");
 			$(".panel").removeClass("active");
 			$(".panel[data-panel=" + panel + "").addClass("active");
 		}
-		
 	});
+	$("#altHeader a").click(function(e){
+		var windowWidth = $(window).width();
+		if (windowWidth > 0 && windowWidth < 768){
+			var panelHere = $(this).find(".link-extend").attr("data-for");
+			if (typeof panelHere != "undefined"){
+				var thisLink = $(this).attr("href"),
+					thisPage = window.location.pathname;
+
+
+				if (thisLink == thisPage){
+					if ($(".panel[data-panel=" + panelHere + "").hasClass("active")){
+						$("#altHeader a, .panel").removeClass("active");
+					} else {
+						$("#altHeader a, .panel").removeClass("active");
+						$(this).addClass("active");
+						$(".panel[data-panel=" + panelHere + "").addClass("active");
+					}
+				
+					e.preventDefault();
+				} else {
+					return true;
+				}
+			}
+		}
+	});
+
+
 	$("#userPortal ul li > img").click(function(){
 		$('#userPortal ul ul').toggle();
 	});

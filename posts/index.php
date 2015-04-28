@@ -18,7 +18,7 @@
 			<?php 
 				if (isset($id)){
 			?>
-				<a href="#">New post</a>
+				<a href="/member/post/">New post</a>
 			<?php
 				}
 			?>
@@ -27,23 +27,40 @@
 	</div>
 	<?php 
 		require('../res/connect.php');		
-		if ($_REQUEST) {
+		if (isset($_REQUEST['category'])){
 			$category = $_REQUEST['category'];
+		}
+		if (isset($_REQUEST['categoryHidden'])){
 			$categoryH = $_REQUEST['categoryHidden'];
+		}
+		if (isset($_REQUEST['dateFrom'])){
 			$datefrom = $_REQUEST['dateFrom'];
+		}
+		if (isset($_REQUEST['dateTo'])){
 			$dateto = $_REQUEST['dateTo'];
+		}
+		if (isset($_REQUEST['ratingFrom'])){
 			$ratingfrom = $_REQUEST['ratingFrom'];
+		}
+		if (isset($_REQUEST['date'])){
 			$date = $_REQUEST['date'];
-			/*$rating = $_REQUEST['rating'];*/
+		}
+		if (isset($_REQUEST['search'])){
 			$search = $_REQUEST['search'];
+		}
+		if (isset($_REQUEST['results'])){
 			$results = $_REQUEST['results'];
+		}
+		if (isset($_REQUEST['sort'])){
 			$sort = $_REQUEST['sort'];
+		}
+		if (isset($_REQUEST['limit'])){
 			$limit = $_REQUEST['limit'];
+		}
 
-		
-		
+		if (isset($_REQUEST)){
 			//Category fix name to ID
-			if ($category || $categoryH){
+			if (isset($category) || isset($categoryH)){
 				if ($category == 0){
 					if ($category){
 						$categoryQu = mysqli_query($connect, "SELECT * FROM categories WHERE categoryName = '$category'");
@@ -109,6 +126,7 @@
 		if (isset($dateto) || isset($datefrom)){
 			$newDateFrom = date("Y-m-d", strtotime($datefrom));
 			$newDateTo = date("Y-m-d", strtotime($dateto));
+			$criteria = "";
 			if (!$datefrom){
 
 				$query .= " AND postDate < '$newDateTo'";
@@ -123,7 +141,10 @@
 			
 		}
 		// Rating range
-		if (isset($ratingfrom)){
+		if (isset($ratingfrom) && $ratingfrom > 0){
+			echo $ratingfrom;
+			echo "Hello";
+			echo "<br /><br /><br />";
 			$ratingfrompieces = explode(" ",$ratingfrom);
 			$ratingFromValue = $ratingfrompieces[0];
 			$ratingToValue = substr($ratingfrompieces[2], 0 , -1);
@@ -132,7 +153,7 @@
 		
 		}	
 		// if blocked
-		if (isset($id)){
+		if ($xUser){
 			$blockQuery = mysqli_query($connect, "SELECT * FROM relationships WHERE relationshipTypeID > 4 AND (userID1 = '$id' OR userID2 = '$id')");
 			if (mysqli_num_rows($blockQuery) > 0){
 				while($blockRow = mysqli_fetch_array($blockQuery)){
@@ -240,7 +261,7 @@
 				$query .= " ORDER BY postDate DESC";
 			}
 		}
-		if ($_REQUEST){
+		if (isset($_REQUEST['page'])){
 			$page = $_REQUEST['page'];
 		}
 		require('../res/getView.php');
@@ -380,7 +401,7 @@
 		} 
 		require_once('../res/itemFooter.php');
 		require_once('../res/overlays.php');
-		require('../res/sidebars.php'); ?>
+		require('../res/gtm.php'); ?>
 </div>
 </body>
 </html>

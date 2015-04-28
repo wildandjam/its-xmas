@@ -1,10 +1,9 @@
 <?php
-	require('connect.php');
 	$getcat = mysqli_query($connect, "SELECT * FROM categories WHERE categoryParent =  '0' ORDER BY categoryName ");
 	$categorycount = mysqli_num_rows($getcat);
 	if (isset($mobileselect) && $mobileselect === true){
 		echo "<select id='category' name='category' class='handheld'>";
-		if ($searchCat > 0){
+		if (isset($searchCat) && $searchCat > 0){
 			echo "<option value='" . $searchCat . "'>" . $searchCatName . "</option>";	
 		} else {
 			echo "<option value='0'>Select</option>";
@@ -28,7 +27,7 @@
 		echo "</select>";
 	} else if (isset($selectbox) && $selectbox === true){
 		echo "<select id='category' name='category' class='jquerySelect nonHandheld'>";
-		if ($searchCat > 0){
+		if (isset($searchCat) && $searchCat > 0){
 			echo "<option value='" . $searchCat . "'>" . $searchCatName . "</option>";	
 		} else {
 			echo "<option value='0'>Select</option>";

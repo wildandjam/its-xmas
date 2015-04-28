@@ -31,13 +31,6 @@ html * {
   display: none;
 }
 
-/* line 33, blogs.scss */
-#blogBody header {
-  background: #183051;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
-}
 /* line 38, blogs.scss */
 #blogBody header .left {
   width: auto;
@@ -117,7 +110,6 @@ html * {
 #blogBody #page {
   float: left;
   width: 100%;
-  padding-top: 50px;
   clear: both;
 }
 /* line 114, blogs.scss */

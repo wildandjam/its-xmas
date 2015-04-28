@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-<?php require('../res/user.php'); ?>
+<?php 
+require('../res/connect.php'); 
+require('../res/user.php'); 
+?>
 <meta name="check" content="<?php echo $itschristmasid; ?>" />
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -33,7 +36,8 @@
 </head>
 
 <body <?php body_class(); ?> id="blogBody">
-<header>
+<?php require('../res/headnav.php'); ?>
+<!--<header>
     <div class="headcont">
         <div class="left">
         	<a href="/blog/" class="iCTitle">It's Christmas Blog</a>
@@ -44,13 +48,25 @@
             <a href="/">Back to main site</a>
         </div>	
     </div>
-</header>
+</header>-->
 
 <div id="page" class="hfeed site">
 	<div id="content" class="site-content">
-		<div class="container main-content-area">
-		<div class="navmenu"><ul>
+		<div id="container" class=" main-content-area">
+            <div id="pageHeader">
+                <span class="fauxH1">Blog</span>
+                <?php require('../res/userPortal.php'); ?>
+                
+                <div class="clearfix"></div>
+                <div id="breadcrumbs">
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li>Blog</li>
+                    </ul>
+                </div>
+            </div>
+		<!--<div class="navmenu"><ul>
 		        <?php sparkling_header_menu(); ?>
 			<li class="handheld"><a href="/">It's Christmas</a></li>
-		</ul></div>
+		</ul></div>-->
 			<div id="blogContent">

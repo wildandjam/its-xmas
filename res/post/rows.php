@@ -1,8 +1,13 @@
 ﻿<div class='item' data-id='<?php echo $postID; ?>' data-token='<?php echo $id ?>'>
 	<div class="itemUserBox">
-    	<div class="itemUserAvatar">
+    	<!--<div class="itemUserAvatar">
         	<span class="avatar small <?php echo $avatarSpan; ?>" style="color:<?php echo $userAvatarFore; ?>;background:<?php echo $userAvatarBack; ?>;"></span>
-        </div>
+        </div>-->
+        <?php 
+            if ($userAvatarBool){
+                echo '<img src="' . $userAvatar . '" alt="Icon" width="80"/>'; 
+            }
+        ?>
         <div class="itemAuthor">
         	<a href="/user/?uid=<?php echo $userID ?>"><?php echo $username; ?></a>
         </div>
@@ -59,7 +64,7 @@
         	<?php echo $dislikeInfoCount; ?> dislikes
         </div>
         <?php 
-		if ($deletetype){
+		if (isset($deletetype)){
 			if ($id == $deleteuserid){
 				switch($deletetype){
 					case "collection":

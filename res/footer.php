@@ -1,5 +1,5 @@
 <?php 
-	if ($id){
+	/*if ($id){
 		$adminuser = false;
 		$adminCheck = mysqli_query($connect, "SELECT * FROM admin WHERE userID = '$id'");
 		$adminCount = mysqli_num_rows($adminCheck);
@@ -29,5 +29,5 @@
 	
 	
 		}
-	}
+	}*/
 ?>

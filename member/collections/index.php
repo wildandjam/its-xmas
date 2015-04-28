@@ -14,7 +14,7 @@
     <?php } ?>
 	<h1>My Collections</h1>
     <?php
-		if ($_REQUEST['status']){
+		if (isset($_REQUEST['status'])){
 			if ($_REQUEST['status'] == "deletesuccess") {
 				echo "<p class='successMsg'>Collection deleted</p>";	
 			}
@@ -74,7 +74,7 @@
 		?>
 	<?php 
 	}
-		require('../../res/sidebars.php'); ?>
+?>
 </div>
 
 </body>

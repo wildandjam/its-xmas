@@ -64,7 +64,7 @@
 					$fakeView = 1;
 					break;	
 			}
-			if ($view == "1" or $view == "2" or $fakeView == "1"){ ?>
+			if ($view == "1" or $view == "2" or (isset($fakeView) && $fakeView == "1")){ ?>
 				<script src="/res/jquery.masonry.min.js"></script>
 				<script type="text/javascript">
 				$(document).ready(function(){	

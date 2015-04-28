@@ -1,5 +1,4 @@
-<?php require('../../res/meta.php'); 
-	require('../../res/connect.php'); ?>
+<?php require('../../res/meta.php'); ?>
 	<title>The Nice List | It's Christmas</title>
 </head>
 <body>
@@ -26,14 +25,8 @@
 				}
 			}
 		?>
-        
-        
-        <div id="nicelistHolder">
-        <?php 
-			
-		
-		
-            require('../../res/connect.php');
+        <div class="tableView">
+        <?php 		
             if (isset($id)){
 				
                 $niceQuery = mysqli_query($connect, "SELECT * FROM relationships WHERE ((relationshipTypeID = '2' OR relationshipTypeID = '4') AND (userID1 = '$id')) OR ((relationshipTypeID = '3' OR relationshipTypeID = '4') AND userID2 = '$id')");
@@ -69,7 +62,7 @@
 							
 						}
    						
-                            echo '<div class="niceRow">';
+                            echo '<div class="tableRow">';
 							echo '<a href="/user/?uid=' . $relUser . '" class="listName">'. $relUserName.'</a>';
 							echo '<a href="/process/nice-list.php?type=unfollow&userOne=' . $user1 . '&userTwo=' . $user2 . '&from=/member/nice-list/" class="removeLink">Remove?</a>';							
 							echo '</div>';
@@ -87,10 +80,7 @@
 			$definitionNeeded = "nice-list";
 			require('../../res/definitions/define.php');
 		?>
-        
-    <?php require('../../res/sidebars.php'); ?>
     </div>
-	
 </div>
 </body>
 </html>

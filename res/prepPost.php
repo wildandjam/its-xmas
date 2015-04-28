@@ -17,13 +17,7 @@
 	if ($userCount == 1){
 		while ($userRow = mysqli_fetch_array($userCheck)){
 			$username = $userRow['userName'];
-			$userAvatar = $userRow['userAvatar'];
-			if ($userAvatar == ""){$userAvatar ="7";}
-			$userAvatarFore = $userRow['userAvatarFore'];
-			if ($userAvatarFore == ""){$userAvatarFore = "#183051";}
-			$userAvatarBack = $userRow['userAvatarBack'];
-			if ($userAvatarBack == ""){$userAvatarBack = "#e8e8e8";}
-			$avatarSpan = $userRow['avatarFontName'];
+			
 		}
 		/*$avatarQuery = mysqli_query($connect, "SELECT * FROM avatar WHERE avatarHidden != 1 AND avatarID = '$userAvatar'");
         if (mysqli_num_rows($avatarQuery) == 1){

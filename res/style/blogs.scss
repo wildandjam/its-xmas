@@ -31,8 +31,8 @@ html {
 
 #blogBody {
   header {
-    background:$blue;
-    @include box-shadow(none);
+    //background:$blue;
+    //@include box-shadow(none);
 	
 
     .left {
@@ -108,7 +108,7 @@ html {
   #page {
     float:left;
     width:100%;
-    padding-top:50px;
+    //padding-top:50px;
     clear:both;
 
     #masthead {

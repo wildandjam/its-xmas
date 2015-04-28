@@ -13,7 +13,16 @@ header {
 
 	&.active {
 		width:239px;
+
+		#extendNav {
+			.link-icon {
+				img {
+					@include transform(rotate(180deg));
+				}
+			}
+		}
 	}
+	
 
 	#altHeader {
 		float:left;
@@ -28,7 +37,19 @@ header {
 			border:1px solid $dgrey;
 			width:100%;
 			height:40px;
-			overflow:hidden;	
+			overflow:hidden;
+			text-decoration:none;
+
+			&.active {
+				background:white;
+
+				.link-extend {
+					@include transform(rotate(180deg));
+					background:$green;
+					color:white;
+					
+				}
+			}	
 
 			&#extendNav {
 				cursor:pointer;
@@ -46,6 +67,18 @@ header {
 					height:40px;
 					width:40px;
 					float:left;
+					@include transition(all 0.5s);
+				}
+				&.events {
+					background-image:url('/images/icon/events.png');
+					background-repeat:no-repeat;
+					height:40px;
+					width:40px;
+					padding:18px 5px 5px;
+					font-size:12px;
+					font-weight:bold;
+					color:$blue;
+					text-align:center;
 				}
 			}
 			.link-name {
@@ -73,6 +106,7 @@ header {
 				text-transform:uppercase;
 				padding:10px;
 				line-height:20px;
+				@include transition(all 0.5s);
 
 				&:hover {
 					background:$green;
@@ -105,6 +139,60 @@ header {
 				background:$dgrey;
 				height:1px;
 
+			}
+		}
+	}
+	@media #{$break-handheld} {
+		bottom:0;
+		top:auto;
+		height:42px;
+		border-top:2px solid $blue;
+		width:100%;
+		left:0;
+		padding:0;
+
+		#altHeader {
+			max-width:400px;
+			margin:0 auto;
+			float:none;
+			height:40px;
+
+			> a {
+				border:0;
+				width:calc(100% / 6);
+				clear:none;
+				margin:0;
+
+				&:hover {
+					background:none;
+				}
+				&.active {
+					background:white;
+
+					&:hover {
+						background:white;
+					}
+				}
+
+				.link-icon {
+					margin:0 auto;
+					float:none;
+
+					img {
+						max-width:100%;
+					}
+				}
+
+				.link-name, .link-extend {
+					display:none;
+					visibility:hidden;
+				}
+			}
+			> span.line {
+				display:none;
+			}
+			 > #extendNav {
+				display:none;
 			}
 		}
 	}
@@ -280,7 +368,7 @@ header {
 	left:0px;
 	top:0px;
 	width:50px;
-	padding:10px;
+	padding:15px;
 	background:white;
 	overflow:hidden;
 	height:100%;
@@ -290,6 +378,18 @@ header {
 		left:238px;
 		width:250px;
 	}
+	@media #{$break-handheld} {
+		display:none;
+
+		&.active {
+			display:block;
+			width:100%;
+			left:0;
+
+		}
+	}
+
+
 	* {
 		max-width:100%;
 	}
@@ -346,6 +446,22 @@ header {
 			}
 		}
 	}
+	.refineRow {
+		float:left;
+		width:100%;
+		clear:both;
+		padding:0 0 10px;
+
+		label {
+			float:left;
+			width:100%;
+			clear:both;
+			font-size:10px;
+			padding-bottom:5px;
+			line-height:16px;
+			text-transform:uppercase;
+		}
+	}
 }
 #pageHeader {
 	float:left;
@@ -358,9 +474,14 @@ header {
 
 	#breadcrumbs {
 		max-width:60%;
+
+		@media #{$break-handheld} {
+			max-width:100%;
+		}
 	}
 
-	h1 {
+	h1, .fauxH1 {
+		font-family:$lobster;
 		text-align:left;
 		font-size:50px;
 		line-height:50px;
@@ -375,6 +496,13 @@ header {
 			font-size:30px;
 			line-height:30px;
 		}
+
+		@media #{$break-handheld} {
+			font-size:35px;
+			margin-top:0;
+			line-height:35px;
+		}
+
 	}
 	#userPortal {
 		float:right;
@@ -382,6 +510,12 @@ header {
 		position:absolute;
 		top:0;
 		right:0;	
+
+		@media #{$break-handheld} {
+			> a {
+				display:none;
+			}
+		}
 
 		a {
 			font-size:12px;
@@ -443,7 +577,9 @@ header {
 			color:white;
 			background:$dgrey;
 			text-decoration:none;
-			font-size:12px;
+			letter-spacing:1px;
+			text-transform:uppercase;
+			font-size:10px;
 			display:block;
 			margin:0 0 0 10px;
 

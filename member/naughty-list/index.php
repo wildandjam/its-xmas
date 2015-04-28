@@ -32,8 +32,6 @@
         <div id="naughtylistHolder">
         <?php 
 			
-		
-		
             require('../../res/connect.php');
             if (isset($id)){
                 $naughtyQuery = mysqli_query($connect, "SELECT * FROM relationships LEFT JOIN users  ON (relationships.userID1 = users.userID) OR (relationships.userID2 = users.userID) WHERE (userID1 = '$id' OR userID2 = '$id') AND (relationshipTypeID = '6' OR relationshipTypeID = '7' OR relationshipTypeID = '9')");
