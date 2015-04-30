@@ -124,23 +124,25 @@ html {
           
       }
     }
-    #content {
-      float:left;
-      width:100%;
-      clear:both;
-
-      .container {
-        padding:0;
 
         #blogContent { 
           float:left;
           width:72.5%;
           margin:0 2.5% 0 0;
           clear:both;
+
+          @media #{$break-handheld} {
+            width:100%;
+            margin:0 0 20px;
+          }
         }
         #secondary {
           float:left;
           width:25%;
+
+          @media #{$break-handheld} {
+            width:100%;
+          }
 
           aside {
             background:white;
@@ -225,8 +227,6 @@ html {
           }
         }
       }
-    }
-  }
 
 
   .container {

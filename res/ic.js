@@ -30,20 +30,17 @@ $(document).ready(function(){
 				var thisLink = $(this).attr("href"),
 					thisPage = window.location.pathname;
 
-
-				if (thisLink == thisPage){
-					if ($(".panel[data-panel=" + panelHere + "").hasClass("active")){
-						$("#altHeader a, .panel").removeClass("active");
-					} else {
-						$("#altHeader a, .panel").removeClass("active");
-						$(this).addClass("active");
-						$(".panel[data-panel=" + panelHere + "").addClass("active");
-					}
-				
-					e.preventDefault();
+				if ($(".panel[data-panel=" + panelHere + "").hasClass("active")){
+					$("#altHeader a, .panel").removeClass("active");
 				} else {
-					return true;
+					$("#altHeader a, .panel").removeClass("active");
+					$(this).addClass("active");
+					$(".panel[data-panel=" + panelHere + "").addClass("active");
 				}
+			
+				e.preventDefault();
+				return false;
+		
 			}
 		}
 	});

@@ -377,13 +377,13 @@
 									echo "<a href=\"/?category=" . $categoryName . "\">" . $categoryName . "</a>";
 								}
 							}
-							if (isset($id)){
+							if (isset($xID)){
 								$getCats = $catID;
 								require('../res/category.php');
 							}
 						?>
 					</div>
-                    <?php if (isset($id) && $id == $userID){ ?>
+                    <?php if (isset($xID) && $id == $userID){ ?>
                         <div id="itemPrivacy">
                             <label for="itemPrivacy">Shared with: </label>
                             <?php 

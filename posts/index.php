@@ -281,16 +281,12 @@
 				$query .= " LIMIT $start, $end";
 			}
 		}
-	/*	if ($id){
-			$query .= " GROUP BY posts.postID";	
-		}*/
 		if (isset($wholequery)){
 			$wholecheck = mysqli_query($connect, $wholequery);
 			$wholecount = mysqli_num_rows($wholecheck);
 		}
 		
 		if ($perPage != "All" && isset($wholecount)){
-
 			$pages = $wholecount / $perPage;
 			if (($wholecount % $perPage) > 0) {
 				$pages + 1;	
@@ -298,7 +294,10 @@
 			if ($page > 1) {
 				$prevPage = $page - 1;
 				$pagination = "<a href='?page=" . $prevPage . "'> < </a>"; 
+			} else if ($page == 1){
+				$pagination = " ";
 			}
+			
 			for ($i = 0; $i < $pages; $i++){
 				$pageI = $i + 1;
 				if ($pageI == $page){
@@ -322,17 +321,9 @@
 		} else {
 			$pagination = "<span class='selected'>1</span>";
 		}
-		//echo $query;
 		
 		if (isset($criteria)){
 			echo "<div id='criteriaHolder'>" . $criteria . "</div>";	
-		} else { ?>
-        	<!--<div id="bigSearch">
-                <div id="bigSearchForm">
-            		<?php require('../forms/bigsearch.php'); ?>
-                </div>
-            </div>-->
-        <?php			
 		}
 		
 		if (isset($query)){
@@ -366,28 +357,12 @@
 				}	
 				echo "<div class='homeSub'>Posts</div>";
 			}
-		}
-		
-		
+		}	
 		
 		if (isset($count) && $count != 0) { 
         	require('../res/switchView.php');
 			
 		?>
-<?php
-		
-
-
-
-
-				
-			
-			
-			
-			
-			
-			
-			?>
 			<div id="itemholder" class="<?php echo $viewName ?>">
 			
 			<?php 

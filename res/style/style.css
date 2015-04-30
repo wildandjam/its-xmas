@@ -1114,7 +1114,7 @@ header .left #countdownShare, header .right #countdownShare {
   float: left;
   width: 100%;
   clear: both;
-  margin: 0 0 20px;
+  margin: 0px;
 }
 /* line 402, partials/_header.scss */
 .panel ul li {
@@ -1166,7 +1166,7 @@ header .left #countdownShare, header .right #countdownShare {
   float: left;
   width: 100%;
   clear: both;
-  padding: 0 0 10px;
+  padding: 5px 0;
 }
 /* line 455, partials/_header.scss */
 .panel .refineRow label {
@@ -1178,8 +1178,62 @@ header .left #countdownShare, header .right #countdownShare {
   line-height: 16px;
   text-transform: uppercase;
 }
+/* line 465, partials/_header.scss */
+.panel select, .panel input, .panel button, .panel label {
+  width: 100%;
+}
+/* line 468, partials/_header.scss */
+.panel .refineRow.buttonRow input[type='checkbox'] {
+  float: left;
+}
+/* line 472, partials/_header.scss */
+.panel .refineRow.buttonRow label {
+  width: auto;
+  clear: none;
+  padding-left: 5px;
+  padding-bottom: 0;
+  line-height: 18px;
+}
+/* line 479, partials/_header.scss */
+.panel .refineRow.buttonRow input {
+  width: auto;
+}
+/* line 483, partials/_header.scss */
+.panel hr {
+  border: 0;
+  height: 1px;
+  float: left;
+  width: 100%;
+  clear: both;
+  border-top: 1px solid #183051;
+}
+/* line 491, partials/_header.scss */
+.panel #refineRating {
+  float: left;
+  clear: both;
+  width: 100%;
+}
+/* line 496, partials/_header.scss */
+.panel #refineRating #ratingSlider {
+  width: 95%;
+  margin: 10px auto;
+}
+/* line 501, partials/_header.scss */
+.panel #refineDateInputs input {
+  width: 47.5%;
+}
+/* line 505, partials/_header.scss */
+.panel button {
+  background: #124f42;
+  padding: 10px 0;
+  text-align: center;
+  width: 100%;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
 
-/* line 466, partials/_header.scss */
+/* line 515, partials/_header.scss */
 #pageHeader {
   float: left;
   width: 100%;
@@ -1189,17 +1243,17 @@ header .left #countdownShare, header .right #countdownShare {
   padding-bottom: 10px;
   position: relative;
 }
-/* line 475, partials/_header.scss */
+/* line 524, partials/_header.scss */
 #pageHeader #breadcrumbs {
   max-width: 60%;
 }
 @media (max-width: 767px) {
-  /* line 475, partials/_header.scss */
+  /* line 524, partials/_header.scss */
   #pageHeader #breadcrumbs {
     max-width: 100%;
   }
 }
-/* line 483, partials/_header.scss */
+/* line 532, partials/_header.scss */
 #pageHeader h1, #pageHeader .fauxH1 {
   font-family: "Lobster Two", cursive;
   text-align: left;
@@ -1212,20 +1266,20 @@ header .left #countdownShare, header .right #countdownShare {
   margin: 10px 0;
   padding: 0;
 }
-/* line 495, partials/_header.scss */
+/* line 544, partials/_header.scss */
 #pageHeader h1.small, #pageHeader .fauxH1.small {
   font-size: 30px;
   line-height: 30px;
 }
 @media (max-width: 767px) {
-  /* line 483, partials/_header.scss */
+  /* line 532, partials/_header.scss */
   #pageHeader h1, #pageHeader .fauxH1 {
     font-size: 35px;
     margin-top: 0;
     line-height: 35px;
   }
 }
-/* line 507, partials/_header.scss */
+/* line 556, partials/_header.scss */
 #pageHeader #userPortal {
   float: right;
   max-width: 40%;
@@ -1234,12 +1288,12 @@ header .left #countdownShare, header .right #countdownShare {
   right: 0;
 }
 @media (max-width: 767px) {
-  /* line 515, partials/_header.scss */
+  /* line 564, partials/_header.scss */
   #pageHeader #userPortal > a {
     display: none;
   }
 }
-/* line 520, partials/_header.scss */
+/* line 569, partials/_header.scss */
 #pageHeader #userPortal a {
   font-size: 12px;
   text-decoration: none;
@@ -1248,18 +1302,18 @@ header .left #countdownShare, header .right #countdownShare {
   margin: 0 0 0 10px;
   line-height: 30px;
 }
-/* line 528, partials/_header.scss */
+/* line 577, partials/_header.scss */
 #pageHeader #userPortal ul {
   display: inline;
   position: relative;
   float: right;
   margin-left: 10px;
 }
-/* line 534, partials/_header.scss */
+/* line 583, partials/_header.scss */
 #pageHeader #userPortal ul img {
   cursor: pointer;
 }
-/* line 538, partials/_header.scss */
+/* line 587, partials/_header.scss */
 #pageHeader #userPortal ul ul {
   display: none;
   position: absolute;
@@ -1273,7 +1327,7 @@ header .left #countdownShare, header .right #countdownShare {
   margin: 0;
   z-index: 100;
 }
-/* line 552, partials/_header.scss */
+/* line 601, partials/_header.scss */
 #pageHeader #userPortal ul ul li a {
   float: left;
   width: 100%;
@@ -1283,16 +1337,16 @@ header .left #countdownShare, header .right #countdownShare {
   margin: 0;
   padding: 0 10px;
 }
-/* line 561, partials/_header.scss */
+/* line 610, partials/_header.scss */
 #pageHeader #userPortal ul ul li a:hover {
   color: white;
   background: #124f42;
 }
-/* line 571, partials/_header.scss */
+/* line 620, partials/_header.scss */
 #pageHeader #pageHeaderLinks {
   float: right;
 }
-/* line 574, partials/_header.scss */
+/* line 623, partials/_header.scss */
 #pageHeader #pageHeaderLinks a {
   float: left;
   padding: 10px 15px;
@@ -1305,24 +1359,24 @@ header .left #countdownShare, header .right #countdownShare {
   display: block;
   margin: 0 0 0 10px;
 }
-/* line 586, partials/_header.scss */
+/* line 635, partials/_header.scss */
 #pageHeader #pageHeaderLinks a:hover {
   background: #124f42;
 }
 
-/* line 592, partials/_header.scss */
+/* line 641, partials/_header.scss */
 #breadcrumbs {
   float: left;
   clear: both;
 }
-/* line 596, partials/_header.scss */
+/* line 645, partials/_header.scss */
 #breadcrumbs ul {
   padding: 0;
   margin: 10px 0;
   width: 100%;
   text-align: left;
 }
-/* line 602, partials/_header.scss */
+/* line 651, partials/_header.scss */
 #breadcrumbs ul li {
   display: inline-block;
   margin: 0 5px 0 0;
@@ -1331,7 +1385,7 @@ header .left #countdownShare, header .right #countdownShare {
   letter-spacing: 1px;
   color: gray;
 }
-/* line 610, partials/_header.scss */
+/* line 659, partials/_header.scss */
 #breadcrumbs ul li a {
   color: #183051;
   text-decoration: none;
@@ -4301,6 +4355,31 @@ span.successMsg {
   background-position: -80px 0px;
 }
 
+/* line 109, partials/_generic.scss */
+.wrapper {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 960px;
+  padding: 0 15px;
+}
+
+/* line 115, partials/_generic.scss */
+a.link {
+  background: #183051;
+  padding: 10px 20px;
+  width: 100%;
+  float: left;
+  clear: both;
+  display: block;
+  margin: 5px 0;
+  color: white;
+  text-align: center;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+
 /* line 1, partials/_banner.scss */
 .banner {
   float: left;
@@ -5967,47 +6046,48 @@ button {
   #container {
     padding-left: 2.5%;
     padding-right: 2.5%;
+    padding-bottom: 60px;
   }
-  /* line 1563, style.scss */
+  /* line 1564, style.scss */
   #container .content, #container .content .content {
     width: 100%;
     margin: 0;
   }
-  /* line 1567, style.scss */
+  /* line 1568, style.scss */
   #container .content input[type='submit'], #container .content button, #container .content .content input[type='submit'], #container .content .content button {
     width: 100%;
   }
-  /* line 1570, style.scss */
+  /* line 1571, style.scss */
   #container .content.static, #container .content .content.static {
     float: left;
   }
 
-  /* line 1577, style.scss */
+  /* line 1578, style.scss */
   #recaptcha_image {
     max-width: 100%;
     height: auto;
   }
-  /* line 1581, style.scss */
+  /* line 1582, style.scss */
   #recaptcha_image img {
     max-width: 100%;
     height: auto;
   }
 
-  /* line 1586, style.scss */
+  /* line 1587, style.scss */
   form#changeMeta {
     margin-top: 25px;
   }
-  /* line 1589, style.scss */
+  /* line 1590, style.scss */
   form#changeMeta label, form#changeMeta input, form#changeMeta button {
     width: 100%;
     max-width: 100%;
   }
-  /* line 1593, style.scss */
+  /* line 1594, style.scss */
   form#changeMeta input {
     margin-bottom: 20px;
   }
 
-  /* line 1598, style.scss */
+  /* line 1599, style.scss */
   .loginLinks #registerLink, .loginLinks #passwordLink {
     width: 100%;
     float: left;
@@ -6015,7 +6095,7 @@ button {
     text-align: center;
     margin: 10px 0;
   }
-  /* line 1605, style.scss */
+  /* line 1606, style.scss */
   .loginLinks #registerLink a, .loginLinks #passwordLink a {
     float: left;
     width: 100%;
@@ -6023,24 +6103,24 @@ button {
     padding: 5px 0;
   }
 
-  /* line 1613, style.scss */
+  /* line 1614, style.scss */
   #paginationContainer {
     padding: 0;
   }
-  /* line 1616, style.scss */
+  /* line 1617, style.scss */
   #paginationContainer #pagination {
     width: 100%;
     clear: both;
     margin: 10px 0;
   }
-  /* line 1621, style.scss */
+  /* line 1622, style.scss */
   #paginationContainer #perPageContainer, #paginationContainer #changeView, #paginationContainer #updateView {
     width: 33.33%;
     margin: 10px 0;
   }
 }
 @media (max-width: 480px) {
-  /* line 1629, style.scss */
+  /* line 1630, style.scss */
   #container .item {
     width: 95%;
     min-width: 0;
@@ -6049,34 +6129,34 @@ button {
   }
 }
 @media (min-width: 768px) {
-  /* line 1638, style.scss */
+  /* line 1639, style.scss */
   .nonHandheld {
     display: block!important;
   }
 
-  /* line 1641, style.scss */
+  /* line 1642, style.scss */
   .handheld {
     display: none!important;
   }
 }
 @media (min-width: 1400px) {
-  /* line 1646, style.scss */
+  /* line 1647, style.scss */
   header .left {
     width: 75%;
   }
 
-  /* line 1649, style.scss */
+  /* line 1650, style.scss */
   header .right {
     width: 25%;
   }
 
-  /* line 1653, style.scss */
+  /* line 1654, style.scss */
   #container .content .content {
     width: 100%;
     margin: 0;
   }
 }
-/* line 1662, style.scss */
+/* line 1663, style.scss */
 #changeMeta {
   width: 100%;
   float: left;
@@ -6085,7 +6165,7 @@ button {
   padding: 20px;
   margin-top: 200px;
 }
-/* line 1670, style.scss */
+/* line 1671, style.scss */
 #changeMeta h3 {
   font-family: "Lobster Two", cursive;
   color: white;
@@ -6096,47 +6176,47 @@ button {
   font-size: 24px;
   padding: 10px 0;
 }
-/* line 1681, style.scss */
+/* line 1682, style.scss */
 #changeMeta label {
   clear: both;
   color: white;
   float: left;
   width: 150px;
 }
-/* line 1687, style.scss */
+/* line 1688, style.scss */
 #changeMeta input {
   float: left;
   width: 250px;
 }
-/* line 1691, style.scss */
+/* line 1692, style.scss */
 #changeMeta button {
   clear: both;
   float: left;
   width: 400px;
 }
 
-/* line 1698, style.scss */
+/* line 1699, style.scss */
 #recaptcha_area {
   margin-top: 20px;
 }
-/* line 1701, style.scss */
+/* line 1702, style.scss */
 #recaptcha_area table {
   display: block;
   float: left;
   width: 100%;
 }
-/* line 1706, style.scss */
+/* line 1707, style.scss */
 #recaptcha_area table tbody, #recaptcha_area table tr, #recaptcha_area table td {
   display: block;
   float: left;
   width: 100%;
 }
-/* line 1711, style.scss */
+/* line 1712, style.scss */
 #recaptcha_area table tbody input, #recaptcha_area table tr input, #recaptcha_area table td input {
   width: 100%!important;
 }
 
-/* line 1717, style.scss */
+/* line 1718, style.scss */
 #postItemChoices {
   width: 100%;
   float: left;
@@ -6144,7 +6224,7 @@ button {
   text-align: center;
 }
 
-/* line 1724, style.scss */
+/* line 1725, style.scss */
 .postItemChoice {
   display: inline-block;
   vertical-align: top;
@@ -6157,30 +6237,30 @@ button {
   text-align: center;
   cursor: pointer;
 }
-/* line 1738, style.scss */
+/* line 1739, style.scss */
 .postItemChoice span {
   color: white;
 }
-/* line 1741, style.scss */
+/* line 1742, style.scss */
 .postItemChoice:hover, .postItemChoice.active {
   background: #124f42;
 }
-/* line 1746, style.scss */
+/* line 1747, style.scss */
 .postItemChoice.hint--bottom:before {
   border-bottom-color: #124f42;
 }
-/* line 1749, style.scss */
+/* line 1750, style.scss */
 .postItemChoice.hint:after, .postItemChoice[data-hint]:after {
   background: #124f42;
 }
 @media (max-width: 767px) {
-  /* line 1724, style.scss */
+  /* line 1725, style.scss */
   .postItemChoice {
     width: 30%;
   }
 }
 
-/* line 1756, style.scss */
+/* line 1757, style.scss */
 #hiddenInput, #hiddenTextarea {
   width: 100%;
   float: left;
@@ -6190,12 +6270,12 @@ button {
   margin: 20px auto;
   text-align: center;
 }
-/* line 1765, style.scss */
+/* line 1766, style.scss */
 #hiddenInput button, #hiddenTextarea button {
   width: 100%;
 }
 
-/* line 1770, style.scss */
+/* line 1771, style.scss */
 .postIt #textContentContainer {
   width: 100%;
   float: left;
@@ -6206,20 +6286,20 @@ button {
   margin-bottom: 20px;
   position: relative;
 }
-/* line 1780, style.scss */
+/* line 1781, style.scss */
 .postIt #textContentContainer p {
   text-align: left;
 }
-/* line 1783, style.scss */
+/* line 1784, style.scss */
 .postIt #textContentContainer ul {
   list-style: disc;
   padding: 0 0 0 40px;
 }
-/* line 1788, style.scss */
+/* line 1789, style.scss */
 .postIt #textContentContainer:hover > #editTextContentContainer {
   display: block;
 }
-/* line 1792, style.scss */
+/* line 1793, style.scss */
 .postIt #textContentContainer #editTextContentContainer {
   display: none;
   position: absolute;
@@ -6231,7 +6311,7 @@ button {
   color: white;
   cursor: pointer;
 }
-/* line 1803, style.scss */
+/* line 1804, style.scss */
 .postIt #textContentContainer #editTextContentContainer #editTextContent {
   position: absolute;
   margin: auto;
@@ -6246,24 +6326,24 @@ button {
   letter-spacing: 1px;
   height: 20px;
 }
-/* line 1817, style.scss */
+/* line 1818, style.scss */
 .postIt #textContentContainer #editTextContentContainer p {
   text-align: left;
 }
-/* line 1820, style.scss */
+/* line 1821, style.scss */
 .postIt #textContentContainer #editTextContentContainer ul {
   list-style: disc;
   padding: 0 0 0 40px;
 }
 
-/* line 1827, style.scss */
+/* line 1828, style.scss */
 .row {
   width: 100%;
   float: left;
   clear: both;
 }
 
-/* line 1833, style.scss */
+/* line 1834, style.scss */
 .avatarBox {
   float: left;
   width: 150px;
@@ -6271,19 +6351,19 @@ button {
   margin: 5px;
   text-align: center;
 }
-/* line 1841, style.scss */
+/* line 1842, style.scss */
 .avatarBox .avatarImage {
   float: left;
   width: 100%;
   padding: 0;
   clear: both;
 }
-/* line 1847, style.scss */
+/* line 1848, style.scss */
 .avatarBox .avatarImage img {
   float: left;
   max-width: 100%;
 }
-/* line 1852, style.scss */
+/* line 1853, style.scss */
 .avatarBox .avatarStatus {
   float: left;
   width: 100%;
@@ -6293,14 +6373,14 @@ button {
   text-transform: uppercase;
   letter-spacing: 1px;
 }
-/* line 1861, style.scss */
+/* line 1862, style.scss */
 .avatarBox .avatarStatus.selected {
   padding: 5px;
   background: white;
   cursor: default;
   font-style: italic;
 }
-/* line 1869, style.scss */
+/* line 1870, style.scss */
 .avatarBox a {
   float: left;
   width: 100%;
@@ -6311,12 +6391,12 @@ button {
   background: #183051;
   text-decoration: none;
 }
-/* line 1879, style.scss */
+/* line 1880, style.scss */
 .avatarBox a:hover {
   background: #124f42;
 }
 
-/* line 1886, style.scss */
+/* line 1887, style.scss */
 #notificationHolder, #nicelistHolder, #naughtylistHolder, #collaboratorHolder, .tableView {
   float: left;
   width: 100%;
@@ -6324,7 +6404,7 @@ button {
   clear: both;
   border: 1px dashed rgba(24, 48, 81, 0.2);
 }
-/* line 1893, style.scss */
+/* line 1894, style.scss */
 #notificationHolder .niceRow, #notificationHolder .naughtyRow, #notificationHolder .tableRow, #nicelistHolder .niceRow, #nicelistHolder .naughtyRow, #nicelistHolder .tableRow, #naughtylistHolder .niceRow, #naughtylistHolder .naughtyRow, #naughtylistHolder .tableRow, #collaboratorHolder .niceRow, #collaboratorHolder .naughtyRow, #collaboratorHolder .tableRow, .tableView .niceRow, .tableView .naughtyRow, .tableView .tableRow {
   float: left;
   width: 100%;
@@ -6332,25 +6412,25 @@ button {
   padding: 10px;
   color: #183051;
 }
-/* line 1900, style.scss */
+/* line 1901, style.scss */
 #notificationHolder .niceRow:nth-child(odd), #notificationHolder .naughtyRow:nth-child(odd), #notificationHolder .tableRow:nth-child(odd), #nicelistHolder .niceRow:nth-child(odd), #nicelistHolder .naughtyRow:nth-child(odd), #nicelistHolder .tableRow:nth-child(odd), #naughtylistHolder .niceRow:nth-child(odd), #naughtylistHolder .naughtyRow:nth-child(odd), #naughtylistHolder .tableRow:nth-child(odd), #collaboratorHolder .niceRow:nth-child(odd), #collaboratorHolder .naughtyRow:nth-child(odd), #collaboratorHolder .tableRow:nth-child(odd), .tableView .niceRow:nth-child(odd), .tableView .naughtyRow:nth-child(odd), .tableView .tableRow:nth-child(odd) {
   background: #f7f7f7;
 }
-/* line 1903, style.scss */
+/* line 1904, style.scss */
 #notificationHolder .niceRow:nth-child(even), #notificationHolder .naughtyRow:nth-child(even), #notificationHolder .tableRow:nth-child(even), #nicelistHolder .niceRow:nth-child(even), #nicelistHolder .naughtyRow:nth-child(even), #nicelistHolder .tableRow:nth-child(even), #naughtylistHolder .niceRow:nth-child(even), #naughtylistHolder .naughtyRow:nth-child(even), #naughtylistHolder .tableRow:nth-child(even), #collaboratorHolder .niceRow:nth-child(even), #collaboratorHolder .naughtyRow:nth-child(even), #collaboratorHolder .tableRow:nth-child(even), .tableView .niceRow:nth-child(even), .tableView .naughtyRow:nth-child(even), .tableView .tableRow:nth-child(even) {
   background: white;
 }
-/* line 1907, style.scss */
+/* line 1908, style.scss */
 #notificationHolder .niceRow a, #notificationHolder .naughtyRow a, #notificationHolder .tableRow a, #nicelistHolder .niceRow a, #nicelistHolder .naughtyRow a, #nicelistHolder .tableRow a, #naughtylistHolder .niceRow a, #naughtylistHolder .naughtyRow a, #naughtylistHolder .tableRow a, #collaboratorHolder .niceRow a, #collaboratorHolder .naughtyRow a, #collaboratorHolder .tableRow a, .tableView .niceRow a, .tableView .naughtyRow a, .tableView .tableRow a {
   color: #183051;
   text-decoration: none;
 }
-/* line 1911, style.scss */
+/* line 1912, style.scss */
 #notificationHolder .niceRow a:hover, #notificationHolder .naughtyRow a:hover, #notificationHolder .tableRow a:hover, #nicelistHolder .niceRow a:hover, #nicelistHolder .naughtyRow a:hover, #nicelistHolder .tableRow a:hover, #naughtylistHolder .niceRow a:hover, #naughtylistHolder .naughtyRow a:hover, #naughtylistHolder .tableRow a:hover, #collaboratorHolder .niceRow a:hover, #collaboratorHolder .naughtyRow a:hover, #collaboratorHolder .tableRow a:hover, .tableView .niceRow a:hover, .tableView .naughtyRow a:hover, .tableView .tableRow a:hover {
   color: #124f42;
   text-decoration: underline;
 }
-/* line 1916, style.scss */
+/* line 1917, style.scss */
 #notificationHolder .niceRow a.removeLink, #notificationHolder .naughtyRow a.removeLink, #notificationHolder .tableRow a.removeLink, #nicelistHolder .niceRow a.removeLink, #nicelistHolder .naughtyRow a.removeLink, #nicelistHolder .tableRow a.removeLink, #naughtylistHolder .niceRow a.removeLink, #naughtylistHolder .naughtyRow a.removeLink, #naughtylistHolder .tableRow a.removeLink, #collaboratorHolder .niceRow a.removeLink, #collaboratorHolder .naughtyRow a.removeLink, #collaboratorHolder .tableRow a.removeLink, .tableView .niceRow a.removeLink, .tableView .naughtyRow a.removeLink, .tableView .tableRow a.removeLink {
   float: right;
   padding-left: 5px;
@@ -6363,73 +6443,73 @@ button {
   letter-spacing: 1px;
   text-decoration: none;
 }
-/* line 1928, style.scss */
+/* line 1929, style.scss */
 #notificationHolder .niceRow a.removeLink:hover, #notificationHolder .naughtyRow a.removeLink:hover, #notificationHolder .tableRow a.removeLink:hover, #nicelistHolder .niceRow a.removeLink:hover, #nicelistHolder .naughtyRow a.removeLink:hover, #nicelistHolder .tableRow a.removeLink:hover, #naughtylistHolder .niceRow a.removeLink:hover, #naughtylistHolder .naughtyRow a.removeLink:hover, #naughtylistHolder .tableRow a.removeLink:hover, #collaboratorHolder .niceRow a.removeLink:hover, #collaboratorHolder .naughtyRow a.removeLink:hover, #collaboratorHolder .tableRow a.removeLink:hover, .tableView .niceRow a.removeLink:hover, .tableView .naughtyRow a.removeLink:hover, .tableView .tableRow a.removeLink:hover {
   color: white;
   background: #bd2c2c;
 }
-/* line 1933, style.scss */
+/* line 1934, style.scss */
 #notificationHolder .niceRow a.listName, #notificationHolder .naughtyRow a.listName, #notificationHolder .tableRow a.listName, #nicelistHolder .niceRow a.listName, #nicelistHolder .naughtyRow a.listName, #nicelistHolder .tableRow a.listName, #naughtylistHolder .niceRow a.listName, #naughtylistHolder .naughtyRow a.listName, #naughtylistHolder .tableRow a.listName, #collaboratorHolder .niceRow a.listName, #collaboratorHolder .naughtyRow a.listName, #collaboratorHolder .tableRow a.listName, .tableView .niceRow a.listName, .tableView .naughtyRow a.listName, .tableView .tableRow a.listName {
   float: left;
 }
-/* line 1940, style.scss */
+/* line 1941, style.scss */
 #notificationHolder .notification, #nicelistHolder .notification, #naughtylistHolder .notification, #collaboratorHolder .notification, .tableView .notification {
   float: left;
   width: 100%;
   clear: both;
   padding: 10px;
 }
-/* line 1946, style.scss */
+/* line 1947, style.scss */
 #notificationHolder .notification.read, #nicelistHolder .notification.read, #naughtylistHolder .notification.read, #collaboratorHolder .notification.read, .tableView .notification.read {
   color: #183051;
 }
-/* line 1949, style.scss */
+/* line 1950, style.scss */
 #notificationHolder .notification.read:nth-child(odd), #nicelistHolder .notification.read:nth-child(odd), #naughtylistHolder .notification.read:nth-child(odd), #collaboratorHolder .notification.read:nth-child(odd), .tableView .notification.read:nth-child(odd) {
   background: #f7f7f7;
 }
-/* line 1952, style.scss */
+/* line 1953, style.scss */
 #notificationHolder .notification.read:nth-child(even), #nicelistHolder .notification.read:nth-child(even), #naughtylistHolder .notification.read:nth-child(even), #collaboratorHolder .notification.read:nth-child(even), .tableView .notification.read:nth-child(even) {
   background: white;
 }
-/* line 1956, style.scss */
+/* line 1957, style.scss */
 #notificationHolder .notification.read a, #nicelistHolder .notification.read a, #naughtylistHolder .notification.read a, #collaboratorHolder .notification.read a, .tableView .notification.read a {
   color: #183051;
   text-decoration: none;
 }
-/* line 1960, style.scss */
+/* line 1961, style.scss */
 #notificationHolder .notification.read a:hover, #nicelistHolder .notification.read a:hover, #naughtylistHolder .notification.read a:hover, #collaboratorHolder .notification.read a:hover, .tableView .notification.read a:hover {
   color: #124f42;
   text-decoration: underline;
 }
-/* line 1966, style.scss */
+/* line 1967, style.scss */
 #notificationHolder .notification.unread, #nicelistHolder .notification.unread, #naughtylistHolder .notification.unread, #collaboratorHolder .notification.unread, .tableView .notification.unread {
   background: #124f42;
   color: white;
 }
-/* line 1970, style.scss */
+/* line 1971, style.scss */
 #notificationHolder .notification.unread a, #nicelistHolder .notification.unread a, #naughtylistHolder .notification.unread a, #collaboratorHolder .notification.unread a, .tableView .notification.unread a {
   color: white;
   text-decoration: none;
 }
-/* line 1974, style.scss */
+/* line 1975, style.scss */
 #notificationHolder .notification.unread a:hover, #nicelistHolder .notification.unread a:hover, #naughtylistHolder .notification.unread a:hover, #collaboratorHolder .notification.unread a:hover, .tableView .notification.unread a:hover {
   text-decoration: underline;
 }
-/* line 1978, style.scss */
+/* line 1979, style.scss */
 #notificationHolder .notification.unread .notifyDate, #nicelistHolder .notification.unread .notifyDate, #naughtylistHolder .notification.unread .notifyDate, #collaboratorHolder .notification.unread .notifyDate, .tableView .notification.unread .notifyDate {
   color: #e8e8e8;
 }
-/* line 1982, style.scss */
+/* line 1983, style.scss */
 #notificationHolder .notification .notifyDate, #nicelistHolder .notification .notifyDate, #naughtylistHolder .notification .notifyDate, #collaboratorHolder .notification .notifyDate, .tableView .notification .notifyDate {
   float: right;
   font-size: 10px;
   color: gray;
 }
-/* line 1987, style.scss */
+/* line 1988, style.scss */
 #notificationHolder .notification .notificationIcon, #nicelistHolder .notification .notificationIcon, #naughtylistHolder .notification .notificationIcon, #collaboratorHolder .notification .notificationIcon, .tableView .notification .notificationIcon {
   padding-right: 10px;
 }
-/* line 1991, style.scss */
+/* line 1992, style.scss */
 #notificationHolder .collaboratorRow, #nicelistHolder .collaboratorRow, #naughtylistHolder .collaboratorRow, #collaboratorHolder .collaboratorRow, .tableView .collaboratorRow {
   float: left;
   width: 100%;
@@ -6437,50 +6517,50 @@ button {
   padding: 10px;
   color: #183051;
 }
-/* line 1998, style.scss */
+/* line 1999, style.scss */
 #notificationHolder .collaboratorRow .listName, #nicelistHolder .collaboratorRow .listName, #naughtylistHolder .collaboratorRow .listName, #collaboratorHolder .collaboratorRow .listName, .tableView .collaboratorRow .listName {
   cursor: pointer;
 }
-/* line 2002, style.scss */
+/* line 2003, style.scss */
 #notificationHolder .collaboratorRow:nth-child(odd), #nicelistHolder .collaboratorRow:nth-child(odd), #naughtylistHolder .collaboratorRow:nth-child(odd), #collaboratorHolder .collaboratorRow:nth-child(odd), .tableView .collaboratorRow:nth-child(odd) {
   background: #f7f7f7;
 }
-/* line 2005, style.scss */
+/* line 2006, style.scss */
 #notificationHolder .collaboratorRow:nth-child(even), #nicelistHolder .collaboratorRow:nth-child(even), #naughtylistHolder .collaboratorRow:nth-child(even), #collaboratorHolder .collaboratorRow:nth-child(even), .tableView .collaboratorRow:nth-child(even) {
   background: white;
 }
-/* line 2008, style.scss */
+/* line 2009, style.scss */
 #notificationHolder .collaboratorRow .collabUsers, #nicelistHolder .collaboratorRow .collabUsers, #naughtylistHolder .collaboratorRow .collabUsers, #collaboratorHolder .collaboratorRow .collabUsers, .tableView .collaboratorRow .collabUsers {
   display: none;
 }
-/* line 2011, style.scss */
+/* line 2012, style.scss */
 #notificationHolder .collaboratorRow.show, #nicelistHolder .collaboratorRow.show, #naughtylistHolder .collaboratorRow.show, #collaboratorHolder .collaboratorRow.show, .tableView .collaboratorRow.show {
   background: #183051;
   color: white;
 }
-/* line 2014, style.scss */
+/* line 2015, style.scss */
 #notificationHolder .collaboratorRow.show .collabUsers, #nicelistHolder .collaboratorRow.show .collabUsers, #naughtylistHolder .collaboratorRow.show .collabUsers, #collaboratorHolder .collaboratorRow.show .collabUsers, .tableView .collaboratorRow.show .collabUsers {
   display: block;
 }
 
-/* line 2023, style.scss */
+/* line 2024, style.scss */
 #userButtons {
   float: left;
   width: 25%;
 }
 @media (max-width: 767px) {
-  /* line 2023, style.scss */
+  /* line 2024, style.scss */
   #userButtons {
     width: 100%;
     clear: both;
   }
-  /* line 2031, style.scss */
+  /* line 2032, style.scss */
   #userButtons > * {
     clear: none;
   }
 }
 
-/* line 2038, style.scss */
+/* line 2039, style.scss */
 .userButton {
   float: right;
   background: #183051;
@@ -6495,16 +6575,16 @@ button {
   margin: 5px 0;
   text-align: center;
 }
-/* line 2053, style.scss */
+/* line 2054, style.scss */
 .userButton.addNaughtyButton:hover {
   background: #bd2c2c;
 }
-/* line 2058, style.scss */
+/* line 2059, style.scss */
 .userButton.addNiceButton:hover {
   background: #124f42;
 }
 @media (max-width: 767px) {
-  /* line 2038, style.scss */
+  /* line 2039, style.scss */
   .userButton {
     float: none;
     display: inline-block;
@@ -6512,7 +6592,7 @@ button {
   }
 }
 
-/* line 2069, style.scss */
+/* line 2070, style.scss */
 .listUpdate {
   float: left;
   padding: 5px 13px;
@@ -6526,86 +6606,86 @@ button {
   clear: both;
 }
 @media (max-width: 767px) {
-  /* line 2069, style.scss */
+  /* line 2070, style.scss */
   .listUpdate {
     float: none;
     display: inline-block;
     vertical-align: top;
   }
 }
-/* line 2089, style.scss */
+/* line 2090, style.scss */
 .listUpdate:nth-child(1) {
   clear: both;
 }
-/* line 2093, style.scss */
+/* line 2094, style.scss */
 .listUpdate a {
   color: #183051;
   font-style: italic;
   text-decoration: none;
 }
-/* line 2098, style.scss */
+/* line 2099, style.scss */
 .listUpdate a:hover {
   color: #bd2c2c;
   text-decoration: underline;
 }
-/* line 2103, style.scss */
+/* line 2104, style.scss */
 .listUpdate a.userButton {
   color: white;
 }
-/* line 2105, style.scss */
+/* line 2106, style.scss */
 .listUpdate a.userButton:hover {
   background: #124f42;
   color: white;
   text-decoration: none;
 }
 
-/* line 2116, style.scss */
+/* line 2117, style.scss */
 .userProfile #itemholder {
   border-top: 1px dashed gray;
 }
 
-/* line 2120, style.scss */
+/* line 2121, style.scss */
 #userProfile {
   float: left;
   width: 100%;
   margin: 10px 0;
   text-align: left;
 }
-/* line 2127, style.scss */
+/* line 2128, style.scss */
 #userProfile #userProfileAvatar {
   float: left;
   padding: 0 20px 0 0;
   max-width: 120px;
 }
-/* line 2133, style.scss */
+/* line 2134, style.scss */
 #userProfile #userProfileInfo {
   float: left;
   width: calc(75% - 120px);
   text-align: left;
 }
 @media (max-width: 767px) {
-  /* line 2133, style.scss */
+  /* line 2134, style.scss */
   #userProfile #userProfileInfo {
     width: calc(100% - 120px);
   }
 }
-/* line 2143, style.scss */
+/* line 2144, style.scss */
 #userProfile span.greyLabel {
   font-size: 11px;
   color: gray;
   width: 100px;
   display: inline-block;
 }
-/* line 2149, style.scss */
+/* line 2150, style.scss */
 #userProfile #userProfileBio {
   margin-top: 15px;
 }
-/* line 2152, style.scss */
+/* line 2153, style.scss */
 #userProfile #userProfileBio span {
   width: 100%;
 }
 @media (max-width: 767px) {
-  /* line 2158, style.scss */
+  /* line 2159, style.scss */
   #userProfile #userProfileAvatar {
     float: left;
     width: 100%;
@@ -6614,12 +6694,12 @@ button {
     padding: 0;
     max-width: 100%;
   }
-  /* line 2166, style.scss */
+  /* line 2167, style.scss */
   #userProfile #userProfileAvatar img {
     margin: 0 auto;
     display: block;
   }
-  /* line 2172, style.scss */
+  /* line 2173, style.scss */
   #userProfile #userProfileInfo {
     width: 100%;
     float: left;
@@ -6628,7 +6708,7 @@ button {
   }
 }
 
-/* line 2181, style.scss */
+/* line 2182, style.scss */
 .removeButton a, .fauxCell .removeButton {
   float: left;
   background: #bd2c2c;
@@ -6645,7 +6725,7 @@ button {
   cursor: pointer;
 }
 
-/* line 2197, style.scss */
+/* line 2198, style.scss */
 .fauxCell .removeButton {
   margin: 2px;
   height: 20px;
@@ -6655,12 +6735,12 @@ button {
   margin: 3px 0 0;
 }
 
-/* line 2205, style.scss */
+/* line 2206, style.scss */
 .clearBoth {
   clear: both;
 }
 
-/* line 2209, style.scss */
+/* line 2210, style.scss */
 .homeSub {
   color: gray;
   font-size: 12px;
@@ -6676,7 +6756,7 @@ button {
   border-bottom: 1px dashed #E8E8E8;
 }
 
-/* line 2223, style.scss */
+/* line 2224, style.scss */
 .homeSubUser {
   width: 200px;
   margin: 10px;
@@ -6684,7 +6764,7 @@ button {
   background: white;
   border: 1px dashed #e8e8e8;
 }
-/* line 2230, style.scss */
+/* line 2231, style.scss */
 .homeSubUser a {
   color: #183051;
   text-decoration: none;
@@ -6695,13 +6775,13 @@ button {
   font-size: 12px;
   text-align: center;
 }
-/* line 2240, style.scss */
+/* line 2241, style.scss */
 .homeSubUser a:hover {
   background: #124f42;
   color: white;
 }
 @media (max-width: 767px) {
-  /* line 2223, style.scss */
+  /* line 2224, style.scss */
   .homeSubUser {
     width: 45%;
     min-width: 45%;
@@ -6711,13 +6791,13 @@ button {
   }
 }
 
-/* line 2255, style.scss */
+/* line 2256, style.scss */
 #bigSearch {
   float: left;
   width: 100%;
   position: relative;
 }
-/* line 2260, style.scss */
+/* line 2261, style.scss */
 #bigSearch #bigSearchInput {
   width: 80%;
   margin: 25px auto;
@@ -6736,7 +6816,7 @@ button {
   outline: 0;
 }
 @media (max-width: 767px) {
-  /* line 2260, style.scss */
+  /* line 2261, style.scss */
   #bigSearch #bigSearchInput {
     margin: 15px auto;
     padding: 10px 15px;
@@ -6745,13 +6825,13 @@ button {
   }
 }
 @media (max-width: 480px) {
-  /* line 2260, style.scss */
+  /* line 2261, style.scss */
   #bigSearch #bigSearchInput {
     width: 90%;
     font-size: 22px;
   }
 }
-/* line 2285, style.scss */
+/* line 2286, style.scss */
 #bigSearch #bigSearchImage {
   width: 51px;
   margin: 0 11% 0 0;
@@ -6762,14 +6842,14 @@ button {
   right: 0%;
 }
 @media (max-width: 767px) {
-  /* line 2285, style.scss */
+  /* line 2286, style.scss */
   #bigSearch #bigSearchImage {
     top: 30px;
     width: 45px;
   }
 }
 @media (max-width: 480px) {
-  /* line 2285, style.scss */
+  /* line 2286, style.scss */
   #bigSearch #bigSearchImage {
     margin-right: 8%;
     width: 30px;
@@ -6777,7 +6857,7 @@ button {
   }
 }
 
-/* line 2308, style.scss */
+/* line 2309, style.scss */
 #aboutPage #aboutHeading {
   width: 50%;
   float: left;
@@ -6786,12 +6866,12 @@ button {
   border: 1px solid #e8e8e8;
 }
 @media (max-width: 767px) {
-  /* line 2308, style.scss */
+  /* line 2309, style.scss */
   #aboutPage #aboutHeading {
     width: 100%;
   }
 }
-/* line 2319, style.scss */
+/* line 2320, style.scss */
 #aboutPage #aboutHeading h1 {
   font-size: 40px;
   border-bottom: 2px dashed #e8e8e8;
@@ -6799,24 +6879,24 @@ button {
   margin-bottom: 20px;
   line-height: 1.5;
 }
-/* line 2326, style.scss */
+/* line 2327, style.scss */
 #aboutPage #aboutHeading h2 {
   line-height: 35px;
   color: #124f42;
 }
-/* line 2331, style.scss */
+/* line 2332, style.scss */
 #aboutPage #aboutContent {
   width: 50%;
   float: left;
   padding: 0 20px;
 }
 @media (max-width: 767px) {
-  /* line 2331, style.scss */
+  /* line 2332, style.scss */
   #aboutPage #aboutContent {
     width: 100%;
   }
 }
-/* line 2340, style.scss */
+/* line 2341, style.scss */
 #aboutPage .exploreWrapper {
   float: left;
   width: 100%;
@@ -6824,7 +6904,7 @@ button {
   text-align: center;
   margin: 30px 0;
 }
-/* line 2347, style.scss */
+/* line 2348, style.scss */
 #aboutPage a.button {
   margin: 0 auto;
   display: inline-block;
@@ -6837,12 +6917,12 @@ button {
   letter-spacing: 1px;
   text-transform: uppercase;
 }
-/* line 2359, style.scss */
+/* line 2360, style.scss */
 #aboutPage a.button:hover {
   background: #124f42;
 }
 
-/* line 2365, style.scss */
+/* line 2366, style.scss */
 .definitionBox {
   float: left;
   clear: both;
@@ -6856,7 +6936,7 @@ button {
   background: rgba(255, 255, 255, 0.5);
 }
 
-/* line 2377, style.scss */
+/* line 2378, style.scss */
 #nofilereader, #iosnotice {
   float: left;
   width: 100%;
@@ -6868,7 +6948,7 @@ button {
   text-align: center;
 }
 
-/* line 2387, style.scss */
+/* line 2388, style.scss */
 #workshopMode {
   display: block;
   padding: 0px 15px;
@@ -6882,13 +6962,13 @@ button {
   text-align: center;
   max-width: 150px;
 }
-/* line 2400, style.scss */
+/* line 2401, style.scss */
 #workshopMode::after {
   text-transform: initial;
   background: #124f42;
   margin-left: -250px;
 }
-/* line 2405, style.scss */
+/* line 2406, style.scss */
 #workshopMode::before {
   border-bottom-color: #124f42;
 }

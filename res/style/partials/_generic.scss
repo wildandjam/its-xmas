@@ -106,3 +106,24 @@ span {
 		}
 	}
 }
+.wrapper {
+	margin:0 auto;
+	width:100%;
+	max-width:960px;
+	padding:0 15px;
+}
+a.link {
+	background:$blue;
+	padding:10px 20px;
+	width:100%;
+	float:left;
+	clear:both;
+	display:block;
+	margin:5px 0;
+	color:white;
+	text-align:center;
+	font-size:12px;
+	text-transform:uppercase;
+	letter-spacing:1px;
+	text-decoration:none;
+}

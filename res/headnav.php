@@ -98,7 +98,9 @@
                 My Christmas
             </a>
         </li> 
-    </ul>
+        <li>
+            <hr />
+        </li>
 <?php } else { ?>
     <ul class="links">
         <li>
@@ -111,9 +113,10 @@
                 Register
             </a>
         </li>  
-    </ul>
+        <li>
+            <hr />
+        </li>
 <?php } ?>
-    <ul class="links">
         <li>
             <a href="/about/">
                 About
@@ -123,6 +126,9 @@
             <a href="/contact/">
                 Contact
             </a>
+        </li>
+        <li>
+            <hr />
         </li>
     </ul>
     <ul class="legal">
@@ -144,6 +150,12 @@
     </ul>
 </div>
 <div class="panel" data-panel="posts">
+    <ul class="links">
+        <li>
+            <a href="/posts/">View all posts</a>
+        </li>
+        <li><hr /></li>
+    </ul>
     <form id="refine" name="refine" action="/posts/" method="post">
         <div class="refineRow">
             <label>Select Category</label><?php 
@@ -151,6 +163,8 @@
                 require("category.php"); 
                 $mobileselect = true;                           
                 require("category.php"); 
+                $mobileselect = false; 
+                $selectbox = false;
             ?>
             <input type="hidden" id="categoryHidden" name="categoryHidden" value="<?php if (isset($searchCat)){ echo $searchCat; } ?>"/>
        </div>
@@ -193,13 +207,15 @@
         </div>
     <?php } ?>
         <div class="refineRow buttonRow">
-            <label>&nbsp;</label>
+            <label class="nonHandheld">&nbsp;</label>
             <button>Refine</button>
         </div>
     </form>
 </div>
 <div class="panel" data-panel="blog">
     <ul class="links">
+        <li><a href="/blog/">Blog home</a></li>
+        <li><hr /></li>
         <li><a href="/blog/topics/best-of/">Best of</a></li>
         <li><a href="/blog/topics/decorations/">Decorations</a></li>
         <li><a href="/blog/topics/diy-crafts/">DIY/Crafts</a></li>
