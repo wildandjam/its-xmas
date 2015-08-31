@@ -5,28 +5,16 @@
 <body>
 <?php require('../res/headnav.php'); ?>
 <div id="container">
-	<div id="pageHeader">
-		<h1>Posts</h1>
-		<?php require('../res/userPortal.php'); ?>
-		<div id="breadcrumbs">
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li>Posts</li>
-            </ul>
-        </div>
-		<div id="pageHeaderLinks">
-			<?php 
-				if (isset($id)){
-			?>
-				<a href="/member/post/">New post</a>
-			<?php
-				}
-			?>
-			<a href="#">Search posts</a>
-		</div>
-	</div>
 	<?php 
-		require('../res/connect.php');		
+		$pgTitle = "Posts";
+		$pgBreadcrumb = "<li>Posts</li>";
+		$pgHeaderLinks =  "<a href='#' class='pull-right'>Search posts</a>";
+		if (isset($xID)){
+			$pgHeaderLinks .= "<a href='/member/post/' class='pull-right'>New post</a>";
+		}
+		require('../res/pageHeader.php');
+	?>
+	<?php 
 		if (isset($_REQUEST['category'])){
 			$category = $_REQUEST['category'];
 		}
@@ -61,8 +49,8 @@
 		if (isset($_REQUEST)){
 			//Category fix name to ID
 			if (isset($category) || isset($categoryH)){
-				if ($category == 0){
-					if ($category){
+				if (isset($category) && $category == 0){
+					if (isset($category)){
 						$categoryQu = mysqli_query($connect, "SELECT * FROM categories WHERE categoryName = '$category'");
 						if (mysqli_num_rows($categoryQu) == 1){
 							while ($catQuRow = mysqli_fetch_array($categoryQu)){
@@ -72,7 +60,7 @@
 					} else {
 						$searchCat = $categoryH;	
 					}
-				} else {
+				} else if (isset($category)){
 					$searchCat = $category;	
 				}
 			}
@@ -85,6 +73,7 @@
 		} else {
 			$query = 'SELECT * FROM posts WHERE postHidden = \'0\' AND (postPrivacy = \'0\' OR (postPrivacy = \'1\'))';
 		}
+		$criteria = "";
 
 		//Search
 		if (isset($search)){
@@ -101,7 +90,7 @@
 				}
 			}
 			$query .= implode(' OR ', $searchBits);
-			$criteria = "<div class='criteria' data-type='search'><em>Search: </em><span class='criteriaResult'>" . $search . "</span><span class='criteriaRemove'><span class=\"icon-close\"></span></span></div>";
+			$criteria .= "<div class='criteria' data-type='search'><em>Search: </em><span class='criteriaResult'>" . $search . "</span><span class='criteriaRemove'><span class=\"icon-close\"></span></span></div>";
 			$userSearchQ = "SELECT * FROM users INNER JOIN userdetails ON (users.userID = userdetails.userID)  WHERE userPrivate = '0' AND ";
 			$userSearchQ .= implode(' OR ', $searchUserBits);
 			$userSearchQ .= " ORDER BY userName ASC";
@@ -127,12 +116,12 @@
 			$newDateFrom = date("Y-m-d", strtotime($datefrom));
 			$newDateTo = date("Y-m-d", strtotime($dateto));
 			$criteria = "";
-			if (!$datefrom){
+			if (!(isset($datefrom))){
 
-				$query .= " AND postDate < '$newDateTo'";
+				$query .= " AND postDate > '$newDateFrom'";
 				$criteria .= "<div class='criteria' data-type='dateFrom'><em>From: </em><span class='criteriaResult'>" . date("d/m/Y", strtotime($datefrom)) . "</span><span class='criteriaRemove'><span class=\"icon-close\"></span></span></div>";
 			} else if (!$dateto){
-				$query .= " AND postDate > '$newDateFrom'";
+				$query .= " AND postDate > '$newDateTo'";
 				$criteria .= "<div class='criteria' data-type='dateTo'><em>To: </em><span class='criteriaResult'>" . date("d/m/Y", strtotime($dateto)) . "</span><span class='criteriaRemove'><span class=\"icon-close\"></span></span></div>";
 			} else {
 				$query .= " AND postDate BETWEEN '$newDateFrom' AND '$newDateTo'";
@@ -310,7 +299,7 @@
 					}
 				}
 			}
-			if ($pageI) {
+			if (isset($pageI)) {
 				if ($page != $pageI){
 					$nextPage = $page + 1;
 					if (isset($pagination)){

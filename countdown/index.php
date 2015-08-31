@@ -2,7 +2,6 @@
 	$ignoreOG = true;
 	require('../res/meta.php'); 
 ?>	
-
 <title>The Countdown to Christmas | It's Christmas</title>
 <meta itemprop="name" property="og:title" content="The Countdown to Christmas | It's Christmas" />
 <meta itemprop="description" property="og:description" name="description" content="It's Christmas <?php echo $countphp; ?>" />
@@ -50,15 +49,19 @@
 		$("#durationSelect button").click(function(){
 			var number = $("#durationSelect select")[0].selectedIndex,
 				value = $("#durationSelect select option").eq(number).attr("value");
-			window.location.href = "http://www.its-xmas.co.uk/process/countdown.php?name=<?php echo $id; ?>&type=" + value;
+			window.location.href = "/process/countdown.php?name=<?php echo $id; ?>&type=" + value;
 		});
 	});
     </script>
 
 <?php require('../res/headnav.php'); ?>
 <div id="container" class="countdownPage">
-    <h1>The Countdown to Christmas</h1>
-    <h2 class="countdownHeader">It's Christmas <span id="countdownPage"><?php echo $countphp; ?></span></h2>
+    <?php 
+        $pgTitle = "Countdown to Christmas";
+        $pgBreadcrumb = "<li>The Countdown to Christmas</li>";
+        require('../res/pageHeader.php');
+    ?>
+    <h2 class="countdownHeader">It's Christmas <span id="countdownPage"><?php if (isset($countphp)) { echo $countphp; } ?></span></h2>
     <div id="shareThisPage">
     	<h3>Share:</h3>
         <span id="fblikeholder" class="facebookLike hint--bottom" data-hint="Share on Facebook"><img src="/images/social/facebook.png" alt="Share countdown on Facebook"/></span>
@@ -94,8 +97,8 @@
         </select>
         <button>Change</button>
     </div>
-	<?php require('../res/sidebars.php'); ?>
+	
     </div>
-<!--<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-537de01b433fb433"></script>-->
+<?php require('../res/gtm.php'); ?>
 </body>
 </html>

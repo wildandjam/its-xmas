@@ -1,35 +1,17 @@
-﻿<?php require('../../res/meta.php'); ?>
+﻿<?php 
+    $membercheck = true;
+    require('../../res/meta.php');
+?>
 <title>My Christmas | It's Christmas</title>
 </head>
 <body>
 <?php require('../../res/headnav.php'); ?>
 <div id="container" class="myChristmasContainer">
-    <div id="pageHeader">
-        <h1>My Christmas</h1>
-        <?php require('../../res/userPortal.php'); ?>
-        
-        <div id="breadcrumbs">
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li>My Christmas</li>
-            </ul>
-        </div>
-        <div id="pageHeaderLinks">
-            <?php 
-                if (isset($id)){
-            ?>
-                <?php require_once('../../res/create.php'); ?>
-            <?php
-                } else {
-            ?>
-                <a href="/register/">Register</a>
-                <a href="/login/">Login</a>
-            <?php
-                }
-            ?>
-            
-        </div>
-    </div>
+    <?php 
+        $pgTitle = "My Christmas";
+        $pgBreadcrumb = "<li>My Christmas</li>";
+        require('../../res/pageHeader.php');
+    ?>
     
 	<?php if (!isset($id)){ ?>
 		<p class="errorMsg">To have the ability to make lists, collections and posts, you need to <a href="/login/">sign in</a> to the Christmas spirit.</p>		

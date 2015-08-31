@@ -1,0 +1,128 @@
+#notificationHolder, #nicelistHolder, #naughtylistHolder, #collaboratorHolder, .tableView {
+	margin-top:20px;
+	margin-bottom:20px;
+	border:1px dashed rgba($blue, 0.2);
+
+	.niceRow, .naughtyRow, .tableRow {
+		padding:10px;
+		color:$blue;
+		font-size:13px;
+
+		&:nth-child(odd){
+			background:#f7f7f7;
+		}
+		&:nth-child(even){
+			background:white;
+		}
+
+		a {
+			color:$blue;
+			text-decoration:none;
+
+			&:hover {
+				color:$green;
+				text-decoration:underline;
+			}
+
+			&.removeLink {
+				float:right;
+				padding-left:5px;
+				color: $error;
+				text-transform: uppercase;
+				font-style: italic;
+				padding: 2px 10px;
+				display: inline-block;
+				font-size: 10px;
+				letter-spacing: 1px;
+				text-decoration: none;
+
+				&:hover {
+					color:white;
+					background:$error;
+				}
+			}
+			&.listName {
+				float:left;
+			}
+		}
+	}
+
+
+	.notification {
+		padding:10px;
+
+		&.read {
+			color:$blue;
+
+			&:nth-child(odd){
+				background:#f7f7f7;
+			}
+			&:nth-child(even){
+				background:white;
+			}
+
+			a {
+				color:$blue;
+				text-decoration:none;
+
+				&:hover {
+					color:$green;
+					text-decoration:underline;
+				}
+			}
+		}
+		&.unread {
+			background:$green;
+			color:white;
+
+			a {
+				color:white;
+				text-decoration:none;
+
+				&:hover {
+					text-decoration:underline;
+				}
+			}
+			.notifyDate {
+				color:$lgrey;
+			}
+		}
+		.notifyDate {
+			font-size:10px;
+			color:$dgrey;
+		}
+		.notificationIcon {
+			padding-right:10px;
+		}
+	}
+	.collaboratorRow {
+		float:left;
+		width:100%;
+		clear:both;
+		padding:10px;
+		color:$blue;
+
+		.listName {
+			cursor:pointer;
+		}
+
+		&:nth-child(odd){
+			background:#f7f7f7;
+		}
+		&:nth-child(even){
+			background:white;
+		}
+		.collabUsers {
+			display:none;
+		}
+		&.show {
+			background:$blue;
+			color:white;
+			.collabUsers {
+				display:block;
+			}
+		}
+
+	}
+
+}

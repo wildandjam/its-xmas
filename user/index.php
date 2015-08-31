@@ -18,26 +18,15 @@
 <body>
 <?php require('../res/headnav.php'); ?>
 <div id="container" class="userProfile">
-	<div id="pageHeader">
-        <h1><?php echo $profilename; ?></h1>
-        <div id="breadcrumbs">
-	        <ul>
-	            <li><a href="/">Home</a></li>
-	            <li><a href="/users/">Users</a></li>
-	        </ul>
-	    </div>
-        <?php require('../res/userPortal.php'); ?>
-        
-        <div id="pageHeaderLinks">
-           
-            
-        </div>
-    </div>
-    
+	<?php 
+		$pgTitle = $profilename;
+		$pgBreadcrumb = "<li><a href='/users/'>Users</a></li>";
+		require('../res/pageHeader.php');
+	?>
 
-	<?php if ($id){ 
-		echo "<div class='content content1000'>";
-		$viewQ = mysqli_query($connect, "SELECT * FROM preferences WHERE userID = '$id'");
+	<?php if (isset($xID)){ 
+		echo "<div class='content content1000 container border-bottom'>";
+		$viewQ = mysqli_query($connect, "SELECT * FROM preferences WHERE userID = '$xID'");
 		$viewQCount = mysqli_num_rows($viewQ);
 		if ($viewQCount == 1){
 			while($viewQRow = mysqli_fetch_array($viewQ)){
@@ -45,7 +34,7 @@
 				$perPage = $viewQRow['perPage'];	
 			}
 		} else {
-			$viewInsert = mysqli_query($connect, "INSERT INTO preferences VALUES ('','$id','1', '')");
+			$viewInsert = mysqli_query($connect, "INSERT INTO preferences VALUES ('','$xID','1', '')");
 			$view = 1;
 		}
 	    	$viewSteps = 1;
@@ -157,7 +146,7 @@
 							
 						?>
 							<div id="userProfile">
-								<div id="userProfileAvatar">
+								<div id="userProfileAvatar" class="col-sm-3">
 									<?php
 										if ($userAvatarBool){
 											echo '<img src="' . $userAvatar . '" alt="Icon" width="110"/>'; 
@@ -166,7 +155,7 @@
 										}
 									?>
                                 </div>
-                                <div id="userProfileInfo">
+                                <div id="userProfileInfo" class="col-sm-3">
                                     <?php if (($firstname == '') && ($lastname == '') && ($gender == '') && ($location == '') && ($bio == '')){
 										if ($requestid == $id){
 											echo "<span class='errorMsg'>You haven't edited your profile. <a href='/member/details'>Do you want to?</a></span>";
@@ -187,13 +176,14 @@
 									if ($location){
 										echo "<span class='greyLabel'>From:</span> " .$location; ?><br />
 									<?php }  ?>
-									<div id="userProfileBio">
+									
+								</div>
+								<div id="userProfileBio" class="col-sm-3">
 										<?php if ($bio){ ?>
 											<span class='greyLabel'>Bio:</span> <?php echo $bio; ?>
 										<?php } ?>
 									</div>
-								</div>
-								<div id="userButtons">
+								<div id="userButtons" class="col-sm-3">
 									<?php 
 									if ($id != $requestid){
 										echo $listStatus;

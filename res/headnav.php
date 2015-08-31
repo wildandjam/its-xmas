@@ -1,12 +1,12 @@
 <?php
 	//Notification Query
-	if ($xUser == true){
-		$notificationQuery = mysqli_query($connect, "SELECT * FROM notifications WHERE notificationUserID = '$id' AND notificationRead = '0' AND notificationHidden = '0'");
+	if ($xUser == true && isset($xID)){
+		$notificationQuery = mysqli_query($connect, "SELECT * FROM notifications WHERE notificationUserID = '$xID' AND notificationRead = '0' AND notificationHidden = '0'");
 		$notificationCount = mysqli_num_rows($notificationQuery);
 	}
 ?>
 <?php if (isset($type)){ ?>
-    <header data-countdown="<?php echo $type; ?>">
+    <header data-countdown="<?php if (isset($type)){ echo $type; } ?>">
 <?php } else { ?>
     <header data-countdown="days">
 <?php } ?>
@@ -19,7 +19,7 @@
                 It's Christmas
             </span>
             <span class="link-extend" data-for="home">
-                >>
+                <span>>></span>
             </span>
         </a>
         <span class="line">
@@ -33,7 +33,7 @@
                 Posts
             </span>
             <span class="link-extend" data-for="posts">
-                >>
+                <span>>></span>
             </span>
         </a>
         <a href="/events/">
@@ -44,7 +44,7 @@
                 Events
             </span>
             <span class="link-extend">
-                >>
+                <span>>></span>
             </span>
         </a>
         <a href="/lists/">
@@ -55,15 +55,7 @@
                 Lists
             </span>
             <span class="link-extend">
-                >>
-            </span>
-        </a>
-        <a href="/wiki/">
-            <span class="link-icon">
-                <img src="/images/icon/wiki.png" alt="Wiki" />
-            </span>
-            <span class="link-name">
-                Wiki
+                <span>>></span>
             </span>
         </a>
         <a href="/blog/">
@@ -74,7 +66,15 @@
                 Blog
             </span>
             <span class="link-extend" data-for="blog">
-                >>
+                <span>>></span>
+            </span>
+        </a>
+        <a href="/countdown/">
+            <span class="link-icon">
+                <img src="/images/icon/countdown.png" alt="Countdown" />
+            </span>
+            <span class="link-name">
+                Countdown
             </span>
         </a>
         <span class="line">
@@ -91,7 +91,7 @@
     </div>
 </header>
 <div class="panel" data-panel="home">
-<?php if (isset($id)){ ?>
+<?php if (isset($xID)){ ?>
     <ul class="links">
         <li>
             <a href="/member/my-christmas/">

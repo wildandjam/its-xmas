@@ -1,6 +1,8 @@
-﻿<?php require('../../res/meta.php'); 
-require('../../res/connect.php');
-	$licheck = mysqli_query($connect, "SELECT * FROM userlist WHERE userID='$id'");
+﻿<?php 
+    $membercheck = true;
+    require('../../res/meta.php');
+
+	$licheck = mysqli_query($connect, "SELECT * FROM userlist WHERE userID='$xID'");
     $licount = mysqli_num_rows($licheck);
 
 ?>

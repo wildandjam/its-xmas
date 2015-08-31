@@ -1,5 +1,7 @@
 <?php
-
+	require_once('connect.php');
+	require_once('user.php'); 
+	require_once('membercheck.php');
 ?>
 <!DOCTYPE html>
 <html class="no-js">
@@ -12,12 +14,13 @@
 <meta http-equiv="Content-Language" content="en">
 
 <!-- Stylesheets -->
+<link href="/res/style/bootstrap.min.css" type="text/css" rel="stylesheet" />
 <link href="/res/style/style.css" type="text/css" rel="stylesheet" />
 <link href="/res/style/hint.css" type="text/css" rel="stylesheet" />
-<link href="/res/select2.css" type="text/css" rel="stylesheet" />
-<link href="/res/jquery-ui.min.css" type="text/css" rel="stylesheet" />
+<link href="/res/style/select2.css" type="text/css" rel="stylesheet" />
+<link href="/res/style/jquery-ui.min.css" type="text/css" rel="stylesheet" />
 <link href="/res/datepicker/daterangepicker.css" rel="stylesheet" />
-<link rel="stylesheet" href="/res/icons/style.css" />
+<link href="/res/icons/style.css" rel="stylesheet" />
 
 <!-- Fonts -->
 <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css' />
@@ -27,10 +30,10 @@
 <!-- Javascript -->
 <!-- jQuery library -->
 	<!--[if !IE]-->
-	<script type="text/javascript" src="/res/jquery.js"></script>
+	<script type="text/javascript" src="/res/js/jquery.js"></script>
 	<!--[endif]-->
 	<!--[if IE]-->
-	<script type="text/javascript" src="/res/jquery-ie.js"></script>
+	<script type="text/javascript" src="/res/js/jquery-ie.js"></script>
 	<!--[endif]-->
 
 <!-- HTML5 backup -->
@@ -39,12 +42,13 @@
 <style type="text/css">header, nav, section, article, aside, footer {display:block;}</style>
 <!-- <![endif]-->
 
-<script type="text/javascript" src="/res/ic.js"></script>
-<script type="text/javascript" src="/res/rate.js"></script>
-<script type="text/javascript" src="/res/select2.min.js"></script>
-<script type="text/javascript" src="/res/jquery-ui.min.js"></script>
-<script type="text/javascript" src="/res/jquery.ui.touch-punch.min.js"></script>
-<script type="text/javascript" src="/res/modernizr.js"></script>
+<script type="text/javascript" src="/res/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/res/js/ic.js"></script>
+<script type="text/javascript" src="/res/js/rate.js"></script>
+<script type="text/javascript" src="/res/js/select2.min.js"></script>
+<script type="text/javascript" src="/res/js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/res/js/jquery.ui.touch-punch.min.js"></script>
+<script type="text/javascript" src="/res/js/modernizr.js"></script>
 <!-- jwplayer -->
 <script src="http://jwpsrv.com/library/P1ehQj67EeS+YSIACyaB8g.js"></script>
 
@@ -88,8 +92,7 @@ if (isset($ignoreOG) && $ignoreOG != true){ ?><meta property="og:type" content="
 <meta property="og:image:width" content="500" />
 <meta property="og:image:height" content="500" />
 <meta itemprop="description" property="og:description" name="description" content="Share the Christmas spirit with It's Christmas - the Christmas portal on the Internet. Upload pictures, share recipes and post videos" /><?php } 
-require_once('connect.php');
-require_once('user.php'); 
+
 if (isset($pageID)){
 	$pageQuery = mysqli_query($connect, "SELECT * FROM seo WHERE pageID = '$pageID'");
 	$pageCount = mysqli_num_rows($pageQuery);

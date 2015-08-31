@@ -1,14 +1,14 @@
 ﻿<?php
-	require('user.php');
-	require('connect.php');
-	if ($id){
+	require_once('connect.php');
+	require_once('user.php');
+	
+	if (isset($xID){
 		$postID = $_REQUEST['postID'];
 		$type = $_REQUEST['type'];
 		$userID = $_REQUEST['token'];
 
 		function notifyLike($postID, $type, $userID, $id){
-			require('connect.php');
-			$getRepeat = mysqli_query($connect, "SELECT * FROM notifications WHERE notificationTypeID = '2' AND notificationUserID = '$notifyUser' AND notificationActionUserID = '$id' AND notificationPostID = '$postID'");
+			$getRepeat = mysqli_query($connect, "SELECT * FROM notifications WHERE notificationTypeID = '2' AND notificationUserID = '$notifyUser' AND notificationActionUserID = '$xID' AND notificationPostID = '$postID'");
 			if (mysqli_num_rows($getRepeat) == 0){
 				$notifydate = date('Y-m-d g:i:s',time()); 
 				$getUser = mysqli_query($connect, "SELECT * FROM posts WHERE postID =  '$postID'");
@@ -17,7 +17,7 @@
 						$notifyUser = $getUserRow['userID'];	
 					}
 				}
-				 $notificationMysql = "INSERT INTO notifications VALUES ('','2','$notifyUser','$id','$notifydate','0','0','$postID')";
+				 $notificationMysql = "INSERT INTO notifications VALUES ('','2','$notifyUser','$xID','$notifydate','0','0','$postID')";
 				$notificationQuery = mysqli_query($connect, $notificationMysql);
 				if ($notificationQuery){
 					return true;
@@ -53,8 +53,5 @@
 			$ratepost = mysqli_query($connect, "INSERT INTO postlikes VALUES ('','$userID','$postID','0','1','$date')");
 			$itemDislikeCount = $itemDislikeCount + 1;
 		}
-		
-		
-		
 	}
 ?>

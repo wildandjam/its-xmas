@@ -1,5 +1,7 @@
-﻿<?php require('../../res/meta.php'); ?>
-<?php require('../../res/membercheck.php'); ?>
+﻿<?php 
+    $membercheck = true;
+	require('../../res/meta.php');
+?>
 <title>Preferences | It's Christmas</title>
 </head>
 <body>

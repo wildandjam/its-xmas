@@ -2,10 +2,12 @@
 	session_start();
 	session_unset();
 	session_destroy();
-	unset($_COOKIE['username']);
-   	setcookie('username', null, -1, '/');
+	unset($_COOKIE['id']);
+   	setcookie('id', null, -1, '/');
 	$msg = "You have been logged out";
 
+
+	//die();
 	require('../res/membercheck.php');
 	require('../res/meta.php');
 	

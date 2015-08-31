@@ -16,5 +16,22 @@ $break-xlarge: "(min-width: 1400px)";
 $break-handheld: "(max-width: 767px)";
 $break-nonHandheld: "(min-width: 768px)";
 
-@media #{$break-medium} {
+
+
+
+@media #{$break-nonHandheld} {
+	.nonHandheld {
+		display:block!important;
+	}
+	.handheld {
+		display:none!important;
+	}
+}
+@media #{$break-handheld} {
+	.nonHandheld {
+		display:none!important;
+	}
+	.handheld {
+		display:block!important;
+	}
 }

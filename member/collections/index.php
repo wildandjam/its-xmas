@@ -1,4 +1,7 @@
-﻿<?php require('../../res/meta.php'); ?>
+﻿<?php 
+    $membercheck = true;
+    require('../../res/meta.php');
+?>
 <title>My Collections | It's Christmas</title>
 </head>
 <body>

@@ -16,9 +16,9 @@
         </div>
 		<div id="pageHeaderLinks">
 			<?php 
-				if (isset($id)){
+				if (isset($xID)){
 			?>
-				<a href="#">New event</a>
+				<a href="/member/event">New event</a>
 			<?php
 				}
 			?>

@@ -1,20 +1,29 @@
 <div id="userPortal">
 <?php
-if ($xUser == true){ ?>
-	<a href="/member/my-christmas/"><?php if (isset($xUsername)){echo $xUsername;} ?></a>
-	<ul>
+if (isset($xID) && $xUser == true){ ?>
+	
+	<?php
+		if (isset($notificationCount) && $notificationCount > 0){
+		?>
+			<a href="/member/notifications/" class="unread pull-right"><?php echo $notificationCount; ?></a>
+		<?php
+		}
+	?>
+	<ul  class='pull-right'>
 		<li>
 			<?php 
 				if ($userAvatarBool){
 					echo '<img src="' . $userAvatar . '" alt="Icon" width="30"/>'; 
-				} else {
-					echo '<img src="http://www.placehold.it/30x30" alt="Icon" />';
 				}
-
-			?>
-
-			
+			?>			
 			<ul>
+				<?php
+					$userPortalAdminCheck = mysqli_query($connect, "SELECT * FROM admin WHERE userID = '$xID'");
+					$userPortalAdminRows = mysqli_num_rows($userPortalAdminCheck);
+					if ($userPortalAdminRows == 1){
+						echo "<li><a href='/admin/'>Admin CMS</a></li>";
+					}
+				?>
 				<li><a href="/member/my-christmas/">My Christmas</a></li>
 				<li><a href="/member/notifications/">Notifications (<?php echo $notificationCount; ?>)</a></li>
 				<li><a href="/member/nice-list/">Nice list</a></li>
@@ -23,11 +32,12 @@ if ($xUser == true){ ?>
 			</ul>
 		</li>
 	</ul>
+	<a href="/member/my-christmas/" class='pull-right'><?php if (isset($xUsername)){echo $xUsername;} ?></a>
 <?php
 } else {
 	?>
-	<a href="/register/">Register</a>
-	<a href="/login/">Login</a>
+	<a href="/register/" class='pull-right'>Register</a>
+	<a href="/login/" class='pull-right'>Login</a>
 	<?php
 }
 ?>

@@ -1,7 +1,8 @@
 <?php 
+    $membercheck = true;
 	require('../../res/meta.php');
-	require('../../res/membercheck.php'); ?>
-    <script src="http://jwpsrv.com/library/P1ehQj67EeS+YSIACyaB8g.js"></script>
+?>
+<script src="http://jwpsrv.com/library/P1ehQj67EeS+YSIACyaB8g.js"></script>
 <script type="text/javascript">
 $(function(){
 	var $img = $('.postimage');
@@ -41,7 +42,7 @@ $(document).on("click", ".postItemChoice", function(){
 });
 
 </script>
-<title>What would you like to share? | It's Christmas</title> 
+<title>New post | It's Christmas</title> 
 </head>
 <body>
 <?php require('../../res/headnav.php'); ?>

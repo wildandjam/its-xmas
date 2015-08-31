@@ -7,7 +7,9 @@
 		header("Location: /member/post/video/");
 	}
 
-require('../../../res/meta.php'); ?>
+    $membercheck = true;
+    require('../../../res/meta.php');
+?>
 <?php require('../../../res/membercheck.php'); ?>
 <script type="text/javascript" src="/res/js/imagesloaded.pkgd.min.js"></script>
 <script type="text/javascript">

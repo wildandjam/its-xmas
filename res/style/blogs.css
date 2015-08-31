@@ -1,3 +1,25 @@
+@media (min-width: 768px) {
+  /* line 23, partials/_variables.scss */
+  .nonHandheld {
+    display: block!important;
+  }
+
+  /* line 26, partials/_variables.scss */
+  .handheld {
+    display: none!important;
+  }
+}
+@media (max-width: 767px) {
+  /* line 31, partials/_variables.scss */
+  .nonHandheld {
+    display: none!important;
+  }
+
+  /* line 34, partials/_variables.scss */
+  .handheld {
+    display: block!important;
+  }
+}
 /*
 Theme Name: It's Christmas
 Theme URI: http://www.its-xmas.co.uk

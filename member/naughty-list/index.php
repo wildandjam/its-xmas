@@ -1,5 +1,7 @@
-<?php require('../../res/meta.php'); 
-	require('../../res/connect.php'); ?>
+<?php 
+    $membercheck = true;
+    require('../../res/meta.php');
+?>
 	<title>The Naughty List | It's Christmas</title>
 </head>
 <body>

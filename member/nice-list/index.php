@@ -1,22 +1,19 @@
-<?php require('../../res/meta.php'); ?>
+<?php 
+    $membercheck = true;
+	require('../../res/meta.php');
+?>
 	<title>The Nice List | It's Christmas</title>
 </head>
 <body>
 <?php require('../../res/headnav.php'); ?>
 <div id="container" class="NiceList">
-		<div id="pageHeader">
-	        <h1>My Nice List</h1>
-	        <?php require('../../res/userPortal.php'); ?>
-	        
-	        <div id="breadcrumbs">
-	            <ul>
-	                <li><a href="/">Home</a></li>
-	                <li><a href="/member/my-christmas">My Christmas</a></li>
-	                <li>My Nice list</li>
-	            </ul>
-	        </div>
-	    </div>
-        <?php 
+	<?php 
+		$pgTitle = "My Nice List";
+		$pgBreadcrumb = "<li><a href='/member/my-christmas'>My Christmas</a></li><li>My Nice List</li>";
+		require('../../res/pageHeader.php');
+	?>
+	<div class="container">
+	    <?php 
 			if (isset($_REQUEST['uid']) && $_REQUEST['uid']){
 				if (isset($_REQUEST['error']) && $_REQUEST['error']){
 					echo "<p class='errorMsg'>Unfortunately there was an issue updating your nice list!</p>";
@@ -57,15 +54,13 @@
 						if (mysqli_num_rows($usersQuery) == 1){
 							while ($userQueryRow = mysqli_fetch_array($usersQuery)){
 								$relUserName = 	$userQueryRow['userName'];
-							}
-									
-							
+							}	
 						}
-   						
-                            echo '<div class="tableRow">';
-							echo '<a href="/user/?uid=' . $relUser . '" class="listName">'. $relUserName.'</a>';
-							echo '<a href="/process/nice-list.php?type=unfollow&userOne=' . $user1 . '&userTwo=' . $user2 . '&from=/member/nice-list/" class="removeLink">Remove?</a>';							
-							echo '</div>';
+                        echo '<div class="tableRow">';
+                        echo '<div class="row">';
+						echo '<div class="col-xs-9"><a href="/user/?uid=' . $relUser . '" class="listName">'. $relUserName.'</a></div>';
+						echo '<div class="col-xs-3"><a href="/process/nice-list.php?type=unfollow&userOne=' . $user1 . '&userTwo=' . $user2 . '&from=/member/nice-list/" class="removeLink">Remove?</a></div>';							
+						echo '</div></div>';
                         
                     }
                 } else {
@@ -80,6 +75,7 @@
 			$definitionNeeded = "nice-list";
 			require('../../res/definitions/define.php');
 		?>
+	</div>
     </div>
 </div>
 </body>

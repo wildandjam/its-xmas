@@ -2,8 +2,8 @@
     <div id="listBox">
         <h3>Add to collection</h3>
         <?php
-            if ($id){
-                $listQuery = mysqli_query($connect, "SELECT * FROM collections WHERE userID = '$id'");
+            if (isset($xID)){
+                $listQuery = mysqli_query($connect, "SELECT * FROM collections WHERE userID = '$xID'");
                 $listCount = mysqli_num_rows($listQuery);
                 
                 if ($listCount > 0){
@@ -19,6 +19,9 @@
 					echo "<p>&nbsp;</p>";
                     echo "<p class=\"errorMsg\">You do not have any collections <br /><a href=\"/member/create-collection/\">Add one?</a></p> ";
                 }
+            } else { ?>
+                <p>Please <a href='/login/'>log in</a> or <a href='/register/'>register</a> to create your own collections.
+            <?php
             }
         ?>
         <div id="currentCollections"></div>

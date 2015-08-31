@@ -1,12 +1,11 @@
 ﻿<?php 
-	require('../res/meta.php'); 
-	require('../res/connect.php');
 	$listID = $_REQUEST['listid'];
 	if (!$listID) {
 		$listID = $_REQUEST['listID'];
 	}
 	
-	if ($listID){
+	if (isset($listID)){
+		require('../res/connect.php'); 
 		$listQuery = mysqli_query($connect, "SELECT * FROM userlist LEFT JOIN users ON (userlist.userID = users.userID) LEFT JOIN userlisttype ON (userlist.userlistType = userlisttype.userlisttypeID) WHERE userListID = '$listID'") or mysqli_error($connect);
 		if (mysqli_num_rows($listQuery) == 1){
 			while ($listRow = mysqli_fetch_array($listQuery)){
@@ -19,12 +18,12 @@
 				$listMode = $listRow['userMode'];
 			}
 		} else {
-			header("location: /error/?page=/list/");
+			//header("location: /error/?page=/list/");
 		}
 	} else {
-		header("location: /error/?page=/list/");
+		//header("location: /error/?page=/list/");
 	}
-	
+	require('../res/meta.php'); 
 	
 	
 ?>
@@ -38,37 +37,7 @@
 <meta property="og:determiner" content="auto" />
 </head>
 <body>
-<!--<div id="fb-root"></div>
-<script type="text/javascript">
-window.fbAsyncInit = function () {
 
-	FB.init({
-		appId: '655466264547809',
-		status: true,
-		xfbml: true
-	});
-	$("#fblikeholder").click(function(){
-		FB.ui(
-		  {
-			method: 'share',
-			href: document.URL
-		  },
-		  function(response) {
-			return true;
-		  }
-		);
-	});
-};
-	
-	(function () {
-		if (document.getElementById('facebook-jssdk')) { return; }
-		var firstScriptElement = document.getElementsByTagName('script')[0],
-			facebookJS = document.createElement('script');
-		facebookJS.id = 'facebook-jssdk';
-		facebookJS.src = '//connect.facebook.net/en_US/all.js';
-		firstScriptElement.parentNode.insertBefore(facebookJS, firstScriptElement);
-	}());
-</script>-->
 <?php require('../res/headnav.php'); ?>
 <div id="container" class="list">
 	<div id="pageHeader">
@@ -117,11 +86,7 @@ window.fbAsyncInit = function () {
                 echo "<h1>List</h1>";
                 echo "<p class='errorMsg'>Maybe you've had too much eggnog. This list doesn't exist!</p>";	
             } ?>
-            
-    <?php
-    require_once('../res/listOverlay.php'); 
-	require_once('../res/reportOverlay.php');
-?>
+
 </div>
 <script type="text/javascript">
 	$(function(){

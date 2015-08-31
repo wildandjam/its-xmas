@@ -1,8 +1,5 @@
 <?php
-
-
-if (!isset($xID)){
-	header('location: /');	
+if (!isset($xID) && isset($membercheck) && $membercheck == true){
+	header('location: /?error=nonmember');	
 }
-
 ?>

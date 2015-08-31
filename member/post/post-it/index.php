@@ -1,6 +1,7 @@
 <?php 
-require('../../../res/meta.php'); 
-require('../../../res/membercheck.php'); 
+    $membercheck = true;
+    require('../../../res/meta.php');
+
 if (isset($_REQUEST['postType'])){
 	$postType = $_REQUEST['postType'];
 }

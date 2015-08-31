@@ -4,7 +4,11 @@
 <body>
 <?php require('../res/headnav.php'); ?>
 <div id="container">
-
+    <?php 
+        $pgTitle = "The South Pole";
+        $pgBreadcrumb = "<li>The South Pole</li>";
+        require('../res/pageHeader.php');
+    ?>
     <div id="errorContainer">
        <h1>Unfortunately the page you are looking for does not exist</h1>
        <?php
@@ -13,7 +17,7 @@
        
 	</div>
 
-<?php require('../res/sidebars.php'); ?>
+<?php require('../res/gtm.php'); ?>
 	
 </div>
 </body>

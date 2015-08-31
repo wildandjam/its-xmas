@@ -1,6 +1,7 @@
 <?php 
-	require('../../../res/meta.php');
-	require('../../../res/membercheck.php'); ?>
+    $membercheck = true;
+    require('../../../res/meta.php');
+?>
 <title>Upload an image | It's Christmas</title> 
 </head>
 <body>

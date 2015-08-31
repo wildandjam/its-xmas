@@ -1,3 +1,25 @@
+@media (min-width: 768px) {
+  /* line 23, partials/_variables.scss */
+  .nonHandheld {
+    display: block!important;
+  }
+
+  /* line 26, partials/_variables.scss */
+  .handheld {
+    display: none!important;
+  }
+}
+@media (max-width: 767px) {
+  /* line 31, partials/_variables.scss */
+  .nonHandheld {
+    display: none!important;
+  }
+
+  /* line 34, partials/_variables.scss */
+  .handheld {
+    display: block!important;
+  }
+}
 /* line 1, partials/_reset.scss */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
@@ -43,8 +65,13 @@ table {
 }
 
 /* line 5, admin.scss */
+body {
+  color: #124f42;
+}
+
+/* line 9, admin.scss */
 header {
-  background: #183051;
+  background: #124f42;
   font-family: "Lobster Two", cursive;
   color: white;
   padding: 10px;
@@ -56,17 +83,22 @@ header {
   width: 100%;
   clear: both;
   text-align: center;
+  height: auto;
+  -webkit-transition: all 0s;
+  -moz-transition: all 0s;
+  -o-transition: all 0s;
+  transition: all 0s;
 }
-/* line 19, admin.scss */
+/* line 25, admin.scss */
 header a {
   text-decoration: none;
   color: white;
 }
-/* line 23, admin.scss */
+/* line 29, admin.scss */
 header a:hover {
   color: #e8e8e8;
 }
-/* line 27, admin.scss */
+/* line 33, admin.scss */
 header #loggedInAs {
   font-family: "Droid Sans", sans-serif;
   text-transform: uppercase;
@@ -76,21 +108,21 @@ header #loggedInAs {
   color: white;
 }
 
-/* line 36, admin.scss */
+/* line 42, admin.scss */
 nav {
   float: left;
   width: 100%;
-  background: #183051;
+  background: #124f42;
   clear: both;
 }
-/* line 42, admin.scss */
+/* line 48, admin.scss */
 nav ul {
   list-style: none;
   float: left;
   width: 100%;
   clear: both;
 }
-/* line 48, admin.scss */
+/* line 54, admin.scss */
 nav ul li {
   float: left;
   width: 16.66%;
@@ -100,10 +132,10 @@ nav ul li {
   color: #e8e8e8;
   text-align: center;
 }
-/* line 57, admin.scss */
+/* line 63, admin.scss */
 nav ul li a {
   padding: 10px;
-  background: #183051;
+  background: #124f42;
   color: #e8e8e8;
   text-decoration: none;
   float: left;
@@ -114,20 +146,20 @@ nav ul li a {
   font-size: 10px;
   letter-spacing: 1px;
 }
-/* line 70, admin.scss */
+/* line 76, admin.scss */
 nav ul li a:hover {
   background: #124f42;
   color: white;
 }
 
-/* line 78, admin.scss */
+/* line 84, admin.scss */
 .breadcrumb {
   float: left;
   width: 100%;
   padding: 10px;
   clear: both;
 }
-/* line 84, admin.scss */
+/* line 90, admin.scss */
 .breadcrumb ul {
   float: left;
   width: 100%;
@@ -135,7 +167,7 @@ nav ul li a:hover {
   padding: 0;
   list-style: none;
 }
-/* line 91, admin.scss */
+/* line 97, admin.scss */
 .breadcrumb ul li {
   float: left;
   font-size: 12px;
@@ -146,21 +178,21 @@ nav ul li a:hover {
   color: #124f42;
   font-weight: bold;
 }
-/* line 101, admin.scss */
+/* line 107, admin.scss */
 .breadcrumb ul li:after {
   content: " >";
 }
-/* line 105, admin.scss */
+/* line 111, admin.scss */
 .breadcrumb ul li a {
-  color: #183051;
+  color: #124f42;
   text-decoration: none;
 }
-/* line 112, admin.scss */
+/* line 115, admin.scss */
 .breadcrumb ul li a:hover {
   text-decoration: underline;
 }
 
-/* line 119, admin.scss */
+/* line 122, admin.scss */
 .wrapper {
   margin: 0 auto;
   overflow: auto;
@@ -169,13 +201,13 @@ nav ul li a:hover {
   display: block;
 }
 
-/* line 126, admin.scss */
+/* line 129, admin.scss */
 #dashboard {
   float: left;
   width: 100%;
   clear: both;
 }
-/* line 131, admin.scss */
+/* line 134, admin.scss */
 #dashboard > div {
   float: left;
   width: 31.33%;
@@ -189,7 +221,7 @@ nav ul li a:hover {
   padding: 10px;
   margin: 1%;
 }
-/* line 140, admin.scss */
+/* line 143, admin.scss */
 #dashboard > div h2, #dashboard > div h3, #dashboard > div h4 {
   float: left;
   clear: both;
@@ -198,23 +230,23 @@ nav ul li a:hover {
   text-align: center;
   padding: 0;
 }
-/* line 149, admin.scss */
+/* line 152, admin.scss */
 #dashboard > div h2 {
   font-family: "Lobster Two", cursive;
   font-size: 20px;
-  color: #183051;
+  color: #124f42;
 }
-/* line 153, admin.scss */
+/* line 156, admin.scss */
 #dashboard > div h2 a {
-  color: #183051;
+  color: #124f42;
 }
-/* line 157, admin.scss */
+/* line 160, admin.scss */
 #dashboard > div h3 {
   font-family: "Droid Sans", sans-serif;
   padding: 5px 0;
   font-size: 12px;
 }
-/* line 163, admin.scss */
+/* line 166, admin.scss */
 #dashboard > div h4 {
   font-family: "Droid Sans", sans-serif;
   font-size: 28px;
@@ -222,10 +254,10 @@ nav ul li a:hover {
   margin-bottom: 25px;
 }
 
-/* line 171, admin.scss */
+/* line 174, admin.scss */
 h1 {
   font-family: "Lobster Two", cursive;
-  color: #183051;
+  color: #124f42;
   float: left;
   width: 100%;
   clear: both;
@@ -234,71 +266,71 @@ h1 {
   padding: 0 0 15px 0;
 }
 
-/* line 181, admin.scss */
+/* line 184, admin.scss */
 table {
   width: 100%;
 }
-/* line 184, admin.scss */
+/* line 187, admin.scss */
 table.auto-width {
   width: 50%;
   min-width: 320px;
 }
-/* line 189, admin.scss */
+/* line 192, admin.scss */
 table thead {
-  border-bottom: 2px solid #183051;
+  border-bottom: 2px solid #124f42;
 }
-/* line 193, admin.scss */
+/* line 196, admin.scss */
 table th {
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-size: 12px;
 }
-/* line 199, admin.scss */
+/* line 202, admin.scss */
 table th, table td {
   text-align: center;
   font-family: "Droid Sans", sans-serif;
   padding: 5px;
 }
-/* line 204, admin.scss */
+/* line 207, admin.scss */
 table td {
   font-size: 14px;
   border: 1px solid rgba(204, 204, 204, 0.15);
 }
-/* line 208, admin.scss */
+/* line 211, admin.scss */
 table td a {
   text-decoration: underline;
-  color: #183051;
+  color: #124f42;
 }
 
-/* line 215, admin.scss */
+/* line 218, admin.scss */
 .row {
   float: left;
   width: 100%;
   clear: both;
 }
-/* line 220, admin.scss */
+/* line 223, admin.scss */
 .row label {
   float: left;
   clear: both;
   font-size: 12px;
-  color: #183051;
+  color: #124f42;
   width: 25%;
   line-height: 24px;
   font-family: "Droid Sans", sans-serif;
 }
-/* line 229, admin.scss */
+/* line 232, admin.scss */
 .row input, .row textarea {
   float: left;
   width: 75%;
   font-size: 12px;
-  color: #183051;
+  color: #124f42;
   padding: 3px 5px;
   font-family: "Droid Sans", sans-serif;
   margin: 0;
   margin-bottom: 20px;
 }
-/* line 239, admin.scss */
+/* line 242, admin.scss */
 .row button {
   width: 75%;
   margin-left: 25%;
@@ -309,7 +341,7 @@ table td a {
   letter-spacing: 1px;
   font-size: 14px;
 }
-/* line 249, admin.scss */
+/* line 252, admin.scss */
 .row button:hover {
   background: #124f42;
 }

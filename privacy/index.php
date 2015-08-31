@@ -11,20 +11,14 @@
 <body>
 <?php require('../res/headnav.php'); ?>
 <div id="container">
-	<div id="pageHeader">
-        <h1>Privacy Policy</h1>
-        <?php require('../res/userPortal.php'); ?>
-        <div id="breadcrumbs">
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li>Privacy Policy</li>
-            </ul>
-        </div>
-    </div>
-	<div class="content static" id="privacy">
+    <?php 
+        $pgTitle = "Privacy Policy";
+        $pgBreadcrumb = "<li>Privacy Policy</li>";
+        require('../res/pageHeader.php');
+    ?>
+	<div class="content container" id="privacy">
         <p>This Privacy Policy governs the manner in which It's Christmas collects, uses, maintains and discloses information collected from users (each, a "User") of the <a href="http://www.its-xmas.co.uk">http://www.its-xmas.co.uk</a> website ("Site"). This privacy policy applies to the Site and all products and services offered by It's Christmas.</p>
-
-<h2>Personal identification information</h2>
+		<h2>Personal identification information</h2>
 
 <p>We may collect personal identification information from Users in a variety of ways, including, but not limited to, when Users visit our site, register on the site, subscribe to the newsletter, fill out a form, and in connection with other activities, services, features or resources we make available on our Site. Users may be asked for, as appropriate, name, email address. Users may, however, visit our Site anonymously. We will collect personal identification information from Users only if they voluntarily submit such information to us. Users can always refuse to supply personally identification information, except that it may prevent them from engaging in certain Site related activities.</p>
 

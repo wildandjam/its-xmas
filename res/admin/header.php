@@ -1,9 +1,9 @@
-<header>
+<header style="height:auto;">
 	<a href="/admin/">It's Christmas - Admin area</a>
 	<div id='loggedInAs'>
 		Logged in as 
 		<?php 
-			if (isset($id)){
+			if (isset($xID)){
 				$userNameQuery = mysqli_query($connect, "SELECT * FROM users WHERE userID = '$id'");
 				$userNameRows = mysqli_num_rows($userNameQuery);
 				if ($userNameRows == '1'){
@@ -19,9 +19,9 @@
 	<ul>
 		<li><a href="/admin/users">Users</a></li>
 		<li><a href="/admin/posts">Posts</a></li>
-		<li><a href="/admin/comments">Comments</a></li>
 		<li><a href="/admin/content">Content/SEO</a></li>
 		<li><a href="/admin/feedback">Feedback</a></li>
+		<li><a href="http://disqus.com">Comments Login</a></li>
 		<li><a href="/blog/wp-login.php">Blog Login</a></li>
 	</ul>
 </nav>

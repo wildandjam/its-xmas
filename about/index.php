@@ -1,6 +1,6 @@
 <?php $pageID = 4;
 	require('../res/meta.php'); 
-	if (!$seoDone){	?>
+	if (!isset($seoDone)){	?>
 		<title>About It's Christmas | It's Christmas</title>
 	<?php
 } ?>
@@ -9,31 +9,11 @@
 <body>
 <?php require('../res/headnav.php'); ?>
 <div id="container">
-	<div id="pageHeader">
-        <h1>About</h1>
-        <?php require('../res/userPortal.php'); ?>
-        <div id="pageHeaderLinks">
-            <?php 	
-                if (isset($id)){
-            ?>
-	            <?php
-                } else {
-            ?>
-                <a href="/register/">Register</a>
-                <a href="/login/">Login</a>
-            <?php
-                }
-            ?>
-            
-        </div>
-        <div class="clearfix"></div>
-        <div id="breadcrumbs">
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li>About</li>
-            </ul>
-        </div>
-    </div>
+    <?php 
+        $pgTitle = "About";
+        $pgBreadcrumb = "<li>About</li>";
+        require('../res/pageHeader.php');
+    ?>
 	<div class="content static content1000" id="aboutPage">
 		<div id="aboutHeading">
         	<h2>Roll up, roll up and welcome to It's Christmas, the most marvellously magical marshmallow world on all the web to ensure all your Christmases are merry and bright!</h2>

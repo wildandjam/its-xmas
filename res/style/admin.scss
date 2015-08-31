@@ -2,8 +2,12 @@
 @import 'partials/variables';
 @import 'partials/reset';
 
+body {
+	color:$green
+}
+
 header {
-	background:$blue;
+	background:$green;
 	font-family:$lobster;
 	color:white;
 	padding:10px;
@@ -15,6 +19,8 @@ header {
 	width:100%;
 	clear:both;
 	text-align:center;
+	height:auto;
+	@include transition(all 0s);
 
 	a {
 		text-decoration:none;
@@ -36,7 +42,7 @@ header {
 nav {
 	float:left;
 	width:100%;
-	background:$blue;
+	background:$green;
 	clear:both;
 
 	ul {
@@ -56,7 +62,7 @@ nav {
 
 			a {
 				padding:10px;
-				background:$blue;
+				background:$green;
 				color:$lgrey;
 				text-decoration:none;
 				float:left;
@@ -103,11 +109,8 @@ nav {
 			}
 
 			a {
-				color:$blue;
+				color:$green;
 				text-decoration:none;
-
-				
-				
 
 				&:hover {
 					text-decoration:underline;
@@ -149,9 +152,9 @@ nav {
 		h2 {
 			font-family:$lobster;
 			font-size:20px;
-			color:$blue;
+			color:$green;
 			a {
-				color:$blue;
+				color:$green;
 			}
 		}
 		h3 {
@@ -170,7 +173,7 @@ nav {
 }
 h1 {
 	font-family:$lobster;
-	color:$blue;
+	color:$green;
 	float:left;
 	width:100%;
 	clear:both;
@@ -187,7 +190,7 @@ table {
 	}
 
 	thead {
-		border-bottom:2px solid $blue;
+		border-bottom:2px solid $green;
 	}
 
 	th {
@@ -207,7 +210,7 @@ table {
 
 		a {
 			text-decoration:underline;
-			color:$blue;
+			color:$green;
 
 		}
 	}
@@ -221,7 +224,7 @@ table {
 		float:left;
 		clear:both;
 		font-size:12px;
-		color:$blue;
+		color:$green;
 		width:25%;
 		line-height:24px;
 		font-family:$font;
@@ -230,7 +233,7 @@ table {
 		float:left;
 		width:75%;
 		font-size:12px;
-		color:$blue;
+		color:$green;
 		padding:3px 5px;
 		font-family:$font;
 		margin:0;

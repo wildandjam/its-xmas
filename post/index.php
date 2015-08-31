@@ -108,23 +108,13 @@
     	<form method="post" action="/process/updatePost.php">
     <?php } ?>
 			<div id="container">
-				<div id="pageHeader">
-					<h1 class="small"><?php echo $title; ?></h1>
-					<div id="breadcrumbs">
-				        <ul>
-				            <li><a href="/">Home</a></li>
-				            <li><a href="/posts/">Posts</a></li>
-				        </ul>
-				    </div>
-			        
-			        <?php require('../res/userPortal.php'); ?>
-			        
-			        <div id="pageHeaderLinks">
-			           
-			            
-			        </div>
-			    </div>
-		
+			
+		<?php 
+		$pgTitle = $title;
+		$pgTitleSmall = true;
+		$pgBreadcrumb = "<li><a href='/posts/'>Posts</a></li>";
+		require('../res/pageHeader.php');
+		?>
 			<div id='itemPost' data-id='<?php echo $postID; ?>' data-token='<?php echo $id ?>' data-userid='<?php echo $userID; ?>'>
             	<?php 
             	if ($_REQUEST){
@@ -531,57 +521,57 @@
 define('DISQUS_SECRET_KEY', 'xhOlWxqR4k3qIMnhICa9fR8jxywaVNKFg2LqLhQXSvOnvuAR4Ropuumv3y4WZyDP');
 define('DISQUS_PUBLIC_KEY', '4Yy4s4ZoahaO2YGpV7ATdnvE9YH4JQeyPDxwZsx6mwdlFSn8VHh8rDTRyVleTuv1');
 
-if ($id){
-	$loggedInQuery = mysqli_query($connect, "SELECT * FROM users WHERE userID = '$id'");
-	if (mysqli_num_rows($loggedInQuery) == 1){
-		$loggedInRow = mysqli_fetch_array($loggedInQuery);
-		$loggedInUser = $loggedInRow['userName'];
-		$loggedInEmail = $loggedInRow['userEmail'];
-	}
-}
 
 
-if ($userAvatarBool){
+if (isset($userAvatarBool)){
 	$disqusAvatar = 'http://www.its-xmas.co.uk' . $userAvatar;
 } else {
 	$disqusAvatar = 'http://www.its-xmas.co.uk/images/logo.png';
 }
-$data = array(
-        "id" => $id,
-        "username" => $loggedInUser,
-        "email" => $loggedInEmail,
+if (isset($xID) && isset($xUserEmail) && isset($xUsername)){
+	$data = array(
+        "id" => $xID,
+        "username" => $xUsername,
+        "email" => $xUserEmail,
         "avatar" => $disqusAvatar
     );
  
-function dsq_hmacsha1($data, $key) {
-    $blocksize=64;
-    $hashfunc='sha1';
-    if (strlen($key)>$blocksize)
-        $key=pack('H*', $hashfunc($key));
-    $key=str_pad($key,$blocksize,chr(0x00));
-    $ipad=str_repeat(chr(0x36),$blocksize);
-    $opad=str_repeat(chr(0x5c),$blocksize);
-    $hmac = pack(
-                'H*',$hashfunc(
-                    ($key^$opad).pack(
-                        'H*',$hashfunc(
-                            ($key^$ipad).$data
-                        )
-                    )
-                )
-            );
-    return bin2hex($hmac);
+	function dsq_hmacsha1($data, $key) {
+	    $blocksize=64;
+	    $hashfunc='sha1';
+	    if (strlen($key)>$blocksize)
+	        $key=pack('H*', $hashfunc($key));
+	    $key=str_pad($key,$blocksize,chr(0x00));
+	    $ipad=str_repeat(chr(0x36),$blocksize);
+	    $opad=str_repeat(chr(0x5c),$blocksize);
+	    $hmac = pack(
+	                'H*',$hashfunc(
+	                    ($key^$opad).pack(
+	                        'H*',$hashfunc(
+	                            ($key^$ipad).$data
+	                        )
+	                    )
+	                )
+	            );
+	    return bin2hex($hmac);
+	}
+	 
+	$message = base64_encode(json_encode($data));
+	$timestamp = time();
+	$hmac = dsq_hmacsha1($message . ' ' . $timestamp, DISQUS_SECRET_KEY);
 }
- 
-$message = base64_encode(json_encode($data));
-$timestamp = time();
-$hmac = dsq_hmacsha1($message . ' ' . $timestamp, DISQUS_SECRET_KEY);
 ?>
 <script type="text/javascript">
-var disqus_config = function() {
-    this.page.remote_auth_s3 = "<?php echo "$message $hmac $timestamp"; ?>";
-    this.page.api_key = "<?php echo DISQUS_PUBLIC_KEY; ?>";
-}
+<?php
+	if (isset($message) && isset($time) && isset($timestamp)) {
+?>
+	var disqus_config = function() {
+	    this.page.remote_auth_s3 = "<?php echo "$message $hmac $timestamp"; ?>";
+	    this.page.api_key = "<?php echo DISQUS_PUBLIC_KEY; ?>";
+	}
+<?php 
+	}
+?>
 </script>
     <script type="text/javascript" src="/ckeditor/ckeditor.js"></script>
         <script type="text/javascript">

@@ -2,7 +2,7 @@
 	$pageID = 9;
 	require('../res/meta.php'); 
 	
-	if (!$seoDone){	?>
+	if (!isset($seoDone)){	?>
 		<title>Milk and Cookie policy | It's Christmas</title>
 	<?php
 } ?>
@@ -11,18 +11,13 @@
 <body>
 <?php require('../res/headnav.php'); ?>
 <div id="container">
-    <div id="pageHeader">
-        <h1>The Milk & Cookie Policy</h1>
-        <?php require('../res/userPortal.php'); ?>
-        <div id="breadcrumbs">
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li>The Milk & Cookie Policy</li>
-            </ul>
-        </div>
-    </div>
+    <?php 
+        $pgTitle = "The Milk & Cookie Policy";
+        $pgBreadcrumb = "<li>The Milk & Cookie Policy</li>";
+        require('../res/pageHeader.php');
+    ?>
 	<div class="content static" id="cookiePolicy">
-                    <img src="/images/milk-cookies.png" alt="Milk and Cookies" align="middle"/>
+        <img src="/images/milk-cookies.png" alt="Milk and Cookies" align="middle"/>
         <h2>Milk Policy</h2>
 
         <p>Whilst on It's Christmas, you are permitted to drink milk. This milk may come: </p>
@@ -61,8 +56,7 @@
 		}
 	});
 </script>
-<?php require('../res/sidebars.php'); ?>
 </div>
-<?php require('../res/admin.php'); ?>
+<?php require('../res/gtm.php'); ?>
 </body>
 </html>

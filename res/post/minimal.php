@@ -28,7 +28,7 @@
             <a href="/post/?id=<?php echo $postID; ?>"><?php echo $title; ?></a>
         </div>
         <div class="itemCategory">
-        	Category: <a href="/?category=<?php echo $categoryName; ?>"><?php echo $categoryName; ?></a>
+        	Category: <a href="/posts/?category=<?php echo $categoryName; ?>"><?php echo $categoryName; ?></a>
         </div>
         <?php if ($url) { ?>
             <div class="itemFrom">
@@ -45,7 +45,7 @@
         	<?php echo $dislikeInfoCount; ?> dislikes
         </div>
         <?php 
-		if ($deletetype){
+		if (isset($deletetype)){
 			if ($id == $deleteuserid){
 				switch($deletetype){
 					case "collection":

@@ -5,17 +5,29 @@
 <body>
 <?php require('../res/headnav.php'); ?>
 <div id="container">
-	<div class="content center">
-		<h1>Authenticate your account</h1>
-<?php
+	<div id="pageHeader">
+        <h1>Authenticate</h1>
+        <?php require('../res/userPortal.php'); ?>
+        
+        <div class="clearfix"></div>
+        <div id="breadcrumbs">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li>Authenticate your account</li>
+            </ul>
+        </div>
+    </div>
 
-$ruser = $_GET['ruser'];
-$authcode = $_GET['authcode'];
-$mduser = md5($ruser);
+	<?php
 
-require('../res/connect.php');
+	$ruser = $_REQUEST['ruser'];
+	$authcode = $_REQUEST['authcode'];
+	if (isset($ruser)){
+		$mduser = md5($ruser);
+	}
 
-if ($connect){
+
+if (isset($connect)){
 	if ($authcode == $mduser) {
 		$authCheck = mysqli_query($connect, "SELECT * FROM users WHERE userName='$ruser'");
 		$authCount = mysqli_num_rows($authCheck);
@@ -48,14 +60,9 @@ if ($connect){
 } else {
 	$status = "<p class='errorMsg'>Unfortunately, there has been an error authenticating your account, please <a href='/contact'>contact us</a></p>";	
 }
-
-
 echo $status."<br />";
-
-
 ?>
-	</div>
-    <?php require('../res/sidebars.php'); ?>
 </div>
+<?php require('../res/gtm.php'); ?>
 </body>
 </html>

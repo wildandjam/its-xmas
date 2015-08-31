@@ -1,7 +1,7 @@
 <?php
 date_default_timezone_set('Europe/London');
 $today = $date = date('Y-m-d H:i');
-$datetime1 = strtotime('2015-12-25 00:00');
+$datetime1 = strtotime('2015-12-24 23:00');
 $datetime2 = strtotime($today);
 $interval = $datetime1-$datetime2;
 if (isset($xID)){

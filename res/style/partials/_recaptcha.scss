@@ -21,3 +21,35 @@
 	border:1px solid $lgrey!important;
 }
 .recaptcha_only_if_privacy {display:none;}
+
+
+#recaptcha_area {
+	margin-top:20px;
+
+	table {
+		display:block;
+		float:left;
+		width:100%;
+
+		tbody, tr, td {
+			display:block;
+			float:left;
+			width:100%;
+
+			input {
+				width:100%!important;
+			}
+		}
+	}
+}
+@media #{$break-handheld} {
+	#recaptcha_image {
+		max-width:100%;
+		height:auto;
+
+		img {
+			max-width:100%;
+			height:auto;
+		}
+	}
+}

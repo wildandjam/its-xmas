@@ -1,9 +1,13 @@
 <?php 
 	session_start();
-	$s = $_SESSION['username'];
-	$from = $_REQUEST['from'];
+	if (isset($_SESSION['username'])){
+		$s = $_SESSION['username'];
+	}
+	if (isset($_REQUEST['from'])){
+		$from = $_REQUEST['from'];
+	}
 	require('../res/connect.php');
-	if ($s){
+	if (isset($s)){
 		if ($connect){
 			$check = mysqli_query($connect, "SELECT * FROM users WHERE userName='$s'");
 			$count = mysqli_num_rows($check);
@@ -23,10 +27,13 @@
 		
 	} else {
 
-		if ($connect){
-			$s = $_SESSION['useremail'];
-			$check = mysqli_query($connect, "SELECT * FROM users WHERE userEmail='$s'");
-			$count = mysqli_num_rows($check);
+		if (isset($connect)){
+			if (isset($_SESSION['useremail'])){
+				$s = $_SESSION['useremail'];
+			}
+			if (isset($s)){
+				$check = mysqli_query($connect, "SELECT * FROM users WHERE userEmail='$s'");
+				$count = mysqli_num_rows($check);
 				if ($count != 1) {
 					$msg = "Unfortunately, there is an issue with our system.";
 				} else {
@@ -36,24 +43,21 @@
 						$email = $row['userEmail'];
 					}
 				}
+			}
 		
 		} else {
 			$msg =  "Unfortunately there has been an error in our database";
 		}
 
 	}
-	if ($id){
-		$_SESSION['id']=$id;
-		$_SESSION['name']=$name;
-		$_SESSION['email']=$email;	
-		if ($from){
-			header("Location: " . $from . "");
-		} else {
-			header("Location: /");
-		}
+	if (isset($xID)){
+			header("Location: /member/my-christmas/");
 	}
 ?>
-<?php require('../res/meta.php'); ?>
+<?php 
+    $membercheck = true;
+	require('../res/meta.php');
+?>
 <title>You are logged in | It's Christmas</title>
 </head>
 

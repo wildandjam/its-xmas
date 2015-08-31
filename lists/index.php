@@ -5,22 +5,17 @@
 <body>
 <?php require('../res/headnav.php'); ?>
 <div id="container" class="home-background">
-	<div id="pageHeader">
-		<h1>Lists</h1>
-		<?php require('../res/userPortal.php'); ?>
-		<div class="clearfix"></div>
-		<div id="breadcrumbs">
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li>Lists</li>
-            </ul>
-        </div>
-		<div id="pageHeaderLinks">
-			<a href="#">Search</a>
-		</div>
-	</div>
 	<?php 
-		$listQuery = mysqli_query($connect, "SELECT * FROM userlist WHERE userListPrivate = '0'");
+        $pgTitle = "Lists";
+        $pgBreadcrumb = "<li>Lists</li>";
+        $pgHeaderLinks =  "<a href='#' class='pull-right'>Search</a>";
+        require('../res/pageHeader.php');
+    ?>
+	<h2 class="text-left">Create a new list</h2>
+
+	<h2 class="text-left">Your lists</h2>
+	<?php 
+		$listQuery = mysqli_query($connect, "SELECT * FROM userlist WHERE userID = '$xID'");
 		$listCount = mysqli_num_rows($listQuery);
 
 		if ($listCount > 0){
@@ -32,12 +27,16 @@
 				$listDate = $listRow->userListDate;
 				$userMode = $listRow->userMode;
 				
-				echo "<a href='/list/?listid=" . $listID ."'>" . $listName . "</a><br />";
+				?>
+					<div class='tool-box'>
+						<a href='/list/?listid=<?php echo $listID; ?>'><?php echo $listName ?></a>
+					</div>
 
-
+				<?php
 			}
 		}
 	?>
+	<h2 class="text-left">Lists shared with you</h2>
 </div>
 </body>
 </html>

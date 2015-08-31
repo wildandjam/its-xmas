@@ -1,0 +1,59 @@
+#aboutPage {
+	
+	#aboutHeading {
+		width:50%; 
+		float:left;
+		padding:20px;
+		background:white;
+		border:1px solid #e8e8e8;
+
+		@media #{$break-handheld} {
+			width:100%;
+		}
+
+		h1 {
+			font-size: 40px;
+			border-bottom: 2px dashed #e8e8e8;
+			padding-bottom: 20px;
+			margin-bottom: 20px;
+			line-height:1.5;
+		}
+		h2 {
+			line-height:35px;
+			color:$green;
+		}
+	}
+	#aboutContent {
+		width:50%; 
+		float:left;
+		padding:0 20px;
+
+		@media #{$break-handheld} {
+			width:100%;
+		}
+	}
+	.exploreWrapper {
+		float:left;
+		width:100%;
+		clear:both;
+		text-align:center;
+		margin:30px 0;
+	}
+	a.button {
+		margin:0 auto;
+		display:inline-block;
+		background:$blue;
+		color:white;
+		font-size:12px;
+		float:none;
+		padding:10px 15px;
+		text-decoration:none;
+		letter-spacing:1px;
+		text-transform:uppercase;
+
+		&:hover {
+			background:$green;
+
+		}
+	}
+}

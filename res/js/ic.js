@@ -5,20 +5,29 @@ $(document).ready(function(){
 		$(".panel").removeClass("active");
 		if ($("header").hasClass("active")){
 			$("header").removeClass("active");
+			$("body").removeClass("navigation");
 		} else {
 			$("header").addClass("active");
+			$("body").addClass("navigation");
 		}
+	});
+	$(document).on("click","body.navigation #container", function(){
+		$(".panel").removeClass("active");
+		$("header").removeClass("active");
+		$("body").removeClass("navigation");
 	});
 	$("#altHeader a .link-extend").click(function(e){
 		e.preventDefault();
 		var panel = $(this).attr("data-for");
+
 		if ($(this).parent("a").hasClass("active")){
 			$("#altHeader a").removeClass("active");
-
 			$(".panel").removeClass("active");
 		} else {
-			$(this).parent("a").addClass("active");
+			$("#altHeader a").removeClass("active");
 			$(".panel").removeClass("active");
+			$(this).parent("a").addClass("active");
+			//$(".panel").removeClass("active");
 			$(".panel[data-panel=" + panel + "").addClass("active");
 		}
 	});
@@ -61,7 +70,7 @@ $(document).ready(function(){
 		} else {
 			var type = "days";
 		}
-		CountDownTimer('12/25/2015 0:0 AM', 'countdown', type);
+		CountDownTimer('12/24/2015 11:0 PM', 'countdown', type);
 	}
 	$("select.jquerySelect").select2();
 	

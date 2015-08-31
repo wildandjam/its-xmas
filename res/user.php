@@ -49,8 +49,11 @@ if (isset($id) && ($id > 0)){
 			}
 			$userAvatar = '/images/avatars/' . $userAvatarSrc;
 			$userAvatarBool = true;
+			$userSpecialAvatarBool = true;
 		} else {
-			$userAvatarBool = false;
+			$userAvatar = '/images/logo250.jpg';
+			$userAvatarBool = true;
+			$userSpecialAvatarBool = false;
 		}
 	} else {
 		$xUser = true;

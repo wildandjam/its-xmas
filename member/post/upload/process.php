@@ -1,6 +1,7 @@
 <?php 
-require('../../../res/user.php');
-require('../../../res/connect.php');
+    $membercheck = true;
+    require('../../../res/meta.php');
+
 
 print_r($_REQUEST);
 /*$target = "../../../images/user/"; 

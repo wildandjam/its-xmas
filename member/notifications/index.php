@@ -1,31 +1,27 @@
-<?php require('../../res/meta.php'); ?>
+<?php 
+    $membercheck = true;
+	require('../../res/meta.php');
+?>
 	<title>Notifications | It's Christmas</title>
 </head>
 <body>
 <?php require('../../res/headnav.php'); ?>
 
 <div id="container" class="notifications">
-	<div id="pageHeader">
-        <h1>Nofications</h1>
-        <?php require('../../res/userPortal.php'); ?>
-        <div id="breadcrumbs">
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/member/my-christmas">My Christmas</a></li>
-                <li>Notifications</li>
-            </ul>
-        </div>
-    </div>
+    <?php 
+		$pgTitle = "Notifications";
+		$pgBreadcrumb = "<li><a href='/member/my-christmas'>My Christmas</a></li><li>Notifications</li>";
+		require('../../res/pageHeader.php');
+	?>
 	<div class="content">
     <?php 
 	if (!isset($id)){
 		echo "<p class='errorMsg'>To get notifications, you need to <a href='/login/'>sign in</a> to the Christmas spirit.</p>";
 		
 	} else { ?>
-    	<div id="notificationHolder">
+    	<div id="notificationHolder" class="container">
 		<?php
-				require('../../res/connect.php');
-				$notificationQuery = mysqli_query($connect, "SELECT * FROM notifications WHERE notificationUserID = '$id' AND notificationHidden = '0' ORDER BY notificationDate DESC");
+				$notificationQuery = mysqli_query($connect, "SELECT * FROM notifications WHERE notificationUserID = '$xID' AND notificationHidden = '0' ORDER BY notificationDate DESC");
 				if (mysqli_num_rows($notificationQuery) > 0){
 					while ($notificationRow = mysqli_fetch_array($notificationQuery)){
 						$notifID = $notificationRow['notificationID'];
@@ -38,9 +34,9 @@
 						$notifPost = $notificationRow['notificationPostID'];
 						
 						if ($notifRead == "0"){
-							echo "<div class='notification unread' data-noID='" . $notifID . "'>";	
+							echo "<div class='notification unread row' data-noID='" . $notifID . "'>";	
 						} else {
-							echo "<div class='notification read' data-noID='" . $notifID . "'>";	
+							echo "<div class='notification read row' data-noID='" . $notifID . "'>";	
 						}
 						
 						$notifUserQUery = mysqli_query($connect, "SELECT * FROM users WHERE userID = '$notifActionUser'");
@@ -60,25 +56,26 @@
 								
 								switch ($notTypeNameExtra){
 									case "nice-list":
-										$notifIcon = "<span class=\"itemFriend notificationIcon\"></span>";
+										$notifIcon = "<span class='itemFriend notificationIcon'></span>";
 										$notifContent = " added you to their nice list";
 										break;
 									case "liked-post":
-										$notifIcon = "<span class=\"likePost notificationIcon\"></span>";
+										$notifIcon = "<span class='likePost notificationIcon'></span>";
 										$notifContent = " liked your <a href='/post/?id= " . $notifPost . "'>post</a>";
 										break;	
 								}
 							}
 						}
+						echo "<div class='col-xs-9'>";
 						echo $notifIcon;
 						echo $notifUserName;
 						echo $notifContent;					
-						
-						echo "<span class='notifyDate'>" . $notifDateFix . "</span>";
 						echo "</div>";
-						
-						
-						
+						echo "<div class='col-xs-3'>";
+						echo "<span class='notifyDate pull-right'>" . $notifDateFix . "</span>";
+						echo "</div>";
+						echo "</div>";
+												
 					}
 					$readQuery = mysqli_query($connect, "UPDATE notifications SET notificationRead = 1 WHERE notificationUserID = '$id' AND notificationHidden = '0' AND notificationRead = 0");
 					if (!$readQuery) {

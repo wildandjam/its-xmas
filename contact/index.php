@@ -12,16 +12,11 @@
 <body>
 <?php require('../res/headnav.php'); ?>
 <div id="container" class="pageContact">
-	<div id="pageHeader">
-        <h1>Contact us</h1>
-        <?php require('../res/userPortal.php'); ?>
-        <div id="breadcrumbs">
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li>Contact us</li>
-            </ul>
-        </div>
-    </div>
+	<?php 
+        $pgTitle = "Contact";
+        $pgBreadcrumb = "<li>Contact</li>";
+        require('../res/pageHeader.php');
+    ?>
 	<div class="content">
     	<?php 
 			$formsent = false;
@@ -94,15 +89,12 @@
                 <?php if (isset($email)){
 					echo "<input type=\"email\" id=\"contactEmail\" name=\"contactEmail\" value=\"" . $email . "\" placeholder=\"Your email\" required />";
 				} else {
-					
-					$emailQuery = mysqli_query($connect, "SELECT * FROM users WHERE userID = '$id'");
-					$emailCount = mysqli_num_rows($emailQuery);
-					while($emailRow = mysqli_fetch_array($emailQuery)){
-						$userEmail = $emailRow['userEmail'];	
+					if (isset($xUserEmail)){
+						echo "<input type=\"email\" id=\"contactEmail\" name=\"contactEmail\" value=\"" . $xUserEmail . "\" placeholder=\"Your email\" required />";
+					} else {
+						echo "<input type=\"email\" id=\"contactEmail\" name=\"contactEmail\" placeholder=\"Your email\" required />";
 					}
 					
-					
-					echo "<input type=\"email\" id=\"contactEmail\" name=\"contactEmail\" value=\"" . $userEmail . "\" placeholder=\"Your email\" required />";
 				}
 				?>
                 <select id="contactType" name="contactType" required>
@@ -128,5 +120,6 @@
     	<?php } ?>
     </div>
 </div>
+<?php require('../res/gtm.php'); ?>
 </body>
 </html>

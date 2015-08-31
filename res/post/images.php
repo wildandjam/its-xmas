@@ -33,7 +33,7 @@
             <div class="itemHover"><span><?php echo $title; ?></span></div>
         </a>
          <?php 
-		if ($deletetype){
+		if (isset($deletetype)){
 			if ($id == $deleteuserid){
 				switch($deletetype){
 					case "collection":
